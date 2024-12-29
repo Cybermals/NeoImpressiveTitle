@@ -1,4 +1,4 @@
-name: NeoIT
+name: Code Checks
 on: push
 jobs:
   lint-python-code:
