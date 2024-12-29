@@ -1,0 +1,18 @@
+name: NeoIT
+on: push
+jobs:
+  lint-python-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install flake8
+        run: |
+          pip install flake8
+      - name: Lint Code
+        run: |
+          flake8
