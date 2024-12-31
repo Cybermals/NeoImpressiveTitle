@@ -1,1 +1,3 @@
+kivy
 panda3d
+panda3d-kivy

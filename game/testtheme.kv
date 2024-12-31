@@ -1,0 +1,67 @@
+#:kivy 1.9.0
+
+<MainScreen>:
+    orientation: "vertical"
+
+    GameButton:
+        text: "Button"
+
+    BoxLayout:
+        Label:
+            text: "CheckBox:"
+
+        GameCheckBox:
+
+    BoxLayout:
+        Label:
+            text: "DropDown:"
+
+        GameDropDown:
+
+    BoxLayout:
+        Label:
+            text: "ProgressBar:"
+
+        GameProgressBar:
+            value: 50
+
+    BoxLayout:
+        Label:
+            text: "RadioButton1:"
+
+        GameCheckBox:
+            group: "RadioGroup1"
+            active: True
+
+    BoxLayout:
+        Label:
+            text: "RadioButton2:"
+            
+        GameCheckBox:
+            group: "RadioGroup1"
+
+    BoxLayout:
+        Label:
+            text: "Slider:"
+
+        GameSlider:
+
+    BoxLayout:
+        Label:
+            text: "Switch:"
+
+        GameSwitch:
+
+    BoxLayout:
+        Label:
+            text: "TextArea:"
+
+        GameTextArea:
+            text: "Multi-Line\nText\nArea"
+
+    BoxLayout:
+        Label:
+            text: "TextInput:"
+
+        GameTextInput:
+            text: "Single-Line Text Input"
