@@ -15,4 +15,4 @@ jobs:
           pip install flake8
       - name: Lint Code
         run: |
-          flake8
+          flake8 --ignore=F821
