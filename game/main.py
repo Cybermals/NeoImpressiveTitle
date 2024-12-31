@@ -3,6 +3,8 @@ from panda3d.core import (
     load_prc_file
 )
 
+from game_state import GameState
+
 
 # Application Class
 # =================
@@ -13,6 +15,14 @@ class NeoImpressiveTitle(ShowBase):
 
         # Call base constructor
         ShowBase.__init__(self)
+
+        # Load music
+        self.title_music = self.loader.load_music("music/Title.ogg")
+        self.title_music.set_loop(True)
+
+        # Initialize game state
+        self.game_state = GameState("GameState")
+        self.game_state.request("SplashScreen")
 
 
 # Entry Point
