@@ -1,3 +1,5 @@
+from kivy.clock import Clock
+from kivy.graphics import Rectangle
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.button import Button
@@ -7,6 +9,9 @@ from kivy.uix.progressbar import ProgressBar
 from kivy.uix.slider import Slider
 from kivy.uix.switch import Switch
 from kivy.uix.textinput import TextInput
+from kivy.uix.togglebutton import ToggleButton
+
+from ui.option_button import OptionButton
 
 
 # Classes
@@ -19,35 +24,13 @@ class GameCheckBox(CheckBox):
     pass
 
 
-class GameDropDown(DropDown):
-    selection = StringProperty("")
-
+class GameOptionButton(OptionButton):
     def __init__(self, *args, **kwargs):
         # Call the base constructor
         super().__init__(*args, **kwargs)
 
-        # Create option buttons
-        for i in range(10):
-            option_btn = GameButton(
-                text=f"Option {i}",
-                size_hint_y=None,
-                height=44
-            )
-            option_btn.bind(on_release=lambda instance: self.select(instance.text))
-            self.add_widget(option_btn)
-
-        # Create main button
-        self.main_btn = GameButton(
-            text=self.selection,
-            size_hint=(None, None)
-        )
-        self.main_btn.bind(on_release=self.open)
-        self.add_widget(self.main_btn)
-
-    def on_select(self, new_selection):
-        # Set new selection
-        self.selection = new_selection
-        self.main_btn.text = new_selection
+        # Set the option class to our themed toggle button
+        self.optionclass = GameToggleButton
 
 
 class GameProgressBar(ProgressBar):
@@ -67,6 +50,10 @@ class GameTextArea(TextInput):
 
 
 class GameTextInput(TextInput):
+    pass
+
+
+class GameToggleButton(ToggleButton):
     pass
 
 
