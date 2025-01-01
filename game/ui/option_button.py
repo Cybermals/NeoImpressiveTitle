@@ -18,7 +18,9 @@ class OptionButton(Button):
 
         # Create dropdown
         self.dropdown = DropDown(size_hint=(None, None))
-        self.dropdown.bind(on_select=lambda instance, selection: self.on_select(selection))
+        self.dropdown.bind(
+            on_select=lambda instance, selection: self.on_select(selection)
+        )
 
     def on_release(self):
         # Open dropdown
@@ -38,7 +40,9 @@ class OptionButton(Button):
                 height=44,
                 state="down" if i == 0 else "normal"
             )
-            btn.bind(on_release=lambda instance: self.dropdown.select(instance.text))
+            btn.bind(
+                on_release=lambda instance: self.dropdown.select(instance.text)
+            )
             self.dropdown.add_widget(btn)
 
         # Set initial selection
