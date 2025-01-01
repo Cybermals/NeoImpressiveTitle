@@ -9,6 +9,7 @@ from kivy.uix.tabbedpanel import TabbedPanel
 from kivy.uix.textinput import TextInput
 from kivy.uix.togglebutton import ToggleButton
 
+from ui.floating_window import FloatingWindow
 from ui.option_button import OptionButton
 from ui.textured_progress import TexturedProgress
 
@@ -20,6 +21,10 @@ class GameButton(Button):
 
 
 class GameCheckBox(CheckBox):
+    pass
+
+
+class GameFloatingWindow(FloatingWindow):
     pass
 
 

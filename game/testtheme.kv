@@ -1,92 +1,105 @@
 #:kivy 1.9.0
 
+<Window1>:
+    title: "Window 1"
+    size: 300, 400
+
+
+<Window2>:
+    title: "Window 2"
+    size: 300, 400
+
+
 <MainScreen>:
-    do_default_tab: False
+    GameTabbedPanel:
+        size: root.size
+        do_default_tab: False
 
-    TabbedPanelItem:
-        text: "Tab 1"
-        background_normal: "images/ui/ButtonUp.png"
-        background_down: "images/ui/ButtonDown.png"
-        font_name: "fonts/ConsolaMono.ttf"
-        font_size: 16
+        TabbedPanelItem:
+            text: "Tab 1"
+            background_normal: "images/ui/ButtonUp.png"
+            background_down: "images/ui/ButtonDown.png"
+            font_name: "fonts/ConsolaMono.ttf"
+            font_size: 16
 
-        GamePanel:
-            orientation: "vertical"
+            GamePanel:
+                orientation: "vertical"
 
-            GameButton:
-                text: "Button"
+                GameButton:
+                    text: "Button"
+                    on_release: root.show_windows()
 
-            BoxLayout:
-                GameLabel:
-                    text: "CheckBox:"
+                BoxLayout:
+                    GameLabel:
+                        text: "CheckBox:"
 
-                GameCheckBox:
+                    GameCheckBox:
 
-            BoxLayout:
-                GameLabel:
-                    text: "OptionButton:"
+                BoxLayout:
+                    GameLabel:
+                        text: "OptionButton:"
 
-                GameOptionButton:
-                    options: {"Cat": 0, "Dog": 1, "Bird": 2}
+                    GameOptionButton:
+                        options: {"Cat": 0, "Dog": 1, "Bird": 2}
 
-            BoxLayout:
-                GameLabel:
-                    text: "RadioButton1:"
+                BoxLayout:
+                    GameLabel:
+                        text: "RadioButton1:"
 
-                GameCheckBox:
-                    group: "RadioGroup1"
-                    active: True
+                    GameCheckBox:
+                        group: "RadioGroup1"
+                        active: True
 
-            BoxLayout:
-                GameLabel:
-                    text: "RadioButton2:"
-                    
-                GameCheckBox:
-                    group: "RadioGroup1"
+                BoxLayout:
+                    GameLabel:
+                        text: "RadioButton2:"
+                        
+                    GameCheckBox:
+                        group: "RadioGroup1"
 
-            BoxLayout:
-                GameLabel:
-                    text: "Slider:"
+                BoxLayout:
+                    GameLabel:
+                        text: "Slider:"
 
-                GameSlider:
+                    GameSlider:
 
-            BoxLayout:
-                GameLabel:
-                    text: "Switch:"
+                BoxLayout:
+                    GameLabel:
+                        text: "Switch:"
 
-                GameSwitch:
+                    GameSwitch:
 
-            BoxLayout:
-                GameLabel:
-                    text: "TextArea:"
+                BoxLayout:
+                    GameLabel:
+                        text: "TextArea:"
 
-                GameTextArea:
-                    text: "Multi-Line\nText\nArea"
+                    GameTextArea:
+                        text: "Multi-Line\nText\nArea"
 
-            BoxLayout:
-                GameLabel:
-                    text: "TextInput:"
+                BoxLayout:
+                    GameLabel:
+                        text: "TextInput:"
 
-                GameTextInput:
-                    text: "Single-Line Text Input"
+                    GameTextInput:
+                        text: "Single-Line Text Input"
 
-            BoxLayout:
-                GameLabel:
-                    text: "TexturedProgress:"
+                BoxLayout:
+                    GameLabel:
+                        text: "TexturedProgress:"
 
-                GameTexturedProgress:
-                    value: 50
+                    GameTexturedProgress:
+                        value: 50
 
-    TabbedPanelItem:
-        text: "Tab 2"
-        background_normal: "images/ui/ButtonUp.png"
-        background_down: "images/ui/ButtonDown.png"
-        font_name: "fonts/ConsolaMono.ttf"
-        font_size: 16
+        TabbedPanelItem:
+            text: "Tab 2"
+            background_normal: "images/ui/ButtonUp.png"
+            background_down: "images/ui/ButtonDown.png"
+            font_name: "fonts/ConsolaMono.ttf"
+            font_size: 16
 
-    TabbedPanelItem:
-        text: "Tab 3"
-        background_normal: "images/ui/ButtonUp.png"
-        background_down: "images/ui/ButtonDown.png"
-        font_name: "fonts/ConsolaMono.ttf"
-        font_size: 16
+        TabbedPanelItem:
+            text: "Tab 3"
+            background_normal: "images/ui/ButtonUp.png"
+            background_down: "images/ui/ButtonDown.png"
+            font_name: "fonts/ConsolaMono.ttf"
+            font_size: 16
