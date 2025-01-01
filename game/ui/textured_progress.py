@@ -12,7 +12,10 @@ class TexturedProgress(Widget):
     def get_value_normalized(self):
         return self.value / self.max
 
-    value_normalized = AliasProperty(get_value_normalized, bind=["max", "value"])
+    value_normalized = AliasProperty(
+        get_value_normalized,
+        bind=["max", "value"]
+    )
 
 
 Builder.load_file("ui/textured_progress.kv")
