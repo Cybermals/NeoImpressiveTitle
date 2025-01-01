@@ -3,6 +3,8 @@
 <GameButton>:
     background_normal: "images/ui/ButtonUp.png"
     background_down: "images/ui/ButtonDown.png"
+    font_name: "fonts/ConsolaMono.ttf"
+    font_size: 16
 
 
 <GameCheckBox>:
@@ -12,12 +14,25 @@
     background_radio_down: "images/ui/CheckBoxTrue.png"
 
 
+<GameLabel>:
+    font_name: "fonts/ConsolaMono.ttf"
+    font_size: 16
+
+
 <GameOptionButton>:
     background_normal: "images/ui/ButtonUp.png"
     background_down: "images/ui/ButtonDown.png"
+    font_name: "fonts/ConsolaMono.ttf"
 
 
-<GameProgressBar>:
+<GamePanel>:
+    background: "images/ui/BorderCenter.png"
+
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: root.background
 
 
 <GameSlider>:
@@ -30,13 +45,28 @@
 <GameSwitch>:
 
 
+<GameTabbedPanel>:
+    background_image: "images/ui/Blank.png"
+
+
 <GameTextArea>:
+    font_name: "fonts/ConsolaMono.ttf"
+    font_size: 16
 
 
 <GameTextInput>:
     multiline: False
+    font_name: "fonts/ConsolaMono.ttf"
+    font_size: 16
+
+
+<GameTexturedProgress>:
+    background: "images/ui/BlackPanel.png"
+    foreground: "images/ui/HPBar.png"
 
 
 <GameToggleButton>:
     background_normal: "images/ui/ButtonUp.png"
     background_down: "images/ui/ButtonDown.png"
+    font_name: "fonts/ConsolaMono.ttf"
+    font_size: 16

@@ -1,12 +1,11 @@
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
 
-import ui.theme
+from ui.theme import GameTabbedPanel
 
 
 # Classes
 # =======
-class MainScreen(BoxLayout):
+class MainScreen(GameTabbedPanel):
     pass
 
 

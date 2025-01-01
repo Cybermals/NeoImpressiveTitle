@@ -1,68 +1,92 @@
 #:kivy 1.9.0
 
 <MainScreen>:
-    orientation: "vertical"
+    do_default_tab: False
 
-    GameButton:
-        text: "Button"
+    TabbedPanelItem:
+        text: "Tab 1"
+        background_normal: "images/ui/ButtonUp.png"
+        background_down: "images/ui/ButtonDown.png"
+        font_name: "fonts/ConsolaMono.ttf"
+        font_size: 16
 
-    BoxLayout:
-        Label:
-            text: "CheckBox:"
+        GamePanel:
+            orientation: "vertical"
 
-        GameCheckBox:
+            GameButton:
+                text: "Button"
 
-    BoxLayout:
-        Label:
-            text: "OptionButton:"
+            BoxLayout:
+                GameLabel:
+                    text: "CheckBox:"
 
-        GameOptionButton:
-            options: {"Cat": 0, "Dog": 1, "Bird": 2}
+                GameCheckBox:
 
-    BoxLayout:
-        Label:
-            text: "ProgressBar:"
+            BoxLayout:
+                GameLabel:
+                    text: "OptionButton:"
 
-        GameProgressBar:
-            value: 50
+                GameOptionButton:
+                    options: {"Cat": 0, "Dog": 1, "Bird": 2}
 
-    BoxLayout:
-        Label:
-            text: "RadioButton1:"
+            BoxLayout:
+                GameLabel:
+                    text: "RadioButton1:"
 
-        GameCheckBox:
-            group: "RadioGroup1"
-            active: True
+                GameCheckBox:
+                    group: "RadioGroup1"
+                    active: True
 
-    BoxLayout:
-        Label:
-            text: "RadioButton2:"
-            
-        GameCheckBox:
-            group: "RadioGroup1"
+            BoxLayout:
+                GameLabel:
+                    text: "RadioButton2:"
+                    
+                GameCheckBox:
+                    group: "RadioGroup1"
 
-    BoxLayout:
-        Label:
-            text: "Slider:"
+            BoxLayout:
+                GameLabel:
+                    text: "Slider:"
 
-        GameSlider:
+                GameSlider:
 
-    BoxLayout:
-        Label:
-            text: "Switch:"
+            BoxLayout:
+                GameLabel:
+                    text: "Switch:"
 
-        GameSwitch:
+                GameSwitch:
 
-    BoxLayout:
-        Label:
-            text: "TextArea:"
+            BoxLayout:
+                GameLabel:
+                    text: "TextArea:"
 
-        GameTextArea:
-            text: "Multi-Line\nText\nArea"
+                GameTextArea:
+                    text: "Multi-Line\nText\nArea"
 
-    BoxLayout:
-        Label:
-            text: "TextInput:"
+            BoxLayout:
+                GameLabel:
+                    text: "TextInput:"
 
-        GameTextInput:
-            text: "Single-Line Text Input"
+                GameTextInput:
+                    text: "Single-Line Text Input"
+
+            BoxLayout:
+                GameLabel:
+                    text: "TexturedProgress:"
+
+                GameTexturedProgress:
+                    value: 50
+
+    TabbedPanelItem:
+        text: "Tab 2"
+        background_normal: "images/ui/ButtonUp.png"
+        background_down: "images/ui/ButtonDown.png"
+        font_name: "fonts/ConsolaMono.ttf"
+        font_size: 16
+
+    TabbedPanelItem:
+        text: "Tab 3"
+        background_normal: "images/ui/ButtonUp.png"
+        background_down: "images/ui/ButtonDown.png"
+        font_name: "fonts/ConsolaMono.ttf"
+        font_size: 16

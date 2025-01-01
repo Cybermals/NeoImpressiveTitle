@@ -1,17 +1,16 @@
-from kivy.clock import Clock
-from kivy.graphics import Rectangle
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty, StringProperty
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.checkbox import CheckBox
-from kivy.uix.dropdown import DropDown
-from kivy.uix.progressbar import ProgressBar
+from kivy.uix.label import Label
 from kivy.uix.slider import Slider
 from kivy.uix.switch import Switch
+from kivy.uix.tabbedpanel import TabbedPanel
 from kivy.uix.textinput import TextInput
 from kivy.uix.togglebutton import ToggleButton
 
 from ui.option_button import OptionButton
+from ui.textured_progress import TexturedProgress
 
 
 # Classes
@@ -24,6 +23,10 @@ class GameCheckBox(CheckBox):
     pass
 
 
+class GameLabel(Label):
+    pass
+
+
 class GameOptionButton(OptionButton):
     def __init__(self, *args, **kwargs):
         # Call the base constructor
@@ -33,7 +36,7 @@ class GameOptionButton(OptionButton):
         self.optionclass = GameToggleButton
 
 
-class GameProgressBar(ProgressBar):
+class GamePanel(BoxLayout):
     pass
 
 
@@ -45,11 +48,19 @@ class GameSwitch(Switch):
     pass
 
 
+class GameTabbedPanel(TabbedPanel):
+    pass
+
+
 class GameTextArea(TextInput):
     pass
 
 
 class GameTextInput(TextInput):
+    pass
+
+
+class GameTexturedProgress(TexturedProgress):
     pass
 
 
