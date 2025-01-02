@@ -24,7 +24,7 @@
             pos: self.x, self.y - (root.title_bar.height / 2 if root.title_bar is not None else 0)
             size: self.width, self.height - (root.title_bar.height / 2 if root.title_bar is not None else 0)
             source: root.background_border
-            border: 8, 8, 8, 8
+            border: 12, 12, 12, 12
 
     Label:
         id: title_bar
@@ -46,6 +46,7 @@
         size: self.texture_size
         pos: root.x + root.width - self.width, root.y + root.height - self.height
         on_release: root.on_close()
+        background_color: 1, 0, 0, 1
         # background_normal: root.background_close_normal
         # background_down: root.background_close_down
         font_name: root.font_name

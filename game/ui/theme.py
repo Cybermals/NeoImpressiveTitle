@@ -45,6 +45,17 @@ class GamePanel(BoxLayout):
     pass
 
 
+class GamePopup(Label):
+    def dismiss(self):
+        # Hide the popup
+        self.parent.remove_widget(self)
+
+    def on_touch_down(self, touch):
+        # Dismiss the popup and stop processing the event
+        self.dismiss()
+        return True
+
+
 class GameSlider(Slider):
     pass
 
