@@ -1,0 +1,25 @@
+#:kivy 1.9.0
+
+<WavesOverlay>:
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/ui/LogoWaves.png"
+
+
+<SplashScreen>:
+    name: "SplashScreen"
+    on_enter: self.reset()
+    on_leave: self.timer.cancel()
+    on_touch_down: base.game_state.request("TitleScreen")
+
+    canvas:
+        Rectangle:
+            pos: 0, 0
+            size: self.size
+            source: "images/ui/Logo.jpg"
+
+    WavesOverlay:
+        pos: self.parent.pos
+        size: self.size

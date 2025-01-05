@@ -3,6 +3,7 @@ from panda3d.core import (
     load_prc_file
 )
 
+from ui import NeoImpressiveTitleUI
 from game_state import GameState
 
 
@@ -15,6 +16,10 @@ class NeoImpressiveTitle(ShowBase):
 
         # Call base constructor
         ShowBase.__init__(self)
+
+        # Initialize UI
+        self.ui = NeoImpressiveTitleUI(self)
+        self.ui.run()
 
         # Load music
         self.title_music = self.loader.load_music("music/Title.ogg")
