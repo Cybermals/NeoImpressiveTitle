@@ -70,7 +70,7 @@ class SplashScreen(Screen):
     def reset(self):
         # Start transition timer
         self.timer = Clock.schedule_once(self.finish, 10)
-        
+
     def finish(self, dt):
         # Switch to the title screen
         base.game_state.request("TitleScreen")
