@@ -3,6 +3,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import FadeTransition, NoTransition, ScreenManager
 
 import ui.screens.splash_screen
+import ui.screens.title_screen
 
 
 # Classes

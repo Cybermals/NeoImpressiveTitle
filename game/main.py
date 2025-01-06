@@ -25,6 +25,9 @@ class NeoImpressiveTitle(ShowBase):
         self.title_music = self.loader.load_music("music/Title.ogg")
         self.title_music.set_loop(True)
 
+        # Load sound effects
+        self.click_sfx = self.loader.load_sfx("sfx/Click.ogg")
+
         # Initialize game state
         self.game_state = GameState("GameState")
         self.game_state.request("SplashScreen")
