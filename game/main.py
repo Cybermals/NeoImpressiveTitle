@@ -32,6 +32,11 @@ class NeoImpressiveTitle(ShowBase):
         self.game_state = GameState("GameState")
         self.game_state.request("SplashScreen")
 
+    def exit_game(self, task):
+        # Exit the game
+        self.userExit()
+        return task.done
+
 
 # Entry Point
 # ===========
