@@ -1,0 +1,75 @@
+#:kivy 1.9.0
+
+<-Logo>:
+    source: "images/ui/Title.png"
+
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: self.source
+
+
+<ChangelogEntry>:
+    text_size: root.width, None
+    halign: "left"
+    size: self.texture_size
+    markup: True
+
+
+<TitleScreen>:
+    name: "TitleScreen"
+    changelog: changelog
+
+    canvas:
+        Rectangle:
+            pos: 0, 0
+            size: self.size
+            source: "images/ui/Backdrop1.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(100)
+
+        Logo:
+            size_hint_y: .25
+
+        BoxLayout:
+            size_hint_y: .75
+
+            BoxLayout:
+                orientation: "vertical"
+                padding: dp(100)
+                spacing: dp(50)
+
+                GameButton:
+                    text: "New Game"
+                    color: 0, 0, 0, 1
+                    on_release: print("New Game")
+
+                GameButton:
+                    text: "Multiplayer"
+                    color: 0, 0, 0, 1
+                    on_release: print("Multiplayer")
+
+                GameButton:
+                    text: "Quit"
+                    color: 0, 0, 0, 1
+                    on_release: print("Quit")
+
+            RecycleView:
+                id: changelog
+                viewclass: "ChangelogEntry"
+
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: "images/ui/BorderCenter.png"
+
+                RecycleBoxLayout:
+                    default_size: None, dp(56)
+                    default_size_hint: 1, None
+                    size_hint_y: None
+                    height: self.minimum_height
+                    orientation: "vertical"
