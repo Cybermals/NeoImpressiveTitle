@@ -1,3 +1,4 @@
+from kivy.core.text import LabelBase
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
@@ -13,11 +14,23 @@ from ui.floating_window import FloatingWindow
 from ui.option_button import OptionButton
 from ui.textured_progress import TexturedProgress
 
+# Initialize fonts
+LabelBase.register(
+    "ConsolaMono",
+    fn_regular="fonts/ConsolaMono.ttf",
+    fn_bold="fonts/ConsolaMono-Bold.ttf"
+)
+
 
 # Classes
 # =======
 class GameButton(Button):
-    pass
+    def on_press(self):
+        try:
+            base.click_sfx.play()
+
+        except NameError:
+            pass # The sound effect is only available ingame. Theme testing doesn't need it.
 
 
 class GameCheckBox(CheckBox):
