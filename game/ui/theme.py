@@ -6,7 +6,7 @@ from kivy.uix.checkbox import CheckBox
 from kivy.uix.label import Label
 from kivy.uix.slider import Slider
 from kivy.uix.switch import Switch
-from kivy.uix.tabbedpanel import TabbedPanel
+from kivy.uix.tabbedpanel import TabbedPanel, TabbedPanelItem
 from kivy.uix.textinput import TextInput
 from kivy.uix.togglebutton import ToggleButton
 
@@ -78,6 +78,10 @@ class GameSwitch(Switch):
 
 
 class GameTabbedPanel(TabbedPanel):
+    pass
+
+
+class GameTabbedPanelItem(TabbedPanelItem):
     pass
 
 
