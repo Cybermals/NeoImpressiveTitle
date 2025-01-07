@@ -31,7 +31,7 @@
             RecycleView:
                 id: campaign_list
                 viewclass: "CampaignButton"
-                size_hint_y: .9
+                size_hint_y: .825
 
                 RecycleBoxLayout:
                     default_size: None, dp(56)
@@ -39,5 +39,11 @@
                     size_hint_y: None
                     height: self.minimum_height
                     orientation: "vertical"
+
+            GameButton:
+                text: "Back"
+                color: 0, 0, 0, 1
+                size_hint_y: .075
+                on_release: base.game_state.request("TitleScreen")
 
         BoxLayout:
