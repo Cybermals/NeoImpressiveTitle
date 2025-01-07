@@ -45,7 +45,7 @@
                 GameButton:
                     text: "New Game"
                     color: 0, 0, 0, 1
-                    on_release: print("New Game")
+                    on_release: base.game_state.request("CampaignScreen")
 
                 GameButton:
                     text: "Multiplayer"
