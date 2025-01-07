@@ -3,7 +3,7 @@ from panda3d.core import (
     load_prc_file
 )
 
-from ui import NeoImpressiveTitleUI
+from ui.neoit import NeoImpressiveTitleUI
 from game_state import GameState
 
 
