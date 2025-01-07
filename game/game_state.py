@@ -18,3 +18,10 @@ class GameState(FSM):
 
     def exitTitleScreen(self):
         pass
+
+    def enterCampaignScreen(self):
+        # Show campaign screen
+        base.ui.switch_to_screen("CampaignScreen")
+
+    def exitCampaignScreen(self):
+        pass

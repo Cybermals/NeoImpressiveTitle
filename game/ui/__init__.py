@@ -4,6 +4,7 @@ from kivy.uix.screenmanager import FadeTransition, NoTransition, ScreenManager
 
 import ui.screens.splash_screen
 import ui.screens.title_screen
+import ui.screens.campaign_screen
 
 
 # Classes
