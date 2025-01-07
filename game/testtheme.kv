@@ -15,13 +15,8 @@
         size: root.size
         do_default_tab: False
 
-        TabbedPanelItem:
+        GameTabbedPanelItem:
             text: "Tab 1"
-            background_normal: "images/ui/ButtonUp.png"
-            background_down: "images/ui/ButtonDown.png"
-            font_name: "fonts/ConsolaMono.ttf"
-            font_size: 16
-            border: 1, 1, 1, 1
 
             GamePanel:
                 orientation: "vertical"
@@ -91,22 +86,12 @@
                     GameTexturedProgress:
                         value: 50
 
-        TabbedPanelItem:
+        GameTabbedPanelItem:
             text: "Tab 2"
-            background_normal: "images/ui/ButtonUp.png"
-            background_down: "images/ui/ButtonDown.png"
-            font_name: "fonts/ConsolaMono.ttf"
-            font_size: 16
-            border: 1, 1, 1, 1
 
             GameButton:
                 text: "Display Popup"
                 on_release: root.show_popup()
 
-        TabbedPanelItem:
+        GameTabbedPanelItem:
             text: "Tab 3"
-            background_normal: "images/ui/ButtonUp.png"
-            background_down: "images/ui/ButtonDown.png"
-            font_name: "fonts/ConsolaMono.ttf"
-            font_size: 16
-            border: 1, 1, 1, 1
