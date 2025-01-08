@@ -2,6 +2,8 @@
 
 <LoginScreen>:
     name: "LoginScreen"
+    username: username.text
+    password: password.text
 
     canvas:
         Rectangle:
@@ -33,7 +35,8 @@
                         color: 0, 0, 0, 1
                         size_hint_x: .2
 
-                    GameTextInput:
+                    TextInput:
+                        id: username
                         size_hint_x: .8
 
                 BoxLayout:
@@ -42,8 +45,10 @@
                         color: 0, 0, 0, 1
                         size_hint_x: .2
 
-                    GameTextInput:
+                    TextInput:
+                        id: password
                         size_hint_x: .8
+                        password: True
 
             BoxLayout:
                 orientation: "vertical"
@@ -53,7 +58,7 @@
                 GameButton:
                     text: "Log In"
                     color: 0, 0, 0, 1
-                    on_release: print("Log In")
+                    on_release: print(f"Log In\nusername = {root.username}\npassword = {root.password}")
 
                 GameButton:
                     text: "New Account"
