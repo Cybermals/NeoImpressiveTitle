@@ -50,7 +50,7 @@
                 GameButton:
                     text: "Multiplayer"
                     color: 0, 0, 0, 1
-                    on_release: print("Multiplayer")
+                    on_release: base.game_state.request("LoginScreen")
 
                 GameButton:
                     text: "Quit"
