@@ -16,8 +16,10 @@ class LoginScreen(Screen):
     password = StringProperty("")
 
     def validate_credentials(self):
-        # Enable/disable login button based on the validity of the given credentials
-        self.login_btn.disabled = (len(self.username) < 1 or len(self.password) < 1)
+        # Enable/disable login button based on the validity of the given
+        # credentials
+        self.login_btn.disabled = (len(self.username) < 1 or
+                                   len(self.password) < 1)
 
     def login(self):
         print("Login")

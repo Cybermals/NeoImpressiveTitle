@@ -1,4 +1,4 @@
-from direct.stdpy.file import *
+from direct.stdpy.file import open
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivy.uix.image import Image

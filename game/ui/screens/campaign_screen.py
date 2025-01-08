@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from direct.stdpy.file import *
+from direct.stdpy.file import listdir
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import Screen
@@ -19,7 +19,9 @@ class CampaignScreen(Screen):
 
     def on_campaign_list(self, instance, value):
         # Load campaign list
-        self.campaign_list.data = [{"text": Path(path).stem} for path in listdir("campaigns")]
+        self.campaign_list.data = [
+            {"text": Path(path).stem} for path in listdir("campaigns")
+        ]
 
 
 Builder.load_file("ui/screens/campaign_screen.kv")

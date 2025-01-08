@@ -7,7 +7,9 @@ from kivy.uix.label import Label
 from kivy.uix.slider import Slider
 from kivy.uix.switch import Switch
 from kivy.uix.tabbedpanel import TabbedPanel, TabbedPanelItem
-from kivy.uix.textinput import TextInput # FIXME: causes text inputs to crash when gaining focus
+
+# FIXME: causes text inputs to crash when gaining focus
+from kivy.uix.textinput import TextInput
 from kivy.uix.togglebutton import ToggleButton
 
 from ui.floating_window import FloatingWindow
@@ -30,7 +32,9 @@ class GameButton(Button):
             base.click_sfx.play()
 
         except NameError:
-            pass # The sound effect is only available ingame. Theme testing doesn't need it.
+            # The sound effect is only available ingame. Theme testing doesn't
+            # need it.
+            pass
 
 
 class GameCheckBox(CheckBox):
