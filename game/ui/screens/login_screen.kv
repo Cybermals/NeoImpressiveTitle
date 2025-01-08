@@ -63,17 +63,17 @@
                     text: "Log In"
                     color: 0, 0, 0, 1
                     disabled: True
-                    on_release: print(f"Log In\nusername = {root.username}\npassword = {root.password}")
+                    on_release: root.login()
 
                 GameButton:
                     text: "New Account"
                     color: 0, 0, 0, 1
-                    on_release: print("New Account")
+                    on_release: root.new_account()
 
                 GameButton:
                     text: "Change Password"
                     color: 0, 0, 0, 1
-                    on_release: print("Change Password")
+                    on_release: root.change_password()
 
                 GameButton:
                     text: "Back"
