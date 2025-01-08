@@ -1,0 +1,73 @@
+#:kivy 1.9.0
+
+<LoginScreen>:
+    name: "LoginScreen"
+
+    canvas:
+        Rectangle:
+            pos: 0, 0
+            size: self.size
+            source: "images/ui/Backdrop1.jpg"
+
+    BoxLayout:
+        padding: dp(50)
+
+        GamePanel:
+            orientation: "vertical"
+            background: "images/ui/StartScreen.png"
+
+            GameLabel:
+                text: "Multiplayer"
+                color: 0, 0, 0, 1
+                font_size: dp(36)
+                size_hint_y: .1
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: .15
+                padding: dp(20)
+
+                BoxLayout:
+                    GameLabel:
+                        text: "Username:"
+                        color: 0, 0, 0, 1
+                        size_hint_x: .2
+
+                    GameTextInput:
+                        size_hint_x: .8
+
+                BoxLayout:
+                    GameLabel:
+                        text: "Password:"
+                        color: 0, 0, 0, 1
+                        size_hint_x: .2
+
+                    GameTextInput:
+                        size_hint_x: .8
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: .75
+                padding: dp(125)
+
+                GameButton:
+                    text: "Log In"
+                    color: 0, 0, 0, 1
+                    on_release: print("Log In")
+
+                GameButton:
+                    text: "New Account"
+                    color: 0, 0, 0, 1
+                    on_release: print("New Account")
+
+                GameButton:
+                    text: "Change Password"
+                    color: 0, 0, 0, 1
+                    on_release: print("Change Password")
+
+                GameButton:
+                    text: "Back"
+                    color: 0, 0, 0, 1
+                    on_release: base.game_state.request("TitleScreen")
+
+        BoxLayout:

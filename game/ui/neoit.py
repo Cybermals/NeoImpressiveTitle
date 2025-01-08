@@ -5,12 +5,13 @@ from kivy.uix.screenmanager import FadeTransition, NoTransition, ScreenManager
 import ui.screens.splash_screen
 import ui.screens.title_screen
 import ui.screens.campaign_screen
+import ui.screens.login_screen
 
 
 # Classes
 # =======
 class MainScreen(ScreenManager):
-    splash_screen = ObjectProperty(None)
+    pass
 
 
 class NeoImpressiveTitleUI(App):
