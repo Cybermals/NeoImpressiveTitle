@@ -22,7 +22,11 @@ class LoginScreen(Screen):
                                    len(self.password) < 1)
 
     def login(self):
-        base.game_state.request("ConnectingScreen", self.username, self.password)
+        base.game_state.request(
+            "ConnectingScreen",
+            self.username,
+            self.password
+        )
 
     def new_account(self):
         webbrowser.open_new_tab(config.REGISTRATION_URL)
