@@ -32,3 +32,15 @@ class GameState(FSM):
 
     def exitLoginScreen(self):
         pass
+
+    def enterConnectingScreen(self, username, password):
+        # Show the connecting screen
+        base.ui.switch_to_screen("LoadingScreen")
+
+        # Do login
+        print("Connecting...")
+        print(f"username = {username}")
+        print(f"password = {password}")
+
+    def exitConnectingScreen(self):
+        pass
