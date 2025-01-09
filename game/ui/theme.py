@@ -7,8 +7,6 @@ from kivy.uix.label import Label
 from kivy.uix.slider import Slider
 from kivy.uix.switch import Switch
 from kivy.uix.tabbedpanel import TabbedPanel, TabbedPanelItem
-
-# FIXME: See https://github.com/DylanCheetah/panda3d-kivy/commit/a32f89b9c9a76aad40b1c832cc0f7519fc7acb0b
 from kivy.uix.textinput import TextInput
 from kivy.uix.togglebutton import ToggleButton
 
