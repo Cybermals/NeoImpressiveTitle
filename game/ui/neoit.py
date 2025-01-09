@@ -6,6 +6,7 @@ import ui.screens.splash_screen
 import ui.screens.title_screen
 import ui.screens.campaign_screen
 import ui.screens.login_screen
+import ui.screens.loading_screen
 
 
 # Classes
