@@ -1,15 +1,5 @@
 #:kivy 1.9.0
 
-<-Logo>:
-    source: "images/ui/Title.png"
-
-    canvas:
-        Rectangle:
-            pos: self.pos
-            size: self.size
-            source: self.source
-
-
 <ChangelogEntry>:
     text_size: root.width, None
     halign: "left"
@@ -31,8 +21,10 @@
         orientation: "vertical"
         padding: dp(100)
 
-        Logo:
+        Image:
+            source: "images/ui/Title.png"
             size_hint_y: .25
+            fill_mode: "contain"
 
         BoxLayout:
             size_hint_y: .75

@@ -1,7 +1,6 @@
 from direct.stdpy.file import open
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
-from kivy.uix.image import Image
 from kivy.uix.screenmanager import Screen
 
 from ui.theme import GameLabel
@@ -9,10 +8,6 @@ from ui.theme import GameLabel
 
 # Classes
 # =======
-class Logo(Image):
-    pass
-
-
 class ChangelogEntry(GameLabel):
     pass
 
