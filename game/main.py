@@ -1,4 +1,5 @@
 from direct.showbase.ShowBase import ShowBase
+from direct.task.Task import Task
 from panda3d.core import (
     load_prc_file
 )
@@ -27,6 +28,13 @@ class NeoImpressiveTitle(ShowBase):
 
         # Load sound effects
         self.click_sfx = self.loader.load_sfx("sfx/Click.ogg")
+
+        # Schedule game initialization
+        self.task_mgr.add(self.init_game(), "init")
+
+    async def init_game(self):
+        # Yield first timeslice to ensure full UI initialization
+        await Task.pause(0)
 
         # Initialize game state
         self.game_state = GameState("GameState")
