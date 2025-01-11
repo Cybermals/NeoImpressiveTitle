@@ -44,3 +44,10 @@ class GameState(FSM):
 
     def exitConnectingScreen(self):
         pass
+
+    def enterCharacterSelectScreen(self):
+        # Show the character select screen
+        base.ui.switch_to_screen("CharacterSelectScreen")
+
+    def exitCharacterSelectScreen(self):
+        pass

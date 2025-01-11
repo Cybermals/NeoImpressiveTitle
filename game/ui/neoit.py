@@ -7,6 +7,7 @@ import ui.screens.title_screen
 import ui.screens.campaign_screen
 import ui.screens.login_screen
 import ui.screens.loading_screen
+import ui.screens.character_select_screen
 
 
 # Classes

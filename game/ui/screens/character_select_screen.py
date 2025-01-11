@@ -1,0 +1,13 @@
+from kivy.lang import Builder
+from kivy.uix.screenmanager import Screen
+
+import ui.theme
+
+
+# Classes
+# =======
+class CharacterSelectScreen(Screen):
+    pass
+
+
+Builder.load_file("ui/screens/character_select_screen.kv")
