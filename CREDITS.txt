@@ -3,6 +3,11 @@ Programming
 DylanCheetah
 
 
+Textures
+--------
+Rakadeja
+
+
 Audio
 -----
 gumbydragon
