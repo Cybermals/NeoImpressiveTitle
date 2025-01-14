@@ -1,0 +1,126 @@
+#:kivy 1.9.0
+
+<CharacterEditorScreen>:
+    name: "CharacterEditorScreen"
+    character_name: character_name.text
+    body: body.value
+    head: head.value
+    mane: mane.value
+    tail: tail.value
+    wings: wings.value
+    tuft: tuft.value
+    save_btn: save_btn
+
+    BoxLayout:
+        padding: dp(50)
+
+        GamePanel:
+            orientation: "vertical"
+            background: "images/ui/StartScreen.png"
+            padding: dp(20)
+
+            BoxLayout:
+                size_hint_y: .1
+
+                GameLabel:
+                    text: "Name:"
+                    color: 0, 0, 0, 1
+                    size_hint_x: .2
+
+                GameTextInput:
+                    id: character_name
+                    size_hint_x: .8
+                    on_text: root.validate_character_name()
+
+            GameTabbedPanel:
+                do_default_tab: False
+                size_hint_y: .8
+
+                GameTabbedPanelItem:
+                    text: "Parts"
+                    color: 0, 0, 0, 1
+
+                    BoxLayout:
+                        orientation: "vertical"
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Body:"
+                                color: 0, 0, 0, 1
+
+                            GameOptionButton:
+                                id: body
+                                color: 0, 0, 0, 1
+                                options: {"Body1": 0}
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Head:"
+                                color: 0, 0, 0, 1
+
+                            GameOptionButton:
+                                id: head
+                                color: 0, 0, 0, 1
+                                options: {"Head1": 0, "Head2": 1, "Head3": 2, "Head4": 3, "Head5": 4, "Head6": 5}
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Mane:"
+                                color: 0, 0, 0, 1
+
+                            GameOptionButton:
+                                id: mane
+                                color: 0, 0, 0, 1
+                                options: {"Maneless": 0, "Mane1": 1, "Mane2": 2, "Mane3": 3, "Mane4": 4, "Mane5": 5, "Mane6": 6, "Mane7": 7, "Mane8": 8, "Mane9": 9, "Mane10": 10, "Mane11": 11, "Mane12": 12, "Mane13": 13, "Mane14": 14, "Mane15": 15, "Mane16": 16, "Mane17": 17, "Mane18": 18, "Mane19": 19}
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Tail:"
+                                color: 0, 0, 0, 1
+
+                            GameOptionButton:
+                                id: tail
+                                color: 0, 0, 0, 1
+                                options: {"Tail1": 0, "Tail2": 1, "Tail3": 2, "Tail4": 3, "Tail5": 4, "Tail6": 5}
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Wings:"
+                                color: 0, 0, 0, 1
+
+                            GameOptionButton:
+                                id: wings
+                                color: 0, 0, 0, 1
+                                options: {"Wingless": 0, "Bird Wings": 1, "Bat Wings": 2, "Bug Wings": 3}
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Tufts:"
+                                color: 0, 0, 0, 1
+
+                            GameOptionButton:
+                                id: tuft
+                                color: 0, 0, 0, 1
+                                options: {"Tuftless": 0, "Tuft1": 1, "Tuft2": 2, "Tuft3": 3, "Tuft4": 4, "Tuft5": 5, "Tuft6": 6, "Tuft7": 7, "Tuft8": 8, "Tuft9": 9}
+
+            BoxLayout:
+                size_hint_y: .1
+
+                GameButton:
+                    text: "Back"
+                    color: 0, 0, 0, 1
+                    on_release: base.game_state.request("CharacterSelectScreen")
+
+                GameButton:
+                    id: save_btn
+                    text: "Save"
+                    color: 0, 0, 0, 1
+                    disabled: True
+                    on_release: print("Save Character")
+
+                GameButton:
+                    text: "Delete"
+                    color: 0, 0, 0, 1
+                    on_release: print("Delete Character")
+
+        BoxLayout:

@@ -51,3 +51,10 @@ class GameState(FSM):
 
     def exitCharacterSelectScreen(self):
         pass
+
+    def enterCharacterEditorScreen(self):
+        # Show the character editor screen
+        base.ui.switch_to_screen("CharacterEditorScreen")
+
+    def exitCharacterEditorScreen(self):
+        pass

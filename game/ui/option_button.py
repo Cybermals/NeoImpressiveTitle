@@ -22,6 +22,11 @@ class OptionButton(Button):
             on_select=lambda instance, selection: self.on_select(selection)
         )
 
+    def select_by_value(self, value):
+        for k, v in self.options:
+            if v == value:
+                self.on_select(k)
+
     def on_release(self):
         # Open dropdown
         self.dropdown.open(self)
