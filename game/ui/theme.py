@@ -53,7 +53,7 @@ class GameOptionButton(OptionButton):
         super().__init__(*args, **kwargs)
 
         # Set the option class to our themed toggle button
-        self.optionclass = GameToggleButton
+        # self.optionclass = GameToggleButton
 
 
 class GamePanel(BoxLayout):
