@@ -33,13 +33,6 @@
 
                 BoxLayout:
                     GameLabel:
-                        text: "OptionButton:"
-
-                    GameOptionButton:
-                        options: {"Cat": 0, "Dog": 1, "Bird": 2}
-
-                BoxLayout:
-                    GameLabel:
                         text: "RadioButton1:"
 
                     GameCheckBox:
@@ -58,6 +51,14 @@
                         text: "Slider:"
 
                     GameSlider:
+
+                BoxLayout:
+                    GameLabel:
+                        text: "Spinner:"
+
+                    GameSpinner:
+                        text_autoupdate: True
+                        values: ["Cat", "Dog", "Bird"]
 
                 BoxLayout:
                     GameLabel:

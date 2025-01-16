@@ -25,13 +25,6 @@
     font_size: dp(16)
 
 
-<GameOptionButton>:
-    background_normal: "images/ui/ButtonUp.png"
-    background_down: "images/ui/ButtonDown.png"
-    font_name: "ConsolaMono"
-    border: 1, 1, 1, 1
-
-
 <GamePanel>:
     background: "images/ui/BorderCenter.png"
 
@@ -66,6 +59,46 @@
     background_vertical: "images/ui/Slider.png"
     cursor_image: "images/ui/ButtonUp.png"
     cursor_disabled_image: "images/ui/ButtonDown.png"
+
+
+<GameSpinner>:
+    background_normal: "images/ui/ButtonUp.png"
+    background_down: "images/ui/ButtonDown.png"
+    background_disabled_normal: "images/ui/ButtonDown.png"
+    background_disabled_down: "images/ui/ButtonDown.png"
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+    border: 1, 1, 1, 1
+
+
+<GameSpinnerDropDown>:
+    background_center: "images/ui/BorderCenter.png"
+    background_border: "images/ui/Border.png"
+
+    canvas.before:
+        Rectangle:
+            pos: self.x + 12, self.y + 12
+            size: self.width - 24, self.height - 24
+            source: self.background_center
+
+        BorderImage:
+            pos: self.pos
+            size: self.size
+            source: self.background_border
+            border: 12, 12, 12, 12
+
+
+<GameSpinnerOption>:
+    background_normal: "images/ui/ButtonUp.png"
+    background_down: "images/ui/ButtonDown.png"
+    background_disabled_normal: "images/ui/ButtonDown.png"
+    background_disabled_down: "images/ui/ButtonDown.png"
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+    border: 1, 1, 1, 1
+    size_hint_y: None
+    height: dp(44)
+    group: "GameSpinnerOption"
 
 
 <GameSwitch>:
