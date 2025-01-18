@@ -9,6 +9,9 @@
     tail_spinner: tail
     wing_spinner: wings
     tuft_spinner: tuft
+    body_marking_spinner: body_marking
+    head_marking_spinner: head_marking
+    tail_marking_spinner: tail_marking
     save_btn: save_btn
 
     BoxLayout:
@@ -95,6 +98,40 @@
 
                             GameSpinner:
                                 id: tuft
+                                color: 0, 0, 0, 1
+
+                GameTabbedPanelItem:
+                    text: "Markings"
+                    color: 0, 0, 0, 1
+
+                    BoxLayout:
+                        orientation: "vertical"
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Body:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: body_marking
+                                color: 0, 0, 0, 1
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Head:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: head_marking
+                                color: 0, 0, 0, 1
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Tail:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: tail_marking
                                 color: 0, 0, 0, 1
 
             BoxLayout:
