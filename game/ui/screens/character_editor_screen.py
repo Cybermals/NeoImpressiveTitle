@@ -18,6 +18,9 @@ class CharacterEditorScreen(Screen):
     tail_spinner = ObjectProperty(None)
     wing_spinner = ObjectProperty(None)
     tuft_spinner = ObjectProperty(None)
+    body_marking_spinner = ObjectProperty(None)
+    head_marking_spinner = ObjectProperty(None)
+    tail_marking_spinner = ObjectProperty(None)
     save_btn = ObjectProperty(None)
 
     def on_body_spinner(self, instance, value):
@@ -43,6 +46,18 @@ class CharacterEditorScreen(Screen):
     def on_tuft_spinner(self, instance, value):
         # Populate tuft spinner
         self.tuft_spinner.values = [Path(path).stem for path in listdir("meshes/player/tufts")]
+
+    def on_body_marking_spinner(self, instance, value):
+        # Populate body marking spinner
+        self.body_marking_spinner.values = ["None"]  # TODO: populate this with actual markings
+
+    def on_head_marking_spinner(self, instance, value):
+        # Populate head marking spinner
+        self.head_marking_spinner.values = ["None"]  # TODO: populate this with actual markings
+
+    def on_tail_marking_spinner(self, instance, value):
+        # Populate tail marking spinner
+        self.tail_marking_spinner.values = ["None"]  # TODO: populate this with actual markings
 
     def validate_character_name(self):
         self.save_btn.disabled = len(self.character_name) == 0
