@@ -2,7 +2,7 @@
 
 <CharacterEditorScreen>:
     name: "CharacterEditorScreen"
-    character_name: character_name.text
+    character_name_input: character_name
     body_spinner: body
     head_spinner: head
     mane_spinner: mane
@@ -12,6 +12,14 @@
     body_marking_spinner: body_marking
     head_marking_spinner: head_marking
     tail_marking_spinner: tail_marking
+    pelt_color_picker: pelt_color
+    underfur_color_picker: underfur_color
+    nose_color_picker: nose_color
+    above_eyes_color_picker: above_eyes_color
+    below_eyes_color_picker: below_eyes_color
+    ear_color_picker: ear_color
+    tailtip_color_picker: tailtip_color
+    eye_color_picker: eye_color
     save_btn: save_btn
 
     BoxLayout:
@@ -133,6 +141,104 @@
                             GameSpinner:
                                 id: tail_marking
                                 color: 0, 0, 0, 1
+
+                GameTabbedPanelItem:
+                    text: "Colors"
+                    color: 0, 0, 0, 1
+
+                    ScrollView:
+                        BoxLayout:
+                            size_hint_y: None
+                            height: 1024
+                            orientation: "vertical"
+
+                            GameLabel:
+                                text: "Pelt:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: pelt_color
+                                color: 114 / 255, 89 / 255, 63 / 255, 1
+
+                            GameLabel:
+                                text: "Underfur:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: underfur_color
+                                color: 165 / 255, 140 / 255, 89 / 255, 1
+
+                            GameLabel:
+                                text: "Nose:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: nose_color
+                                color: 5 / 255, 5 / 255, 5 / 255, 1
+
+                            GameLabel:
+                                text: "Above Eyes:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: above_eyes_color
+                                color: 63 / 255, 38 / 255, 12 / 255, 1
+
+                            GameLabel:
+                                text: "Below Eyes:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: below_eyes_color
+                                color: 140 / 255, 114 / 255, 63 / 255, 1
+
+                            GameLabel:
+                                text: "Ears:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: ear_color
+                                color: 63 / 255, 63 / 255, 12 / 255, 1
+
+                            GameLabel:
+                                text: "Tailtip:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: tailtip_color
+                                color: 51 / 255, 38 / 255, 0 / 255, 1
+
+                            GameLabel:
+                                text: "Eyes:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: eye_color
+                                color: 140 / 255, 76 / 255, 38 / 255, 1
 
             BoxLayout:
                 size_hint_y: .1
