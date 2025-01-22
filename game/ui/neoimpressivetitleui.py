@@ -1,5 +1,4 @@
 from panda3d_kivy.app import App
-from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import FadeTransition, NoTransition, ScreenManager
 
 import ui.screens.splash_screen
@@ -8,7 +7,7 @@ import ui.screens.campaign_screen
 import ui.screens.login_screen
 import ui.screens.loading_screen
 import ui.screens.character_select_screen
-import ui.screens.character_editor_screen
+import ui.screens.character_editor_screen  # noqa: F401
 
 
 # Classes

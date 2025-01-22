@@ -5,7 +5,7 @@ from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.screenmanager import Screen
 
 import config
-import ui.theme
+import ui.theme  # noqa: F401
 
 
 # Classes
@@ -22,7 +22,7 @@ class LoginScreen(Screen):
                                    len(self.password) < 1)
 
     def login(self):
-        base.game_state.request(
+        base.game_state.request(  # noqa: F821
             "ConnectingScreen",
             self.username,
             self.password

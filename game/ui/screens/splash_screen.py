@@ -73,7 +73,7 @@ class SplashScreen(Screen):
 
     def finish(self, dt):
         # Switch to the title screen
-        base.game_state.request("TitleScreen")
+        base.game_state.request("TitleScreen")  # noqa: F821
 
 
 Builder.load_file("ui/screens/splash_screen.kv")
