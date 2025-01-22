@@ -6,36 +6,36 @@ from direct.fsm.FSM import FSM
 class GameState(FSM):
     def enterSplashScreen(self):
         # Show splash screen and play title screen music
-        base.ui.switch_to_screen("SplashScreen")
-        base.title_music.play()
+        base.ui.switch_to_screen("SplashScreen")  # noqa: F821
+        base.title_music.play()  # noqa: F821
 
     def exitSplashScreen(self):
         pass
 
     def enterTitleScreen(self):
         # Show title screen
-        base.ui.switch_to_screen("TitleScreen")
+        base.ui.switch_to_screen("TitleScreen")  # noqa: F821
 
     def exitTitleScreen(self):
         pass
 
     def enterCampaignScreen(self):
         # Show campaign screen
-        base.ui.switch_to_screen("CampaignScreen")
+        base.ui.switch_to_screen("CampaignScreen")  # noqa: F821
 
     def exitCampaignScreen(self):
         pass
 
     def enterLoginScreen(self):
         # Show the login screen
-        base.ui.switch_to_screen("LoginScreen")
+        base.ui.switch_to_screen("LoginScreen")  # noqa: F821
 
     def exitLoginScreen(self):
         pass
 
     def enterConnectingScreen(self, username, password):
         # Show the connecting screen
-        base.ui.switch_to_screen("LoadingScreen")
+        base.ui.switch_to_screen("LoadingScreen")  # noqa: F821
 
         # Do login
         print("Connecting...")
@@ -47,14 +47,14 @@ class GameState(FSM):
 
     def enterCharacterSelectScreen(self):
         # Show the character select screen
-        base.ui.switch_to_screen("CharacterSelectScreen")
+        base.ui.switch_to_screen("CharacterSelectScreen")  # noqa: F821
 
     def exitCharacterSelectScreen(self):
         pass
 
     def enterCharacterEditorScreen(self):
         # Show the character editor screen
-        base.ui.switch_to_screen("CharacterEditorScreen")
+        base.ui.switch_to_screen("CharacterEditorScreen")  # noqa: F821
 
     def exitCharacterEditorScreen(self):
         pass
