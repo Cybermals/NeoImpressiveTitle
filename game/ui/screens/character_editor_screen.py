@@ -2,7 +2,7 @@ from pathlib import Path
 
 from direct.stdpy.file import *
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty, StringProperty
+from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import Screen
 
 import ui.theme
@@ -11,7 +11,7 @@ import ui.theme
 # Classes
 # =======
 class CharacterEditorScreen(Screen):
-    character_name = StringProperty("")
+    character_name_input = ObjectProperty(None)
     body_spinner = ObjectProperty(None)
     head_spinner = ObjectProperty(None)
     mane_spinner = ObjectProperty(None)
@@ -21,6 +21,14 @@ class CharacterEditorScreen(Screen):
     body_marking_spinner = ObjectProperty(None)
     head_marking_spinner = ObjectProperty(None)
     tail_marking_spinner = ObjectProperty(None)
+    pelt_color_picker = ObjectProperty(None)
+    underfur_color_picker = ObjectProperty(None)
+    nose_color_picker = ObjectProperty(None)
+    above_eyes_color_picker = ObjectProperty(None)
+    below_eyes_color_picker = ObjectProperty(None)
+    ear_color_picker = ObjectProperty(None)
+    tailtip_color_picker = ObjectProperty(None)
+    eye_color_picker = ObjectProperty(None)
     save_btn = ObjectProperty(None)
 
     def on_body_spinner(self, instance, value):

@@ -13,6 +13,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.togglebutton import ToggleButton
 
 from ui.floating_window import FloatingWindow
+from ui.mini_color_picker import MiniColorPicker
 from ui.textured_progress import TexturedProgress
 
 # Initialize fonts
@@ -37,6 +38,10 @@ class GameButton(Button):
 
 
 class GameCheckBox(CheckBox):
+    pass
+
+
+class GameColorPicker(MiniColorPicker):
     pass
 
 

@@ -1,0 +1,98 @@
+#:kivy 1.9.0
+
+<MiniColorPicker>:
+    orientation: "vertical"
+    background_color: [1, 1, 1, 1]
+    color: [red.value / 255, green.value / 255, blue.value / 255, 1]
+    red_slider: red
+    green_slider: green
+    blue_slider: blue
+
+    canvas:
+        Color:
+            rgba: self.background_color
+
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        Label:
+            text: "R:"
+            size_hint_x: .1
+            
+            canvas.before:
+                Color:
+                    rgb: 0, 0, 0, 1
+
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Slider:
+            id: red
+            min: 0
+            max: 255
+            step: 1
+            value: 255
+            size_hint_x: .8
+            on_value: root.background_color[0] = self.value / 255
+
+        TextInput:
+            text: str(int(root.color[0] * 255))
+            size_hint_x: .1
+            on_text: root.update_red(self.text)
+
+    BoxLayout:
+        Label:
+            text: "G:"
+            size_hint_x: .1
+
+            canvas.before:
+                Color:
+                    rgb: 0, 0, 0, 1
+
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Slider:
+            id: green
+            min: 0
+            max: 255
+            step: 1
+            value: 255
+            size_hint_x: .8
+            on_value: root.background_color[1] = self.value / 255
+
+        TextInput:
+            text: str(int(root.color[1] * 255))
+            size_hint_x: .1
+            on_text: root.update_green(self.text)
+
+    BoxLayout:
+        Label:
+            text: "B:"
+            size_hint_x: .1
+
+            canvas.before:
+                Color:
+                    rgb: 0, 0, 0, 1
+
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Slider:
+            id: blue
+            min: 0
+            max: 255
+            step: 1
+            value: 255
+            size_hint_x: .8
+            on_value: root.background_color[2] = self.value / 255
+
+        TextInput:
+            text: str(int(root.color[2] * 255))
+            size_hint_x: .1
+            on_text: root.update_blue(self.text)
