@@ -2,7 +2,7 @@ from pathlib import Path
 
 from direct.stdpy.file import *
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty
+from kivy.properties import ObjectProperty, NumericProperty
 from kivy.uix.screenmanager import Screen
 
 import ui.theme
@@ -29,6 +29,8 @@ class CharacterEditorScreen(Screen):
     ear_color_picker = ObjectProperty(None)
     tailtip_color_picker = ObjectProperty(None)
     eye_color_picker = ObjectProperty(None)
+    size_slider = ObjectProperty(None)
+    character_size = NumericProperty(1)
     save_btn = ObjectProperty(None)
 
     def on_body_spinner(self, instance, value):
@@ -66,6 +68,13 @@ class CharacterEditorScreen(Screen):
     def on_tail_marking_spinner(self, instance, value):
         # Populate tail marking spinner
         self.tail_marking_spinner.values = ["None"]  # TODO: populate this with actual markings
+
+    def update_size(self, value):
+        try:
+            self.size_slider.value = max(min(float(value), 255), 0)
+
+        except ValueError:
+            pass
 
     def validate_character_name(self):
         self.save_btn.disabled = len(self.character_name) == 0

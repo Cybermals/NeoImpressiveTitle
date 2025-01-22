@@ -20,6 +20,8 @@
     ear_color_picker: ear_color
     tailtip_color_picker: tailtip_color
     eye_color_picker: eye_color
+    size_slider: size
+    character_size: size.value
     save_btn: save_btn
 
     BoxLayout:
@@ -239,6 +241,37 @@
                             GameColorPicker:
                                 id: eye_color
                                 color: 140 / 255, 76 / 255, 38 / 255, 1
+
+                GameTabbedPanelItem:
+                    text: "Sizes"
+                    color: 0, 0, 0, 1
+
+                    BoxLayout:
+                        orientation: "vertical"
+
+                        BoxLayout:
+                            size_hint_y: .1
+
+                            GameLabel:
+                                text: "Size:"
+                                color: 0, 0, 0, 1
+                                size_hint_x: .1
+
+                            Slider:
+                                id: size
+                                min: .25
+                                max: 1.5
+                                step: .01
+                                value: 1
+                                size_hint_x: .8
+
+                            GameTextInput:
+                                text: str(root.character_size)
+                                size_hint_x: .1
+                                on_text: root.update_size(self.text)
+
+                        BoxLayout:
+                            size_hint_y: .9
 
             BoxLayout:
                 size_hint_y: .1
