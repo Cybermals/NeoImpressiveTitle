@@ -5,7 +5,6 @@ from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.screenmanager import Screen
 
 import config
-import ui.theme  # noqa: F401
 
 
 # Classes
