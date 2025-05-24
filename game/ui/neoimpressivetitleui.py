@@ -32,6 +32,3 @@ class NeoImpressiveTitleUI(App):
             self.main_screen.transition = NoTransition()
 
         self.main_screen.current = name
-
-        if name == "SplashScreen":
-            self.main_screen.current_screen.reset()

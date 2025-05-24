@@ -10,8 +10,6 @@
 
 <SplashScreen>:
     name: "SplashScreen"
-    on_enter: self.reset()
-    on_leave: self.timer.cancel()
     on_touch_down: base.game_state.request("TitleScreen")
 
     canvas:

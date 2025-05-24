@@ -64,12 +64,13 @@ class SplashScreen(Screen):
         # Call the base constructor
         super().__init__(*args, **kwargs)
 
-        # Reset this screen
-        self.reset()
-
-    def reset(self):
+    def on_enter(self):
         # Start transition timer
         self.timer = Clock.schedule_once(self.finish, 10)
+
+    def on_leave(self):
+        # Cancel transition timer
+        self.timer.cancel()
 
     def finish(self, dt):
         # Switch to the title screen
