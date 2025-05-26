@@ -1,8 +1,13 @@
 from kivy.lang import Builder
 from kivy.properties import ListProperty, ObjectProperty, StringProperty
-from kivy.uix.screenmanager import NoTransition, ScreenManager, ScreenManagerException, SlideTransition
+from kivy.uix.screenmanager import (
+    NoTransition,
+    ScreenManager,
+    ScreenManagerException,
+    SlideTransition
+)
 
-import ui.chat_log
+import ui.chat_log  # noqa: F401
 
 
 # Classes
@@ -18,10 +23,10 @@ class ChatBox(ScreenManager):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
-        self.general_chat = [{"username": "DylanCheetah", "content": f"General post {i + 1}. The quick brown fox jumped over the lazy brown dog. The cat sat on the mat with the rat and the bat and the hat."} for i in range(100)]
-        self.local_chat = [{"username": "DylanCheetah", "content": f"Local post {i + 1}."} for i in range(100)]
-        self.party_chat = [{"username": "DylanCheetah", "content": f"Party post {i + 1}."} for i in range(100)]
+
+        self.general_chat = [{"username": "DylanCheetah", "content": f"General post {i + 1}. The quick brown fox jumped over the lazy brown dog. The cat sat on the mat with the rat and the bat and the hat."} for i in range(100)]  # noqa: E501
+        self.local_chat = [{"username": "DylanCheetah", "content": f"Local post {i + 1}."} for i in range(100)]  # noqa: E501
+        self.party_chat = [{"username": "DylanCheetah", "content": f"Party post {i + 1}."} for i in range(100)]  # noqa: E501
 
     def hide_chat(self):
         self.transition = SlideTransition(direction="left")
