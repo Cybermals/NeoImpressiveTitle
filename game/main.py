@@ -39,7 +39,7 @@ class NeoImpressiveTitle(ShowBase):
         # Initialize game state
         self.game_state = GameState("GameState")
         # self.game_state.request("SplashScreen")
-        self.game_state.request("CharacterEditorScreen")
+        self.game_state.request("Game", "Multiplayer")
 
     def exit_game(self, task):
         # Exit the game
