@@ -9,7 +9,7 @@ import ui.screens.login_screen
 import ui.screens.loading_screen
 import ui.screens.character_select_screen
 import ui.screens.character_editor_screen  # noqa: F401
-import ui.screens.hud
+import ui.screens.hud  # noqa: F401
 
 
 # Classes

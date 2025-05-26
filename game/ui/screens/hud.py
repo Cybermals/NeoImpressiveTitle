@@ -1,7 +1,7 @@
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
 
-import ui.chat_box
+import ui.chat_box  # noqa: F401
 
 
 # Classes
