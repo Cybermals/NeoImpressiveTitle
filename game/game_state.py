@@ -58,3 +58,11 @@ class GameState(FSM):
 
     def exitCharacterEditorScreen(self):
         pass
+
+    def enterGame(self, mode):
+        # Show the ingame HUD
+        base.ui.switch_to_screen("HUD")  # noqa: F821
+        print(f"Game Mode: {mode}")
+
+    def exitGame(self):
+        pass
