@@ -21,7 +21,7 @@
                 GameButton:
                     size_hint_x: .2
                     text: "Hide"
-                    on_press: root.hide_chat()
+                    on_release: root.hide_chat()
 
             ScreenManager:
                 id: chat_log
@@ -70,7 +70,7 @@
                 GameButton:
                     text: "Send"
                     size_hint_x: .2
-                    on_press: print("Sending message...")
+                    on_release: print("Sending message...")
 
     Screen:
         name: "HiddenChat"
@@ -87,7 +87,7 @@
                 GameButton:
                     size_hint_x: .2
                     text: "Show"
-                    on_press: root.show_chat()
+                    on_release: root.show_chat()
 
                 BoxLayout:
                     size_hint_x: .8
