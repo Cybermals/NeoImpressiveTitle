@@ -1,12 +1,5 @@
 #:kivy 1.9.0
 
-<ChangelogEntry>:
-    markup: True
-    text_size: root.width, None
-    size: self.texture_size
-    halign: "left"
-
-
 <TitleScreen>:
     name: "TitleScreen"
     changelog: changelog
@@ -49,19 +42,5 @@
                     color: 0, 0, 0, 1
                     on_release: base.task_mgr.add(base.exit_game, "exit")
 
-            RecycleView:
+            ChangeLog:
                 id: changelog
-                viewclass: "ChangelogEntry"
-
-                canvas.before:
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
-                        source: "images/ui/BorderCenter.png"
-
-                RecycleBoxLayout:
-                    default_size: None, dp(56)
-                    default_size_hint: 1, None
-                    size_hint_y: None
-                    height: self.minimum_height
-                    orientation: "vertical"
