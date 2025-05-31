@@ -2,6 +2,9 @@
 
 <HUD>:
     name: "HUD"
+    chat_box: chat_box
+    player_hp_panel: player_hp_panel
+    target_hp_panel: target_hp_panel
 
     AnchorLayout:
         anchor_x: "left"
@@ -9,6 +12,7 @@
         padding: dp(8)
 
         ChatBox:
+            id: chat_box
             size_hint: .5, .4
 
     AnchorLayout:
@@ -17,4 +21,14 @@
         padding: dp(8)
 
         PlayerHPPanel:
+            id: player_hp_panel
             size_hint: .3, .2
+
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        padding: dp(8)
+
+        TargetHPPanel:
+            id: target_hp_panel
+            size_hint: .3, .1
