@@ -1,0 +1,41 @@
+#:kivy 1.9.0
+
+<PlayerHPPanel>:
+    orientation: "vertical"
+    spacing: dp(8)
+
+    Label:
+        size_hint_y: .45
+        font_size: dp(32)
+        text: "Attack"
+
+    GameTexturedProgress:
+        size_hint_y: .25
+        value: 50
+
+    BoxLayout:
+        size_hint_y: .3
+
+        GameImageButton:
+            source: "images/ui/House.png"
+            on_release: print("Home")
+
+        GameImageButton:
+            source: "images/ui/Info.png"
+            on_release: print("Bio")
+
+        GameImageButton:
+            source: "images/ui/Person.png"
+            on_release: print("Friends")
+
+        GameImageButton:
+            source: "images/ui/Backpack.png"
+            on_release: print("Inventory")
+
+        GameImageButton:
+            source: "images/ui/PersonWalking.png"
+            on_release: print("Actions")
+
+        GameImageButton:
+            source: "images/ui/People.png"
+            on_release: print("Party")

@@ -13,6 +13,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.togglebutton import ToggleButton
 
 from ui.floating_window import FloatingWindow
+from ui.image_button import ImageButton
 from ui.mini_color_picker import MiniColorPicker
 from ui.textured_progress import TexturedProgress
 
@@ -46,6 +47,10 @@ class GameColorPicker(MiniColorPicker):
 
 
 class GameFloatingWindow(FloatingWindow):
+    pass
+
+
+class GameImageButton(ImageButton):
     pass
 
 
