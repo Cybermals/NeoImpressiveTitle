@@ -1,0 +1,21 @@
+#:kivy 1.9.0
+
+<TargetHPPanel>:
+    Screen:
+        name: "Hidden"
+
+    Screen:
+        name: "Visible"
+
+        GamePanel:
+            orientation: "vertical"
+            padding: dp(8)
+            spacing: dp(8)
+            background: "images/ui/BlackPanel.png"
+
+            GameLabel:
+                font_size: dp(32)
+                text: "Target"
+
+            GameTexturedProgress:
+                value: 50
