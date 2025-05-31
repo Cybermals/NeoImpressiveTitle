@@ -3,15 +3,11 @@ from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import Screen
 
-from ui.theme import GameLabel
+import ui.changelog
 
 
 # Classes
 # =======
-class ChangelogEntry(GameLabel):
-    pass
-
-
 class TitleScreen(Screen):
     changelog = ObjectProperty(None)
 
