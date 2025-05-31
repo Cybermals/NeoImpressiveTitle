@@ -5,10 +5,12 @@
     background_down: ""
     background_disabled_normal: ""
     background_disabled_down: ""
-    current_background: self.background_normal
+    border: 1, 1, 1, 1
+    _current_background: self.background_normal
 
     canvas.before:
-        Rectangle:
+        BorderImage:
             pos: self.pos
             size: self.size
-            source: self.current_background
+            source: self._current_background
+            border: self.border
