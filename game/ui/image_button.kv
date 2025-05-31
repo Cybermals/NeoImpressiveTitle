@@ -1,0 +1,14 @@
+#:kivy 1.9.0
+
+<ImageButton>:
+    background_normal: ""
+    background_down: ""
+    background_disabled_normal: ""
+    background_disabled_down: ""
+    current_background: self.background_normal
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: self.current_background
