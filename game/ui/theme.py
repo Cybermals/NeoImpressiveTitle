@@ -51,7 +51,14 @@ class GameFloatingWindow(FloatingWindow):
 
 
 class GameImageButton(ImageButton):
-    pass
+    def on_press(self):
+        try:
+            base.click_sfx.play()
+
+        except NameError:
+            # The sound effect is only available ingame. Theme testing doesn't
+            # need it.
+            pass
 
 
 class GameLabel(Label):
