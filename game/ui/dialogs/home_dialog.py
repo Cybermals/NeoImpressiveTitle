@@ -1,11 +1,11 @@
 from kivy.lang import Builder
 
-from ui.floating_window import FloatingWindow
+from ui.theme import GameFloatingWindow
 
 
 # Classes
 # =======
-class HomeDialog(FloatingWindow):
+class HomeDialog(GameFloatingWindow):
     pass
 
 

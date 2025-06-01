@@ -1,5 +1,5 @@
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty, StringProperty
+from kivy.properties import NumericProperty, ListProperty, ObjectProperty, StringProperty
 from kivy.uix.behaviors import DragBehavior
 from kivy.uix.widget import Widget
 
@@ -14,6 +14,10 @@ class FloatingWindow(DragBehavior, Widget):
     background_title = StringProperty()
     background_close_normal = StringProperty()
     background_close_down = StringProperty()
+    border_panel = ListProperty()
+    border_close = ListProperty()
+    font_name = StringProperty()
+    font_size = NumericProperty()
 
     def on_touch_down(self, touch):
         # Call base method
