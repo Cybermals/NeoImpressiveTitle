@@ -6,12 +6,14 @@
     drag_timeout: 10000
     drag_distance: 0
     title: "Floating Window"
-    background_panel: "images/ui/BorderCenter.png"
-    background_border: "images/ui/Border.png"
-    background_title: "images/ui/ButtonUp.png"
-    background_close_normal: "images/ui/ButtonUp.png"
-    background_close_down: "images/ui/ButtonDown.png"
-    font_name: "fonts/ConsolaMono.ttf"
+    background_panel: ""
+    background_border: ""
+    background_title: ""
+    background_close_normal: ""
+    background_close_down: ""
+    border_panel: 1, 1, 1, 1
+    border_close: 1, 1, 1, 1
+    font_name: "ConsolaMono"
     font_size: 16
 
     canvas.before:
@@ -24,7 +26,7 @@
             pos: self.x, self.y - (root.title_bar.height / 2 if root.title_bar is not None else 0)
             size: self.width, self.height - (root.title_bar.height / 2 if root.title_bar is not None else 0)
             source: root.background_border
-            border: 12, 12, 12, 12
+            border: root.border_panel
 
     Label:
         id: title_bar
@@ -43,11 +45,11 @@
     Button:
         id: close_btn
         text: "X"
-        size: self.texture_size
-        pos: root.x + root.width - self.width, root.y + root.height - self.height
+        size: 32, 32
+        pos: root.x + root.width - self.width, root.y + root.height - self.height + 4
         on_release: root.on_close()
-        background_color: 1, 0, 0, 1
-        # background_normal: root.background_close_normal
-        # background_down: root.background_close_down
+        background_normal: root.background_close_normal
+        background_down: root.background_close_down
+        border: root.border_close
         font_name: root.font_name
         font_size: root.font_size
