@@ -1,0 +1,27 @@
+#:kivy 1.9.0
+
+<FriendsDialog>:
+    title: "Friends"
+    pos: 260, 300
+    size_hint: .25, .6
+
+    RelativeLayout:
+        pos: root.pos
+        width: root.width
+        height: root.height - root.title_bar.height
+
+        BoxLayout:
+            padding: dp(12)
+
+            GameTabbedPanel:
+                do_default_tab: False
+
+                GameTabbedPanelItem:
+                    text: "Friends"
+
+                    FriendList:
+
+                GameTabbedPanelItem:
+                    text: "Blocked"
+
+                    BlockList:

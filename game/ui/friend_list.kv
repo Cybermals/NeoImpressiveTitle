@@ -1,0 +1,25 @@
+#:kivy 1.9.0
+
+<FriendListEntry>:
+    online: False
+    username: "Friend"
+
+    Image:
+        size_hint_x: .1
+        source: "images/ui/FriendOnline.png" if root.online else "images/ui/FriendOffline.png"
+
+    GameButton:
+        size_hint_x: .9
+        text: root.username
+        on_release: print(f"Clicked friend {root.username}")
+
+
+<FriendList>:
+    viewclass: "FriendListEntry"
+
+    RecycleBoxLayout:
+        orientation: "vertical"
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
