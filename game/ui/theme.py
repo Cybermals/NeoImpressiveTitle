@@ -47,7 +47,15 @@ class GameColorPicker(MiniColorPicker):
 
 
 class GameFloatingWindow(FloatingWindow):
-    pass
+    def on_parent(self, instance, value):
+        if value is None:
+            try:
+                base.click_sfx.play()
+
+            except NameError:
+                # The sound effect is only available ingame. Theme testing doesn't
+                # need it.
+                pass
 
 
 class GameImageButton(ImageButton):
