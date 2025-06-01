@@ -11,8 +11,8 @@ import config
 # =======
 class LoginScreen(Screen):
     login_btn = ObjectProperty()
-    username = StringProperty("")
-    password = StringProperty("")
+    username = StringProperty()
+    password = StringProperty()
 
     def validate_credentials(self):
         # Enable/disable login button based on the validity of the given

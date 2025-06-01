@@ -7,8 +7,8 @@ from kivy.uix.screenmanager import Screen
 # Classes
 # =======
 class LoadingScreen(Screen):
-    message = StringProperty("")
-    ellipsis = StringProperty("")
+    message = StringProperty()
+    ellipsis = StringProperty()
 
     def __init__(self, *args, **kwargs):
         # Call the base constructor
