@@ -8,6 +8,7 @@ import ui.player_hp_panel  # noqa: F401
 import ui.target_hp_panel  # noqa: F401
 
 from ui.dialogs.bio_dialog import BioDialog
+from ui.dialogs.friends_dialog import FriendsDialog
 from ui.dialogs.home_dialog import HomeDialog
 
 
@@ -25,6 +26,7 @@ class HUD(Screen):
         # Create dialogs
         self.home_dlg = HomeDialog()
         self.bio_dlg = BioDialog()
+        self.friends_dlg = FriendsDialog()
 
     def toggle_home_dialog(self):
         if self.home_dlg.parent is None:
@@ -41,7 +43,11 @@ class HUD(Screen):
             self.remove_widget(self.bio_dlg)
 
     def toggle_friend_dialog(self):
-        pass
+        if self.friends_dlg.parent is None:
+            self.add_widget(self.friends_dlg)
+
+        else:
+            self.remove_widget(self.friends_dlg)
 
     def toggle_inventory_dialog(self):
         pass
