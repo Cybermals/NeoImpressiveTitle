@@ -9,7 +9,7 @@ import ui.changelog
 # Classes
 # =======
 class TitleScreen(Screen):
-    changelog = ObjectProperty(None)
+    changelog = ObjectProperty()
 
     def on_changelog(self, instance, value):
         # Load the changelog

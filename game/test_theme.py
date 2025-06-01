@@ -16,9 +16,9 @@ class Window2(FloatingWindow):
 
 
 class MainScreen(Widget):
-    window1 = ObjectProperty(None)
-    window2 = ObjectProperty(None)
-    popup = ObjectProperty(None)
+    window1 = ObjectProperty()
+    window2 = ObjectProperty()
+    popup = ObjectProperty()
 
     def __init__(self, *args, **kwargs):
         # Call the base constructor
