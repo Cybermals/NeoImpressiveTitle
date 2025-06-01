@@ -10,7 +10,7 @@ import config
 # Classes
 # =======
 class LoginScreen(Screen):
-    login_btn = ObjectProperty(None)
+    login_btn = ObjectProperty()
     username = StringProperty("")
     password = StringProperty("")
 

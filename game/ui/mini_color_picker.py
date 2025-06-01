@@ -7,9 +7,9 @@ from kivy.uix.boxlayout import BoxLayout
 # =======
 class MiniColorPicker(BoxLayout):
     color = ListProperty([1, 1, 1, 1])
-    red_slider = ObjectProperty(None)
-    green_slider = ObjectProperty(None)
-    blue_slider = ObjectProperty(None)
+    red_slider = ObjectProperty()
+    green_slider = ObjectProperty()
+    blue_slider = ObjectProperty()
 
     def on_color(self, instance, value):
         # Return if the color sliders don't exist yet

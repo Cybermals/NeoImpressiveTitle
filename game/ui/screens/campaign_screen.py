@@ -15,7 +15,7 @@ class CampaignButton(GameButton):
 
 
 class CampaignScreen(Screen):
-    campaign_list = ObjectProperty(None)
+    campaign_list = ObjectProperty()
 
     def on_campaign_list(self, instance, value):
         # Load campaign list

@@ -7,7 +7,7 @@ from kivy.uix.widget import Widget
 # Classes
 # =======
 class FloatingWindow(DragBehavior, Widget):
-    title_bar = ObjectProperty(None)
+    title_bar = ObjectProperty()
     title = StringProperty()
     background_panel = StringProperty()
     background_border = StringProperty()
