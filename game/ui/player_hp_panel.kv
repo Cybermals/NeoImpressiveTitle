@@ -18,24 +18,24 @@
 
         GameImageButton:
             source: "images/ui/House.png"
-            on_release: print("Home")
+            on_release: root.parent.parent.toggle_home_dialog()
 
         GameImageButton:
             source: "images/ui/Info.png"
-            on_release: print("Bio")
+            on_release: root.parent.parent.toggle_bio_dialog()
 
         GameImageButton:
             source: "images/ui/Person.png"
-            on_release: print("Friends")
+            on_release: root.parent.parent.toggle_friend_dialog()
 
         GameImageButton:
             source: "images/ui/Backpack.png"
-            on_release: print("Inventory")
+            on_release: root.parent.parent.toggle_inventory_dialog()
 
         GameImageButton:
             source: "images/ui/PersonWalking.png"
-            on_release: print("Actions")
+            on_release: root.parent.parent.toggle_actions_dialog()
 
         GameImageButton:
             source: "images/ui/People.png"
-            on_release: print("Party")
+            on_release: root.parent.parent.toggle_party_dialog()
