@@ -5,23 +5,21 @@
     pos: 260, 300
     size_hint: .25, .6
 
-    RelativeLayout:
+    BoxLayout:
         pos: root.pos
         width: root.width
         height: root.height - root.title_bar.height
+        padding: dp(12)
 
-        BoxLayout:
-            padding: dp(12)
+        GameTabbedPanel:
+            do_default_tab: False
 
-            GameTabbedPanel:
-                do_default_tab: False
+            GameTabbedPanelItem:
+                text: "Friends"
 
-                GameTabbedPanelItem:
-                    text: "Friends"
+                FriendList:
 
-                    FriendList:
+            GameTabbedPanelItem:
+                text: "Blocked"
 
-                GameTabbedPanelItem:
-                    text: "Blocked"
-
-                    BlockList:
+                BlockList:

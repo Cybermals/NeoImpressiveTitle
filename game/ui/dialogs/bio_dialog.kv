@@ -5,13 +5,11 @@
     pos: 0, 60
     size_hint: .25, .6
 
-    RelativeLayout:
+    BoxLayout:
         pos: root.pos
         width: root.width
         height: root.height - root.title_bar.height
+        padding: dp(12)
 
-        BoxLayout:
-            padding: dp(12)
-
-            GameTextArea:
-                on_text: root.set_modified(True)
+        GameTextArea:
+            on_text: root.set_modified(True)
