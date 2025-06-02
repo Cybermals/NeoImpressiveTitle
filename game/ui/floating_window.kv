@@ -17,6 +17,9 @@
     font_size: 16
 
     canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+            
         Rectangle:
             pos: self.x + 12, self.y + 12 - (root.title_bar.height / 2 if root.title_bar is not None else 0)
             size: self.width - 24, self.height - 24 - (root.title_bar.height / 2 if root.title_bar is not None else 0)
