@@ -1,0 +1,22 @@
+#:kivy 1.9.0
+
+<InventoryDialog>:
+    title: "Inventory"
+    pos: 260, 15
+    size_hint: .25, .35
+    equipped_items: equipped_items
+
+    BoxLayout:
+        pos: root.pos
+        width: root.width
+        height: root.height - root.title_bar.height
+        padding: dp(12)
+        orientation: "vertical"
+
+        ItemList:
+            id: equipped_items
+            size_hint_y: .8
+
+        GameButton:
+            size_hint_y: .2
+            text: "Stash"
