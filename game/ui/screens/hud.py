@@ -7,6 +7,7 @@ import ui.minimap  # noqa: F401
 import ui.player_hp_panel  # noqa: F401
 import ui.target_hp_panel  # noqa: F401
 
+from ui.dialogs.actions_dialog import ActionsDialog
 from ui.dialogs.bio_dialog import BioDialog
 from ui.dialogs.friends_dialog import FriendsDialog
 from ui.dialogs.home_dialog import HomeDialog
@@ -31,6 +32,7 @@ class HUD(Screen):
         self.friends_dlg = FriendsDialog()
         self.inventory_dlg = InventoryDialog()
         self.stash_dlg = StashDialog()
+        self.actions_dlg = ActionsDialog()
 
     def toggle_home_dialog(self):
         if self.home_dlg.parent is None:
@@ -68,7 +70,11 @@ class HUD(Screen):
             self.remove_widget(self.stash_dlg)
 
     def toggle_actions_dialog(self):
-        pass
+        if self.actions_dlg.parent is None:
+            self.add_widget(self.actions_dlg)
+
+        else:
+            self.remove_widget(self.actions_dlg)
 
     def toggle_party_dialog(self):
         pass
