@@ -1,0 +1,16 @@
+#:kivy 1.9.0
+
+<StashDialog>:
+    title: "Stash"
+    pos: 520, 15
+    size_hint: .25, .35
+    items: items
+
+    BoxLayout:
+        pos: root.pos
+        width: root.width
+        height: root.height - root.title_bar.height
+        padding: dp(12)
+
+        ItemList:
+            id: items
