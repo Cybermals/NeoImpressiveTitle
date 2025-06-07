@@ -1,0 +1,25 @@
+#:kivy 1.9.0
+
+<PartyDialog>:
+    title: "Party"
+    pos: 760, 100
+    size_hint: .25, .6
+    party: party
+
+    BoxLayout:
+        pos: root.pos
+        width: root.width
+        height: root.height - root.title_bar.height
+        padding: dp(12)
+        orientation: "vertical"
+
+        ItemList:
+            id: party
+            size_hint_y: .9
+
+        GameButton:
+            id: leave_party_btn
+            text: "Leave Party"
+            size_hint_y: .1
+            disabled: True
+            on_release: print("Leave Party")

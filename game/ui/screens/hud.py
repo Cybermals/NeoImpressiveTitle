@@ -12,6 +12,7 @@ from ui.dialogs.bio_dialog import BioDialog
 from ui.dialogs.friends_dialog import FriendsDialog
 from ui.dialogs.home_dialog import HomeDialog
 from ui.dialogs.inventory_dialog import InventoryDialog
+from ui.dialogs.party_dialog import PartyDialog
 from ui.dialogs.stash_dialog import StashDialog
 
 
@@ -33,6 +34,7 @@ class HUD(Screen):
         self.inventory_dlg = InventoryDialog()
         self.stash_dlg = StashDialog()
         self.actions_dlg = ActionsDialog()
+        self.party_dlg = PartyDialog()
 
     def toggle_home_dialog(self):
         if self.home_dlg.parent is None:
@@ -77,7 +79,11 @@ class HUD(Screen):
             self.remove_widget(self.actions_dlg)
 
     def toggle_party_dialog(self):
-        pass
+        if self.party_dlg.parent is None:
+            self.add_widget(self.party_dlg)
+
+        else:
+            self.remove_widget(self.party_dlg)
 
 
 Builder.load_file("ui/screens/hud.kv")
