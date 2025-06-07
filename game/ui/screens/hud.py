@@ -11,6 +11,7 @@ from ui.dialogs.bio_dialog import BioDialog
 from ui.dialogs.friends_dialog import FriendsDialog
 from ui.dialogs.home_dialog import HomeDialog
 from ui.dialogs.inventory_dialog import InventoryDialog
+from ui.dialogs.stash_dialog import StashDialog
 
 
 # Classes
@@ -29,6 +30,7 @@ class HUD(Screen):
         self.bio_dlg = BioDialog()
         self.friends_dlg = FriendsDialog()
         self.inventory_dlg = InventoryDialog()
+        self.stash_dlg = StashDialog()
 
     def toggle_home_dialog(self):
         if self.home_dlg.parent is None:
@@ -57,6 +59,13 @@ class HUD(Screen):
 
         else:
             self.remove_widget(self.inventory_dlg)
+
+    def toggle_stash_dialog(self):
+        if self.stash_dlg.parent is None:
+            self.add_widget(self.stash_dlg)
+
+        else:
+            self.remove_widget(self.stash_dlg)
 
     def toggle_actions_dialog(self):
         pass
