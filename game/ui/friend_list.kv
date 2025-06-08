@@ -3,6 +3,7 @@
 <FriendListEntry>:
     online: False
     username: "Friend"
+    command: lambda friend: print(f"Clicked friend {friend.username}")
 
     Image:
         size_hint_x: .1
@@ -11,7 +12,7 @@
     GameButton:
         size_hint_x: .9
         text: root.username
-        on_release: print(f"Clicked friend {root.username}")
+        on_release: root.command(root)
 
 
 <FriendList>:
