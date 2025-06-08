@@ -4,13 +4,19 @@ from direct.fsm.FSM import FSM
 # Game State Class
 # ================
 class GameState(FSM):
+    def request(self, request, *args):
+        # Store previous state before transitioning
+        self.prev_state = self.state
+        return FSM.request(self, request, *args)
+
     def enterSplashScreen(self):
         # Show splash screen and play title screen music
         base.ui.switch_to_screen("SplashScreen")  # noqa: F821
         base.title_music.play()  # noqa: F821
 
     def exitSplashScreen(self):
-        pass
+        # Enable pause menu
+        base.accept("escape", base.toggle_pause)
 
     def enterTitleScreen(self):
         # Show title screen
@@ -59,10 +65,17 @@ class GameState(FSM):
     def exitCharacterEditorScreen(self):
         pass
 
-    def enterGame(self, mode):
+    def enterGame(self, mode="ResumeGame"):
         # Show the ingame HUD
         base.ui.switch_to_screen("HUD")  # noqa: F821
         print(f"Game Mode: {mode}")
 
     def exitGame(self):
+        pass
+
+    def enterPause(self):
+        # Show pause menu
+        base.ui.switch_to_screen("PauseMenu")
+
+    def exitPause(self):
         pass
