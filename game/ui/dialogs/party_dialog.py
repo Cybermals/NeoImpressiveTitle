@@ -3,7 +3,7 @@ from kivy.properties import ObjectProperty
 
 from ui.theme import GameFloatingWindow
 
-import ui.item_list
+import ui.item_list  # noqa: F401
 
 
 # Classes
