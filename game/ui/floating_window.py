@@ -1,5 +1,10 @@
 from kivy.lang import Builder
-from kivy.properties import NumericProperty, ListProperty, ObjectProperty, StringProperty
+from kivy.properties import (
+    NumericProperty,
+    ListProperty,
+    ObjectProperty,
+    StringProperty
+)
 from kivy.uix.behaviors import DragBehavior
 from kivy.uix.widget import Widget
 

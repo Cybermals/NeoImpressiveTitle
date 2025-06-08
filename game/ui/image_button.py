@@ -1,6 +1,6 @@
 from kivy.lang import Builder
 from kivy.properties import ListProperty, StringProperty
-from kivy.uix.button import Button, ButtonBehavior
+from kivy.uix.button import ButtonBehavior
 from kivy.uix.image import Image
 
 

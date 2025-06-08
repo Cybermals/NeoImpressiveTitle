@@ -3,7 +3,7 @@ from kivy.lang import Builder
 from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import Screen
 
-import ui.changelog
+import ui.changelog  # noqa: F401
 
 
 # Classes

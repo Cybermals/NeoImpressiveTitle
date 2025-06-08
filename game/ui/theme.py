@@ -49,7 +49,7 @@ class GameColorPicker(MiniColorPicker):
 class GameFloatingWindow(FloatingWindow):
     def on_close(self):
         super().on_close()
-        
+
         try:
             base.click_sfx.play()
 

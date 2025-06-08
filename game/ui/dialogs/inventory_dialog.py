@@ -4,7 +4,7 @@ from kivy.uix.bubble import Bubble
 
 from ui.theme import GameFloatingWindow
 
-import ui.item_list
+import ui.item_list  # noqa: F401
 
 
 # Classes
@@ -19,7 +19,7 @@ class ItemBubble(Bubble):
         # Was the click inside the bubble?
         if self.collide_point(touch.x, touch.y):
             return True
-        
+
         # Close the bubble
         self.parent.remove_widget(self)
         return False
@@ -36,13 +36,14 @@ class InventoryDialog(GameFloatingWindow):
         # Display test data
         self.equipped_items.data = [{
             "text": f"Item {i + 1}",
-            "command": lambda item: self.show_item_menu(item)} for i in range(100)]
+            "command": lambda item: self.show_item_menu(item)
+            } for i in range(100)]
 
     def show_item_menu(self, item):
         # Create item bubble if it doesn't exist
         if not hasattr(self, "item_bubble"):
             self.item_bubble = ItemBubble()
-        
+
         # Set selected item and bubble position
         self.item_bubble.item = item
         self.item_bubble.center_x = self.mouse_pos[0]

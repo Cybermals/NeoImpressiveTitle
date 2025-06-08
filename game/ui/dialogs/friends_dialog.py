@@ -4,8 +4,8 @@ from kivy.uix.bubble import Bubble
 
 from ui.theme import GameFloatingWindow
 
-import ui.block_list
-import ui.friend_list
+import ui.block_list  # noqa: F401
+import ui.friend_list  # noqa: F401
 
 
 # Classes
@@ -20,11 +20,11 @@ class FriendBubble(Bubble):
         # Handled event?
         if self.collide_point(touch.x, touch.y):
             return True
-        
+
         # Close this widget
         self.parent.remove_widget(self)
         return False
-    
+
 
 class BlockedPlayerBubble(Bubble):
     player = ObjectProperty()
@@ -36,7 +36,7 @@ class BlockedPlayerBubble(Bubble):
         # Handled event?
         if self.collide_point(touch.x, touch.y):
             return True
-        
+
         # Close this widget
         self.parent.remove_widget(self)
         return False
@@ -55,13 +55,14 @@ class FriendsDialog(GameFloatingWindow):
         self.friends.data = [{
             "online": i % 4,
             "username": f"Friend {i + 1}",
-            "command": lambda friend: self.show_friend_menu(friend)} for i in range(100)]
-        
+            "command": lambda friend: self.show_friend_menu(friend)
+            } for i in range(100)]
+
     def on_blocked_players(self, instance, value):
         # Load sample block list
         self.blocked_players.data = [{
             "text": f"Troublemaker {i + 1}",
-            "command": lambda blocked_player: self.show_blocked_player_menu(blocked_player)
+            "command": lambda blocked_player: self.show_blocked_player_menu(blocked_player)  # noqa: E501
             } for i in range(100)]
 
     def show_friend_menu(self, friend):

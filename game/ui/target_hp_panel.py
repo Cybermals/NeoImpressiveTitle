@@ -8,7 +8,7 @@ class TargetHPPanel(ScreenManager):
     def show(self):
         self.transition = SlideTransition(direction="down")
         self.current = "Visible"
-    
+
     def hide(self):
         self.transition = SlideTransition(direction="up")
         self.current = "Hidden"
