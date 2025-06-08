@@ -1,0 +1,43 @@
+#:kivy 1.9.0
+
+<PauseMenu>:
+    name: "PauseMenu"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        BoxLayout:
+            size_hint_y: .3
+
+        BoxLayout:
+            size_hint_y: .4
+
+            BoxLayout:
+                size_hint_x: .4
+
+            GamePanel:
+                orientation: "vertical"
+                size_hint_x: .2
+                padding: dp(16)
+
+                GameButton:
+                    text: "Resume"
+                    on_release: base.toggle_pause()
+
+                GameButton:
+                    text: "Settings"
+                    on_release: print("Settings")
+
+                GameButton:
+                    text: "Restart"
+                    on_release: print("Restart")
+
+                GameButton:
+                    text: "Quit"
+                    on_release: base.task_mgr.add(base.exit_game, "exit")
+
+            BoxLayout:
+                size_hint_x: .4
+
+        BoxLayout:
+            size_hint_y: .3
