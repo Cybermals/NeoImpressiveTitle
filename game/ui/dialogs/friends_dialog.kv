@@ -22,11 +22,24 @@
             on_release: root.parent.remove_friend(root.friend)
 
 
+<BlockedPlayerBubble>:
+    size_hint: None, None
+    size: 100, 48
+    player: None
+
+    BubbleContent:
+        BubbleButton:
+            text: "Remove"
+            size_hint_y: 1
+            on_release: root.parent.remove_blocked_player(root.player)
+
+
 <FriendsDialog>:
     title: "Friends"
     pos: 260, 300
     size_hint: .25, .6
     friends: friends
+    blocked_players: blocked_players
 
     BoxLayout:
         pos: root.pos
@@ -47,3 +60,4 @@
                 text: "Blocked"
 
                 BlockList:
+                    id: blocked_players
