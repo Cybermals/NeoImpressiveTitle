@@ -1,5 +1,27 @@
 #:kivy 1.9.0
 
+<ItemBubble>:
+    size_hint: None, None
+    size: 200, 48
+    item: None
+
+    BubbleContent:
+        BubbleButton:
+            text: "Stash"
+            size_hint_y: 1
+            on_release: root.parent.stash_item(root.item)
+
+        BubbleButton:
+            text: "Drop"
+            size_hint_y: 1
+            on_release: root.parent.drop_item(root.item)
+
+        BubbleButton:
+            text: "Delete"
+            size_hint_y: 1
+            on_release: root.parent.delete_item(root.item)
+
+
 <InventoryDialog>:
     title: "Inventory"
     pos: 260, 15
