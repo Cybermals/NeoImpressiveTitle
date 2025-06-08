@@ -1,9 +1,32 @@
 #:kivy 1.9.0
 
+<FriendBubble>:
+    size_hint: None, None
+    size: 200, 48
+    friend: None
+
+    BubbleContent:
+        BubbleButton:
+            text: "Message"
+            size_hint_y: 1
+            on_release: root.parent.message_friend(root.friend)
+
+        BubbleButton:
+            text: "Find"
+            size_hint_y: 1
+            on_release: root.parent.find_friend(root.friend)
+
+        BubbleButton:
+            text: "Remove"
+            size_hint_y: 1
+            on_release: root.parent.remove_friend(root.friend)
+
+
 <FriendsDialog>:
     title: "Friends"
     pos: 260, 300
     size_hint: .25, .6
+    friends: friends
 
     BoxLayout:
         pos: root.pos
@@ -18,6 +41,7 @@
                 text: "Friends"
 
                 FriendList:
+                    id: friends
 
             GameTabbedPanelItem:
                 text: "Blocked"
