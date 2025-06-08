@@ -1,5 +1,17 @@
 #:kivy 1.9.0
 
+<StashItemBubble>:
+    size_hint: None, None
+    size: 100, 48
+    item: None
+
+    BubbleContent:
+        BubbleButton:
+            text: "Equip"
+            size_hint_y: 1
+            on_release: root.parent.equip_item(root.item)
+ 
+
 <StashDialog>:
     title: "Stash"
     pos: 520, 15
