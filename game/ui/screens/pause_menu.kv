@@ -22,11 +22,11 @@
 
                 GameButton:
                     text: "Resume"
-                    on_release: base.toggle_pause()
+                    on_release: base.game_state.request("Game")
 
                 GameButton:
                     text: "Settings"
-                    on_release: print("Settings")
+                    on_release: base.game_state.request("Settings")
 
                 GameButton:
                     text: "Restart"
