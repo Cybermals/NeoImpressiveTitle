@@ -11,6 +11,7 @@ import ui.screens.character_select_screen
 import ui.screens.character_editor_screen  # noqa: F401
 import ui.screens.hud  # noqa: F401
 import ui.screens.pause_menu
+import ui.screens.settings_screen
 
 
 # Classes

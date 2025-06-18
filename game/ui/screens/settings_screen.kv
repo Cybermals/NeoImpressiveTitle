@@ -1,0 +1,51 @@
+#:kivy 1.9.0
+
+<SettingsScreen>:
+    name: "Settings"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        BoxLayout:
+            size_hint_y: .1
+
+        BoxLayout:
+            size_hint_y: .8
+
+            BoxLayout:
+                size_hint_x: .1
+
+            GamePanel:
+                orientation: "vertical"
+
+                ScrollView:
+                    size_hint_y: .9
+
+                    BoxLayout:
+                        orientation: "vertical"
+                        size_hint_y: None
+                        height: 1000
+
+                        GameLabel:
+                            text: "Settings Placeholder"
+
+                BoxLayout:
+                    size_hint_y: .1
+                    padding: dp(8)
+
+                    BoxLayout:
+                        size_hint_x: .4
+
+                    GameButton:
+                        size_hint_x: .2
+                        text: "Back"
+                        on_release: base.game_state.request("Pause")
+
+                    BoxLayout:
+                        size_hint_x: .4
+
+            BoxLayout:
+                size_hint_x: .1
+
+        BoxLayout:
+            size_hint_y: .1
