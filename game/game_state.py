@@ -79,3 +79,10 @@ class GameState(FSM):
 
     def exitPause(self):
         pass
+
+    def enterSettingsScreen(self):
+        # Show settings screen
+        base.ui.switch_to_screen("Settings")
+
+    def exitSettingsScreen(self):
+        pass
