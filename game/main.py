@@ -13,7 +13,7 @@ from game_state import GameState
 class NeoImpressiveTitle(ShowBase):
     def __init__(self):
         # Load config file
-        load_prc_file("config.prc")
+        load_prc_file("settings.prc")
 
         # Call base constructor
         ShowBase.__init__(self)
