@@ -16,26 +16,38 @@
     BoxLayout:
         size_hint_y: .3
 
-        GameImageButton:
-            source: "images/ui/House.png"
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "h"
             on_release: root.parent.parent.toggle_home_dialog()
 
-        GameImageButton:
-            source: "images/ui/Info.png"
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "b"
             on_release: root.parent.parent.toggle_bio_dialog()
 
-        GameImageButton:
-            source: "images/ui/Person.png"
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "f"
             on_release: root.parent.parent.toggle_friend_dialog()
 
-        GameImageButton:
-            source: "images/ui/Backpack.png"
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "i"
             on_release: root.parent.parent.toggle_inventory_dialog()
 
-        GameImageButton:
-            source: "images/ui/PersonWalking.png"
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "a"
             on_release: root.parent.parent.toggle_actions_dialog()
 
-        GameImageButton:
-            source: "images/ui/People.png"
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "p"
             on_release: root.parent.parent.toggle_party_dialog()

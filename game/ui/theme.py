@@ -23,6 +23,10 @@ LabelBase.register(
     fn_regular="fonts/ConsolaMono.ttf",
     fn_bold="fonts/ConsolaMono-Bold.ttf"
 )
+LabelBase.register(
+    "oIT-Icons",
+    fn_regular="fonts/oIT-Icons.ttf"
+)
 
 
 # Classes

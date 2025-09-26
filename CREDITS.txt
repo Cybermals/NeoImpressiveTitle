@@ -13,6 +13,12 @@ Audio
 gumbydragon
 
 
+Fonts
+-----
+wmk69
+Zenvy
+
+
 Original Game
 -------------
 KovuLKD and Contributors
@@ -20,4 +26,4 @@ KovuLKD and Contributors
 
 Special Thanks
 --------------
-KITO Community
+KYCO:IT Community
