@@ -14,7 +14,7 @@ class TitleScreen(Screen):
     def on_changelog(self, instance, value):
         # Load the changelog
         with open("changelog.txt") as f:
-            self.changelog.data = [{"text": line.strip()} for line in f]
+            self.changelog.data = [{"text": " " if line == "\n" else line.rstrip()} for line in f]
 
 
 Builder.load_file("ui/screens/title_screen.kv")
