@@ -3,41 +3,27 @@
 <PauseMenu>:
     name: "PauseMenu"
 
-    BoxLayout:
-        orientation: "vertical"
+    AnchorLayout:
+        anchor_x: "center"
+        anchor_y: "center"
 
-        BoxLayout:
-            size_hint_y: .3
+        GamePanel:
+            orientation: "vertical"
+            size_hint: .2, .4
+            padding: dp(16)
 
-        BoxLayout:
-            size_hint_y: .4
+            GameButton:
+                text: "Resume"
+                on_release: base.game_state.request("Game")
 
-            BoxLayout:
-                size_hint_x: .4
+            GameButton:
+                text: "Settings"
+                on_release: base.game_state.request("SettingsScreen")
 
-            GamePanel:
-                orientation: "vertical"
-                size_hint_x: .2
-                padding: dp(16)
+            GameButton:
+                text: "Restart"
+                on_release: print("Restart")
 
-                GameButton:
-                    text: "Resume"
-                    on_release: base.game_state.request("Game")
-
-                GameButton:
-                    text: "Settings"
-                    on_release: base.game_state.request("SettingsScreen")
-
-                GameButton:
-                    text: "Restart"
-                    on_release: print("Restart")
-
-                GameButton:
-                    text: "Quit"
-                    on_release: base.task_mgr.add(base.exit_game, "exit")
-
-            BoxLayout:
-                size_hint_x: .4
-
-        BoxLayout:
-            size_hint_y: .3
+            GameButton:
+                text: "Quit"
+                on_release: base.task_mgr.add(base.exit_game, "exit")
