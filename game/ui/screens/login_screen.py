@@ -1,7 +1,7 @@
 import webbrowser
 
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty, StringProperty
+from kivy.properties import BooleanProperty, StringProperty
 from kivy.uix.screenmanager import Screen
 
 import config
@@ -10,15 +10,15 @@ import config
 # Classes
 # =======
 class LoginScreen(Screen):
-    login_btn = ObjectProperty()
     username = StringProperty()
     password = StringProperty()
+    login_disabled = BooleanProperty()
 
     def validate_credentials(self):
         # Enable/disable login button based on the validity of the given
         # credentials
-        self.login_btn.disabled = (len(self.username) < 1 or
-                                   len(self.password) < 1)
+        self.login_disabled = (len(self.username) < 1 or 
+                          len(self.password) < 1)
 
     def login(self):
         base.game_state.request(  # noqa: F821

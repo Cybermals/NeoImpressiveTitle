@@ -39,7 +39,7 @@ class NeoImpressiveTitle(ShowBase):
         # Initialize game state
         self.game_state = GameState("GameState")
         self.game_state.request("SplashScreen")
-        self.game_state.request("CampaignScreen")
+        self.game_state.request("LoginScreen")
 
     def toggle_pause(self):
         if self.game_state.state != "Pause":
