@@ -2,7 +2,6 @@
 
 <LoginScreen>:
     name: "LoginScreen"
-    login_btn: login_btn
     username: username.text
     password: password.text
 
@@ -59,10 +58,9 @@
                 padding: dp(125)
 
                 GameButton:
-                    id: login_btn
                     text: "Log In"
                     color: 0, 0, 0, 1
-                    disabled: True
+                    disabled: root.login_disabled
                     on_release: root.login()
 
                 GameButton:
