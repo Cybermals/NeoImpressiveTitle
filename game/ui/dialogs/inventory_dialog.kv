@@ -26,7 +26,6 @@
     title: "Inventory"
     pos: 260, 15
     size_hint: .25, .35
-    equipped_items: equipped_items.data
 
     BoxLayout:
         pos: root.pos
@@ -36,8 +35,8 @@
         orientation: "vertical"
 
         ItemList:
-            id: equipped_items
             size_hint_y: .8
+            data: root.equipped_items
 
         GameButton:
             size_hint_y: .2

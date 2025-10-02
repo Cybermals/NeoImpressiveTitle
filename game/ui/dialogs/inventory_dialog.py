@@ -28,16 +28,19 @@ class ItemBubble(Bubble):
 class InventoryDialog(GameFloatingWindow):
     equipped_items = ListProperty()
 
-    def on_touch_down(self, touch):
-        self.mouse_pos = touch.pos
-        return super().on_touch_down(touch)
+    def __init__(self, *args, **kwargs):
+        # Call the base constructor
+        super().__init__(*args, **kwargs)
 
-    def on_equipped_items(self, instance, value):
         # Display test data
         self.equipped_items = [{
             "text": f"Item {i + 1}",
             "command": lambda item: self.show_item_menu(item)
             } for i in range(100)]
+
+    def on_touch_down(self, touch):
+        self.mouse_pos = touch.pos
+        return super().on_touch_down(touch)
 
     def show_item_menu(self, item):
         # Create item bubble if it doesn't exist
