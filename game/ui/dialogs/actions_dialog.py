@@ -1,5 +1,5 @@
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty
+from kivy.properties import StringProperty
 
 from ui.theme import GameFloatingWindow
 
@@ -7,58 +7,64 @@ from ui.theme import GameFloatingWindow
 # Classes
 # =======
 class ActionsDialog(GameFloatingWindow):
-    primary_action = ObjectProperty()
-    secondary_action = ObjectProperty()
-    emote = ObjectProperty()
+    PRIMARY_ACTIONS = [
+        "None",
+        "Sit",
+        "Lay",
+        "Plop Down",
+        "Side Lay",
+        "Lay Down",
+        "Roll Over",
+        "Crouch",
+        "Point",
+        "Stretch",
+        "Headswing",
+        "Headbang",
+        "Buttswing",
+        "Wingwave",
+        "Moonwalk",
+        "Thriller",
+        "Rofl",
+        "Roar",
+        "Curl",
+        "Faint"
+    ]
+    SECONDARY_ACTIONS = [
+        "None",
+        "Nod Head",
+        "Shake Head",
+        "Nod Head (Slow)",
+        "Shake Head (Slow)",
+        "Head Tilt",
+        "Lick",
+        "Nuzzle",
+        "Sniff",
+        "Tail Flick",
+        "Laugh",
+        "Chuckle"
+    ]
+    EMOTES = [
+        "None"
+    ]
+
+    primary_action = StringProperty()
+    secondary_action = StringProperty()
+    emote = StringProperty()
+
+    def __init__(self, *args, **kwargs):
+        # Call the base constructor
+        super().__init__(*args, **kwargs)
+
+        # TODO: Load emotes from config file
 
     def on_primary_action(self, instance, value):
-        # Set available primary actions
-        self.primary_action.values = [
-            "None",
-            "Sit",
-            "Lay",
-            "Plop Down",
-            "Side Lay",
-            "Lay Down",
-            "Roll Over",
-            "Crouch",
-            "Point",
-            "Stretch",
-            "Headswing",
-            "Headbang",
-            "Buttswing",
-            "Wingwave",
-            "Moonwalk",
-            "Thriller",
-            "Rofl",
-            "Roar",
-            "Curl",
-            "Faint"
-        ]
+        print(f"Primary Action: {value}")
 
     def on_secondary_action(self, instance, value):
-        # Set available secondary actions
-        self.secondary_action.values = [
-            "None",
-            "Nod Head",
-            "Shake Head",
-            "Nod Head (Slow)",
-            "Shake Head (Slow)",
-            "Head Tilt",
-            "Lick",
-            "Nuzzle",
-            "Sniff",
-            "Tail Flick",
-            "Laugh",
-            "Chuckle"
-        ]
+        print(f"Secondary Action: {value}")
 
     def on_emote(self, instance, value):
-        # Set available emotes
-        self.emote.values = [
-            "None"
-        ]
-        # TODO: Load emotes from config file.
+        print(f"Emotes: {value}")
 
 
 Builder.load_file("ui/dialogs/actions_dialog.kv")
