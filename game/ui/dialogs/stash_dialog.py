@@ -1,5 +1,5 @@
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty
+from kivy.properties import ListProperty, ObjectProperty
 from kivy.uix.bubble import Bubble
 
 from ui.theme import GameFloatingWindow
@@ -26,18 +26,21 @@ class StashItemBubble(Bubble):
 
 
 class StashDialog(GameFloatingWindow):
-    items = ObjectProperty()
+    items = ListProperty()
+
+    def __init__(self, *args, **kwargs):
+        # Call the base constructor
+        super().__init__(*args, **kwargs)
+
+        # Display test data
+        self.items = [{
+            "text": f"Item {i + 1}",
+            "command": lambda item: self.show_item_menu(item)
+            } for i in range(100)]
 
     def on_touch_down(self, touch):
         self.mouse_pos = touch.pos
         return super().on_touch_down(touch)
-
-    def on_items(self, instance, value):
-        # Display test data
-        self.items.data = [{
-            "text": f"Item {i + 1}",
-            "command": lambda item: self.show_item_menu(item)
-            } for i in range(100)]
 
     def show_item_menu(self, item):
         # Create item bubble if it doesn't exist
