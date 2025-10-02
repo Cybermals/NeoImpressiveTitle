@@ -1,5 +1,5 @@
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty
+from kivy.properties import ListProperty, ObjectProperty
 from kivy.uix.bubble import Bubble
 
 from ui.theme import GameFloatingWindow
@@ -26,7 +26,7 @@ class ItemBubble(Bubble):
 
 
 class InventoryDialog(GameFloatingWindow):
-    equipped_items = ObjectProperty()
+    equipped_items = ListProperty()
 
     def on_touch_down(self, touch):
         self.mouse_pos = touch.pos
@@ -34,7 +34,7 @@ class InventoryDialog(GameFloatingWindow):
 
     def on_equipped_items(self, instance, value):
         # Display test data
-        self.equipped_items.data = [{
+        self.equipped_items = [{
             "text": f"Item {i + 1}",
             "command": lambda item: self.show_item_menu(item)
             } for i in range(100)]
