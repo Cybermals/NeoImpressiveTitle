@@ -1,5 +1,4 @@
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import Screen
 
 import ui.chat_box  # noqa: F401
@@ -19,10 +18,6 @@ from ui.dialogs.stash_dialog import StashDialog
 # Classes
 # =======
 class HUD(Screen):
-    chat_box = ObjectProperty()
-    player_hp_panel = ObjectProperty()
-    target_hp_panel = ObjectProperty()
-
     def __init__(self, *args, **kwargs):
         # Call base constructor
         super().__init__(*args, **kwargs)
