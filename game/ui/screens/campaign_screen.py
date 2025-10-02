@@ -2,7 +2,7 @@ from pathlib import Path
 
 from direct.stdpy.file import listdir
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty
+from kivy.properties import ListProperty
 from kivy.uix.screenmanager import Screen
 
 from ui.theme import GameButton
@@ -15,11 +15,14 @@ class CampaignButton(GameButton):
 
 
 class CampaignScreen(Screen):
-    campaign_list = ObjectProperty()
+    campaign_list = ListProperty()
 
-    def on_campaign_list(self, instance, value):
+    def __init__(self, *args, **kwargs):
+        # Call the base constructor
+        super().__init__(*args, **kwargs)
+        
         # Load campaign list
-        self.campaign_list.data = [
+        self.campaign_list = [
             {"text": Path(path).stem} for path in listdir("campaigns")
         ]
 
