@@ -1,0 +1,97 @@
+#:kivy 1.9.0
+
+<Window1>:
+    title: "Window 1"
+    size: 300, 400
+
+
+<Window2>:
+    title: "Window 2"
+    size: 300, 400
+
+
+<MainScreen>:
+    GameTabbedPanel:
+        size: root.size
+
+        GameTabbedPanelItem:
+            text: "Tab 1"
+
+            GamePanel:
+                orientation: "vertical"
+
+                GameButton:
+                    text: "Button"
+                    on_release: root.show_windows()
+
+                BoxLayout:
+                    GameLabel:
+                        text: "CheckBox:"
+
+                    GameCheckBox:
+
+                BoxLayout:
+                    GameLabel:
+                        text: "RadioButton1:"
+
+                    GameCheckBox:
+                        group: "RadioGroup1"
+                        active: True
+
+                BoxLayout:
+                    GameLabel:
+                        text: "RadioButton2:"
+                        
+                    GameCheckBox:
+                        group: "RadioGroup1"
+
+                BoxLayout:
+                    GameLabel:
+                        text: "Slider:"
+
+                    GameSlider:
+
+                BoxLayout:
+                    GameLabel:
+                        text: "Spinner:"
+
+                    GameSpinner:
+                        text_autoupdate: True
+                        values: ["Cat", "Dog", "Bird"]
+
+                BoxLayout:
+                    GameLabel:
+                        text: "Switch:"
+
+                    GameSwitch:
+
+                BoxLayout:
+                    GameLabel:
+                        text: "TextArea:"
+
+                    GameTextArea:
+                        text: "Multi-Line\nText\nArea"
+
+                BoxLayout:
+                    GameLabel:
+                        text: "TextInput:"
+
+                    GameTextInput:
+                        text: "Single-Line Text Input"
+
+                BoxLayout:
+                    GameLabel:
+                        text: "TexturedProgress:"
+
+                    GameTexturedProgress:
+                        value: 50
+
+        GameTabbedPanelItem:
+            text: "Tab 2"
+
+            GameButton:
+                text: "Display Popup"
+                on_release: root.show_popup()
+
+        GameTabbedPanelItem:
+            text: "Tab 3"

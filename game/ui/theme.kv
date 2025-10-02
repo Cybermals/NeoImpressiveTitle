@@ -1,0 +1,150 @@
+#:kivy 1.9.0
+
+<GameButton>:
+    background_normal: "images/ui/ButtonUp.png"
+    background_down: "images/ui/ButtonDown.png"
+    background_disabled_normal: "images/ui/ButtonDown.png"
+    background_disabled_down: "images/ui/ButtonDown.png"
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+    border: 1, 1, 1, 1
+
+
+<GameCheckBox>:
+    background_checkbox_normal: "images/ui/CheckBoxFalse.png"
+    background_checkbox_down: "images/ui/CheckBoxTrue.png"
+    background_radio_normal: "images/ui/CheckBoxFalse.png"
+    background_radio_down: "images/ui/CheckBoxTrue.png"
+
+
+<GameColorPicker>:
+
+
+<GameFloatingWindow>:
+    background_panel: "images/ui/BorderCenter.png"
+    background_border: "images/ui/Border.png"
+    background_title: "images/ui/ButtonUp.png"
+    background_close_normal: "images/ui/ButtonUp.png"
+    background_close_down: "images/ui/ButtonDown.png"
+    border_panel: 12, 12, 12, 12
+
+
+<GameLabel>:
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+
+
+<GamePanel>:
+    background: "images/ui/BorderCenter.png"
+
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: root.background
+
+
+<GamePopup>:
+    background_center: "images/ui/BorderCenter.png"
+    background_border: "images/ui/Border.png"
+    font_name: "ConsolaMono"
+    font_size: dp(24)
+
+    canvas.before:
+        Rectangle:
+            pos: self.x + 12, self.y + 12
+            size: self.width - 24, self.height - 24
+            source: self.background_center
+
+        BorderImage:
+            pos: self.pos
+            size: self.size
+            source: self.background_border
+            border: 12, 12, 12, 12
+
+
+<GameSlider>:
+    background_horizontal: "images/ui/Slider.png"
+    background_vertical: "images/ui/Slider.png"
+    cursor_image: "images/ui/ButtonUp.png"
+    cursor_disabled_image: "images/ui/ButtonDown.png"
+
+
+<GameSpinner>:
+    background_normal: "images/ui/ButtonUp.png"
+    background_down: "images/ui/ButtonDown.png"
+    background_disabled_normal: "images/ui/ButtonDown.png"
+    background_disabled_down: "images/ui/ButtonDown.png"
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+    border: 1, 1, 1, 1
+    text_autoupdate: True
+
+
+<GameSpinnerDropDown>:
+    background_center: "images/ui/BorderCenter.png"
+    background_border: "images/ui/Border.png"
+
+    canvas.before:
+        Rectangle:
+            pos: self.x + 12, self.y + 12
+            size: self.width - 24, self.height - 24
+            source: self.background_center
+
+        BorderImage:
+            pos: self.pos
+            size: self.size
+            source: self.background_border
+            border: 12, 12, 12, 12
+
+
+<GameSpinnerOption>:
+    background_normal: "images/ui/ButtonUp.png"
+    background_down: "images/ui/ButtonDown.png"
+    background_disabled_normal: "images/ui/ButtonDown.png"
+    background_disabled_down: "images/ui/ButtonDown.png"
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+    border: 1, 1, 1, 1
+    size_hint_y: None
+    height: dp(44)
+    group: "GameSpinnerOption"
+
+
+<GameSwitch>:
+
+
+<GameTabbedPanel>:
+    background_image: "images/ui/Blank.png"
+
+
+<GameTabbedPanelItem>:
+    background_normal: "images/ui/ButtonUp.png"
+    background_down: "images/ui/ButtonDown.png"
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+    border: 1, 1, 1, 1
+
+
+<GameTextArea>:
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+
+
+<GameTextInput>:
+    multiline: False
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+
+
+<GameTexturedProgress>:
+    background: "images/ui/BlackPanel.png"
+    foreground: "images/ui/HPBar.png"
+
+
+<GameToggleButton>:
+    background_normal: "images/ui/ButtonUp.png"
+    background_down: "images/ui/ButtonDown.png"
+    font_name: "ConsolaMono"
+    font_size: dp(16)
+    border: 1, 1, 1, 1

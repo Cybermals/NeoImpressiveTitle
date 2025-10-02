@@ -1,0 +1,58 @@
+#:kivy 1.9.0
+
+<FloatingWindow>:
+    title_bar: title_bar
+    drag_rectangle: self.x, self.y + self.height - (title_bar.height if title_bar is not None else 0), self.width - close_btn.width, self.height - (title_bar.height if title_bar is not None else 0)
+    drag_timeout: 10000
+    drag_distance: 0
+    title: "Floating Window"
+    background_panel: ""
+    background_border: ""
+    background_title: ""
+    background_close_normal: ""
+    background_close_down: ""
+    border_panel: 1, 1, 1, 1
+    border_close: 1, 1, 1, 1
+    font_name: "ConsolaMono"
+    font_size: 16
+
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+            
+        Rectangle:
+            pos: self.x + 12, self.y + 12 - (root.title_bar.height / 2 if root.title_bar is not None else 0)
+            size: self.width - 24, self.height - 24 - (root.title_bar.height / 2 if root.title_bar is not None else 0)
+            source: root.background_panel
+
+        BorderImage:
+            pos: self.x, self.y - (root.title_bar.height / 2 if root.title_bar is not None else 0)
+            size: self.width, self.height - (root.title_bar.height / 2 if root.title_bar is not None else 0)
+            source: root.background_border
+            border: root.border_panel
+
+    Label:
+        id: title_bar
+        text: root.title
+        size: root.width, self.texture_size[1]
+        pos: root.x, root.y + root.height - self.height
+        font_name: root.font_name
+        font_size: root.font_size
+
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: root.background_title
+
+    Button:
+        id: close_btn
+        text: "X"
+        size: 32, 32
+        pos: root.x + root.width - self.width, root.y + root.height - self.height + 4
+        on_release: root.on_close()
+        background_normal: root.background_close_normal
+        background_down: root.background_close_down
+        border: root.border_close
+        font_name: root.font_name
+        font_size: root.font_size

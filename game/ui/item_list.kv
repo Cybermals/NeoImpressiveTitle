@@ -1,0 +1,16 @@
+#:kivy 1.9.0
+
+<ItemListEntry>:
+    command: lambda item: print(f"Clicked {item.text}")
+    on_release: self.command(self)
+
+
+<ItemList>:
+    viewclass: "ItemListEntry"
+
+    RecycleBoxLayout:
+        orientation: "vertical"
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height

@@ -1,0 +1,44 @@
+#:kivy 1.9.0
+
+<ItemBubble>:
+    size_hint: None, None
+    size: 200, 48
+    item: None
+
+    BubbleContent:
+        BubbleButton:
+            text: "Stash"
+            size_hint_y: 1
+            on_release: root.parent.stash_item(root.item)
+
+        BubbleButton:
+            text: "Drop"
+            size_hint_y: 1
+            on_release: root.parent.drop_item(root.item)
+
+        BubbleButton:
+            text: "Delete"
+            size_hint_y: 1
+            on_release: root.parent.delete_item(root.item)
+
+
+<InventoryDialog>:
+    title: "Inventory"
+    pos: 260, 15
+    size_hint: .25, .35
+
+    BoxLayout:
+        pos: root.pos
+        width: root.width
+        height: root.height - root.title_bar.height
+        padding: dp(12)
+        orientation: "vertical"
+
+        ItemList:
+            size_hint_y: .8
+            data: root.equipped_items
+
+        GameButton:
+            size_hint_y: .2
+            text: "Stash"
+            on_release: root.parent.toggle_stash_dialog()

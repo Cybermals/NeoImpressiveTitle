@@ -1,0 +1,36 @@
+from panda3d_kivy.app import App
+from kivy.uix.screenmanager import FadeTransition, NoTransition, ScreenManager
+
+import ui.theme
+import ui.screens.splash_screen
+import ui.screens.title_screen
+import ui.screens.campaign_screen
+import ui.screens.login_screen
+import ui.screens.loading_screen
+import ui.screens.character_select_screen
+import ui.screens.character_editor_screen  # noqa: F401
+import ui.screens.hud  # noqa: F401
+import ui.screens.pause_menu
+import ui.screens.settings_screen
+
+
+# Classes
+# =======
+class MainScreen(ScreenManager):
+    pass
+
+
+class NeoImpressiveTitleUI(App):
+    def build(self):
+        self.main_screen = MainScreen()
+        return self.main_screen
+
+    def switch_to_screen(self, name):
+        # Switch screens
+        if name in ["TitleScreen"]:
+            self.main_screen.transition = FadeTransition()
+
+        else:
+            self.main_screen.transition = NoTransition()
+
+        self.main_screen.current = name

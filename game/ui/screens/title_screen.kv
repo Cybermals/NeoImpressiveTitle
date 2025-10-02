@@ -1,0 +1,45 @@
+#:kivy 1.9.0
+
+<TitleScreen>:
+    name: "TitleScreen"
+
+    canvas:
+        Rectangle:
+            pos: 0, 0
+            size: self.size
+            source: "images/ui/Backdrop1.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(100)
+
+        Image:
+            source: "images/ui/Title.png"
+            size_hint_y: .25
+            fill_mode: "contain"
+
+        BoxLayout:
+            size_hint_y: .75
+
+            BoxLayout:
+                orientation: "vertical"
+                padding: dp(100)
+                spacing: dp(50)
+
+                GameButton:
+                    text: "New Game"
+                    color: 0, 0, 0, 1
+                    on_release: base.game_state.request("CampaignScreen")
+
+                GameButton:
+                    text: "Multiplayer"
+                    color: 0, 0, 0, 1
+                    on_release: base.game_state.request("LoginScreen")
+
+                GameButton:
+                    text: "Quit"
+                    color: 0, 0, 0, 1
+                    on_release: base.task_mgr.add(base.exit_game, "exit")
+
+            ChangeLog:
+                data: root.changelog

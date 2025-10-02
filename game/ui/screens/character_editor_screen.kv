@@ -1,0 +1,302 @@
+#:kivy 1.9.0
+
+<CharacterEditorScreen>:
+    name: "CharacterEditorScreen"
+    character_name: character_name.text
+    body: body.text
+    head: head.text
+    mane: mane.text
+    tail: tail.text
+    wing: wings.text
+    tuft: tuft.text
+    body_marking: body_marking.text
+    head_marking: head_marking.text
+    tail_marking: tail_marking.text
+    pelt_color: pelt_color.color
+    underfur_color: underfur_color.color
+    nose_color: nose_color.color
+    above_eyes_color: above_eyes_color.color
+    below_eyes_color: below_eyes_color.color
+    ear_color: ear_color.color
+    tailtip_color: tailtip_color.color
+    eye_color: eye_color.color
+    character_size: character_size.value
+
+    BoxLayout:
+        padding: dp(50)
+
+        GamePanel:
+            orientation: "vertical"
+            background: "images/ui/StartScreen.png"
+            padding: dp(20)
+
+            BoxLayout:
+                size_hint_y: .1
+
+                GameLabel:
+                    text: "Name:"
+                    color: 0, 0, 0, 1
+                    size_hint_x: .2
+
+                GameTextInput:
+                    id: character_name
+                    size_hint_x: .8
+                    on_text: root.validate_character_name()
+
+            GameTabbedPanel:
+                size_hint_y: .8
+                do_default_tab: False
+
+                GameTabbedPanelItem:
+                    text: "Parts"
+                    color: 0, 0, 0, 1
+
+                    BoxLayout:
+                        orientation: "vertical"
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Body:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: body
+                                color: 0, 0, 0, 1
+                                values: root.bodies
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Head:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: head
+                                color: 0, 0, 0, 1
+                                values: root.heads
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Mane:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: mane
+                                color: 0, 0, 0, 1
+                                values: root.manes
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Tail:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: tail
+                                color: 0, 0, 0, 1
+                                values: root.tails
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Wings:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: wings
+                                color: 0, 0, 0, 1
+                                values: root.wings
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Tufts:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: tuft
+                                color: 0, 0, 0, 1
+                                values: root.tufts
+
+                GameTabbedPanelItem:
+                    text: "Markings"
+                    color: 0, 0, 0, 1
+
+                    BoxLayout:
+                        orientation: "vertical"
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Body:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: body_marking
+                                color: 0, 0, 0, 1
+                                values: root.body_markings
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Head:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: head_marking
+                                color: 0, 0, 0, 1
+                                values: root.head_markings
+
+                        BoxLayout:
+                            GameLabel:
+                                text: "Tail:"
+                                color: 0, 0, 0, 1
+
+                            GameSpinner:
+                                id: tail_marking
+                                color: 0, 0, 0, 1
+                                values: root.tail_markings
+
+                GameTabbedPanelItem:
+                    text: "Colors"
+                    color: 0, 0, 0, 1
+
+                    ScrollView:
+                        BoxLayout:
+                            size_hint_y: None
+                            height: 1024
+                            orientation: "vertical"
+
+                            GameLabel:
+                                text: "Pelt:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: pelt_color
+                                color: 114 / 255, 89 / 255, 63 / 255, 1
+
+                            GameLabel:
+                                text: "Underfur:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: underfur_color
+                                color: 165 / 255, 140 / 255, 89 / 255, 1
+
+                            GameLabel:
+                                text: "Nose:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: nose_color
+                                color: 5 / 255, 5 / 255, 5 / 255, 1
+
+                            GameLabel:
+                                text: "Above Eyes:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: above_eyes_color
+                                color: 63 / 255, 38 / 255, 12 / 255, 1
+
+                            GameLabel:
+                                text: "Below Eyes:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: below_eyes_color
+                                color: 140 / 255, 114 / 255, 63 / 255, 1
+
+                            GameLabel:
+                                text: "Ears:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: ear_color
+                                color: 63 / 255, 63 / 255, 12 / 255, 1
+
+                            GameLabel:
+                                text: "Tailtip:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: tailtip_color
+                                color: 51 / 255, 38 / 255, 0 / 255, 1
+
+                            GameLabel:
+                                text: "Eyes:"
+                                color: 0, 0, 0, 1
+                                size_hint: None, None
+                                size: self.texture_size
+                                halign: "left"
+
+                            GameColorPicker:
+                                id: eye_color
+                                color: 140 / 255, 76 / 255, 38 / 255, 1
+
+                GameTabbedPanelItem:
+                    text: "Sizes"
+                    color: 0, 0, 0, 1
+
+                    BoxLayout:
+                        orientation: "vertical"
+
+                        BoxLayout:
+                            size_hint_y: .1
+
+                            GameLabel:
+                                text: "Size:"
+                                color: 0, 0, 0, 1
+                                size_hint_x: .1
+
+                            Slider:
+                                id: character_size
+                                min: .25
+                                max: 1.5
+                                step: .01
+                                value: 1
+                                size_hint_x: .75
+
+                            GameTextInput:
+                                text: str(round(root.character_size, 2))
+                                size_hint_x: .15
+                                on_text: root.update_size(self.text)
+
+                        BoxLayout:
+                            size_hint_y: .9
+
+            BoxLayout:
+                size_hint_y: .1
+
+                GameButton:
+                    text: "Back"
+                    color: 0, 0, 0, 1
+                    on_release: base.game_state.request("CharacterSelectScreen")
+
+                GameButton:
+                    text: "Save"
+                    color: 0, 0, 0, 1
+                    disabled: root.save_disabled
+                    on_release: print("Save Character")
+
+                GameButton:
+                    text: "Delete"
+                    color: 0, 0, 0, 1
+                    on_release: print("Delete Character")
+
+        BoxLayout:

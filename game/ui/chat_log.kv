@@ -1,0 +1,28 @@
+#:kivy 1.9.0
+
+<Post>:
+    text: f"[ref={root.username}][color=#00ffff]<{root.username}>[/color][/ref]: {root.content}"
+    markup: True
+    size_hint: 1, None
+    text_size: self.width, None
+    halign: "left"
+
+
+<ChatLog>:
+    background: "images/ui/BorderCenter.png"
+    viewclass: "Post"
+    on_data: root.update_text()
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: root.background
+
+    RecycleBoxLayout:
+        orientation: "vertical"
+        key_size: "ks"
+        default_size_hint: 1, None
+        size_hint: 1, None
+        height: self.minimum_height
+        on_width: root.update_text()

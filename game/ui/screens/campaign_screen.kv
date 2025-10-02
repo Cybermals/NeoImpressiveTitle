@@ -1,0 +1,48 @@
+#:kivy 1.9.0
+
+<CampaignButton>:
+    color: 0, 0, 0, 1
+    on_release: print(f"Starting campaign '{self.text}'...")
+
+
+<CampaignScreen>:
+    name: "CampaignScreen"
+
+    canvas:
+        Rectangle:
+            pos: 0, 0
+            size: self.size
+            source: "images/ui/Backdrop1.jpg"
+
+    BoxLayout:
+        padding: dp(50)
+
+        GamePanel:
+            background: "images/ui/StartScreen.png"
+            orientation: "vertical"
+
+            GameLabel:
+                text: "Campaigns"
+                color: 0, 0, 0, 1
+                font_size: dp(36)
+                size_hint_y: .1
+
+            RecycleView:
+                viewclass: "CampaignButton"
+                size_hint_y: .825
+                data: root.campaign_list
+
+                RecycleBoxLayout:
+                    default_size: None, dp(56)
+                    default_size_hint: 1, None
+                    size_hint_y: None
+                    height: self.minimum_height
+                    orientation: "vertical"
+
+            GameButton:
+                text: "Back"
+                color: 0, 0, 0, 1
+                size_hint_y: .075
+                on_release: base.game_state.request("TitleScreen")
+
+        BoxLayout:

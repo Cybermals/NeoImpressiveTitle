@@ -1,0 +1,16 @@
+#:kivy 1.9.0
+
+<BlockListEntry>:
+    command: lambda blocked_player: print(f"Clicked {blocked_player.text}")
+    on_release: self.command(self)
+
+
+<BlockList>:
+    viewclass: "BlockListEntry"
+
+    RecycleBoxLayout:
+        orientation: "vertical"
+        default_size: None, dp(56)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height

@@ -1,0 +1,92 @@
+#:kivy 1.9.0
+
+<ChatBox>:
+    dm_recipient: dm_recipient.text
+    chat_mode: chat_mode.text
+    chat_input: chat_input.text
+
+    Screen:
+        name: "VisibleChat"
+
+        BoxLayout:
+            orientation: "vertical"
+
+            BoxLayout:
+                size_hint_y: .1
+
+                BoxLayout:
+                    size_hint_x: .8
+
+                GameButton:
+                    size_hint_x: .2
+                    text: "Hide"
+                    on_release: root.hide_chat()
+
+            ScreenManager:
+                id: chat_log
+                size_hint_y: .65
+
+                Screen:
+                    name: "General"
+
+                    ChatLog:
+                        data: root.general_chat
+
+                Screen:
+                    name: "Local"
+
+                    ChatLog:
+                        data: root.local_chat
+
+                Screen:
+                    name: "Party"
+                    
+                    ChatLog:
+                        data: root.party_chat
+
+            BoxLayout:
+                size_hint_y: .125
+
+                GameTextInput:
+                    id: dm_recipient
+                    hint_text: "DM Recipient"
+                    size_hint_x: .8
+
+                GameSpinner:
+                    id: chat_mode
+                    text_autoupdate: True
+                    values: ["General", "Local", "Party"]
+                    size_hint_x: .2
+
+            BoxLayout:
+                size_hint_y: .125
+
+                GameTextInput:
+                    id: chat_input
+                    hint_text: "Chat"
+                    size_hint_x: .8
+
+                GameButton:
+                    text: "Send"
+                    size_hint_x: .2
+                    on_release: print("Sending message...")
+
+    Screen:
+        name: "HiddenChat"
+
+        BoxLayout:
+            orientation: "vertical"
+
+            BoxLayout:
+                size_hint_y: .9
+
+            BoxLayout:
+                size_hint_y: .1
+
+                GameButton:
+                    size_hint_x: .2
+                    text: "Show"
+                    on_release: root.show_chat()
+
+                BoxLayout:
+                    size_hint_x: .8

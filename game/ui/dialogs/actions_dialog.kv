@@ -1,0 +1,43 @@
+#:kivy 1.9.0
+
+<ActionsDialog>:
+    title: "Actions"
+    pos: 520, 300
+    size_hint: .25, .6
+    primary_action: primary_action.text
+    secondary_action: secondary_action.text
+    emote: emote.text
+
+    BoxLayout:
+        pos: root.pos
+        width: root.width
+        height: root.height - root.title_bar.height
+        padding: dp(12)
+        orientation: "vertical"
+
+        GameLabel:
+            text: "Primary:"
+            size_hint_y: .16
+
+        GameSpinner:
+            id: primary_action
+            values: root.PRIMARY_ACTIONS
+            size_hint_y: .16
+
+        GameLabel:
+            text: "Secondary:"
+            size_hint_y: .16
+
+        GameSpinner:
+            id: secondary_action
+            values: root.SECONDARY_ACTIONS
+            size_hint_y: .16
+
+        GameLabel:
+            text: "Emote:"
+            size_hint_y: .16
+
+        GameSpinner:
+            id: emote
+            values: root.EMOTES
+            size_hint_y: .16

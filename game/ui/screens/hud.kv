@@ -1,0 +1,39 @@
+#:kivy 1.9.0
+
+<HUD>:
+    name: "HUD"
+
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "bottom"
+        padding: dp(8)
+
+        ChatBox:
+            id: chat_box
+            size_hint: .5, .4
+
+    AnchorLayout:
+        anchor_x: "right"
+        anchor_y: "bottom"
+        padding: dp(8)
+
+        PlayerHPPanel:
+            id: player_hp_panel
+            size_hint: .3, .2
+
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        padding: dp(8)
+
+        TargetHPPanel:
+            id: target_hp_panel
+            size_hint: .3, .1
+
+    AnchorLayout:
+        anchor_x: "right"
+        anchor_y: "top"
+        padding: dp(8)
+
+        Minimap:
+            size_hint: .16, .25

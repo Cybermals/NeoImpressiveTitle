@@ -1,0 +1,81 @@
+#:kivy 1.9.0
+
+<LoginScreen>:
+    name: "LoginScreen"
+    username: username.text
+    password: password.text
+
+    canvas:
+        Rectangle:
+            pos: 0, 0
+            size: self.size
+            source: "images/ui/Backdrop1.jpg"
+
+    BoxLayout:
+        padding: dp(50)
+
+        GamePanel:
+            orientation: "vertical"
+            background: "images/ui/StartScreen.png"
+
+            GameLabel:
+                text: "Multiplayer"
+                color: 0, 0, 0, 1
+                font_size: dp(36)
+                size_hint_y: .1
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: .2
+                padding: dp(20)
+
+                BoxLayout:
+                    GameLabel:
+                        text: "Username:"
+                        color: 0, 0, 0, 1
+                        size_hint_x: .2
+
+                    GameTextInput:
+                        id: username
+                        size_hint_x: .8
+                        on_text: root.validate_credentials()
+
+                BoxLayout:
+                    GameLabel:
+                        text: "Password:"
+                        color: 0, 0, 0, 1
+                        size_hint_x: .2
+
+                    GameTextInput:
+                        id: password
+                        size_hint_x: .8
+                        password: True
+                        on_text: root.validate_credentials()
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: .7
+                padding: dp(125)
+
+                GameButton:
+                    text: "Log In"
+                    color: 0, 0, 0, 1
+                    disabled: root.login_disabled
+                    on_release: root.login()
+
+                GameButton:
+                    text: "New Account"
+                    color: 0, 0, 0, 1
+                    on_release: root.new_account()
+
+                GameButton:
+                    text: "Change Password"
+                    color: 0, 0, 0, 1
+                    on_release: root.change_password()
+
+                GameButton:
+                    text: "Back"
+                    color: 0, 0, 0, 1
+                    on_release: base.game_state.request("TitleScreen")
+
+        BoxLayout:

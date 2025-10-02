@@ -1,0 +1,59 @@
+#:kivy 1.9.0
+
+<CharacterSelectScreen>:
+    name: "CharacterSelectScreen"
+
+    canvas:
+        Rectangle:
+            pos: 0, 0
+            size: self.size
+            source: "images/ui/Backdrop2.png"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+
+        BoxLayout:
+            size_hint_y: .1
+
+            GameButton:
+                text: "<"
+                font_size: dp(64)
+                size_hint_x: .1
+                on_release: print("Previous Character")
+
+            GameLabel:
+                text: "Character"
+                font_size: dp(36)
+                size_hint_x: .8
+
+            GameButton:
+                text: ">"
+                font_size: dp(64)
+                size_hint_x: .1
+                on_release: print("Next Character")
+
+        BoxLayout:
+            size_hint_y: .8
+
+        BoxLayout:
+            size_hint_y: .1
+            spacing: dp(32)
+
+            GameButton:
+                text: "Back"
+                on_release: base.game_state.request("TitleScreen")
+
+            GameButton:
+                text: "Start"
+                disabled: True
+                on_release: print("Start Game")
+
+            GameButton:
+                text: "Edit"
+                disabled: True
+                on_release: print("Edit Character")
+
+            GameButton:
+                text: "New"
+                on_release: print("New Character")

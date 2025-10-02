@@ -1,0 +1,18 @@
+#:kivy 1.9.0
+
+<TexturedProgress>:
+    max: 100
+    value: 0
+    background: "images/bg.png"
+    foreground: "images/fg.png"
+
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: root.background
+
+        Rectangle:
+            pos: self.pos
+            size: self.size[0] * (root.value / root.max), self.size[1]
+            source: root.foreground

@@ -1,0 +1,25 @@
+#:kivy 1.9.0
+
+<ChangeLogEntry>:
+    markup: True
+    size_hint: 1, None
+    text_size: root.width, None
+    halign: "left"
+
+
+<ChangeLog>:
+    viewclass: "ChangeLogEntry"
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/ui/BorderCenter.png"
+
+    RecycleBoxLayout:
+        orientation: "vertical"
+        key_size: "ks"
+        default_size_hint: 1, None
+        size_hint: 1, None
+        height: self.minimum_height
+        on_width: root.update_text()

@@ -1,0 +1,53 @@
+#:kivy 1.9.0
+
+<PlayerHPPanel>:
+    orientation: "vertical"
+    spacing: dp(8)
+
+    GameLabel:
+        size_hint_y: .45
+        font_size: dp(32)
+        text: "Attack"
+
+    GameTexturedProgress:
+        size_hint_y: .25
+        value: 50
+
+    BoxLayout:
+        size_hint_y: .3
+
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "h"
+            on_release: root.parent.parent.toggle_home_dialog()
+
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "b"
+            on_release: root.parent.parent.toggle_bio_dialog()
+
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "f"
+            on_release: root.parent.parent.toggle_friend_dialog()
+
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "i"
+            on_release: root.parent.parent.toggle_inventory_dialog()
+
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "a"
+            on_release: root.parent.parent.toggle_actions_dialog()
+
+        GameButton:
+            font_name: "oIT-Icons"
+            font_size: dp(36)
+            text: "p"
+            on_release: root.parent.parent.toggle_party_dialog()

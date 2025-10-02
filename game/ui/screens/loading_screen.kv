@@ -1,0 +1,24 @@
+#:kivy 1.9.0
+
+<LoadingScreen>:
+    name: "LoadingScreen"
+    message: "Connecting"
+    ellipsis: ""
+
+    canvas:
+        Rectangle:
+            pos: 0, 0
+            size: self.size
+            source: "images/ui/Backdrop1.jpg"
+
+    BoxLayout:
+        padding: dp(20)
+        
+        GameLabel:
+            text: root.message + root.ellipsis
+            color: 0, 0, 0, 1
+            font_size: dp(36)
+            text_size: self.size
+            size: self.texture_size
+            halign: "left"
+            valign: "bottom"

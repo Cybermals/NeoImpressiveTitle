@@ -1,0 +1,15 @@
+#:kivy 1.9.0
+
+<BioDialog>:
+    title: "Bio"
+    pos: 0, 60
+    size_hint: .25, .6
+
+    BoxLayout:
+        pos: root.pos
+        width: root.width
+        height: root.height - root.title_bar.height
+        padding: dp(12)
+
+        GameTextArea:
+            on_text: root.set_modified(True)
