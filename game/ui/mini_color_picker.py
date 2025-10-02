@@ -13,11 +13,11 @@ class MiniColorPicker(BoxLayout):
 
     def on_color(self, instance, value):
         # Return if the color sliders don't exist yet
-        if (self.red_slider is None or 
-            self.green_slider is None or 
-            self.blue_slider is None):
+        if (self.red_slider is None or
+            self.green_slider is None or
+            self.blue_slider is None):  # noqa: E129
             return
-        
+
         # Update color slider values
         self.red_slider.value = value[0] * 255
         self.green_slider.value = value[1] * 255

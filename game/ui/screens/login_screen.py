@@ -17,8 +17,8 @@ class LoginScreen(Screen):
     def validate_credentials(self):
         # Enable/disable login button based on the validity of the given
         # credentials
-        self.login_disabled = (len(self.username) < 1 or 
-                          len(self.password) < 1)
+        self.login_disabled = (len(self.username) < 1 or
+                               len(self.password) < 1)
 
     def login(self):
         base.game_state.request(  # noqa: F821

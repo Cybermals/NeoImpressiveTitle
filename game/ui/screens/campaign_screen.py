@@ -20,7 +20,7 @@ class CampaignScreen(Screen):
     def __init__(self, *args, **kwargs):
         # Call the base constructor
         super().__init__(*args, **kwargs)
-        
+
         # Load campaign list
         self.campaign_list = [
             {"text": Path(path).stem} for path in listdir("campaigns")

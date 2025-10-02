@@ -109,7 +109,7 @@ class CharacterEditorScreen(Screen):
 
     def on_nose_color(self, instance, value):
         print(f"Nose Color: {value}")
-    
+
     def on_above_eyes_color(self, instance, value):
         print(f"Above Eye Color: {value}")
 

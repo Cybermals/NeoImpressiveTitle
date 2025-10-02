@@ -56,7 +56,7 @@ class FriendsDialog(GameFloatingWindow):
             "username": f"Friend {i + 1}",
             "command": lambda friend: self.show_friend_menu(friend)
             } for i in range(100)]
-        
+
         # Load sample block list
         self.blocked_players = [{
             "text": f"Troublemaker {i + 1}",

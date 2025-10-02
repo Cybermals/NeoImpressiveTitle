@@ -16,7 +16,7 @@ class GameState(FSM):
 
     def exitSplashScreen(self):
         # Enable pause menu
-        base.accept("escape", base.toggle_pause)
+        base.accept("escape", base.toggle_pause)  # noqa: F821
 
     def enterTitleScreen(self):
         # Show title screen
@@ -75,14 +75,14 @@ class GameState(FSM):
 
     def enterPause(self):
         # Show pause menu
-        base.ui.switch_to_screen("PauseMenu")
+        base.ui.switch_to_screen("PauseMenu")  # noqa: F821
 
     def exitPause(self):
         pass
 
     def enterSettingsScreen(self):
         # Show settings screen
-        base.ui.switch_to_screen("Settings")
+        base.ui.switch_to_screen("Settings")  # noqa: F821
 
     def exitSettingsScreen(self):
         pass

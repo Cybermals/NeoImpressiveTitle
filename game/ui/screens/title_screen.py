@@ -17,7 +17,9 @@ class TitleScreen(Screen):
 
         # Load the changelog
         with open("changelog.txt") as f:
-            self.changelog = [{"text": " " if line == "\n" else line.rstrip()} for line in f]
+            self.changelog = [
+                {"text": " " if line == "\n" else line.rstrip()} for line in f
+            ]
 
 
 Builder.load_file("ui/screens/title_screen.kv")
