@@ -2,7 +2,6 @@
 
 <TitleScreen>:
     name: "TitleScreen"
-    changelog: changelog
 
     canvas:
         Rectangle:
@@ -43,4 +42,4 @@
                     on_release: base.task_mgr.add(base.exit_game, "exit")
 
             ChangeLog:
-                id: changelog
+                data: root.changelog
