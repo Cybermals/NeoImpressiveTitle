@@ -38,8 +38,6 @@
     title: "Friends"
     pos: 260, 300
     size_hint: .25, .6
-    friends: friends
-    blocked_players: blocked_players
 
     BoxLayout:
         pos: root.pos
@@ -54,10 +52,10 @@
                 text: "Friends"
 
                 FriendList:
-                    id: friends
+                    data: root.friends
 
             GameTabbedPanelItem:
                 text: "Blocked"
 
                 BlockList:
-                    id: blocked_players
+                    data: root.blocked_players

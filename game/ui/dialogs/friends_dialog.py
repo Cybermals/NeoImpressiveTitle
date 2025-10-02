@@ -1,5 +1,5 @@
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty
+from kivy.properties import ListProperty, ObjectProperty
 from kivy.uix.bubble import Bubble
 
 from ui.theme import GameFloatingWindow
@@ -43,27 +43,29 @@ class BlockedPlayerBubble(Bubble):
 
 
 class FriendsDialog(GameFloatingWindow):
-    friends = ObjectProperty()
-    blocked_players = ObjectProperty()
+    friends = ListProperty()
+    blocked_players = ListProperty()
 
-    def on_touch_down(self, touch):
-        self.mouse_pos = touch.pos
-        return super().on_touch_down(touch)
+    def __init__(self, *args, **kwargs):
+        # Call the base constructor
+        super().__init__(*args, **kwargs)
 
-    def on_friends(self, instance, value):
         # Load sample friends
-        self.friends.data = [{
+        self.friends = [{
             "online": i % 4,
             "username": f"Friend {i + 1}",
             "command": lambda friend: self.show_friend_menu(friend)
             } for i in range(100)]
-
-    def on_blocked_players(self, instance, value):
+        
         # Load sample block list
-        self.blocked_players.data = [{
+        self.blocked_players = [{
             "text": f"Troublemaker {i + 1}",
             "command": lambda blocked_player: self.show_blocked_player_menu(blocked_player)  # noqa: E501
             } for i in range(100)]
+
+    def on_touch_down(self, touch):
+        self.mouse_pos = touch.pos
+        return super().on_touch_down(touch)
 
     def show_friend_menu(self, friend):
         # Create the friend bubble if it doesn't exist yet
