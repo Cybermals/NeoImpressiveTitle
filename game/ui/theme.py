@@ -13,7 +13,6 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.togglebutton import ToggleButton
 
 from ui.floating_window import FloatingWindow
-from ui.image_button import ImageButton
 from ui.mini_color_picker import MiniColorPicker
 from ui.textured_progress import TexturedProgress
 
@@ -54,17 +53,6 @@ class GameFloatingWindow(FloatingWindow):
     def on_close(self):
         super().on_close()
 
-        try:
-            base.click_sfx.play()
-
-        except NameError:
-            # The sound effect is only available ingame. Theme testing doesn't
-            # need it.
-            pass
-
-
-class GameImageButton(ImageButton):
-    def on_press(self):
         try:
             base.click_sfx.play()
 
