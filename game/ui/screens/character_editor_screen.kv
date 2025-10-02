@@ -2,27 +2,25 @@
 
 <CharacterEditorScreen>:
     name: "CharacterEditorScreen"
-    character_name_input: character_name
-    body_spinner: body
-    head_spinner: head
-    mane_spinner: mane
-    tail_spinner: tail
-    wing_spinner: wings
-    tuft_spinner: tuft
-    body_marking_spinner: body_marking
-    head_marking_spinner: head_marking
-    tail_marking_spinner: tail_marking
-    pelt_color_picker: pelt_color
-    underfur_color_picker: underfur_color
-    nose_color_picker: nose_color
-    above_eyes_color_picker: above_eyes_color
-    below_eyes_color_picker: below_eyes_color
-    ear_color_picker: ear_color
-    tailtip_color_picker: tailtip_color
-    eye_color_picker: eye_color
-    size_slider: size
-    character_size: size.value
-    save_btn: save_btn
+    character_name: character_name.text
+    body: body.text
+    head: head.text
+    mane: mane.text
+    tail: tail.text
+    wing: wings.text
+    tuft: tuft.text
+    body_marking: body_marking.text
+    head_marking: head_marking.text
+    tail_marking: tail_marking.text
+    pelt_color: pelt_color.color
+    underfur_color: underfur_color.color
+    nose_color: nose_color.color
+    above_eyes_color: above_eyes_color.color
+    below_eyes_color: below_eyes_color.color
+    ear_color: ear_color.color
+    tailtip_color: tailtip_color.color
+    eye_color: eye_color.color
+    character_size: character_size.value
 
     BoxLayout:
         padding: dp(50)
@@ -64,6 +62,7 @@
                             GameSpinner:
                                 id: body
                                 color: 0, 0, 0, 1
+                                values: root.bodies
 
                         BoxLayout:
                             GameLabel:
@@ -73,6 +72,7 @@
                             GameSpinner:
                                 id: head
                                 color: 0, 0, 0, 1
+                                values: root.heads
 
                         BoxLayout:
                             GameLabel:
@@ -82,6 +82,7 @@
                             GameSpinner:
                                 id: mane
                                 color: 0, 0, 0, 1
+                                values: root.manes
 
                         BoxLayout:
                             GameLabel:
@@ -91,6 +92,7 @@
                             GameSpinner:
                                 id: tail
                                 color: 0, 0, 0, 1
+                                values: root.tails
 
                         BoxLayout:
                             GameLabel:
@@ -100,6 +102,7 @@
                             GameSpinner:
                                 id: wings
                                 color: 0, 0, 0, 1
+                                values: root.wings
 
                         BoxLayout:
                             GameLabel:
@@ -109,6 +112,7 @@
                             GameSpinner:
                                 id: tuft
                                 color: 0, 0, 0, 1
+                                values: root.tufts
 
                 GameTabbedPanelItem:
                     text: "Markings"
@@ -125,6 +129,7 @@
                             GameSpinner:
                                 id: body_marking
                                 color: 0, 0, 0, 1
+                                values: root.body_markings
 
                         BoxLayout:
                             GameLabel:
@@ -134,6 +139,7 @@
                             GameSpinner:
                                 id: head_marking
                                 color: 0, 0, 0, 1
+                                values: root.head_markings
 
                         BoxLayout:
                             GameLabel:
@@ -143,6 +149,7 @@
                             GameSpinner:
                                 id: tail_marking
                                 color: 0, 0, 0, 1
+                                values: root.tail_markings
 
                 GameTabbedPanelItem:
                     text: "Colors"
@@ -258,16 +265,16 @@
                                 size_hint_x: .1
 
                             Slider:
-                                id: size
+                                id: character_size
                                 min: .25
                                 max: 1.5
                                 step: .01
                                 value: 1
-                                size_hint_x: .8
+                                size_hint_x: .75
 
                             GameTextInput:
-                                text: str(root.character_size)
-                                size_hint_x: .1
+                                text: str(round(root.character_size, 2))
+                                size_hint_x: .15
                                 on_text: root.update_size(self.text)
 
                         BoxLayout:
@@ -282,10 +289,9 @@
                     on_release: base.game_state.request("CharacterSelectScreen")
 
                 GameButton:
-                    id: save_btn
                     text: "Save"
                     color: 0, 0, 0, 1
-                    disabled: True
+                    disabled: root.save_disabled
                     on_release: print("Save Character")
 
                 GameButton:
