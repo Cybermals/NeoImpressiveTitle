@@ -39,7 +39,7 @@ p0.renderer.setFinalYScale(1.0000)
 p0.renderer.setNonanimatedTheta(0.0000)
 p0.renderer.setAlphaBlendMethod(BaseParticleRenderer.PPBLENDLINEAR)
 p0.renderer.setAlphaDisable(0)
-p0.renderer.setColorBlendMode(ColorBlendAttrib.MAdd, ColorBlendAttrib.OOneMinusIncomingColor, ColorBlendAttrib.OOne)
+p0.renderer.setColorBlendMode(ColorBlendAttrib.MAdd, ColorBlendAttrib.OOne, ColorBlendAttrib.OOne)
 p0.renderer.getColorInterpolationManager().addConstant(0.0,0.800000011920929,Vec4(0.0,0.501960813999176,0.501960813999176,1.0),True)
 p0.renderer.getColorInterpolationManager().addConstant(0.800000011920929,1.0,Vec4(0.0,0.0,0.6196078658103943,1.0),True)
 # Emitter parameters
