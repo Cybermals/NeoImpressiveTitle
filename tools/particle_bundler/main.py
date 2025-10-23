@@ -35,6 +35,10 @@ from panda3d.physics import *
     
     # Iterate over particle files
     for path in Path(args.in_folder).iterdir():
+        # Skip non-particle files
+        if path.suffix != ".ptf":
+            continue
+
         # Write particle class
         out_file.write(f"""class {path.stem}(ParticleEffect):
     def __init__(self, *args, **kwargs):
