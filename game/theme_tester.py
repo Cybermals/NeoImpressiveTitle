@@ -2,16 +2,16 @@ from kivy.app import App
 from kivy.properties import ObjectProperty
 from kivy.uix.widget import Widget
 
-from ui.theme import FloatingWindow, GamePopup
+from ui.theme import GameFloatingWindow, GamePopup
 
 
 # Classes
 # =======
-class Window1(FloatingWindow):
+class Window1(GameFloatingWindow):
     pass
 
 
-class Window2(FloatingWindow):
+class Window2(GameFloatingWindow):
     pass
 
 
@@ -45,7 +45,7 @@ class MainScreen(Widget):
             self.add_widget(self.popup)
 
 
-class TestTheme(App):
+class ThemeTester(App):
     def build(self):
         return MainScreen()
 
@@ -53,4 +53,4 @@ class TestTheme(App):
 # Entry Point
 # ===========
 if __name__ == "__main__":
-    TestTheme().run()
+    ThemeTester().run()
