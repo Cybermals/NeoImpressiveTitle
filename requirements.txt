@@ -1,3 +1,4 @@
 kivy
 panda3d
+panda3d-gltf
 panda3d-kivy
