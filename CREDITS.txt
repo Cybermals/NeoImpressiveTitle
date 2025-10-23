@@ -3,6 +3,13 @@ Programming
 DylanCheetah
 
 
+Meshes
+------
+3D-Diggers (Farn, Farn2, Fir05-30, Fir06-30, Fir14-25, Plant, Plant2, 
+            Shroom1-1, Shroom1-2, Shroom1-3, Shroom2-1, Shroom2-2, Shroom2-3)
+DylanCheetah (mesh upgrades)
+
+
 Artwork
 -------
 Rakadeja
