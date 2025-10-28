@@ -1,3 +1,10 @@
+"""Particle Editor
+
+Author: DylanCheetah
+Description:
+A simple script to invoke the particle panel built into Panda3D.
+"""
+
 from direct.showbase.ShowBase import ShowBase
 from direct.tkpanels.ParticlePanel import ParticlePanel
 from panda3d.core import load_prc_file
