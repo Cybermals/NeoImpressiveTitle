@@ -1,3 +1,10 @@
+"""Particle Bundler
+
+Author: DylanCheetah
+Description:
+Bundles a folder of .ptf files into a single .py format particle library.
+"""
+
 from argparse import ArgumentParser
 from pathlib import Path
 
