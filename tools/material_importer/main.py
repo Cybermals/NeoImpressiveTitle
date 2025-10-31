@@ -1,3 +1,10 @@
+"""Material Importer
+
+Author: DylanCheetah
+Description:
+Convert Ogre material scripts to TOML files we can use with Panda3D.
+"""
+
 from argparse import ArgumentParser
 from pathlib import Path
 
