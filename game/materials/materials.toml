@@ -1,0 +1,720 @@
+[shrubYellowMat]
+texture_stages = [
+    { texture = "shrubLeavesYellow.png" },
+]
+cull = "none"
+alpha_rejection = "greater_equal 128"
+
+[shrubSnowMat]
+texture_stages = [
+    { texture = "shrubLeavesSnow.png" },
+]
+cull = "none"
+alpha_rejection = "greater_equal 128"
+
+[shrubSnowFlowerMat]
+texture_stages = [
+    { texture = "shrubFlowerSnow.png" },
+]
+cull = "none"
+alpha_rejection = "greater_equal 128"
+
+[butterfly2Mat]
+texture_stages = [
+    { texture = "green_butterflyTex.png", wrap = "wrap", filter = "trilinear" },
+]
+cull = "none"
+alpha_rejection = "greater_equal 128"
+ambient = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+diffuse = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+specular = [
+    0.01,
+    0.01,
+    0.01,
+    1.0,
+]
+emission = [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+]
+
+[butterfly3Mat]
+texture_stages = [
+    { texture = "yellow_butterflyTex.png", wrap = "wrap", filter = "trilinear" },
+]
+cull = "none"
+alpha_rejection = "greater_equal 128"
+ambient = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+diffuse = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+specular = [
+    0.01,
+    0.01,
+    0.01,
+    1.0,
+]
+emission = [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+]
+
+[ghostMat]
+cull = "none"
+depth_write = false
+blend_mode = "alpha_blend"
+
+[[ghostMat.texture_stages]]
+texture = "ghostTex.png"
+wrap = "wrap"
+scroll = [
+    0.01,
+    0.02,
+]
+rotate = -0.01
+wave = "scale_y sine 3 0.1 0 3"
+
+[ghostHareMat]
+cull = "none"
+depth_write = false
+blend_mode = "colour_blend"
+lighting = false
+
+[[ghostHareMat.texture_stages]]
+texture = "ghostTex2.png"
+wrap = "wrap"
+filter = "trilinear"
+
+[[ghostHareMat.texture_stages]]
+texture = "ghostTex.png"
+wrap = "wrap"
+scroll = [
+    0.01,
+    0.02,
+]
+rotate = -0.01
+wave = "scale_y sine 3 0.1 0 3"
+
+[[ghostHareMat.texture_stages]]
+texture = "hareTex.jpg"
+
+[ghostMantaMat]
+cull = "none"
+depth_write = false
+blend_mode = "colour_blend"
+lighting = false
+
+[[ghostMantaMat.texture_stages]]
+texture = "ghostTex2.png"
+wrap = "wrap"
+filter = "trilinear"
+
+[[ghostMantaMat.texture_stages]]
+texture = "ghostTex.png"
+wrap = "wrap"
+scroll = [
+    0.01,
+    0.02,
+]
+rotate = -0.01
+wave = "scale_y sine 3 0.1 0 3"
+
+[[ghostMantaMat.texture_stages]]
+texture = "mantarayTex.jpg"
+
+[ghostGazelleMat]
+cull = "none"
+depth_write = false
+blend_mode = "colour_blend"
+lighting = false
+
+[[ghostGazelleMat.texture_stages]]
+texture = "ghostTex2.png"
+wrap = "wrap"
+filter = "trilinear"
+
+[[ghostGazelleMat.texture_stages]]
+texture = "ghostTex.png"
+wrap = "wrap"
+scroll = [
+    0.01,
+    0.02,
+]
+rotate = -0.01
+wave = "scale_y sine 3 0.1 0 3"
+
+[[ghostGazelleMat.texture_stages]]
+texture = "gazelleTex.jpg"
+
+[ghostHawkMat]
+cull = "none"
+depth_write = false
+blend_mode = "colour_blend"
+lighting = false
+
+[[ghostHawkMat.texture_stages]]
+texture = "ghostTex2.png"
+wrap = "wrap"
+filter = "trilinear"
+
+[[ghostHawkMat.texture_stages]]
+texture = "ghostTex.png"
+wrap = "wrap"
+scroll = [
+    0.01,
+    0.02,
+]
+rotate = -0.01
+wave = "scale_y sine 3 0.1 0 3"
+
+[[ghostHawkMat.texture_stages]]
+texture = "hawkTex.jpg"
+
+[ghostFoxMat]
+cull = "none"
+depth_write = false
+blend_mode = "colour_blend"
+lighting = false
+
+[[ghostFoxMat.texture_stages]]
+texture = "ghostTex2.png"
+wrap = "wrap"
+filter = "trilinear"
+
+[[ghostFoxMat.texture_stages]]
+texture = "ghostTex.png"
+wrap = "wrap"
+scroll = [
+    0.01,
+    0.02,
+]
+rotate = -0.01
+wave = "scale_y sine 3 0.1 0 3"
+
+[[ghostFoxMat.texture_stages]]
+texture = "fennecfoxTex.png"
+
+[ghostGiraffeMat]
+cull = "none"
+depth_write = false
+blend_mode = "colour_blend"
+lighting = false
+
+[[ghostGiraffeMat.texture_stages]]
+texture = "ghostTex2.png"
+wrap = "wrap"
+filter = "trilinear"
+
+[[ghostGiraffeMat.texture_stages]]
+texture = "ghostTex.png"
+wrap = "wrap"
+scroll = [
+    0.01,
+    0.02,
+]
+rotate = -0.01
+wave = "scale_y sine 3 0.1 0 3"
+
+[[ghostGiraffeMat.texture_stages]]
+texture = "giraffeTex.jpg"
+
+[nightmareMat]
+cull = "none"
+depth_write = false
+blend_mode = "colour_blend"
+lighting = false
+
+[[nightmareMat.texture_stages]]
+texture = "ghostTex2.png"
+wrap = "wrap"
+filter = "trilinear"
+
+[[nightmareMat.texture_stages]]
+texture = "ghostTex.png"
+wrap = "wrap"
+scroll = [
+    0.01,
+    0.02,
+]
+rotate = -0.01
+wave = "scale_y sine 3 0.1 0 3"
+
+[[nightmareMat.texture_stages]]
+texture = "nightmareTex.jpg"
+
+[WinterHareMat]
+texture_stages = [
+    { texture = "WinterHareTex.png", wrap = "wrap", filter = "trilinear" },
+]
+ambient = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+diffuse = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+specular = [
+    0.01,
+    0.01,
+    0.01,
+    1.0,
+]
+emission = [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+]
+depth_write = true
+blend_mode = "alpha_blend"
+
+[bellLeafMat]
+texture_stages = [
+    { texture = "bellTex.png" },
+]
+cull = "none"
+depth_write = false
+blend_mode = "alpha_blend"
+
+[beltMat]
+texture_stages = [
+    { texture = "beltTex1.jpg" },
+]
+cull = "none"
+
+[beltMat2]
+texture_stages = [
+    { texture = "bellTex.png" },
+]
+cull = "none"
+
+[braceletMat]
+texture_stages = [
+    { texture = "braceletTex.jpg" },
+]
+cull = "none"
+
+[braceletMat2]
+texture_stages = [
+    { texture = "braceletTex2.jpg" },
+]
+cull = "none"
+
+[braceletMat3]
+texture_stages = [
+    { texture = "bellTex.png" },
+]
+cull = "none"
+
+[braceletMat5]
+texture_stages = [
+    { texture = "braceletTex5.jpg" },
+]
+cull = "none"
+
+[glassesMat]
+texture_stages = [
+    { texture = "necklaceTex2.jpg" },
+]
+
+[glassesMat2]
+texture_stages = [
+    { texture = "shadesTex.jpg" },
+]
+cull = "none"
+depth_write = false
+blend_mode = "modulate"
+
+[helmetMat]
+texture_stages = [
+    { texture = "helmetTex.jpg" },
+]
+cull = "none"
+
+[helmetMat2]
+texture_stages = [
+    { texture = "teethTex.jpg" },
+]
+
+[helmetMat3]
+texture_stages = [
+    { texture = "helmetTex3.jpg" },
+]
+cull = "none"
+
+[hornMat3]
+texture_stages = [
+    { texture = "hornTex3.jpg" },
+]
+
+[necklaceMat2]
+texture_stages = []
+cull = "clockwise"
+ambient = [
+    0.800000011920929,
+    0.800000011920929,
+    0.800000011920929,
+    1.0,
+]
+diffuse = [
+    0.6400000190734865,
+    0.6400000190734865,
+    0.6400000190734865,
+    1.0,
+]
+specular = [
+    0.5,
+    0.5,
+    0.5,
+    1.0,
+    12.5,
+]
+emission = [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+]
+depth_write = true
+blend_mode = "one zero"
+lighting = true
+color_write = true
+depth_test = true
+depth_func = "less_equal"
+polygon_mode = "solid"
+
+[necklaceMat9]
+texture_stages = [
+    { texture = "necklaceTex9.jpg" },
+]
+cull = "none"
+
+[rubynecklaceMat]
+texture_stages = [
+    { texture = "necklace12Tex.jpg", wrap = "wrap", filter = "trilinear" },
+]
+cull = "none"
+diffuse = [
+    0.8,
+    0.8,
+    0.8,
+]
+specular = [
+    1.0,
+    1.0,
+    1.0,
+    12.5,
+]
+
+[tieMat]
+texture_stages = [
+    { texture = "checkerboard-tieTex.jpg", wrap = "wrap", filter = "trilinear" },
+]
+cull = "none"
+ambient = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+diffuse = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+specular = [
+    0.01,
+    0.01,
+    0.01,
+    1.0,
+]
+emission = [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+]
+
+[tie1Mat]
+texture_stages = [
+    { texture = "smiley-tieTex.jpg", wrap = "wrap", filter = "trilinear" },
+]
+cull = "none"
+ambient = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+diffuse = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+specular = [
+    0.01,
+    0.01,
+    0.01,
+    1.0,
+]
+emission = [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+]
+
+[tie2Mat]
+ambient = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+diffuse = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+specular = [
+    0.01,
+    0.01,
+    0.01,
+    1.0,
+]
+emission = [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+]
+
+[[tie2Mat.texture_stages]]
+texture = "rainbow-tieTex.jpg"
+wrap = "wrap"
+filter = "trilinear"
+
+[[tie2Mat.texture_stages]]
+texture = "rainbow-tieTex.jpg"
+wrap = "wrap"
+filter = "trilinear"
+scroll = [
+    0.0,
+    0.1,
+]
+
+[GrassYellowMat]
+texture_stages = [
+    { texture = "grassYellow.png" },
+]
+cull = "none"
+alpha_rejection = "greater_equal 128"
+ambient = [
+    0.75,
+    0.75,
+    0.75,
+    1.0,
+]
+diffuse = [
+    0.1,
+    0.1,
+    0.1,
+    1.0,
+]
+
+[EggMat]
+texture_stages = [
+    { texture = "red.jpg" },
+]
+cull = "none"
+specular = [
+    1.0,
+    1.0,
+    1.0,
+    10.0,
+]
+
+[EggMat2]
+texture_stages = [
+    { texture = "blue.jpg" },
+]
+cull = "none"
+specular = [
+    1.0,
+    1.0,
+    1.0,
+    10.0,
+]
+
+[EggMat3]
+texture_stages = [
+    { texture = "green.jpg" },
+]
+cull = "none"
+specular = [
+    1.0,
+    1.0,
+    1.0,
+    10.0,
+]
+
+[EggMat4]
+texture_stages = [
+    { texture = "silver.jpg" },
+]
+cull = "none"
+specular = [
+    2.0,
+    2.0,
+    2.0,
+    10.0,
+]
+
+[EggMat5]
+texture_stages = [
+    { texture = "gold.jpg" },
+]
+cull = "none"
+specular = [
+    2.0,
+    2.0,
+    2.0,
+    10.0,
+]
+
+[GateMatBlack]
+texture_stages = [
+    { texture = "black.jpg" },
+]
+lighting = false
+
+[GateMatWhite]
+texture_stages = [
+    { texture = "white.jpg" },
+]
+lighting = false
+
+[CaveLight]
+texture_stages = [
+    { texture = "sunRadiance.png" },
+]
+depth_write = false
+blend_mode = "add"
+lighting = false
+
+[pumpkinGlowMat]
+texture_stages = [
+    { texture = " pumpkinTex.jpg", wave = "scale_y sine 1.7 1 0 1.7" },
+]
+emission = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+
+[gloweye1Mat]
+emission = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+
+[[gloweye1Mat.texture_stages]]
+texture = " red.jpg"
+
+[[gloweye1Mat.texture_stages]]
+texture = " glowTex.jpg"
+scroll = [
+    0.2,
+    0.0,
+]
+scale = "40 40"
+
+[gloweye2Mat]
+emission = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+
+[[gloweye2Mat.texture_stages]]
+texture = " gold.jpg"
+
+[[gloweye2Mat.texture_stages]]
+texture = " glowTex.jpg"
+scroll = [
+    0.2,
+    0.0,
+]
+scale = "40 40"
+
+[gloweye3Mat]
+emission = [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+]
+
+[[gloweye3Mat.texture_stages]]
+texture = " blue.jpg"
+
+[[gloweye3Mat.texture_stages]]
+texture = " glowTex.jpg"
+scroll = [
+    0.2,
+    0.0,
+]
+scale = "40 40"
+
+[acaciaLeafYellowMat]
+texture_stages = [
+    { texture = "acaciaLeafYellow.png" },
+]
+cull = "none"
+alpha_rejection = "greater_equal 128"
+ambient = [
+    0.75,
+    0.75,
+    0.75,
+    1.0,
+]
+diffuse = [
+    0.05,
+    0.05,
+    0.05,
+    1.0,
+]
