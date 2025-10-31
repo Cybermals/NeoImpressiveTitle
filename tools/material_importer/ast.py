@@ -82,13 +82,13 @@ class Pass(object):
         self.light_clip_planes = None
         self.light_scissor = None
         self.normalise_normals = None
-        self.poloygon_mode = None
+        self.polygon_mode = None
         self.shading = None
         self.transparent_sorting = None
         self.fog_override = None
 
-    def __getitem__(self, i):
-        return self.texture_units[i]
+    def __iter__(self):
+        return iter(self.texture_units)
 
     def parse(self, f, startline):
         # Iterate over the lines of the material script
@@ -166,8 +166,8 @@ class Technique(object):
     def __init__(self):
         self.passes = []
 
-    def __getitem__(self, i):
-        return self.passes[i]
+    def __iter__(self):
+        return iter(self.passes)
 
     def parse(self, f, startline):
         # Iterate over the lines of the material script
@@ -215,8 +215,8 @@ class Material(object):
         self.transparency_casts_shadows = None
         self.receive_shadows = None
 
-    def __getitem__(self, i):
-        return self.techniques[i]
+    def __iter__(self):
+        return iter(self.techniques)
 
     def parse(self, f, startline):
         # Iterate over the lines of the material script
@@ -269,8 +269,8 @@ class MaterialLibrary(object):
     def __init__(self):
         self.materials = {}
 
-    def __getitem__(self, key):
-        return self.materials[key]
+    def __iter__(self):
+        return iter(self.materials.items())
 
     def parse(self, f):
         # Iterate over the lines of the material script
