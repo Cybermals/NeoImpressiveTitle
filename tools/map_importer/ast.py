@@ -16,6 +16,7 @@ class MapSettings(object):
     def parse(self, s):
         # Split section into params
         params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
 
         # Parse params
         self.terrain = params[0]
@@ -50,6 +51,7 @@ class Portal(object):
     def parse(self, s):
         # Split section into params
         params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
 
         # Parse params
         self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
@@ -75,6 +77,7 @@ class Gate(object):
     def parse(self, s):
         # Split section into params
         params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
 
         # Parse params
         self.material = params[0]
@@ -104,6 +107,7 @@ class WaterPlane(object):
     def parse(self, s):
         # Split section into params
         params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
 
         # Parse params
         self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
@@ -137,6 +141,81 @@ class WaterPlane(object):
             data["is_solid"] = self.is_solid
 
         return data
+    
+
+class MapObject(object):
+    def __init__(self):
+        self.mesh = ""
+        self.pos = [0, 0, 0]
+        self.rot = [0, 0, 0]
+        self.scale = [0, 0, 0]
+        self.sound = ""
+        self.material = ""
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.mesh = params[0].replace(".mesh", "")
+        self.pos = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+        self.rot = [float(n) * GLOBAL_SCALE for n in params[2].split(" ")]
+        self.scale = [float(n) * GLOBAL_SCALE for n in params[3].split(" ")]
+
+        if len(params) > 4:
+            self.sound = params[4]
+
+        if len(params) > 5:
+            self.material = params[5]
+
+    def to_dict(self):
+        # Convert object data to a dictionary
+        data = {
+            "mesh": self.mesh,
+            "pos": self.pos,
+            "rot": self.rot,
+            "scale": self.scale
+        }
+
+        if self.sound != "":
+            data["sound"] = self.sound
+
+        if self.material != "":
+            data["material"] = self.material
+
+        return data
+    
+
+class Particle(object):
+    def __init__(self):
+        self.name = ""
+        self.pos = [0, 0, 0]
+        self.sound = ""
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.name = params[0]
+        self.pos = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+
+        if len(params) > 2:
+            self.sound = params[2]
+
+    def to_dict(self):
+        # Convert particle data to a dictionary
+        data = {
+            "name": self.name,
+            "pos": self.pos
+        }
+
+        if self.sound != "":
+            data["sound"] = self.sound
+
+        return data
 
 
 class Map(object):
@@ -145,6 +224,8 @@ class Map(object):
         self.portals = []
         self.gates = []
         self.water_planes = []
+        self.map_objects = []
+        self.particles = []
 
     def parse(self, s):
         # Split map data into sections
@@ -179,6 +260,18 @@ class Map(object):
                 water_plane.parse(section)
                 self.water_planes.append(water_plane)
 
+            # Parse object section
+            elif section.startswith("Object"):
+                map_object = MapObject()
+                map_object.parse(section)
+                self.map_objects.append(map_object)
+
+            # Parse particle section
+            elif section.startswith("Particle"):
+                particle = Particle()
+                particle.parse(section)
+                self.particles.append(particle)
+
     def to_dict(self):
         # Convert map data to a dictionary
         data = {}
@@ -193,5 +286,41 @@ class Map(object):
         if len(self.water_planes):
             data["water_planes"] = [
                 water_plane.to_dict() for water_plane in self.water_planes]
+            
+        if len(self.map_objects):
+            # Group map objects by mesh for more efficient rendering
+            map_objects = {}
+
+            for map_object in self.map_objects:
+                # Preprocess map object data
+                map_object_data = map_object.to_dict()
+                key = (
+                    map_object_data["mesh"], 
+                    map_object_data["material"] if "material" in map_object_data else ""
+                )
+                del map_object_data["mesh"]
+
+                if "material" in map_object_data:
+                    del map_object_data["material"]
+
+                # Add object if necessary
+                if key not in map_objects:
+                    map_objects[key] = {
+                        "mesh": key[0],
+                        "instances": []
+                    }
+
+                    if key[1] != "":
+                        map_objects[key]["material"] = key[1]
+
+                # Add object instance
+                map_objects[key]["instances"].append(map_object_data)
+
+            # Add map objects
+            data["objects"] = list(map_objects.values())
+
+        if len(self.particles):
+            data["particles"] = [
+                particle.to_dict() for particle in self.particles]
 
         return data
