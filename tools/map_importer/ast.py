@@ -160,7 +160,7 @@ class MapObject(object):
         # Parse params
         self.mesh = params[0].replace(".mesh", "")
         self.pos = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
-        self.rot = [float(n) * GLOBAL_SCALE for n in params[2].split(" ")]
+        self.rot = [float(n) for n in params[2].split(" ")]
         self.scale = [float(n) * GLOBAL_SCALE for n in params[3].split(" ")]
 
         if len(params) > 4:
@@ -216,6 +216,99 @@ class Particle(object):
             data["sound"] = self.sound
 
         return data
+    
+
+class WeatherCycle(object):
+    def __init__(self):
+        self.name = ""
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.name = params[0] if params[0] != "None" else ""
+
+    def to_dict(self):
+        # Convert weather cycle data to dictionary
+        return {
+            "name": self.name
+        }
+    
+
+class Interior(object):
+    def __init__(self):
+        self.height = 0
+        self.material = ""
+        self.sky_color = [0, 0, 0, 0]
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.height = float(params[0]) * GLOBAL_SCALE
+        self.material = params[1]
+        
+        if len(params) > 2:
+            self.sky_color = [float(n) for n in params[2].split(" ")]
+
+    def to_dict(self):
+        # Convert interior data to a dictionary
+        return {
+            "height": self.height,
+            "material": self.material,
+            "sky_color": self.sky_color
+        }
+    
+
+class Light(object):
+    def __init__(self):
+        self.pos = [0, 0, 0]
+        self.color = [0, 0, 0, 0]
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+        self.color = [float(n) for n in params[1].split(" ")]
+
+    def to_dict(self):
+        # Convert light data to a dictionary
+        return {
+            "pos": self.pos,
+            "color": self.color
+        }
+    
+
+class Billboard(object):
+    def __init__(self):
+        self.pos = [0, 0, 0]
+        self.scale = [0, 0, 0]
+        self.material = ""
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+        self.scale = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+        self.material = params[2]
+
+    def to_dict(self):
+        # Convert billboard data to a dictionary
+        return {
+            "pos": self.pos,
+            "scale": self.scale,
+            "material": self.material
+        }
 
 
 class Map(object):
@@ -226,6 +319,10 @@ class Map(object):
         self.water_planes = []
         self.map_objects = []
         self.particles = []
+        self.weather_cycle = None
+        self.interior = None
+        self.lights = []
+        self.billboards = []
 
     def parse(self, s):
         # Split map data into sections
@@ -271,6 +368,28 @@ class Map(object):
                 particle = Particle()
                 particle.parse(section)
                 self.particles.append(particle)
+
+            # Parse weather cycle section
+            elif section.startswith("WeatherCycle"):
+                self.weather_cycle = WeatherCycle()
+                self.weather_cycle.parse(section)
+
+            # Parse interior section
+            elif section.startswith("Interior"):
+                self.interior = Interior()
+                self.interior.parse(section)
+
+            # Parse light section
+            elif section.startswith("Light"):
+                light = Light()
+                light.parse(section)
+                self.lights.append(light)
+
+            # Parse billboard section
+            elif section.startswith("Billboard"):
+                billboard = Billboard()
+                billboard.parse(section)
+                self.billboards.append(billboard)
 
     def to_dict(self):
         # Convert map data to a dictionary
@@ -322,5 +441,18 @@ class Map(object):
         if len(self.particles):
             data["particles"] = [
                 particle.to_dict() for particle in self.particles]
+            
+        if self.weather_cycle is not None and self.weather_cycle.name != "":
+            data["weather_cycle"] = self.weather_cycle.to_dict()["name"]
+
+        if self.interior is not None:
+            data["interior"] = self.interior.to_dict()
+
+        if len(self.lights):
+            data["lights"] = [light.to_dict() for light in self.lights]
+
+        if len(self.billboards):
+            data["billboards"] = [
+                billboard.to_dict() for billboard in self.billboards]
 
         return data
