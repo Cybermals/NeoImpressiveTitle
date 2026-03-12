@@ -309,6 +309,100 @@ class Billboard(object):
             "scale": self.scale,
             "material": self.material
         }
+    
+
+class SphereWall(object):
+    def __init__(self):
+        self.pos = [0, 0, 0]
+        self.range = 0
+        self.is_inside = False
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+        self.range = float(params[1]) * GLOBAL_SCALE
+        self.is_inside = params[2] == "true"
+
+    def to_dict(self):
+        # Convert sphere wall data to a dictionary
+        return {
+            "pos": self.pos,
+            "range": self.range,
+            "is_inside": self.is_inside
+        }
+    
+
+class BoxWall(object):
+    def __init__(self):
+        self.pos = [0, 0, 0]
+        self.range = [0, 0]
+        self.is_inside = False
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parase params
+        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+        self.range = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+        self.is_inside = params[2] == "true"
+
+    def to_dict(self):
+        # Convert box wall data to a dictionary
+        return {
+            "pos": self.pos,
+            "range": self.range,
+            "is_inside": self.is_inside
+        }
+    
+
+class MapEffect(object):
+    def __init__(self):
+        self.name = ""
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.name = params[0]
+
+    def to_dict(self):
+        # Convert map effect data to a dictionary
+        return {
+            "name": self.name
+        }
+    
+
+class Grass(object):
+    def __init__(self):
+        self.material = ""
+        self.map = ""
+        self.color_map = ""
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.material = params[0]
+        self.map = params[1]
+        self.color_map = params[2]
+
+    def to_dict(self):
+        # Convert grass data to a dictionary
+        return {
+            "material": self.material,
+            "map": self.map,
+            "color_map": self.color_map
+        }
 
 
 class Map(object):
@@ -323,6 +417,10 @@ class Map(object):
         self.interior = None
         self.lights = []
         self.billboards = []
+        self.sphere_walls = []
+        self.box_walls = []
+        self.map_effect = None
+        self.grass = None
 
     def parse(self, s):
         # Split map data into sections
@@ -391,6 +489,28 @@ class Map(object):
                 billboard.parse(section)
                 self.billboards.append(billboard)
 
+            # Parse sphere wall section
+            elif section.startswith("SphereWall"):
+                sphere_wall = SphereWall()
+                sphere_wall.parse(section)
+                self.sphere_walls.append(sphere_wall)
+
+            # Parse box wall section
+            elif section.startswith("BoxWall"):
+                box_wall = BoxWall()
+                box_wall.parse(section)
+                self.box_walls.append(box_wall)
+
+            # Parse map effect section
+            elif section.startswith("MapEffect"):
+                self.map_effect = MapEffect()
+                self.map_effect.parse(section)
+
+            # Parse grass section
+            elif section.startswith("Grass"):
+                self.grass = Grass()
+                self.grass.parse(section)
+
     def to_dict(self):
         # Convert map data to a dictionary
         data = {}
@@ -454,5 +574,21 @@ class Map(object):
         if len(self.billboards):
             data["billboards"] = [
                 billboard.to_dict() for billboard in self.billboards]
+            
+        if len(self.sphere_walls):
+            data["sphere_walls"] = [
+                sphere_wall.to_dict() for sphere_wall in self.sphere_walls
+            ]
+
+        if len(self.box_walls):
+            data["box_walls"] = [
+                box_wall.to_dict() for box_wall in self.box_walls
+            ]
+
+        if self.map_effect and self.map_effect.name != "":
+            data["map_effect"] = self.map_effect.to_dict()["name"]
+
+        if self.grass:
+            data["grass"] = self.grass.to_dict()
 
         return data
