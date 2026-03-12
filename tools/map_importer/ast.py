@@ -403,6 +403,47 @@ class Grass(object):
             "map": self.map,
             "color_map": self.color_map
         }
+    
+
+class RandomTrees(object):
+    def __init__(self):
+        self.trees = []
+        self.count = 0
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.trees = [tree.replace(".mesh", "") for tree in params[:-1]]
+        self.count = int(params[-1])
+
+    def to_dict(self):
+        # Convert random tree data to a dictionary
+        return {
+            "trees": self.trees,
+            "count": self.count
+        }
+    
+
+class RandomBushes(object):
+    def __init__(self):
+        self.bushes = []
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.bushes = [bush.replace(".mesh", "") for bush in params]
+
+    def to_dict(self):
+        # Convert random bush data to a dictionary
+        return {
+            "bushes": self.bushes
+        }
 
 
 class Map(object):
@@ -421,6 +462,8 @@ class Map(object):
         self.box_walls = []
         self.map_effect = None
         self.grass = None
+        self.random_trees = None
+        self.random_bushes = None
 
     def parse(self, s):
         # Split map data into sections
@@ -511,6 +554,16 @@ class Map(object):
                 self.grass = Grass()
                 self.grass.parse(section)
 
+            # Parse random trees section
+            elif section.startswith("RandomTrees"):
+                self.random_trees = RandomTrees()
+                self.random_trees.parse(section)
+
+            # Parse random bushes section
+            elif section.startswith("RandomBushes"):
+                self.random_bushes = RandomBushes()
+                self.random_bushes.parse(section)
+
     def to_dict(self):
         # Convert map data to a dictionary
         data = {}
@@ -590,5 +643,11 @@ class Map(object):
 
         if self.grass:
             data["grass"] = self.grass.to_dict()
+
+        if self.random_trees:
+            data["random_trees"] = self.random_trees.to_dict()
+
+        if self.random_bushes:
+            data["random_bushes"] = self.random_bushes.to_dict()
 
         return data
