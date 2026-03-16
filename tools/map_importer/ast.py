@@ -444,6 +444,83 @@ class RandomBushes(object):
         return {
             "bushes": self.bushes
         }
+    
+
+class FoliageGroup(object):
+    def __init__(self):
+        self.mesh = ""
+        self.material = ""
+        self.instances = []
+
+    def parse(self, s):
+        # Split section into lines
+        lines = s.split("\n")
+        lines = [line.strip() for line in lines]
+        lines[0] = lines[0][:-1]
+
+        # Parse mesh and material
+        params = lines[0].split(";")
+        self.mesh = params[0].replace(".mesh", "")
+
+        if len(params) > 1:
+            self.material = params[1]
+
+        # Parse instances
+        for line in lines[1:]:
+            # Skip blank lines and custom EOF character
+            if line == "" or line == "#":
+                continue
+
+            # Split line into params
+            params = line.split(";")
+            params = [param.strip() for param in params]
+
+            # Parse params
+            pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+            scale = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+            rot = [float(n) * GLOBAL_SCALE for n in params[2].split(" ")]
+            self.instances.append({
+                "pos": pos,
+                "rot": rot,
+                "scale": scale
+            })
+
+    def to_dict(self):
+        # Convert tree group to a dictionary
+        data = {
+            "mesh": self.mesh,
+            "instances": self.instances
+        }
+
+        if self.material != "":
+            data["material"] = self.material
+
+        return data
+    
+
+class FoliageGroups(object):
+    def __init__(self):
+        self.groups = []
+
+    def parse(self, s, map_folder):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+
+        # Parse tree file
+        tree_file = map_folder / params[0]
+        tree_data = tree_file.read_text()
+        sections = tree_data.split("[")[1:]
+
+        for section in sections:
+            group = FoliageGroup()
+            group.parse(section)
+            self.groups.append(group)
+
+    def to_dict(self):
+        # Convert tree groups to a dictionary
+        return {
+            "groups": [group.to_dict() for group in self.groups]
+        }
 
 
 class Map(object):
@@ -464,10 +541,11 @@ class Map(object):
         self.grass = None
         self.random_trees = None
         self.random_bushes = None
+        self.trees = None
 
-    def parse(self, s):
+    def parse(self, world_file):
         # Split map data into sections
-        sections = s.split("[")
+        sections = world_file.read_text().split("[")
 
         # Parse sections
         for section in sections:
@@ -564,6 +642,11 @@ class Map(object):
                 self.random_bushes = RandomBushes()
                 self.random_bushes.parse(section)
 
+            # Parse trees section
+            elif section.startswith("Trees"):
+                self.trees = FoliageGroups()
+                self.trees.parse(section, world_file.parent)
+
     def to_dict(self):
         # Convert map data to a dictionary
         data = {}
@@ -649,5 +732,8 @@ class Map(object):
 
         if self.random_bushes:
             data["random_bushes"] = self.random_bushes.to_dict()
+
+        if self.trees:
+            data["trees"] = self.trees.to_dict()["groups"]
 
         return data

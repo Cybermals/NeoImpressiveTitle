@@ -21,12 +21,12 @@ parser.add_argument("out_folder", type=Path, help="the folder to write the conve
 args = parser.parse_args()
 
 # Import each map in the given folder
-for map_name in args.in_folder.iterdir():
+for map_folder in args.in_folder.iterdir():
     # Build path to .world file
-    world_file = map_name / f"{map_name.stem}.world"
+    world_file = map_folder / f"{map_folder.stem}.world"
 
     # Skip over files
-    if map_name.is_file():
+    if map_folder.is_file():
         continue
 
     # Skip map folders which lack a .world file
@@ -36,7 +36,7 @@ for map_name in args.in_folder.iterdir():
     # Import world map
     print(f"Parsing '{world_file}'...")
     world_map = Map()
-    world_map.parse(world_file.read_text())
+    world_map.parse(world_file)
 
     # Convert world map
     print(f"Converting '{world_file}'...")
