@@ -36,7 +36,7 @@ class MapSettings(object):
             "height": self.height,
             "spawn_point": self.spawn_point
         }
-        
+
         if self.bounds is not None:
             data["bounds"] = self.bounds
 
@@ -114,7 +114,7 @@ class WaterPlane(object):
         self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
         self.scale_x = float(params[1]) * 500 * GLOBAL_SCALE
         self.scale_z = float(params[2]) * 500 * GLOBAL_SCALE
-        
+
         if len(params) > 3:
             self.material = params[3]
 
@@ -252,7 +252,7 @@ class Interior(object):
         # Parse params
         self.height = float(params[0]) * GLOBAL_SCALE
         self.material = params[1]
-        
+
         if len(params) > 2:
             self.sky_color = [float(n) for n in params[2].split(" ")]
 
@@ -774,7 +774,7 @@ class Map(object):
                 map_object_data = map_object.to_dict()
                 key = (
                     map_object_data["mesh"],
-                    map_object_data["material"] 
+                    map_object_data["material"]
                     if "material" in map_object_data else ""
                 )
                 del map_object_data["mesh"]
