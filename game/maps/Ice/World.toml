@@ -1,0 +1,80 @@
+terrain = "iceterrain.cfg"
+width = 800.0
+height = 800.0
+spawn_point = [
+    400.0,
+    400.0,
+    10.0,
+]
+weather_cycle = "Snow"
+map_effect = "Exhale"
+
+[[portals]]
+pos = [
+    485.1,
+    28.8,
+    385.20000000000005,
+]
+range = 2.5
+destination = "Default"
+
+[[portals]]
+pos = [
+    753.7,
+    26.0,
+    515.1,
+]
+range = 2.5
+destination = "Waterfall"
+
+[[portals]]
+pos = [
+    312.40000000000003,
+    30.0,
+    456.6,
+]
+range = 2.5
+destination = "Lava"
+
+[[portals]]
+pos = [
+    665.7,
+    30.0,
+    402.5,
+]
+range = 2.5
+destination = "Ocean"
+
+[[portals]]
+pos = [
+    624.7,
+    30.0,
+    90.5,
+]
+range = 2.5
+destination = "ReallyBig"
+
+[[gates]]
+material = "GateMatBlack"
+pos = [
+    559.0,
+    28.400000000000002,
+    213.0,
+]
+destination = "Ice Cave"
+dest_pos = [
+    62.2,
+    82.80000000000001,
+]
+
+[[water_planes]]
+pos = [
+    400.0,
+    25.0,
+    400.0,
+]
+scale_x = 1500.0
+scale_z = 1500.0
+material = "Terrain/FrozenWater"
+sound = "wind1.wav"
+is_solid = true

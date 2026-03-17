@@ -1,0 +1,2774 @@
+terrain = "defaulterrain.cfg"
+width = 500.0
+height = 500.0
+spawn_point = [
+    250.0,
+    250.0,
+    10.0,
+]
+
+[[portals]]
+pos = [
+    139.5,
+    13.0,
+    400.0,
+]
+range = 2.5
+destination = "Waterfall"
+
+[[portals]]
+pos = [
+    57.0,
+    34.0,
+    19.0,
+]
+range = 2.5
+destination = "ReallyBig"
+
+[[portals]]
+pos = [
+    407.0,
+    5.0,
+    207.0,
+]
+range = 2.5
+destination = "Ocean"
+
+[[portals]]
+pos = [
+    437.0,
+    14.0,
+    17.0,
+]
+range = 2.5
+destination = "Ice"
+
+[[portals]]
+pos = [
+    17.0,
+    10.0,
+    437.0,
+]
+range = 2.5
+destination = "Lava"
+
+[[portals]]
+pos = [
+    298.663,
+    4.0,
+    298.149,
+]
+range = 2.5
+destination = "Playground"
+
+[[gates]]
+material = "GateMatBlack"
+pos = [
+    188.8,
+    2.3000000000000003,
+    163.20000000000002,
+]
+destination = "Serpent's Pass"
+dest_pos = [
+    889.1030000000001,
+    186.458,
+]
+
+[[gates]]
+material = "GateMatBlack"
+pos = [
+    164.3,
+    10.0,
+    147.9,
+]
+destination = "Hidden Valley"
+dest_pos = [
+    889.1030000000001,
+    186.458,
+]
+
+[[water_planes]]
+pos = [
+    165.5,
+    20.0,
+    153.5,
+]
+scale_x = 8.75
+scale_z = 7.75
+material = "Terrain/Water"
+sound = "water1.wav"
+
+[[objects]]
+mesh = "Waterfall"
+
+[[objects.instances]]
+pos = [
+    165.3,
+    19.900000000000002,
+    147.0,
+]
+rot = [
+    0.5,
+    1.0,
+    0.8,
+]
+scale = [
+    0.0,
+    18.0,
+    0.0,
+]
+
+[[objects]]
+mesh = "rock"
+
+[[objects.instances]]
+pos = [
+    164.9,
+    9.0,
+    143.3,
+]
+rot = [
+    1.0,
+    1.0,
+    1.0,
+]
+scale = [
+    -6.0,
+    0.0,
+    0.0,
+]
+
+[[objects.instances]]
+pos = [
+    167.20000000000002,
+    8.0,
+    143.1,
+]
+rot = [
+    1.2,
+    1.2,
+    1.2,
+]
+scale = [
+    -6.0,
+    0.0,
+    0.0,
+]
+
+[[objects.instances]]
+pos = [
+    162.0,
+    8.0,
+    143.1,
+]
+rot = [
+    1.0,
+    1.0,
+    1.0,
+]
+scale = [
+    -6.0,
+    0.0,
+    0.0,
+]
+
+[[objects]]
+mesh = "fir05_30"
+
+[[objects.instances]]
+pos = [
+    250.0,
+    250.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    49.0,
+    22.0,
+]
+rot = [
+    3.0,
+]
+scale = [
+    0.09000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    63.0,
+    22.0,
+]
+rot = [
+    5.0,
+]
+scale = [
+    0.11000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    58.0,
+    30.0,
+]
+rot = [
+    7.0,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    48.0,
+    39.0,
+]
+rot = [
+    1.0,
+]
+scale = [
+    0.06999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    80.0,
+    38.0,
+]
+rot = [
+    5.5,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    244.20000000000002,
+    317.6,
+]
+rot = [
+    18.0,
+]
+scale = [
+    0.09000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    305.40000000000003,
+    302.40000000000003,
+]
+rot = [
+    9.5,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    391.5,
+    262.2,
+]
+rot = [
+    5.0,
+]
+scale = [
+    0.11000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    427.6,
+    331.20000000000005,
+]
+rot = [
+    13.5,
+]
+scale = [
+    0.06999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    411.0,
+    417.6,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    319.70000000000005,
+    465.0,
+]
+rot = [
+    17.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    266.1,
+    410.6,
+]
+rot = [
+    27.0,
+]
+scale = [
+    0.06999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    111.10000000000001,
+    358.6,
+]
+rot = [
+    30.700000000000003,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    32.0,
+    332.6,
+]
+rot = [
+    4.5,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    59.400000000000006,
+    215.4,
+]
+rot = [
+    10.0,
+]
+scale = [
+    0.09000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    104.0,
+    184.20000000000002,
+]
+rot = [
+    7.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    219.70000000000002,
+    132.4,
+]
+rot = [
+    4.0,
+]
+scale = [
+    0.09000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    351.20000000000005,
+    176.5,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    299.0,
+    185.5,
+]
+rot = [
+    16.0,
+]
+scale = [
+    0.09000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    279.2,
+    141.4,
+]
+rot = [
+    24.0,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    189.4,
+    253.9,
+]
+rot = [
+    16.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    345.1,
+    226.4,
+]
+rot = [
+    12.0,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    429.70000000000005,
+    191.10000000000002,
+]
+rot = [
+    6.0,
+]
+scale = [
+    0.09000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    486.5,
+    227.10000000000002,
+]
+rot = [
+    2.0,
+]
+scale = [
+    0.11000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    108.5,
+    274.0,
+]
+rot = [
+    12.5,
+]
+scale = [
+    0.05,
+]
+
+[[objects.instances]]
+pos = [
+    90.9,
+    308.6,
+]
+rot = [
+    21.5,
+]
+scale = [
+    0.04000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    195.0,
+    368.6,
+]
+rot = [
+    30.0,
+]
+scale = [
+    0.05,
+]
+
+[[objects.instances]]
+pos = [
+    212.0,
+    380.6,
+]
+rot = [
+    5.800000000000001,
+]
+scale = [
+    0.06999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    185.70000000000002,
+    432.90000000000003,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.09000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    116.7,
+    444.8,
+]
+rot = [
+    1.5,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    8.6,
+    440.3,
+]
+rot = [
+    9.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    388.8,
+    205.20000000000002,
+]
+rot = [
+    17.0,
+]
+scale = [
+    0.11000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    384.90000000000003,
+    384.40000000000003,
+]
+rot = [
+    7.7,
+]
+scale = [
+    0.19,
+]
+
+[[objects]]
+mesh = "farn1"
+
+[[objects.instances]]
+pos = [
+    25.700000000000003,
+    31.700000000000003,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    103.0,
+    42.7,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    106.0,
+    15.200000000000001,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    124.4,
+    30.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    22.0,
+    11.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    52.400000000000006,
+    12.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    62.300000000000004,
+    42.800000000000004,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    20.1,
+    69.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    68.0,
+    63.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    48.400000000000006,
+    88.2,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    13.100000000000001,
+    104.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    24.900000000000002,
+    114.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    11.200000000000001,
+    129.70000000000002,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    51.300000000000004,
+    108.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    97.10000000000001,
+    90.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    139.20000000000002,
+    66.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    163.70000000000002,
+    41.300000000000004,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    154.9,
+    9.3,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    193.8,
+    16.3,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    175.5,
+    63.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    44.0,
+    61.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    83.0,
+    30.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    115.0,
+    75.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    150.0,
+    29.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    212.0,
+    42.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    163.0,
+    85.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    225.70000000000002,
+    31.700000000000003,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    303.0,
+    42.7,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    406.0,
+    15.200000000000001,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    324.40000000000003,
+    30.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    222.0,
+    11.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    252.4,
+    12.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    262.3,
+    42.800000000000004,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    220.10000000000002,
+    69.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    268.0,
+    63.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    248.4,
+    88.2,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    213.10000000000002,
+    104.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    224.9,
+    114.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    211.20000000000002,
+    129.70000000000002,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    251.3,
+    108.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    297.1,
+    90.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    339.20000000000005,
+    66.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    363.70000000000005,
+    41.300000000000004,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    354.90000000000003,
+    9.3,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    393.8,
+    16.3,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    375.5,
+    63.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    244.0,
+    61.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    283.0,
+    30.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    315.0,
+    75.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    350.0,
+    29.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    412.0,
+    42.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    363.0,
+    85.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects]]
+mesh = "farn2"
+
+[[objects.instances]]
+pos = [
+    75.7,
+    31.700000000000003,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    153.0,
+    42.7,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    156.0,
+    15.200000000000001,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    174.4,
+    30.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    72.0,
+    11.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    102.4,
+    12.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    162.3,
+    42.800000000000004,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    210.10000000000002,
+    69.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    168.0,
+    63.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    248.4,
+    88.2,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    413.1,
+    104.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    124.9,
+    114.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    311.20000000000005,
+    129.70000000000002,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    351.3,
+    108.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    297.1,
+    90.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    179.20000000000002,
+    66.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    103.7,
+    41.300000000000004,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    454.90000000000003,
+    9.3,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    253.8,
+    16.3,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    105.5,
+    63.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    344.0,
+    61.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    183.0,
+    30.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    15.0,
+    75.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    50.0,
+    29.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    112.0,
+    42.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects.instances]]
+pos = [
+    363.0,
+    85.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.2,
+]
+
+[[objects]]
+mesh = "rock"
+
+[[objects.instances]]
+pos = [
+    280.0,
+    280.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    169.4,
+    149.20000000000002,
+]
+rot = [
+    2.0,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    169.9,
+    150.70000000000002,
+]
+rot = [
+    7.0,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    170.4,
+    152.1,
+]
+rot = [
+    9.0,
+]
+scale = [
+    0.06,
+]
+
+[[objects.instances]]
+pos = [
+    170.3,
+    153.60000000000002,
+]
+rot = [
+    12.600000000000001,
+]
+scale = [
+    0.06999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    170.10000000000002,
+    155.60000000000002,
+]
+rot = [
+    15.0,
+]
+scale = [
+    0.06,
+]
+
+[[objects.instances]]
+pos = [
+    169.8,
+    156.9,
+]
+rot = [
+    20.0,
+]
+scale = [
+    0.05,
+]
+
+[[objects.instances]]
+pos = [
+    168.3,
+    157.60000000000002,
+]
+rot = [
+    21.5,
+]
+scale = [
+    0.06999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    166.60000000000002,
+    157.9,
+]
+rot = [
+    5.0,
+]
+scale = [
+    0.06,
+]
+
+[[objects.instances]]
+pos = [
+    164.5,
+    157.70000000000002,
+]
+rot = [
+    26.0,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    163.10000000000002,
+    158.4,
+]
+rot = [
+    30.0,
+]
+scale = [
+    0.05,
+]
+
+[[objects.instances]]
+pos = [
+    161.9,
+    157.60000000000002,
+]
+rot = [
+    14.5,
+]
+scale = [
+    0.06999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    160.70000000000002,
+    156.4,
+]
+rot = [
+    17.5,
+]
+scale = [
+    0.06,
+]
+
+[[objects.instances]]
+pos = [
+    160.70000000000002,
+    154.5,
+]
+rot = [
+    10.0,
+]
+scale = [
+    0.05,
+]
+
+[[objects.instances]]
+pos = [
+    160.5,
+    153.5,
+]
+rot = [
+    3.0,
+]
+scale = [
+    0.06,
+]
+
+[[objects.instances]]
+pos = [
+    160.5,
+    151.20000000000002,
+]
+rot = [
+    7.0,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    161.3,
+    149.9,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.06,
+]
+
+[[objects.instances]]
+pos = [
+    379.3,
+    387.8,
+]
+rot = [
+    7.7,
+]
+scale = [
+    0.15000000000000002,
+]
+
+[[objects]]
+mesh = "shrub"
+material = "shrubMat"
+
+[[objects.instances]]
+pos = [
+    200.0,
+    200.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    179.70000000000002,
+    205.5,
+]
+rot = [
+    2.0,
+]
+scale = [
+    0.11000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    313.1,
+    292.0,
+]
+rot = [
+    7.0,
+]
+scale = [
+    0.13,
+]
+
+[[objects.instances]]
+pos = [
+    464.70000000000005,
+    440.20000000000005,
+]
+rot = [
+    12.0,
+]
+scale = [
+    0.11000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    457.90000000000003,
+    468.3,
+]
+rot = [
+    22.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    468.3,
+    450.70000000000005,
+]
+rot = [
+    32.0,
+]
+scale = [
+    0.13999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    414.70000000000005,
+    440.20000000000005,
+]
+rot = [
+    7.0,
+]
+scale = [
+    0.13,
+]
+
+[[objects.instances]]
+pos = [
+    422.20000000000005,
+    457.90000000000003,
+]
+rot = [
+    8.0,
+]
+scale = [
+    0.15000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    449.90000000000003,
+    414.70000000000005,
+]
+rot = [
+    9.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    450.70000000000005,
+    422.20000000000005,
+]
+rot = [
+    21.0,
+]
+scale = [
+    0.13,
+]
+
+[[objects.instances]]
+pos = [
+    464.70000000000005,
+    449.90000000000003,
+]
+rot = [
+    20.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    470.40000000000003,
+    440.20000000000005,
+]
+rot = [
+    4.0,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    464.70000000000005,
+    469.90000000000003,
+]
+rot = [
+    5.0,
+]
+scale = [
+    0.09000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    469.90000000000003,
+    440.20000000000005,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    181.8,
+    389.6,
+]
+rot = [
+    18.0,
+]
+scale = [
+    0.13999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    193.3,
+    365.1,
+]
+rot = [
+    27.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    193.20000000000002,
+    323.3,
+]
+rot = [
+    2.5,
+]
+scale = [
+    0.13999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    79.30000000000001,
+    381.5,
+]
+rot = [
+    6.0,
+]
+scale = [
+    0.13,
+]
+
+[[objects.instances]]
+pos = [
+    17.8,
+    343.3,
+]
+rot = [
+    12.0,
+]
+scale = [
+    0.15000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    299.5,
+    238.9,
+]
+rot = [
+    10.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    349.90000000000003,
+    237.20000000000002,
+]
+rot = [
+    15.0,
+]
+scale = [
+    0.13,
+]
+
+[[objects.instances]]
+pos = [
+    388.0,
+    244.3,
+]
+rot = [
+    24.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    374.70000000000005,
+    195.4,
+]
+rot = [
+    27.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    350.6,
+    183.8,
+]
+rot = [
+    1.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    195.0,
+    163.5,
+]
+rot = [
+    5.0,
+]
+scale = [
+    0.11000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    189.3,
+    156.0,
+]
+rot = [
+    7.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects]]
+mesh = "fern"
+
+[[objects.instances]]
+pos = [
+    420.0,
+    420.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    430.1,
+    441.20000000000005,
+]
+rot = [
+    1.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    441.0,
+    484.5,
+]
+rot = [
+    2.0,
+]
+scale = [
+    0.13,
+]
+
+[[objects.instances]]
+pos = [
+    450.20000000000005,
+    452.0,
+]
+rot = [
+    3.0,
+]
+scale = [
+    0.13999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    465.0,
+    429.5,
+]
+rot = [
+    4.0,
+]
+scale = [
+    0.15000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    470.3,
+    471.20000000000005,
+]
+rot = [
+    5.0,
+]
+scale = [
+    0.16000000000000003,
+]
+
+[[objects.instances]]
+pos = [
+    483.0,
+    437.90000000000003,
+]
+rot = [
+    6.0,
+]
+scale = [
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    492.5,
+    430.1,
+]
+rot = [
+    7.0,
+]
+scale = [
+    0.13,
+]
+
+[[objects.instances]]
+pos = [
+    440.20000000000005,
+    441.0,
+]
+rot = [
+    8.0,
+]
+scale = [
+    0.13999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    422.20000000000005,
+    450.20000000000005,
+]
+rot = [
+    9.0,
+]
+scale = [
+    0.15000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    484.5,
+    465.0,
+]
+rot = [
+    10.0,
+]
+scale = [
+    0.16000000000000003,
+]
+
+[[objects.instances]]
+pos = [
+    434.5,
+    470.3,
+]
+rot = [
+    11.0,
+]
+scale = [
+    0.17,
+]
+
+[[objects.instances]]
+pos = [
+    495.6,
+    483.0,
+]
+rot = [
+    12.0,
+]
+scale = [
+    0.13999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    445.6,
+    492.5,
+]
+rot = [
+    13.0,
+]
+scale = [
+    0.15000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    421.40000000000003,
+    454.5,
+]
+rot = [
+    14.0,
+]
+scale = [
+    0.16000000000000003,
+]
+
+[[objects.instances]]
+pos = [
+    441.20000000000005,
+    434.5,
+]
+rot = [
+    15.0,
+]
+scale = [
+    0.17,
+]
+
+[[objects.instances]]
+pos = [
+    437.90000000000003,
+    443.5,
+]
+rot = [
+    16.0,
+]
+scale = [
+    0.18000000000000002,
+]
+
+[[objects.instances]]
+pos = [
+    468.0,
+    464.8,
+]
+rot = [
+    17.0,
+]
+scale = [
+    0.19,
+]
+
+[[objects.instances]]
+pos = [
+    425.70000000000005,
+    420.0,
+]
+rot = [
+    18.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    421.0,
+    441.0,
+]
+rot = [
+    19.0,
+]
+scale = [
+    0.09000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    28.200000000000003,
+    345.0,
+]
+rot = [
+    15.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    162.9,
+    141.3,
+]
+rot = [
+    16.0,
+]
+scale = [
+    0.13,
+]
+
+[[objects.instances]]
+pos = [
+    165.3,
+    141.1,
+]
+rot = [
+    7.0,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    168.10000000000002,
+    141.5,
+]
+rot = [
+    20.1,
+]
+scale = [
+    0.06999999999999999,
+]
+
+[[objects.instances]]
+pos = [
+    160.20000000000002,
+    141.8,
+]
+rot = [
+    20.0,
+]
+scale = [
+    0.08000000000000002,
+]
+
+[[objects]]
+mesh = "rockSlab"
+
+[[objects.instances]]
+pos = [
+    157.10000000000002,
+    23.0,
+    403.3,
+]
+rot = [
+    0.0,
+    0.0,
+    0.0,
+]
+scale = [
+    0.1,
+    0.1,
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    166.3,
+    24.1,
+    399.3,
+]
+rot = [
+    0.0,
+    4.5,
+    0.0,
+]
+scale = [
+    0.1,
+    0.1,
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    174.5,
+    25.200000000000003,
+    391.70000000000005,
+]
+rot = [
+    0.0,
+    12.5,
+    0.0,
+]
+scale = [
+    0.1,
+    0.1,
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    180.8,
+    26.400000000000002,
+    383.5,
+]
+rot = [
+    0.0,
+    17.5,
+    0.0,
+]
+scale = [
+    0.1,
+    0.1,
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    182.0,
+    27.700000000000003,
+    373.3,
+]
+rot = [
+    0.0,
+    21.5,
+    0.0,
+]
+scale = [
+    0.1,
+    0.1,
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    180.10000000000002,
+    29.0,
+    361.3,
+]
+rot = [
+    0.0,
+    27.5,
+    0.0,
+]
+scale = [
+    0.1,
+    0.1,
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    175.3,
+    30.5,
+    348.8,
+]
+rot = [
+    0.0,
+    32.5,
+    0.0,
+]
+scale = [
+    0.19,
+    0.19,
+    0.19,
+]
+
+[[objects]]
+mesh = "Waterfall"
+
+[[objects.instances]]
+pos = [
+    165.3,
+    19.900000000000002,
+    147.0,
+]
+rot = [
+    0.0,
+    18.0,
+    0.0,
+]
+scale = [
+    0.05,
+    0.1,
+    0.08000000000000002,
+]
+
+[[objects]]
+mesh = "rock"
+
+[[objects.instances]]
+pos = [
+    164.9,
+    9.0,
+    143.3,
+]
+rot = [
+    -6.0,
+    0.0,
+    0.0,
+]
+scale = [
+    0.1,
+    0.1,
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    167.20000000000002,
+    8.0,
+    143.1,
+]
+rot = [
+    -6.0,
+    0.0,
+    0.0,
+]
+scale = [
+    0.12,
+    0.12,
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    162.0,
+    8.0,
+    143.1,
+]
+rot = [
+    -6.0,
+    0.0,
+    0.0,
+]
+scale = [
+    0.1,
+    0.1,
+    0.1,
+]
+
+[[particles]]
+name = "WaterSplash"
+pos = [
+    164.9,
+    10.0,
+    143.5,
+]
+sound = "water1.wav"
+
+[[particles]]
+name = "WaterSplash"
+pos = [
+    167.20000000000002,
+    9.9,
+    143.4,
+]
+
+[[particles]]
+name = "WaterSplash"
+pos = [
+    162.0,
+    9.0,
+    143.3,
+]
+
+[grass]
+material = "yellowGrass"
+map = "grassdensitymap.png"
+color_map = "grass_tex.jpg"
+
+[[collision_boxes]]
+pos = [
+    165.5,
+    19.0,
+    157.70000000000002,
+]
+range = [
+    9.0,
+    1.2000000000000002,
+    3.0,
+]
+
+[[collision_boxes]]
+pos = [
+    160.3,
+    19.0,
+    153.8,
+]
+range = [
+    3.0,
+    1.2000000000000002,
+    7.0,
+]
+
+[[collision_boxes]]
+pos = [
+    170.10000000000002,
+    19.0,
+    153.60000000000002,
+]
+range = [
+    3.0,
+    1.2000000000000002,
+    7.6000000000000005,
+]
+
+[[collision_boxes]]
+pos = [
+    385.20000000000005,
+    0.0,
+    384.20000000000005,
+]
+range = [
+    1.5,
+    8.1,
+    1.5,
+]
+
+[[collision_boxes]]
+pos = [
+    384.6,
+    0.0,
+    385.6,
+]
+range = [
+    2.5,
+    6.1000000000000005,
+    2.5,
+]
+
+[[collision_boxes]]
+pos = [
+    157.10000000000002,
+    22.900000000000002,
+    403.3,
+]
+range = [
+    4.0,
+    1.0,
+    4.0,
+]
+
+[[collision_boxes]]
+pos = [
+    166.3,
+    24.0,
+    399.3,
+]
+range = [
+    4.0,
+    1.0,
+    4.0,
+]
+
+[[collision_boxes]]
+pos = [
+    174.5,
+    25.1,
+    391.70000000000005,
+]
+range = [
+    4.0,
+    1.0,
+    4.0,
+]
+
+[[collision_boxes]]
+pos = [
+    180.8,
+    26.3,
+    383.5,
+]
+range = [
+    4.0,
+    1.0,
+    4.0,
+]
+
+[[collision_boxes]]
+pos = [
+    182.0,
+    27.6,
+    373.3,
+]
+range = [
+    4.0,
+    1.0,
+    4.0,
+]
+
+[[collision_boxes]]
+pos = [
+    180.10000000000002,
+    28.900000000000002,
+    361.3,
+]
+range = [
+    4.0,
+    1.0,
+    4.0,
+]
+
+[[collision_boxes]]
+pos = [
+    175.3,
+    30.5,
+    348.8,
+]
+range = [
+    7.6000000000000005,
+    1.7000000000000002,
+    7.6000000000000005,
+]
+
+[[colllision_spheres]]
+pos = [
+    280.0,
+    5.0,
+    280.0,
+]
+range = [
+    2.5,
+]
+
+[[colllision_spheres]]
+pos = [
+    161.3,
+    18.8,
+    149.6,
+]
+range = [
+    1.3,
+]
+
+[[colllision_spheres]]
+pos = [
+    169.5,
+    18.8,
+    149.1,
+]
+range = [
+    1.7000000000000002,
+]
+
+[[colllision_spheres]]
+pos = [
+    379.3,
+    -1.0,
+    387.8,
+]
+range = [
+    3.2,
+]

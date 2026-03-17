@@ -1,0 +1,273 @@
+terrain = "underwaterCaveterrain.cfg"
+width = 100.0
+height = 100.0
+spawn_point = [
+    45.0,
+    45.0,
+    10.0,
+]
+
+[[gates]]
+material = "GateMatWhite"
+pos = [
+    88.9,
+    13.0,
+    14.700000000000001,
+]
+destination = "Ocean"
+dest_pos = [
+    73.60000000000001,
+    60.7,
+    16.8,
+]
+
+[[gates]]
+material = "GateMatWhite"
+pos = [
+    14.700000000000001,
+    3.2,
+    87.0,
+]
+destination = "Serpent's Pass"
+dest_pos = [
+    55.7,
+    19.8,
+]
+
+[[water_planes]]
+pos = [
+    50.0,
+    3.0,
+    50.0,
+]
+scale_x = 1000.0
+scale_z = 1000.0
+material = "Terrain/LargeWater"
+
+[[particles]]
+name = "WaterSplash"
+pos = [
+    82.7,
+    2.8000000000000003,
+    20.8,
+]
+sound = "water1.wav"
+
+[[particles]]
+name = "Fireflywest"
+pos = [
+    9.4,
+    14.8,
+    27.3,
+]
+
+[[particles]]
+name = "Fireflynorth"
+pos = [
+    9.4,
+    14.8,
+    27.3,
+]
+
+[[particles]]
+name = "Fireflyeast"
+pos = [
+    29.8,
+    14.8,
+    44.800000000000004,
+]
+
+[[particles]]
+name = "Fireflysouth"
+pos = [
+    29.8,
+    14.8,
+    44.800000000000004,
+]
+
+[interior]
+height = 24.5
+material = "Terrain/UnderwaterCeiling"
+sky_color = [
+    0,
+    0,
+    0,
+    0,
+]
+
+[[lights]]
+pos = [
+    87.0,
+    13.0,
+    16.6,
+]
+color = [
+    0.75,
+    0.74,
+    0.72,
+]
+
+[[lights]]
+pos = [
+    17.5,
+    3.2,
+    84.80000000000001,
+]
+color = [
+    0.75,
+    0.74,
+    0.72,
+]
+
+[[lights]]
+pos = [
+    9.4,
+    14.8,
+    27.3,
+]
+color = [
+    0.05,
+    0.74,
+    1.0,
+]
+
+[[billboards]]
+pos = [
+    87.0,
+    13.0,
+    16.6,
+]
+scale = [
+    6.0,
+    6.0,
+]
+material = "CaveLight"
+
+[[billboards]]
+pos = [
+    17.5,
+    3.2,
+    84.80000000000001,
+]
+scale = [
+    10.0,
+    10.0,
+]
+material = "CaveLight"
+
+[[sphere_walls]]
+pos = [
+    50.0,
+    0.0,
+    50.0,
+]
+range = 49.0
+is_inside = false
+
+[[objects]]
+mesh = "waterfall"
+
+[[objects.instances]]
+pos = [
+    87.0,
+    12.200000000000001,
+    16.5,
+]
+rot = [
+    0.0,
+    -4.5,
+    0.0,
+]
+scale = [
+    0.015,
+    0.03,
+    0.1,
+]
+
+[[objects]]
+mesh = "crystal"
+
+[[objects.instances]]
+pos = [
+    8.0,
+    14.600000000000001,
+    26.3,
+]
+rot = [
+    0.0,
+    0.0,
+    0.0,
+]
+scale = [
+    0.25,
+    0.25,
+    0.25,
+]
+
+[[objects.instances]]
+pos = [
+    9.5,
+    14.700000000000001,
+    23.6,
+]
+rot = [
+    0.0,
+    3.0,
+    0.0,
+]
+scale = [
+    0.1,
+    0.1,
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    6.4,
+    14.8,
+    30.3,
+]
+rot = [
+    0.0,
+    6.0,
+    0.0,
+]
+scale = [
+    0.12,
+    0.12,
+    0.12,
+]
+
+[[objects.instances]]
+pos = [
+    10.200000000000001,
+    14.600000000000001,
+    30.900000000000002,
+]
+rot = [
+    0.0,
+    10.5,
+    0.0,
+]
+scale = [
+    0.11000000000000001,
+    0.11000000000000001,
+    0.11000000000000001,
+]
+
+[[objects.instances]]
+pos = [
+    14.0,
+    14.600000000000001,
+    26.3,
+]
+rot = [
+    0.0,
+    25.0,
+    0.0,
+]
+scale = [
+    0.13999999999999999,
+    0.13999999999999999,
+    0.13999999999999999,
+]

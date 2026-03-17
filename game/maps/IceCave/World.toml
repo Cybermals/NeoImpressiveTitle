@@ -1,0 +1,89 @@
+terrain = "icecaveterrain.cfg"
+width = 100.0
+height = 100.0
+spawn_point = [
+    50.0,
+    50.0,
+    10.0,
+]
+map_effect = "Exhale"
+
+[[gates]]
+material = "GateMatWhite"
+pos = [
+    51.7,
+    35.0,
+    85.4,
+]
+destination = "Ice"
+dest_pos = [
+    563.6,
+    204.60000000000002,
+]
+
+[[water_planes]]
+pos = [
+    50.0,
+    9.0,
+    50.0,
+]
+scale_x = 100.0
+scale_z = 100.0
+material = "GlowingIce"
+sound = "no sound"
+is_solid = true
+
+[interior]
+height = 48.0
+material = "Terrain/IceTerrain"
+sky_color = [
+    0,
+    0,
+    0,
+    0,
+]
+
+[[lights]]
+pos = [
+    50.0,
+    5.0,
+    50.0,
+]
+color = [
+    0.4,
+    0.9,
+    1.0,
+]
+
+[[lights]]
+pos = [
+    51.7,
+    35.0,
+    85.4,
+]
+color = [
+    0.75,
+    0.74,
+    0.72,
+]
+
+[[billboards]]
+pos = [
+    56.5,
+    35.0,
+    84.7,
+]
+scale = [
+    6.0,
+    6.0,
+]
+material = "CaveLight"
+
+[[sphere_walls]]
+pos = [
+    50.0,
+    0.0,
+    50.0,
+]
+range = 42.0
+is_inside = false

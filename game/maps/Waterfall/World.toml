@@ -1,0 +1,183 @@
+terrain = "waterfallterrain.cfg"
+width = 250.0
+height = 250.0
+spawn_point = [
+    50.0,
+    50.0,
+    10.0,
+]
+weather_cycle = "ThunderstormRain"
+
+[[portals]]
+pos = [
+    100.0,
+    30.0,
+    80.0,
+]
+range = 2.5
+destination = "Default"
+
+[[portals]]
+pos = [
+    221.0,
+    27.0,
+    221.0,
+]
+range = 2.5
+destination = "ReallyBig"
+
+[[portals]]
+pos = [
+    35.0,
+    42.5,
+    245.0,
+]
+range = 2.5
+destination = "GreatFalls"
+
+[[gates]]
+material = "GateMatBlack"
+pos = [
+    126.9,
+    5.0,
+    126.9,
+]
+destination = "Waterfall Cave"
+dest_pos = [
+    47.6,
+    85.2,
+]
+
+[[water_planes]]
+pos = [
+    154.5,
+    5.0,
+    130.0,
+]
+scale_x = 75.0
+scale_z = 75.0
+sound = "water1.wav"
+
+[[water_planes]]
+pos = [
+    98.0,
+    21.5,
+    90.0,
+]
+scale_x = 50.0
+scale_z = 100.0
+material = "Terrain/Water"
+sound = "water1.wav"
+
+[[water_planes]]
+pos = [
+    63.0,
+    28.5,
+    152.0,
+]
+scale_x = 50.0
+scale_z = 90.0
+material = "Terrain/Water"
+sound = "water1.wav"
+
+[[objects]]
+mesh = "Waterfall"
+
+[[objects.instances]]
+pos = [
+    126.0,
+    21.5,
+    119.5,
+]
+rot = [
+    1.0,
+    0.52,
+    1.4,
+]
+scale = [
+    0.0,
+    9.1,
+    0.0,
+]
+
+[[objects.instances]]
+pos = [
+    126.0,
+    21.5,
+    134.5,
+]
+rot = [
+    1.2,
+    0.52,
+    1.4,
+]
+scale = [
+    0.0,
+    9.0,
+    0.0,
+]
+
+[[objects.instances]]
+pos = [
+    90.5,
+    28.5,
+    118.5,
+]
+rot = [
+    0.8,
+    0.22,
+    1.3,
+]
+scale = [
+    0.0,
+    9.200000000000001,
+    0.0,
+]
+
+[[objects.instances]]
+pos = [
+    91.0,
+    28.5,
+    130.5,
+]
+rot = [
+    1.0,
+    0.22,
+    1.32,
+]
+scale = [
+    0.0,
+    9.9,
+    0.0,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    134.5,
+    5.0,
+    125.5,
+]
+sound = "waterfall.mp3"
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    99.0,
+    21.3,
+    122.5,
+]
+sound = "waterfall.mp3"
+
+[grass]
+material = "grass"
+map = "grassdensitymap.png"
+color_map = "grass_tex2.png"
+
+[random_trees]
+trees = [
+    "fir14_25",
+    "fir06_30",
+    "fir14_25",
+]
+count = 20

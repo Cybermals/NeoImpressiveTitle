@@ -1,0 +1,168 @@
+terrain = "jungleterrain.cfg"
+width = 2500.0
+height = 2500.0
+spawn_point = [
+    400.0,
+    400.0,
+    10.0,
+]
+weather_cycle = "Thunderstorm"
+
+[[portals]]
+pos = [
+    36.1,
+    118.60000000000001,
+    2276.6,
+]
+range = 5.0
+destination = "Default"
+
+[[portals]]
+pos = [
+    771.4000000000001,
+    60.900000000000006,
+    226.10000000000002,
+]
+range = 5.0
+destination = "Ocean"
+
+[[water_planes]]
+pos = [
+    556.1,
+    91.0,
+    170.10000000000002,
+]
+scale_x = 5000.0
+scale_z = 5000.0
+material = "Terrain/LargeWater"
+sound = "water1.wav"
+
+[[water_planes]]
+pos = [
+    34.800000000000004,
+    120.0,
+    2258.0,
+]
+scale_x = 9.0
+scale_z = 10.5
+material = "Terrain/Water"
+sound = "water1.wav"
+
+[[water_planes]]
+pos = [
+    300.0,
+    121.0,
+    450.0,
+]
+scale_x = 92.5
+scale_z = 62.5
+material = "Terrain/Water"
+sound = "water1.wav"
+
+[[objects]]
+mesh = "Waterfall"
+
+[[objects.instances]]
+pos = [
+    44.0,
+    119.5,
+    2258.1,
+]
+rot = [
+    1.5,
+    1.0,
+    2.0,
+]
+scale = [
+    0.0,
+    9.0,
+    0.0,
+]
+
+[[objects.instances]]
+pos = [
+    48.300000000000004,
+    101.5,
+    2253.2000000000003,
+]
+rot = [
+    3.0,
+    0.5,
+    1.5,
+]
+scale = [
+    0.0,
+    9.0,
+    0.0,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    60.0,
+    91.10000000000001,
+    2253.6,
+]
+sound = "waterfall.mp3"
+
+[[particles]]
+name = "Geyser"
+pos = [
+    284.40000000000003,
+    121.4,
+    439.1,
+]
+sound = "Steam2.wav"
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    282.3,
+    119.9,
+    453.5,
+]
+
+[[particles]]
+name = "Geyser"
+pos = [
+    306.2,
+    121.10000000000001,
+    444.0,
+]
+sound = "Steam1.wav"
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    270.0,
+    121.2,
+    462.90000000000003,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    321.8,
+    121.10000000000001,
+    448.70000000000005,
+]
+
+[grass]
+material = "yellowGrass"
+map = "grassdensitymap.png"
+color_map = "grass_tex.jpg"
+
+[random_trees]
+trees = [
+    "fir14_25",
+    "fir06_30",
+    "fir05_30",
+]
+count = 25000
+
+[random_bushes]
+bushes = [
+    "farn2",
+    "shroom2_2",
+    "shroom1_1",
+]

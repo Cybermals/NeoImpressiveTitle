@@ -1,0 +1,47 @@
+terrain = "forestterrain.cfg"
+width = 500.0
+height = 500.0
+spawn_point = [
+    90.0,
+    200.0,
+    0.1,
+]
+
+[[portals]]
+pos = [
+    94.0,
+    12.0,
+    78.0,
+]
+range = 2.5
+destination = "Default"
+
+[[water_planes]]
+pos = [
+    110.0,
+    28.0,
+    90.0,
+]
+scale_x = 110.0
+scale_z = 110.0
+sound = "water1.wav"
+
+[grass]
+material = "grass"
+map = "grassdensitymap2.png"
+color_map = "grass_tex.jpg"
+
+[random_trees]
+trees = [
+    "fir14_25",
+    "fir06_30",
+    "fir05_30",
+]
+count = 350
+
+[random_bushes]
+bushes = [
+    "farn1",
+    "plant2",
+    "shroom1_1",
+]

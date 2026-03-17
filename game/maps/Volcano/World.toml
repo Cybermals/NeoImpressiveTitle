@@ -1,0 +1,214 @@
+terrain = "volcanoterrain.cfg"
+width = 750.0
+height = 750.0
+spawn_point = [
+    97.7,
+    632.9000000000001,
+    10.0,
+]
+weather_cycle = "Redsky"
+
+[[portals]]
+pos = [
+    108.80000000000001,
+    88.0,
+    632.3000000000001,
+]
+range = 2.5
+destination = "Default"
+
+[[portals]]
+pos = [
+    396.8,
+    165.0,
+    391.0,
+]
+range = 2.5
+destination = "Jungle"
+
+[[portals]]
+pos = [
+    507.5,
+    110.0,
+    332.5,
+]
+range = 2.5
+destination = "Lava"
+
+[[portals]]
+pos = [
+    336.5,
+    1.5,
+    371.8,
+]
+range = 2.5
+destination = "Ocean"
+
+[[water_planes]]
+pos = [
+    324.0,
+    170.0,
+    377.8,
+]
+scale_x = 60.0
+scale_z = 60.0
+material = "Terrain/Magma"
+sound = "lava1.wav"
+
+[[water_planes]]
+pos = [
+    605.0,
+    60.0,
+    172.5,
+]
+scale_x = 70.0
+scale_z = 70.0
+material = "Terrain/Magma"
+sound = "lava1.wav"
+
+[[water_planes]]
+pos = [
+    689.2,
+    42.5,
+    667.7,
+]
+scale_x = 275.0
+scale_z = 375.0
+material = "Terrain/Magma"
+sound = "lava1.wav"
+
+[[water_planes]]
+pos = [
+    212.5,
+    29.5,
+    648.5,
+]
+scale_x = 75.0
+scale_z = 75.0
+sound = "water1.wav"
+
+[[water_planes]]
+pos = [
+    243.5,
+    46.0,
+    40.5,
+]
+scale_x = 100.0
+scale_z = 100.0
+sound = "water1.wav"
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    214.8,
+    29.0,
+    661.1,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    206.0,
+    29.0,
+    649.8000000000001,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    216.0,
+    29.0,
+    640.0,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    270.3,
+    45.5,
+    38.5,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    243.10000000000002,
+    45.5,
+    47.1,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    228.3,
+    45.5,
+    39.1,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    220.70000000000002,
+    45.5,
+    39.6,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    257.40000000000003,
+    45.5,
+    49.800000000000004,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    254.9,
+    45.5,
+    37.0,
+]
+
+[[particles]]
+name = "WaterfallSmoke"
+pos = [
+    215.9,
+    45.5,
+    45.0,
+]
+
+[[particles]]
+name = "Geyser"
+pos = [
+    196.20000000000002,
+    50.2,
+    29.400000000000002,
+]
+sound = "Steam2.wav"
+
+[[particles]]
+name = "Geyser"
+pos = [
+    564.0,
+    90.2,
+    366.0,
+]
+sound = "Steam2.wav"
+
+[[particles]]
+name = "Geyser"
+pos = [
+    51.0,
+    89.5,
+    247.60000000000002,
+]
+sound = "Steam2.wav"
+
+[[particles]]
+name = "Geyser"
+pos = [
+    236.4,
+    51.0,
+    658.5,
+]
+sound = "Steam2.wav"

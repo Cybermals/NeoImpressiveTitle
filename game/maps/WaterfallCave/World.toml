@@ -1,0 +1,149 @@
+terrain = "waterfallcaveterrain.cfg"
+width = 100.0
+height = 100.0
+spawn_point = [
+    50.0,
+    50.0,
+    10.0,
+]
+
+[[gates]]
+material = "GateMatWhite"
+pos = [
+    47.0,
+    13.0,
+    94.4,
+]
+destination = "Waterfall"
+dest_pos = [
+    159.0,
+    119.9,
+]
+
+[[water_planes]]
+pos = [
+    50.0,
+    12.0,
+    50.0,
+]
+scale_x = 100.0
+scale_z = 100.0
+sound = "water1.wav"
+
+[interior]
+height = 20.0
+material = "WaterfallCaveCeiling"
+sky_color = [
+    0,
+    0,
+    0,
+    0,
+]
+
+[[lights]]
+pos = [
+    47.0,
+    13.0,
+    94.4,
+]
+color = [
+    0.75,
+    0.74,
+    0.72,
+]
+
+[[lights]]
+pos = [
+    50.0,
+    13.200000000000001,
+    50.5,
+]
+color = [
+    0.1,
+    0.9,
+    1.0,
+]
+
+[[lights]]
+pos = [
+    49.5,
+    13.200000000000001,
+    49.5,
+]
+color = [
+    0.1,
+    0.9,
+    1.0,
+]
+
+[[billboards]]
+pos = [
+    47.2,
+    13.0,
+    89.5,
+]
+scale = [
+    6.0,
+    6.0,
+]
+material = "CaveLight"
+
+[[sphere_walls]]
+pos = [
+    50.0,
+    0.0,
+    50.0,
+]
+range = 40.0
+is_inside = false
+
+[[objects]]
+mesh = "Crystal"
+
+[[objects.instances]]
+pos = [
+    50.0,
+    50.0,
+]
+rot = [
+    0.0,
+]
+scale = [
+    0.25,
+]
+
+[[objects.instances]]
+pos = [
+    51.0,
+    49.6,
+]
+rot = [
+    18.0,
+]
+scale = [
+    0.17,
+]
+
+[[objects.instances]]
+pos = [
+    49.0,
+    51.5,
+]
+rot = [
+    15.5,
+]
+scale = [
+    0.1,
+]
+
+[[objects.instances]]
+pos = [
+    48.800000000000004,
+    49.2,
+]
+rot = [
+    9.0,
+]
+scale = [
+    0.13999999999999999,
+]

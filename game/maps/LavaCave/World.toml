@@ -1,0 +1,76 @@
+terrain = "lavacaveterrain.cfg"
+width = 100.0
+height = 100.0
+spawn_point = [
+    50.0,
+    50.0,
+    10.0,
+]
+
+[[gates]]
+material = "GateMatWhite"
+pos = [
+    48.2,
+    12.0,
+    98.5,
+]
+destination = "Lava"
+dest_pos = [
+    510.0,
+    317.6,
+]
+
+[[water_planes]]
+pos = [
+    50.0,
+    8.0,
+    50.0,
+]
+scale_x = 500.0
+scale_z = 500.0
+material = "Terrain/LargeMagma"
+sound = "lava1.wav"
+
+[[water_planes]]
+pos = [
+    50.0,
+    9.0,
+    50.0,
+]
+scale_x = 50.0
+scale_z = 50.0
+sound = "water1.wav"
+
+[interior]
+height = 28.0
+material = "Terrain/LavaTerrain"
+sky_color = [
+    0,
+    0,
+    0,
+    0,
+]
+
+[[lights]]
+pos = [
+    48.2,
+    12.0,
+    97.0,
+]
+color = [
+    0.75,
+    0.74,
+    0.72,
+]
+
+[[billboards]]
+pos = [
+    48.2,
+    12.0,
+    93.5,
+]
+scale = [
+    7.0,
+    7.0,
+]
+material = "CaveLight"
