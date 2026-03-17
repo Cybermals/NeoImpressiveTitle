@@ -41,6 +41,8 @@ for map_folder in args.in_folder.iterdir():
     # Convert world map
     print(f"Converting '{world_file}'...")
     world_data = world_map.to_dict()
-
-    if "Default.world" in str(world_file):
-        print(world_data)
+    map_name = map_folder.stem.replace(" ", "").replace("'", "")
+    toml_file = args.out_folder / map_name / "World.toml"
+    
+    with toml_file.open("wb") as f:
+        tomli_w.dump(world_data, f)
