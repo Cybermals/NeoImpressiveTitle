@@ -35,14 +35,14 @@ class TextureUnit(object):
             elif line == "{":
                 # Can't start the block twice
                 if block_started:
-                   raise MaterialSyntaxError(f"Line {lineno}: Unexpected token.")
-                
+                    raise MaterialSyntaxError(f"Line {lineno}: Unexpected token.")  # noqa: E501
+
                 block_started = True
 
             # End block
             elif line == "}":
                 return lineno
-            
+
             # Property?
             elif (line.startswith("texture") or
                   line.startswith("tex_address_mode") or
@@ -58,7 +58,7 @@ class TextureUnit(object):
 
             # Unknown?
             else:
-                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")
+                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")  # noqa: E501
 
 
 class Pass(object):
@@ -110,14 +110,14 @@ class Pass(object):
             elif line == "{":
                 # Can't start the block twice
                 if block_started:
-                   raise MaterialSyntaxError(f"Line {lineno}: Unexpected token.")
-                
+                    raise MaterialSyntaxError(f"Line {lineno}: Unexpected token.")  # noqa: E501
+
                 block_started = True
 
             # End block
             elif line == "}":
                 return lineno
-            
+
             # Property?
             elif (line.startswith("cull_hardware") or
                   line.startswith("cull_software") or
@@ -149,7 +149,7 @@ class Pass(object):
                 # Store property value
                 key = line
                 setattr(self, key, True)
-            
+
             # Texture unit?
             elif line.startswith("texture_unit"):
                 # Parse texture unit
@@ -159,7 +159,7 @@ class Pass(object):
 
             # Unknown?
             else:
-                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")
+                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")  # noqa: E501
 
 
 class Technique(object):
@@ -189,8 +189,8 @@ class Technique(object):
             elif line == "{":
                 # Can't start the block twice
                 if block_started:
-                   raise MaterialSyntaxError(f"Line {lineno}: Unexpected token.")
-                
+                    raise MaterialSyntaxError(f"Line {lineno}: Unexpected token.")  # noqa: E501
+
                 block_started = True
 
             # End block
@@ -206,7 +206,7 @@ class Technique(object):
 
             # Unknown?
             else:
-                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")
+                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")  # noqa: E501
 
 
 class Material(object):
@@ -238,14 +238,14 @@ class Material(object):
             elif line == "{":
                 # Can't start the block twice
                 if block_started:
-                   raise MaterialSyntaxError(f"Line {lineno}: Unexpected token.")
-                
+                    raise MaterialSyntaxError(f"Line {lineno}: Unexpected token.")  # noqa: E501
+
                 block_started = True
 
             # End block?
             elif line == "}":
                 return lineno
-            
+
             # Property?
             elif (line.startswith("transparency_casts_shadows") or
                   line.startswith("receive_shadows")):
@@ -262,7 +262,7 @@ class Material(object):
 
             # Unknown?
             else:
-                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")
+                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")  # noqa: E501
 
 
 class MaterialLibrary(object):
@@ -296,4 +296,4 @@ class MaterialLibrary(object):
 
             # Unknown line
             else:
-                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")
+                raise MaterialSyntaxError(f"Line {lineno} cannot be recognized.")  # noqa: E501

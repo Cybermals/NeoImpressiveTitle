@@ -15,8 +15,16 @@ from ast import MaterialLibrary
 
 # Parse command-line arguments
 parser = ArgumentParser()
-parser.add_argument("in_folder", type=Path, help="a folder of Ogre material scripts to import")
-parser.add_argument("out_file", type=Path, help="the material library file to output")
+parser.add_argument(
+    "in_folder",
+    type=Path,
+    help="a folder of Ogre material scripts to import"
+)
+parser.add_argument(
+    "out_file",
+    type=Path,
+    help="the material library file to output"
+)
 args = parser.parse_args()
 
 # Walk the source folder
@@ -49,14 +57,14 @@ for name, mat in mat_lib:
     for i, technique in enumerate(mat):
         # We only support 1 technique per material
         if i > 0:
-            print(f"{name}: WARNING: We only support 1 technique per material.")
+            print(f"{name}: WARNING: We only support 1 technique per material.")  # noqa: E501
             break
 
         # Iterate over passes
         for i, _pass in enumerate(technique):
             # We only support 1 pass per material
             if i > 0:
-                print(f"{name}: WARNING: We only support 1 pass per technique.")
+                print(f"{name}: WARNING: We only support 1 pass per technique.")  # noqa: E501
                 break
 
             # Cull mode?
@@ -69,19 +77,23 @@ for name, mat in mat_lib:
 
             # Ambient?
             if _pass.ambient:
-                material["ambient"] = [float(n) for n in _pass.ambient.split(" ")]
+                material["ambient"] = [
+                    float(n) for n in _pass.ambient.split(" ")]
 
             # Diffuse?
             if _pass.diffuse:
-                material["diffuse"] = [float(n) for n in _pass.diffuse.split(" ")]
+                material["diffuse"] = [
+                    float(n) for n in _pass.diffuse.split(" ")]
 
             # Specular?
             if _pass.specular:
-                material["specular"] = [float(n) for n in _pass.specular.split(" ")]
+                material["specular"] = [
+                    float(n) for n in _pass.specular.split(" ")]
 
             # Emissive?
             if _pass.emissive:
-                material["emission"] = [float(n) for n in _pass.emissive.split(" ")]
+                material["emission"] = [
+                    float(n) for n in _pass.emissive.split(" ")]
 
             # Depth write?
             if _pass.depth_write:
@@ -130,7 +142,8 @@ for name, mat in mat_lib:
 
                 # Scroll animation?
                 if texture_unit.scroll_anim:
-                    texture_stage["scroll"] = [float(n) for n in texture_unit.scroll_anim.split(" ")]
+                    texture_stage["scroll"] = [
+                        float(n) for n in texture_unit.scroll_anim.split(" ")]
 
                 # Rotate animation?
                 if texture_unit.rotate_anim:
