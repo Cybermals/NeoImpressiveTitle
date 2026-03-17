@@ -16,8 +16,16 @@ from ast import Map
 
 # Parse command-line arguments
 parser = ArgumentParser()
-parser.add_argument("in_folder", type=Path, help="a folder containing one or more maps to import")
-parser.add_argument("out_folder", type=Path, help="the folder to write the converted maps into")
+parser.add_argument(
+    "in_folder",
+    type=Path,
+    help="a folder containing one or more maps to import"
+)
+parser.add_argument(
+    "out_folder",
+    type=Path,
+    help="the folder to write the converted maps into"
+)
 args = parser.parse_args()
 
 # Import each map in the given folder
@@ -43,6 +51,6 @@ for map_folder in args.in_folder.iterdir():
     world_data = world_map.to_dict()
     map_name = map_folder.stem.replace(" ", "").replace("'", "")
     toml_file = args.out_folder / map_name / "World.toml"
-    
+
     with toml_file.open("wb") as f:
         tomli_w.dump(world_data, f)

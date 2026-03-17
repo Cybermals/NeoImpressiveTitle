@@ -22,7 +22,8 @@ class MapSettings(object):
         self.terrain = params[0]
         self.width = int(params[1]) * GLOBAL_SCALE
         self.height = int(params[2]) * GLOBAL_SCALE
-        self.spawn_point = [float(n) * GLOBAL_SCALE for n in params[3].split(" ")]
+        self.spawn_point = [
+            float(n) * GLOBAL_SCALE for n in params[3].split(" ")]
 
         if len(params) > 4:
             self.bounds = [int(n) * GLOBAL_SCALE for n in params[4].split(" ")]
@@ -40,7 +41,7 @@ class MapSettings(object):
             data["bounds"] = self.bounds
 
         return data
-    
+
 
 class Portal(object):
     def __init__(self):
@@ -65,7 +66,7 @@ class Portal(object):
             "range": self.range,
             "destination": self.destination
         }
-    
+
 
 class Gate(object):
     def __init__(self):
@@ -93,7 +94,7 @@ class Gate(object):
             "destination": self.destination,
             "dest_pos": self.dest_pos
         }
-    
+
 
 class WaterPlane(object):
     def __init__(self):
@@ -141,7 +142,7 @@ class WaterPlane(object):
             data["is_solid"] = self.is_solid
 
         return data
-    
+
 
 class MapObject(object):
     def __init__(self):
@@ -185,7 +186,7 @@ class MapObject(object):
             data["material"] = self.material
 
         return data
-    
+
 
 class Particle(object):
     def __init__(self):
@@ -216,7 +217,7 @@ class Particle(object):
             data["sound"] = self.sound
 
         return data
-    
+
 
 class WeatherCycle(object):
     def __init__(self):
@@ -235,7 +236,7 @@ class WeatherCycle(object):
         return {
             "name": self.name
         }
-    
+
 
 class Interior(object):
     def __init__(self):
@@ -262,7 +263,7 @@ class Interior(object):
             "material": self.material,
             "sky_color": self.sky_color
         }
-    
+
 
 class Light(object):
     def __init__(self):
@@ -284,7 +285,7 @@ class Light(object):
             "pos": self.pos,
             "color": self.color
         }
-    
+
 
 class Billboard(object):
     def __init__(self):
@@ -309,7 +310,7 @@ class Billboard(object):
             "scale": self.scale,
             "material": self.material
         }
-    
+
 
 class SphereWall(object):
     def __init__(self):
@@ -334,7 +335,7 @@ class SphereWall(object):
             "range": self.range,
             "is_inside": self.is_inside
         }
-    
+
 
 class BoxWall(object):
     def __init__(self):
@@ -359,7 +360,7 @@ class BoxWall(object):
             "range": self.range,
             "is_inside": self.is_inside
         }
-    
+
 
 class MapEffect(object):
     def __init__(self):
@@ -378,7 +379,7 @@ class MapEffect(object):
         return {
             "name": self.name
         }
-    
+
 
 class Grass(object):
     def __init__(self):
@@ -403,7 +404,7 @@ class Grass(object):
             "map": self.map,
             "color_map": self.color_map
         }
-    
+
 
 class RandomTrees(object):
     def __init__(self):
@@ -425,7 +426,7 @@ class RandomTrees(object):
             "trees": self.trees,
             "count": self.count
         }
-    
+
 
 class RandomBushes(object):
     def __init__(self):
@@ -444,7 +445,7 @@ class RandomBushes(object):
         return {
             "bushes": self.bushes
         }
-    
+
 
 class FoliageGroup(object):
     def __init__(self):
@@ -500,7 +501,7 @@ class FoliageGroup(object):
             data["material"] = self.material
 
         return data
-    
+
 
 class FoliageGroups(object):
     def __init__(self):
@@ -547,7 +548,7 @@ class CollisionBox(object):
             "pos": self.pos,
             "range": self.range
         }
-    
+
 
 class CollisionSphere(object):
     def __init__(self):
@@ -569,7 +570,7 @@ class CollisionSphere(object):
             "pos": self.pos,
             "range": self.range
         }
-    
+
 
 class Music(object):
     def __init__(self):
@@ -588,7 +589,6 @@ class Music(object):
         return {
             "music": self.name
         }
-
 
 
 class Map(object):
@@ -739,7 +739,7 @@ class Map(object):
 
             # Parse spawn critters section
             elif section.startswith("SpawnCritters"):
-                print("WARNING: SpawnCritters sections not supported. Use the global critter spawn config instead.")
+                print("WARNING: SpawnCritters sections not supported. Use the global critter spawn config instead.")  # noqa: E501
 
             # Parse freeze time section
             elif section.startswith("FreezeTime"):
@@ -764,7 +764,7 @@ class Map(object):
         if len(self.water_planes):
             data["water_planes"] = [
                 water_plane.to_dict() for water_plane in self.water_planes]
-            
+
         if len(self.map_objects):
             # Group map objects by mesh for more efficient rendering
             map_objects = {}
@@ -773,8 +773,9 @@ class Map(object):
                 # Preprocess map object data
                 map_object_data = map_object.to_dict()
                 key = (
-                    map_object_data["mesh"], 
-                    map_object_data["material"] if "material" in map_object_data else ""
+                    map_object_data["mesh"],
+                    map_object_data["material"] 
+                    if "material" in map_object_data else ""
                 )
                 del map_object_data["mesh"]
 
@@ -800,7 +801,7 @@ class Map(object):
         if len(self.particles):
             data["particles"] = [
                 particle.to_dict() for particle in self.particles]
-            
+
         if self.weather_cycle is not None and self.weather_cycle.name != "":
             data["weather_cycle"] = self.weather_cycle.to_dict()["name"]
 
@@ -813,7 +814,7 @@ class Map(object):
         if len(self.billboards):
             data["billboards"] = [
                 billboard.to_dict() for billboard in self.billboards]
-            
+
         if len(self.sphere_walls):
             data["sphere_walls"] = [
                 sphere_wall.to_dict() for sphere_wall in self.sphere_walls
@@ -845,10 +846,10 @@ class Map(object):
 
         if len(self.collision_boxes):
             data["collision_boxes"] = [
-                collision_box.to_dict() 
+                collision_box.to_dict()
                 for collision_box in self.collision_boxes
             ]
-            
+
         if len(self.collision_spheres):
             data["colllision_spheres"] = [
                 collision_sphere.to_dict()
