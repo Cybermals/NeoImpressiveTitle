@@ -527,6 +527,70 @@ class FoliageGroups(object):
         }
 
 
+class CollisionBox(object):
+    def __init__(self):
+        self.pos = [0, 0, 0]
+        self.range = [0, 0, 0]
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+        self.range = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+
+    def to_dict(self):
+        # Convert collision box to a dictionary
+        return {
+            "pos": self.pos,
+            "range": self.range
+        }
+    
+
+class CollisionSphere(object):
+    def __init__(self):
+        self.pos = [0, 0, 0]
+        self.range = 0
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+        self.range = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+
+    def to_dict(self):
+        # Convert collision sphere to a dictionary
+        return {
+            "pos": self.pos,
+            "range": self.range
+        }
+    
+
+class Music(object):
+    def __init__(self):
+        self.name = ""
+
+    def parse(self, s):
+        # Split section into params
+        params = s.strip().split("\n")[1:]
+        params = [param.strip() for param in params]
+
+        # Parse params
+        self.name = params[0]
+
+    def to_dict(self):
+        # Convert music to a dictionary
+        return {
+            "music": self.name
+        }
+
+
+
 class Map(object):
     def __init__(self):
         self.settings = None
@@ -546,6 +610,10 @@ class Map(object):
         self.random_trees = None
         self.random_bushes = None
         self.foliage = []
+        self.collision_boxes = []
+        self.collision_spheres = []
+        self.freeze_time = False
+        self.music = None
 
     def parse(self, world_file):
         # Split map data into sections
@@ -657,6 +725,31 @@ class Map(object):
                 foliage_group.parse(section, world_file.parent)
                 self.foliage.append(foliage_group)
 
+            # Parse collision box section
+            elif section.startswith("CollBox"):
+                collision_box = CollisionBox()
+                collision_box.parse(section)
+                self.collision_boxes.append(collision_box)
+
+            # Parse collision sphere section
+            elif section.startswith("CollSphere"):
+                collision_sphere = CollisionSphere()
+                collision_sphere.parse(section)
+                self.collision_spheres.append(collision_sphere)
+
+            # Parse spawn critters section
+            elif section.startswith("SpawnCritters"):
+                print("WARNING: SpawnCritters sections not supported. Use the global critter spawn config instead.")
+
+            # Parse freeze time section
+            elif section.startswith("FreezeTime"):
+                self.freeze_time = True
+
+            # Parse music section
+            elif section.startswith("Music"):
+                self.music = Music()
+                self.music.parse(section)
+
     def to_dict(self):
         # Convert map data to a dictionary
         data = {}
@@ -749,5 +842,23 @@ class Map(object):
 
             for foliage_group in self.foliage:
                 data["objects"].extend(foliage_group.to_dict()["groups"])
+
+        if len(self.collision_boxes):
+            data["collision_boxes"] = [
+                collision_box.to_dict() 
+                for collision_box in self.collision_boxes
+            ]
+            
+        if len(self.collision_spheres):
+            data["colllision_spheres"] = [
+                collision_sphere.to_dict()
+                for collision_sphere in self.collision_spheres
+            ]
+
+        if self.freeze_time:
+            data["freeze_time"] = self.freeze_time
+
+        if self.music:
+            data["music"] = self.music.to_dict()["music"]
 
         return data

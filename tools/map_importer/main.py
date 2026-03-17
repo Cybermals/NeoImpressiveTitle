@@ -41,4 +41,6 @@ for map_folder in args.in_folder.iterdir():
     # Convert world map
     print(f"Converting '{world_file}'...")
     world_data = world_map.to_dict()
-    print(world_data)
+
+    if "Default.world" in str(world_file):
+        print(world_data)
