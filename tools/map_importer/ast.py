@@ -475,6 +475,10 @@ class FoliageGroup(object):
             params = line.split(";")
             params = [param.strip() for param in params]
 
+            # Skip corrupt lines
+            if len(params) != 3:
+                continue
+
             # Parse params
             pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
             scale = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
@@ -541,7 +545,7 @@ class Map(object):
         self.grass = None
         self.random_trees = None
         self.random_bushes = None
-        self.trees = None
+        self.foliage = []
 
     def parse(self, world_file):
         # Split map data into sections
@@ -642,10 +646,16 @@ class Map(object):
                 self.random_bushes = RandomBushes()
                 self.random_bushes.parse(section)
 
-            # Parse trees section
-            elif section.startswith("Trees"):
-                self.trees = FoliageGroups()
-                self.trees.parse(section, world_file.parent)
+            # Parse foliage section
+            elif (section.startswith("Trees") or
+                  section.startswith("Bushes") or
+                  section.startswith("FloatingBushes") or
+                  section.startswith("NewTrees") or
+                  section.startswith("NewBushes") or
+                  section.startswith("NewFloatingBushes")):
+                foliage_group = FoliageGroups()
+                foliage_group.parse(section, world_file.parent)
+                self.foliage.append(foliage_group)
 
     def to_dict(self):
         # Convert map data to a dictionary
@@ -733,7 +743,11 @@ class Map(object):
         if self.random_bushes:
             data["random_bushes"] = self.random_bushes.to_dict()
 
-        if self.trees:
-            data["trees"] = self.trees.to_dict()["groups"]
+        if len(self.foliage):
+            if "objects" not in data:
+                data["objects"] = []
+
+            for foliage_group in self.foliage:
+                data["objects"].extend(foliage_group.to_dict()["groups"])
 
         return data
