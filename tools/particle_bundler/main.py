@@ -12,13 +12,13 @@ from pathlib import Path
 # Parse command-line arguments
 parser = ArgumentParser()
 parser.add_argument(
-    "in_folder", 
-    type=str, 
+    "in_folder",
+    type=str,
     help="a folder containing particle files to bundle"
 )
 parser.add_argument(
-    "out_file", 
-    type=str, 
+    "out_file",
+    type=str,
     help="the path of the particle library to outputs"
 )
 args = parser.parse_args()
@@ -66,7 +66,7 @@ from panda3d.physics import *
         with open(path, "r") as in_file:
             # Iterate over particle config lines
             for line in in_file:
-                # Copy particle config line to output file with correct 
+                # Copy particle config line to output file with correct
                 # indentation
                 out_file.write(f"        {line}")
 
