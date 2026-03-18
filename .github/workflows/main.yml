@@ -15,4 +15,4 @@ jobs:
           pip install flake8
       - name: Lint Code
         run: |
-          flake8 --extend-exclude particles/__init__.py
+          flake8 --extend-exclude game/particles/__init__.py
