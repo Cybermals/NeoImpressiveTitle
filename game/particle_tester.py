@@ -23,7 +23,7 @@ class MainScreen(RelativeLayout):
         # Populate particle spinner
         self.ids.particle.values = [
             particle for particle in dir(particles) if (
-                inspect.isclass(getattr(particles, particle)) and 
+                inspect.isclass(getattr(particles, particle)) and
                 issubclass(getattr(particles, particle), ParticleEffect))
         ]
 
@@ -31,9 +31,9 @@ class MainScreen(RelativeLayout):
         # Ignore "Select Particle"
         if value == "Select Particle":
             return
-        
+
         # Load selected particle
-        base.load_particle(value)
+        base.load_particle(value)  # noqa: F821
 
 
 class ParticleTesterUI(App):
