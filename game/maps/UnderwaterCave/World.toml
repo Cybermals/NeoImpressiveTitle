@@ -165,7 +165,7 @@ range = 49.0
 is_inside = false
 
 [[objects]]
-mesh = "waterfall"
+mesh = "waterfall.gltf"
 
 [[objects.instances]]
 pos = [
@@ -185,7 +185,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "crystal"
+mesh = "crystal.gltf"
 
 [[objects.instances]]
 pos = [

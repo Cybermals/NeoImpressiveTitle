@@ -98,7 +98,7 @@ range = 40.0
 is_inside = false
 
 [[objects]]
-mesh = "Crystal"
+mesh = "Crystal.gltf"
 
 [[objects.instances]]
 pos = [

@@ -67,7 +67,7 @@ scale_z = 5.0
 material = "Terrain/Healwater"
 
 [[objects]]
-mesh = "bubble1"
+mesh = "bubble1.gltf"
 material = "CaveMat"
 
 [[objects.instances]]
@@ -521,7 +521,7 @@ scale = [
 sound = "no sound"
 
 [[objects]]
-mesh = "Crystal"
+mesh = "Crystal.gltf"
 
 [[objects.instances]]
 pos = [
@@ -541,7 +541,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "salmon"
+mesh = "salmon.gltf"
 
 [[objects.instances]]
 pos = [
@@ -562,7 +562,7 @@ scale = [
 sound = "water1.wav"
 
 [[objects]]
-mesh = "fir14_25"
+mesh = "fir14_25.gltf"
 
 [[objects.instances]]
 pos = [
@@ -745,7 +745,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fir06_30"
+mesh = "fir06_30.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1048,7 +1048,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "Tree1"
+mesh = "Tree1.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1268,7 +1268,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "acaciaTree"
+mesh = "acaciaTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1515,7 +1515,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "savannahTree"
+mesh = "savannahTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1858,7 +1858,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "Jungletree"
+mesh = "Jungletree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1923,7 +1923,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fern"
+mesh = "fern.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2151,7 +2151,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn2"
+mesh = "farn2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2229,7 +2229,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rockSlab"
+mesh = "rockSlab.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2727,7 +2727,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rockSlab2"
+mesh = "rockSlab2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3370,7 +3370,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "grassPatch"
+mesh = "grassPatch.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3733,7 +3733,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom2_2"
+mesh = "shroom2_2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3828,7 +3828,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shrub"
+mesh = "shrub.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3996,7 +3996,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom2_1"
+mesh = "shroom2_1.gltf"
 
 [[objects.instances]]
 pos = [
@@ -4104,7 +4104,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn1"
+mesh = "farn1.gltf"
 
 [[objects.instances]]
 pos = [
@@ -4137,7 +4137,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "waterfall"
+mesh = "waterfall.gltf"
 material = "Waterfall2"
 
 [[objects.instances]]
@@ -4175,7 +4175,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rock"
+mesh = "rock.gltf"
 
 [[objects.instances]]
 pos = [
@@ -4720,7 +4720,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "salmon"
+mesh = "salmon.gltf"
 
 [[objects.instances]]
 pos = [
@@ -4806,7 +4806,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "crystal"
+mesh = "crystal.gltf"
 
 [[objects.instances]]
 pos = [
@@ -5037,7 +5037,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom1_2"
+mesh = "shroom1_2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -5176,7 +5176,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "head2"
+mesh = "head2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -5194,7 +5194,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "body1"
+mesh = "body1.gltf"
 
 [[objects.instances]]
 pos = [
@@ -5212,7 +5212,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "tail2"
+mesh = "tail2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -5230,7 +5230,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "wings"
+mesh = "wings.gltf"
 
 [[objects.instances]]
 pos = [
@@ -5610,9 +5610,9 @@ color_map = "Flower2.png"
 
 [random_trees]
 trees = [
-    "fern",
-    "acaciatree",
-    "Tree1",
+    "fern.gltf",
+    "acaciatree.gltf",
+    "Tree1.gltf",
 ]
 count = 400
 

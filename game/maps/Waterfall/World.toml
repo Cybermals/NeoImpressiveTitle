@@ -81,7 +81,7 @@ material = "Terrain/Water"
 sound = "water1.wav"
 
 [[objects]]
-mesh = "Waterfall"
+mesh = "Waterfall.gltf"
 
 [[objects.instances]]
 pos = [
@@ -176,8 +176,8 @@ color_map = "grass_tex2.png"
 
 [random_trees]
 trees = [
-    "fir14_25",
-    "fir06_30",
-    "fir14_25",
+    "fir14_25.gltf",
+    "fir06_30.gltf",
+    "fir14_25.gltf",
 ]
 count = 20

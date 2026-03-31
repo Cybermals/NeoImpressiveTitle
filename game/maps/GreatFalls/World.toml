@@ -87,7 +87,7 @@ scale_z = 200.0
 material = "Terrain/RapidWater"
 
 [[objects]]
-mesh = "Waterfall"
+mesh = "Waterfall.gltf"
 
 [[objects.instances]]
 pos = [
@@ -192,7 +192,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "savannahTree"
+mesh = "savannahTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -7959,7 +7959,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fir06_30"
+mesh = "fir06_30.gltf"
 
 [[objects.instances]]
 pos = [
@@ -7986,7 +7986,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn1"
+mesh = "farn1.gltf"
 
 [[objects.instances]]
 pos = [
@@ -9741,7 +9741,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rock"
+mesh = "rock.gltf"
 
 [[objects.instances]]
 pos = [
@@ -9780,7 +9780,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "den"
+mesh = "den.gltf"
 
 [[objects.instances]]
 pos = [
@@ -9975,7 +9975,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "BeeHive"
+mesh = "BeeHive.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10046,7 +10046,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn1"
+mesh = "farn1.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10321,7 +10321,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "GrassPatch"
+mesh = "GrassPatch.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10341,7 +10341,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom1_1"
+mesh = "shroom1_1.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10361,7 +10361,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom1_2"
+mesh = "shroom1_2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10398,7 +10398,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom2_2"
+mesh = "shroom2_2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10418,7 +10418,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rockSlab"
+mesh = "rockSlab.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10438,7 +10438,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "Wand"
+mesh = "Wand.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10458,7 +10458,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "Sign"
+mesh = "Sign.gltf"
 
 [[objects.instances]]
 pos = [

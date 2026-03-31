@@ -33,15 +33,15 @@ color_map = "grass_tex.jpg"
 
 [random_trees]
 trees = [
-    "fir14_25",
-    "fir06_30",
-    "fir05_30",
+    "fir14_25.gltf",
+    "fir06_30.gltf",
+    "fir05_30.gltf",
 ]
 count = 350
 
 [random_bushes]
 bushes = [
-    "farn1",
-    "plant2",
-    "shroom1_1",
+    "farn1.gltf",
+    "plant2.gltf",
+    "shroom1_1.gltf",
 ]

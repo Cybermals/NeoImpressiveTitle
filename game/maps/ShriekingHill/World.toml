@@ -34,7 +34,7 @@ material = "Terrain/bloodWater"
 sound = "water1.wav"
 
 [[objects]]
-mesh = "Crystal"
+mesh = "Crystal.gltf"
 material = "Terrain/Magma"
 
 [[objects.instances]]
@@ -74,7 +74,7 @@ scale = [
 sound = "no sound"
 
 [[objects]]
-mesh = "rockslab"
+mesh = "rockslab.gltf"
 material = "Terrain/LargeWater"
 
 [[objects.instances]]
@@ -96,7 +96,7 @@ scale = [
 sound = "no sound"
 
 [[objects]]
-mesh = "rockslab"
+mesh = "rockslab.gltf"
 material = "Terrain/CalmWater"
 
 [[objects.instances]]
@@ -262,7 +262,7 @@ scale = [
 sound = "no sound"
 
 [[objects]]
-mesh = "rockslab"
+mesh = "rockslab.gltf"
 material = "Terrain/LakeWater"
 
 [[objects.instances]]
@@ -302,7 +302,7 @@ scale = [
 sound = "no sound"
 
 [[objects]]
-mesh = "fir05_30"
+mesh = "fir05_30.gltf"
 
 [[objects.instances]]
 pos = [
@@ -645,7 +645,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fir06_30"
+mesh = "fir06_30.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1260,7 +1260,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fir14_25"
+mesh = "fir14_25.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1314,7 +1314,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fir05_30"
+mesh = "fir05_30.gltf"
 material = "Terrain/CalmWater"
 
 [[objects.instances]]
@@ -1335,7 +1335,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn2"
+mesh = "farn2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1882,7 +1882,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rockSlab2"
+mesh = "rockSlab2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1953,11 +1953,11 @@ scale = [
 ]
 
 [[objects]]
-mesh = "grassPatch"
+mesh = "grassPatch.gltf"
 instances = []
 
 [[objects]]
-mesh = "shroom2_2"
+mesh = "shroom2_2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2283,19 +2283,19 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shrub"
+mesh = "shrub.gltf"
 instances = []
 
 [[objects]]
-mesh = "shroom2_1"
+mesh = "shroom2_1.gltf"
 instances = []
 
 [[objects]]
-mesh = "farn1"
+mesh = "farn1.gltf"
 instances = []
 
 [[objects]]
-mesh = "pumpkin"
+mesh = "pumpkin.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2757,7 +2757,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "candles"
+mesh = "candles.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3015,7 +3015,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "grave"
+mesh = "grave.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3477,7 +3477,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom2_2"
+mesh = "shroom2_2.gltf"
 material = "Terrain/CalmWater"
 
 [[objects.instances]]
@@ -3515,7 +3515,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "crystal"
+mesh = "crystal.gltf"
 material = "Terrain/bloodWater"
 
 [[objects.instances]]
