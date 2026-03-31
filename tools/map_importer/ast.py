@@ -483,7 +483,7 @@ class FoliageGroup(object):
             # Parse params
             pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
             scale = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
-            rot = [float(n) * GLOBAL_SCALE for n in params[2].split(" ")]
+            rot = [float(n) for n in params[2].split(" ")]
             self.instances.append({
                 "pos": pos,
                 "rot": rot,
