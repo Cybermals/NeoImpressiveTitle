@@ -1,0 +1,20 @@
+[[layers]]
+texture = "rock_tex1.png"
+scale = [
+    0.1,
+    0.1
+]
+
+[[layers]]
+texture = "fallssandtex.png"
+scale = [
+    0.02,
+    0.02
+]
+
+[[layers]]
+texture = "fallsgrasstex.png"
+scale = [
+    0.02,
+    0.02
+]

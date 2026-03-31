@@ -1,0 +1,6 @@
+[[layers]]
+texture = "lava_tex.jpg"
+scale = [
+    0.02,
+    0.02
+]

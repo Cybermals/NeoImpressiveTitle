@@ -1,0 +1,6 @@
+[[layers]]
+texture = "grass_tex2.png"
+scale = [
+    0.025,
+    0.025
+]

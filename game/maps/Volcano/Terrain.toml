@@ -1,0 +1,13 @@
+[[layers]]
+texture = "dust_texdark.jpg"
+scale = [
+    0.01,
+    0.01
+]
+
+[[layers]]
+texture = "rock_tex2.png"
+scale = [
+    0.01,
+    0.01
+]

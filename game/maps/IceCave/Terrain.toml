@@ -1,0 +1,6 @@
+[[layers]]
+texture = "ice_tex.png"
+scale = [
+    0.02,
+    0.02
+]

@@ -1,0 +1,6 @@
+[[layers]]
+texture = "jungle.jpg"
+scale = [
+    0.02,
+    0.02
+]
