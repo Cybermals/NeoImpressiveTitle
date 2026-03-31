@@ -159,7 +159,7 @@ class MapObject(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.mesh = params[0].replace(".mesh", "")
+        self.mesh = params[0].replace(".mesh", ".gltf")
         self.pos = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
         self.rot = [float(n) for n in params[2].split(" ")]
         self.scale = [float(n) * GLOBAL_SCALE for n in params[3].split(" ")]
@@ -417,7 +417,7 @@ class RandomTrees(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.trees = [tree.replace(".mesh", "") for tree in params[:-1]]
+        self.trees = [tree.replace(".mesh", ".gltf") for tree in params[:-1]]
         self.count = int(params[-1])
 
     def to_dict(self):
@@ -438,7 +438,7 @@ class RandomBushes(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.bushes = [bush.replace(".mesh", "") for bush in params]
+        self.bushes = [bush.replace(".mesh", ".gltf") for bush in params]
 
     def to_dict(self):
         # Convert random bush data to a dictionary
@@ -461,7 +461,7 @@ class FoliageGroup(object):
 
         # Parse mesh and material
         params = lines[0].split(";")
-        self.mesh = params[0].replace(".mesh", "")
+        self.mesh = params[0].replace(".mesh", ".gltf")
 
         if len(params) > 1:
             self.material = params[1]
