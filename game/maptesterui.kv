@@ -1,0 +1,31 @@
+#:kivy 1.9.0
+
+<MapTesterScreen>:
+    map_name: map_name.text
+
+    AnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+
+        BoxLayout:
+            size_hint: .25, .05
+            orientation: "vertical"
+            padding: dp(16)
+
+            canvas:
+                Color:
+                    rgb: 0, 0, 0
+
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            BoxLayout:
+                Label:
+                    size_hint_x: .2
+                    text: "Map:"
+
+                Spinner:
+                    id: map_name
+                    size_hint_x: .9
+                    text: "Choose a Map"
