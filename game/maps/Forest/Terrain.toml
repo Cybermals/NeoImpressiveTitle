@@ -1,3 +1,6 @@
+[terrain]
+max_height = 60
+
 [[layers]]
 texture = "soil_tex.png"
 scale = [

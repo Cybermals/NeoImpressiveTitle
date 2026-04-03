@@ -1,3 +1,6 @@
+[terrain]
+max_height = 250
+
 [[layers]]
 texture = "jungle.jpg"
 scale = [

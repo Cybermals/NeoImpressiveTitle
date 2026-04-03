@@ -1,3 +1,6 @@
+[terrain]
+max_height = 70
+
 [[layers]]
 texture = "sand_tex.png"
 scale = [

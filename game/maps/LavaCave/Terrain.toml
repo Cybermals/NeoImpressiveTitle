@@ -1,3 +1,6 @@
+[terrain]
+max_height = 31
+
 [[layers]]
 texture = "lava_tex.jpg"
 scale = [

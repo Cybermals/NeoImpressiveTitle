@@ -1,3 +1,6 @@
+[terrain]
+max_height = 50
+
 [[layers]]
 texture = "grass_tex2.png"
 scale = [

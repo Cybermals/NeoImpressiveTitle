@@ -1,3 +1,6 @@
+[terrain]
+max_height = 80
+
 [[layers]]
 texture = "rock_tex1.png"
 scale = [

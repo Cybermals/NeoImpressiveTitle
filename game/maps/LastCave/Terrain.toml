@@ -1,2 +1,5 @@
+[terrain]
+max_height = 100
+
 [[layers]]
 texture = "MissingMaterial"

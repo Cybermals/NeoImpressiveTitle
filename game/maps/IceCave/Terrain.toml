@@ -1,3 +1,6 @@
+[terrain]
+max_height = 51
+
 [[layers]]
 texture = "ice_tex.png"
 scale = [
