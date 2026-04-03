@@ -3,16 +3,16 @@ width = 2500.0
 height = 2500.0
 spawn_point = [
     400.0,
-    400.0,
     10.0,
+    400.0,
 ]
 weather_cycle = "Thunderstorm"
 
 [[portals]]
 pos = [
     36.1,
-    118.60000000000001,
     2276.6,
+    118.60000000000001,
 ]
 range = 5.0
 destination = "Default"
@@ -20,8 +20,8 @@ destination = "Default"
 [[portals]]
 pos = [
     771.4000000000001,
-    60.900000000000006,
     226.10000000000002,
+    60.900000000000006,
 ]
 range = 5.0
 destination = "Ocean"
@@ -29,8 +29,8 @@ destination = "Ocean"
 [[water_planes]]
 pos = [
     556.1,
-    91.0,
     170.10000000000002,
+    91.0,
 ]
 scale_x = 5000.0
 scale_z = 5000.0
@@ -40,8 +40,8 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     34.800000000000004,
-    120.0,
     2258.0,
+    120.0,
 ]
 scale_x = 9.0
 scale_z = 10.5
@@ -51,8 +51,8 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     300.0,
-    121.0,
     450.0,
+    121.0,
 ]
 scale_x = 92.5
 scale_z = 62.5
@@ -65,8 +65,8 @@ mesh = "Waterfall.gltf"
 [[objects.instances]]
 pos = [
     44.0,
-    119.5,
     2258.1,
+    119.5,
 ]
 rot = [
     1.5,
@@ -75,15 +75,15 @@ rot = [
 ]
 scale = [
     0.0,
-    9.0,
     0.0,
+    9.0,
 ]
 
 [[objects.instances]]
 pos = [
     48.300000000000004,
-    101.5,
     2253.2000000000003,
+    101.5,
 ]
 rot = [
     3.0,
@@ -92,16 +92,16 @@ rot = [
 ]
 scale = [
     0.0,
-    9.0,
     0.0,
+    9.0,
 ]
 
 [[particles]]
 name = "WaterfallSmoke"
 pos = [
     60.0,
-    91.10000000000001,
     2253.6,
+    91.10000000000001,
 ]
 sound = "waterfall.mp3"
 
@@ -109,8 +109,8 @@ sound = "waterfall.mp3"
 name = "Geyser"
 pos = [
     284.40000000000003,
-    121.4,
     439.1,
+    121.4,
 ]
 sound = "Steam2.wav"
 
@@ -118,16 +118,16 @@ sound = "Steam2.wav"
 name = "WaterfallSmoke"
 pos = [
     282.3,
-    119.9,
     453.5,
+    119.9,
 ]
 
 [[particles]]
 name = "Geyser"
 pos = [
     306.2,
-    121.10000000000001,
     444.0,
+    121.10000000000001,
 ]
 sound = "Steam1.wav"
 
@@ -135,16 +135,16 @@ sound = "Steam1.wav"
 name = "WaterfallSmoke"
 pos = [
     270.0,
-    121.2,
     462.90000000000003,
+    121.2,
 ]
 
 [[particles]]
 name = "WaterfallSmoke"
 pos = [
     321.8,
-    121.10000000000001,
     448.70000000000005,
+    121.10000000000001,
 ]
 
 [grass]

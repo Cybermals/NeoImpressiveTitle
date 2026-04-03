@@ -3,30 +3,30 @@ width = 200.0
 height = 200.0
 spawn_point = [
     100.0,
-    100.0,
     10.0,
+    100.0,
 ]
 
 [[gates]]
 material = "GateMatWhite"
 pos = [
     50.0,
-    57.6,
     10.5,
+    57.6,
 ]
 destination = "Underwater Cave"
 dest_pos = [
     22.3,
-    3.1,
     80.9,
+    3.1,
 ]
 
 [[gates]]
 material = "GateMatWhite"
 pos = [
     144.9,
-    57.6,
     191.0,
+    57.6,
 ]
 destination = "Last Cave"
 dest_pos = [
@@ -37,8 +37,8 @@ dest_pos = [
 [[water_planes]]
 pos = [
     100.0,
-    57.0,
     100.0,
+    57.0,
 ]
 scale_x = 1000.0
 scale_z = 1000.0
@@ -57,8 +57,8 @@ sky_color = [
 [[lights]]
 pos = [
     52.5,
-    57.6,
     13.0,
+    57.6,
 ]
 color = [
     0.75,
@@ -69,8 +69,8 @@ color = [
 [[lights]]
 pos = [
     143.20000000000002,
-    57.6,
     189.0,
+    57.6,
 ]
 color = [
     0.75,
@@ -81,8 +81,8 @@ color = [
 [[billboards]]
 pos = [
     52.5,
-    57.6,
     13.0,
+    57.6,
 ]
 scale = [
     6.0,
@@ -93,8 +93,8 @@ material = "CaveLight"
 [[billboards]]
 pos = [
     142.9,
-    57.6,
     188.60000000000002,
+    57.6,
 ]
 scale = [
     10.0,
@@ -105,8 +105,8 @@ material = "CaveLight"
 [[sphere_walls]]
 pos = [
     100.0,
-    0.0,
     100.0,
+    0.0,
 ]
 range = 99.0
 is_inside = false

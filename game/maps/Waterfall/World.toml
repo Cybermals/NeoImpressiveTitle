@@ -3,16 +3,16 @@ width = 250.0
 height = 250.0
 spawn_point = [
     50.0,
-    50.0,
     10.0,
+    50.0,
 ]
 weather_cycle = "ThunderstormRain"
 
 [[portals]]
 pos = [
     100.0,
-    30.0,
     80.0,
+    30.0,
 ]
 range = 2.5
 destination = "Default"
@@ -20,8 +20,8 @@ destination = "Default"
 [[portals]]
 pos = [
     221.0,
-    27.0,
     221.0,
+    27.0,
 ]
 range = 2.5
 destination = "ReallyBig"
@@ -29,8 +29,8 @@ destination = "ReallyBig"
 [[portals]]
 pos = [
     35.0,
-    42.5,
     245.0,
+    42.5,
 ]
 range = 2.5
 destination = "GreatFalls"
@@ -39,8 +39,8 @@ destination = "GreatFalls"
 material = "GateMatBlack"
 pos = [
     126.9,
-    5.0,
     126.9,
+    5.0,
 ]
 destination = "Waterfall Cave"
 dest_pos = [
@@ -51,8 +51,8 @@ dest_pos = [
 [[water_planes]]
 pos = [
     154.5,
-    5.0,
     130.0,
+    5.0,
 ]
 scale_x = 75.0
 scale_z = 75.0
@@ -61,8 +61,8 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     98.0,
-    21.5,
     90.0,
+    21.5,
 ]
 scale_x = 50.0
 scale_z = 100.0
@@ -72,8 +72,8 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     63.0,
-    28.5,
     152.0,
+    28.5,
 ]
 scale_x = 50.0
 scale_z = 90.0
@@ -86,8 +86,8 @@ mesh = "Waterfall.gltf"
 [[objects.instances]]
 pos = [
     126.0,
-    21.5,
     119.5,
+    21.5,
 ]
 rot = [
     1.0,
@@ -96,15 +96,15 @@ rot = [
 ]
 scale = [
     0.0,
-    9.1,
     0.0,
+    9.1,
 ]
 
 [[objects.instances]]
 pos = [
     126.0,
-    21.5,
     134.5,
+    21.5,
 ]
 rot = [
     1.2,
@@ -113,15 +113,15 @@ rot = [
 ]
 scale = [
     0.0,
-    9.0,
     0.0,
+    9.0,
 ]
 
 [[objects.instances]]
 pos = [
     90.5,
-    28.5,
     118.5,
+    28.5,
 ]
 rot = [
     0.8,
@@ -130,15 +130,15 @@ rot = [
 ]
 scale = [
     0.0,
-    9.200000000000001,
     0.0,
+    9.200000000000001,
 ]
 
 [[objects.instances]]
 pos = [
     91.0,
-    28.5,
     130.5,
+    28.5,
 ]
 rot = [
     1.0,
@@ -147,16 +147,16 @@ rot = [
 ]
 scale = [
     0.0,
-    9.9,
     0.0,
+    9.9,
 ]
 
 [[particles]]
 name = "WaterfallSmoke"
 pos = [
     134.5,
-    5.0,
     125.5,
+    5.0,
 ]
 sound = "waterfall.mp3"
 
@@ -164,8 +164,8 @@ sound = "waterfall.mp3"
 name = "WaterfallSmoke"
 pos = [
     99.0,
-    21.3,
     122.5,
+    21.3,
 ]
 sound = "waterfall.mp3"
 

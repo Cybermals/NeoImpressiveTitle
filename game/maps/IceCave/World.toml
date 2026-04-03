@@ -3,8 +3,8 @@ width = 100.0
 height = 100.0
 spawn_point = [
     50.0,
-    50.0,
     10.0,
+    50.0,
 ]
 map_effect = "Exhale"
 
@@ -12,8 +12,8 @@ map_effect = "Exhale"
 material = "GateMatWhite"
 pos = [
     51.7,
-    35.0,
     85.4,
+    35.0,
 ]
 destination = "Ice"
 dest_pos = [
@@ -24,8 +24,8 @@ dest_pos = [
 [[water_planes]]
 pos = [
     50.0,
-    9.0,
     50.0,
+    9.0,
 ]
 scale_x = 100.0
 scale_z = 100.0
@@ -46,8 +46,8 @@ sky_color = [
 [[lights]]
 pos = [
     50.0,
-    5.0,
     50.0,
+    5.0,
 ]
 color = [
     0.4,
@@ -58,8 +58,8 @@ color = [
 [[lights]]
 pos = [
     51.7,
-    35.0,
     85.4,
+    35.0,
 ]
 color = [
     0.75,
@@ -70,8 +70,8 @@ color = [
 [[billboards]]
 pos = [
     56.5,
-    35.0,
     84.7,
+    35.0,
 ]
 scale = [
     6.0,
@@ -82,8 +82,8 @@ material = "CaveLight"
 [[sphere_walls]]
 pos = [
     50.0,
-    0.0,
     50.0,
+    0.0,
 ]
 range = 42.0
 is_inside = false

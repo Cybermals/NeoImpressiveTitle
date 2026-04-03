@@ -3,16 +3,16 @@ width = 800.0
 height = 800.0
 spawn_point = [
     400.0,
-    400.0,
     10.0,
+    400.0,
 ]
 weather_cycle = "Redsky"
 
 [[portals]]
 pos = [
     396.70000000000005,
-    41.6,
     65.3,
+    41.6,
 ]
 range = 2.5
 destination = "ReallyBig"
@@ -20,8 +20,8 @@ destination = "ReallyBig"
 [[portals]]
 pos = [
     134.3,
-    55.1,
     304.3,
+    55.1,
 ]
 range = 2.5
 destination = "Default"
@@ -29,8 +29,8 @@ destination = "Default"
 [[portals]]
 pos = [
     576.6,
-    10.0,
     51.5,
+    10.0,
 ]
 range = 1.0
 destination = "Waterfall"
@@ -38,8 +38,8 @@ destination = "Waterfall"
 [[portals]]
 pos = [
     53.300000000000004,
-    60.0,
     40.300000000000004,
+    60.0,
 ]
 range = 2.5
 destination = "Ice"
@@ -47,8 +47,8 @@ destination = "Ice"
 [[portals]]
 pos = [
     643.6,
-    39.0,
     725.1,
+    39.0,
 ]
 range = 3.0
 destination = "Jungle"
@@ -56,8 +56,8 @@ destination = "Jungle"
 [[portals]]
 pos = [
     343.20000000000005,
-    37.0,
     478.20000000000005,
+    37.0,
 ]
 range = 2.0
 destination = "Volcano"
@@ -66,8 +66,8 @@ destination = "Volcano"
 material = "GateMatBlack"
 pos = [
     511.5,
-    39.5,
     319.0,
+    39.5,
 ]
 destination = "Lava Cave"
 dest_pos = [
@@ -78,8 +78,8 @@ dest_pos = [
 [[water_planes]]
 pos = [
     531.6,
-    38.0,
     347.1,
+    38.0,
 ]
 scale_x = 100.0
 scale_z = 100.0
@@ -89,8 +89,8 @@ sound = "lava1.wav"
 [[water_planes]]
 pos = [
     15.700000000000001,
-    55.1,
     82.0,
+    55.1,
 ]
 scale_x = 15.0
 scale_z = 15.0
@@ -99,8 +99,8 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     576.6,
-    7.0,
     51.5,
+    7.0,
 ]
 scale_x = 20.0
 scale_z = 20.0
@@ -110,8 +110,8 @@ sound = "lava1.wav"
 [[water_planes]]
 pos = [
     352.1,
-    40.0,
     649.8000000000001,
+    40.0,
 ]
 scale_x = 20.0
 scale_z = 20.0
@@ -121,8 +121,8 @@ sound = "lava1.wav"
 [[water_planes]]
 pos = [
     677.2,
-    25.0,
     748.0,
+    25.0,
 ]
 scale_x = 40.0
 scale_z = 50.0
@@ -131,8 +131,8 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     390.70000000000005,
-    38.0,
     687.5,
+    38.0,
 ]
 scale_x = 37.0
 scale_z = 50.0
@@ -141,8 +141,8 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     417.8,
-    13.5,
     517.2,
+    13.5,
 ]
 scale_x = 5000.0
 scale_z = 5000.0
@@ -153,32 +153,32 @@ sound = "lava1.wav"
 name = "WaterfallSmoke"
 pos = [
     683.0,
-    24.1,
     747.3000000000001,
+    24.1,
 ]
 
 [[particles]]
 name = "WaterfallSmoke"
 pos = [
     668.7,
-    24.3,
     750.5,
+    24.3,
 ]
 
 [[particles]]
 name = "WaterfallSmoke"
 pos = [
     385.5,
-    38.400000000000006,
     683.0,
+    38.400000000000006,
 ]
 
 [[particles]]
 name = "Geyser"
 pos = [
     390.5,
-    50.0,
     269.1,
+    50.0,
 ]
 sound = "Steam2.wav"
 
@@ -186,8 +186,8 @@ sound = "Steam2.wav"
 name = "Geyser"
 pos = [
     385.6,
-    50.1,
     261.3,
+    50.1,
 ]
 sound = "Steam2.wav"
 
@@ -195,8 +195,8 @@ sound = "Steam2.wav"
 name = "Geyser"
 pos = [
     390.8,
-    47.5,
     277.5,
+    47.5,
 ]
 sound = "Steam1.wav"
 
@@ -204,8 +204,8 @@ sound = "Steam1.wav"
 name = "Geyser"
 pos = [
     611.3000000000001,
-    45.0,
     431.90000000000003,
+    45.0,
 ]
 sound = "Steam1.wav"
 
@@ -213,8 +213,8 @@ sound = "Steam1.wav"
 name = "Geyser"
 pos = [
     444.70000000000005,
-    58.400000000000006,
     352.5,
+    58.400000000000006,
 ]
 sound = "Steam2.wav"
 
@@ -222,7 +222,7 @@ sound = "Steam2.wav"
 name = "Geyser"
 pos = [
     492.8,
-    25.6,
     469.6,
+    25.6,
 ]
 sound = "Steam2.wav"

@@ -3,16 +3,16 @@ width = 100.0
 height = 100.0
 spawn_point = [
     50.0,
-    50.0,
     10.0,
+    50.0,
 ]
 
 [[gates]]
 material = "GateMatWhite"
 pos = [
     48.2,
-    12.0,
     98.5,
+    12.0,
 ]
 destination = "Lava"
 dest_pos = [
@@ -23,8 +23,8 @@ dest_pos = [
 [[water_planes]]
 pos = [
     50.0,
-    8.0,
     50.0,
+    8.0,
 ]
 scale_x = 500.0
 scale_z = 500.0
@@ -34,8 +34,8 @@ sound = "lava1.wav"
 [[water_planes]]
 pos = [
     50.0,
-    9.0,
     50.0,
+    9.0,
 ]
 scale_x = 50.0
 scale_z = 50.0
@@ -54,8 +54,8 @@ sky_color = [
 [[lights]]
 pos = [
     48.2,
-    12.0,
     97.0,
+    12.0,
 ]
 color = [
     0.75,
@@ -66,8 +66,8 @@ color = [
 [[billboards]]
 pos = [
     48.2,
-    12.0,
     93.5,
+    12.0,
 ]
 scale = [
     7.0,

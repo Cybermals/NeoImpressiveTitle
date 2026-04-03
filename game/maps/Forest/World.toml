@@ -3,15 +3,15 @@ width = 500.0
 height = 500.0
 spawn_point = [
     90.0,
-    200.0,
     0.1,
+    200.0,
 ]
 
 [[portals]]
 pos = [
     94.0,
-    12.0,
     78.0,
+    12.0,
 ]
 range = 2.5
 destination = "Default"
@@ -19,8 +19,8 @@ destination = "Default"
 [[water_planes]]
 pos = [
     110.0,
-    28.0,
     90.0,
+    28.0,
 ]
 scale_x = 110.0
 scale_z = 110.0

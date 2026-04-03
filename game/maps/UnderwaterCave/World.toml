@@ -3,30 +3,30 @@ width = 100.0
 height = 100.0
 spawn_point = [
     45.0,
-    45.0,
     10.0,
+    45.0,
 ]
 
 [[gates]]
 material = "GateMatWhite"
 pos = [
     88.9,
-    13.0,
     14.700000000000001,
+    13.0,
 ]
 destination = "Ocean"
 dest_pos = [
     73.60000000000001,
-    60.7,
     16.8,
+    60.7,
 ]
 
 [[gates]]
 material = "GateMatWhite"
 pos = [
     14.700000000000001,
-    3.2,
     87.0,
+    3.2,
 ]
 destination = "Serpent's Pass"
 dest_pos = [
@@ -37,8 +37,8 @@ dest_pos = [
 [[water_planes]]
 pos = [
     50.0,
-    3.0,
     50.0,
+    3.0,
 ]
 scale_x = 1000.0
 scale_z = 1000.0
@@ -48,8 +48,8 @@ material = "Terrain/LargeWater"
 name = "WaterSplash"
 pos = [
     82.7,
-    2.8000000000000003,
     20.8,
+    2.8000000000000003,
 ]
 sound = "water1.wav"
 
@@ -57,32 +57,32 @@ sound = "water1.wav"
 name = "Fireflywest"
 pos = [
     9.4,
-    14.8,
     27.3,
+    14.8,
 ]
 
 [[particles]]
 name = "Fireflynorth"
 pos = [
     9.4,
-    14.8,
     27.3,
+    14.8,
 ]
 
 [[particles]]
 name = "Fireflyeast"
 pos = [
     29.8,
-    14.8,
     44.800000000000004,
+    14.8,
 ]
 
 [[particles]]
 name = "Fireflysouth"
 pos = [
     29.8,
-    14.8,
     44.800000000000004,
+    14.8,
 ]
 
 [interior]
@@ -98,8 +98,8 @@ sky_color = [
 [[lights]]
 pos = [
     87.0,
-    13.0,
     16.6,
+    13.0,
 ]
 color = [
     0.75,
@@ -110,8 +110,8 @@ color = [
 [[lights]]
 pos = [
     17.5,
-    3.2,
     84.80000000000001,
+    3.2,
 ]
 color = [
     0.75,
@@ -122,8 +122,8 @@ color = [
 [[lights]]
 pos = [
     9.4,
-    14.8,
     27.3,
+    14.8,
 ]
 color = [
     0.05,
@@ -134,8 +134,8 @@ color = [
 [[billboards]]
 pos = [
     87.0,
-    13.0,
     16.6,
+    13.0,
 ]
 scale = [
     6.0,
@@ -146,8 +146,8 @@ material = "CaveLight"
 [[billboards]]
 pos = [
     17.5,
-    3.2,
     84.80000000000001,
+    3.2,
 ]
 scale = [
     10.0,
@@ -158,8 +158,8 @@ material = "CaveLight"
 [[sphere_walls]]
 pos = [
     50.0,
-    0.0,
     50.0,
+    0.0,
 ]
 range = 49.0
 is_inside = false
@@ -170,8 +170,8 @@ mesh = "waterfall.gltf"
 [[objects.instances]]
 pos = [
     87.0,
-    12.200000000000001,
     16.5,
+    12.200000000000001,
 ]
 rot = [
     0.0,
@@ -180,8 +180,8 @@ rot = [
 ]
 scale = [
     0.015,
-    0.03,
     0.1,
+    0.03,
 ]
 
 [[objects]]
@@ -190,8 +190,8 @@ mesh = "crystal.gltf"
 [[objects.instances]]
 pos = [
     8.0,
-    14.600000000000001,
     26.3,
+    14.600000000000001,
 ]
 rot = [
     0.0,
@@ -207,8 +207,8 @@ scale = [
 [[objects.instances]]
 pos = [
     9.5,
-    14.700000000000001,
     23.6,
+    14.700000000000001,
 ]
 rot = [
     0.0,
@@ -224,8 +224,8 @@ scale = [
 [[objects.instances]]
 pos = [
     6.4,
-    14.8,
     30.3,
+    14.8,
 ]
 rot = [
     0.0,
@@ -241,8 +241,8 @@ scale = [
 [[objects.instances]]
 pos = [
     10.200000000000001,
-    14.600000000000001,
     30.900000000000002,
+    14.600000000000001,
 ]
 rot = [
     0.0,
@@ -258,8 +258,8 @@ scale = [
 [[objects.instances]]
 pos = [
     14.0,
-    14.600000000000001,
     26.3,
+    14.600000000000001,
 ]
 rot = [
     0.0,

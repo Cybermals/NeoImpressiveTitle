@@ -3,16 +3,16 @@ width = 100.0
 height = 100.0
 spawn_point = [
     50.0,
-    50.0,
     10.0,
+    50.0,
 ]
 
 [[gates]]
 material = "GateMatWhite"
 pos = [
     47.0,
-    13.0,
     94.4,
+    13.0,
 ]
 destination = "Waterfall"
 dest_pos = [
@@ -23,8 +23,8 @@ dest_pos = [
 [[water_planes]]
 pos = [
     50.0,
-    12.0,
     50.0,
+    12.0,
 ]
 scale_x = 100.0
 scale_z = 100.0
@@ -43,8 +43,8 @@ sky_color = [
 [[lights]]
 pos = [
     47.0,
-    13.0,
     94.4,
+    13.0,
 ]
 color = [
     0.75,
@@ -55,8 +55,8 @@ color = [
 [[lights]]
 pos = [
     50.0,
-    13.200000000000001,
     50.5,
+    13.200000000000001,
 ]
 color = [
     0.1,
@@ -67,8 +67,8 @@ color = [
 [[lights]]
 pos = [
     49.5,
-    13.200000000000001,
     49.5,
+    13.200000000000001,
 ]
 color = [
     0.1,
@@ -79,8 +79,8 @@ color = [
 [[billboards]]
 pos = [
     47.2,
-    13.0,
     89.5,
+    13.0,
 ]
 scale = [
     6.0,
@@ -91,8 +91,8 @@ material = "CaveLight"
 [[sphere_walls]]
 pos = [
     50.0,
-    0.0,
     50.0,
+    0.0,
 ]
 range = 40.0
 is_inside = false

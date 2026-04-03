@@ -3,16 +3,16 @@ width = 5000.0
 height = 5000.0
 spawn_point = [
     2500.0,
-    2500.0,
     10.0,
+    2500.0,
 ]
 weather_cycle = "ThunderstormRain"
 
 [[portals]]
 pos = [
     2560.0,
-    27.0,
     2560.0,
+    27.0,
 ]
 range = 2.5
 destination = "Default"
@@ -20,8 +20,8 @@ destination = "Default"
 [[portals]]
 pos = [
     3700.0,
-    18.0,
     4475.0,
+    18.0,
 ]
 range = 2.5
 destination = "Waterfall"
@@ -29,8 +29,8 @@ destination = "Waterfall"
 [[portals]]
 pos = [
     4900.0,
-    4.0,
     75.5,
+    4.0,
 ]
 range = 1.5
 destination = "Forest"
@@ -38,8 +38,8 @@ destination = "Forest"
 [[portals]]
 pos = [
     2480.0,
-    28.0,
     2495.0,
+    28.0,
 ]
 range = 3.0
 destination = "Ocean"

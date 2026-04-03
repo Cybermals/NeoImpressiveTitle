@@ -3,29 +3,29 @@ width = 1000.0
 height = 1000.0
 spawn_point = [
     487.3,
-    14.0,
     0.1,
+    14.0,
 ]
 
 [[gates]]
 material = "GateMatWhite"
 pos = [
     487.3,
-    54.0,
     2.5,
+    54.0,
 ]
 destination = "Serpent's Pass"
 dest_pos = [
     138.4,
-    57.6,
     180.5,
+    57.6,
 ]
 
 [[water_planes]]
 pos = [
     500.0,
-    52.0,
     500.0,
+    52.0,
 ]
 scale_x = 1250.0
 scale_z = 1250.0
@@ -44,8 +44,8 @@ sky_color = [
 [[lights]]
 pos = [
     487.3,
-    54.0,
     6.0,
+    54.0,
 ]
 color = [
     0.75,
@@ -56,8 +56,8 @@ color = [
 [[billboards]]
 pos = [
     487.3,
-    54.0,
     6.0,
+    54.0,
 ]
 scale = [
     10.0,
