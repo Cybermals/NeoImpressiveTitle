@@ -2,7 +2,7 @@
 max_height = 51
 
 [[layers]]
-texture = "ice_tex.png"
+texture = "ice_tex.jpg"
 scale = [
     0.02,
     0.02
