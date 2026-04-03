@@ -2,9 +2,19 @@ import tomllib
 
 from direct.directnotify.DirectNotify import DirectNotify
 from direct.stdpy.file import *
+from panda3d.bullet import (
+    BulletDebugNode,
+    BulletGhostNode,
+    BulletHeightfieldShape,
+    BulletSphereShape,
+    BulletRigidBodyNode,
+    BulletWorld,
+    Z_up
+)
 from panda3d.core import (
     GeoMipTerrain,
     Material,
+    PNMImage,
     SamplerState,
     Shader,
     TextureStage,
@@ -14,6 +24,7 @@ from panda3d.core import (
 
 # Configure logging
 logger = DirectNotify().newCategory("MapManager")
+logger.setInfo(True)
 
 
 # Classes
@@ -24,6 +35,16 @@ class MapManager(object):
             map_name for map_name in listdir("maps") 
             if self.is_map_valid(map_name)]
         self.terrain = None
+        self.terrain_body = None
+        self.portals = []
+
+        # Load default shader
+        self.default_shader = Shader.load(
+            Shader.SL_GLSL,
+            "shaders/Simple.vert.glsl",
+            "shaders/Simple.frag.glsl"
+        )
+        base.render.set_shader(self.default_shader)
 
         # Create terrain material
         self.terrain_mat = Material()
@@ -45,6 +66,19 @@ class MapManager(object):
         self.stripes_tex.magfilter = SamplerState.FT_linear_mipmap_linear
         self.stripes_tex.wrap_u = SamplerState.WM_repeat
         self.stripes_tex.wrap_v = SamplerState.WM_repeat
+
+        # Create Bullet world
+        self.physics_world = BulletWorld()
+        self.physics_world.set_gravity(0, 0, -9.81)
+
+        # Configure physics debugging
+        bullet_dbg = base.render.attach_new_node(BulletDebugNode("BulletDebug"))
+        bullet_dbg.node().show_wireframe(True)
+        bullet_dbg.node().show_constraints(True)
+        bullet_dbg.node().show_bounding_boxes(False)
+        bullet_dbg.node().show_normals(False)
+        bullet_dbg.show()
+        self.physics_world.set_debug_node(bullet_dbg.node())
 
         # Schedule update task
         base.task_mgr.add(self.update, "map_manager")
@@ -126,23 +160,99 @@ class MapManager(object):
 
         # Set terrain size
         terrain.get_root().set_scale(
-            world_config["width"] / 513,
-            world_config["height"] / 513,
+            world_config["width"] / 512,
+            world_config["height"] / 512,
             terrain_config["terrain"]["max_height"]
         )
+
+        # Create terrain rigid body
+        terrain_shape = BulletHeightfieldShape(
+            terrain.heightfield(),
+            terrain_config["terrain"]["max_height"],
+            Z_up
+        )
+        terrain_body = base.render.attach_new_node(BulletRigidBodyNode("TerrainBody"))
+        terrain_body.node().add_shape(terrain_shape)
+        terrain_body.set_scale(
+            world_config["width"] / 512,
+            world_config["height"] / 512,
+            1
+        )
+        terrain_body.set_pos(
+            world_config["width"] / 2,
+            world_config["height"] / 2,
+            terrain_config["terrain"]["max_height"] / 2
+        )
+        self.physics_world.attach(terrain_body.node())
+        self.terrain_body = terrain_body
 
         # Generate and display terrain
         terrain.generate()
         terrain.get_root().reparent_to(base.render)
         self.terrain = terrain
 
+        # Set world bounds if present
+        # TODO
+
+        # Does the map have portals?
+        if "portals" in world_config:
+            # Create portals
+            for portal in world_config["portals"]:
+                self.add_portal(
+                    portal["pos"], 
+                    portal["range"], 
+                    portal["destination"]
+                )
+
     def unload_map(self):
         # Destroy existing terrain
-        self.terrain = None
+        if self.terrain is not None:
+            self.terrain.get_root().remove_node()
+            self.terrain = None
+
+        # Destroy existing terrain body
+        if self.terrain_body is not None:
+            self.physics_world.remove(self.terrain_body)
+            self.terrain_body.remove_node()
+            self.terrain_body = None
+
+        # Destroy existing portals
+        for portal in self.portals:
+            self.physics_world.remove(portal)
+            portal.remove_node()
+
+        self.portals = []
+
+    def add_portal(self, pos, range, destination):
+        # Create portal
+        logger.info(f"Adding portal (pos = {pos}, range = {range}, destination = {destination})...")
+        
+        portal_shape = BulletSphereShape(1)
+        portal_body = base.render.attach_new_node(BulletGhostNode("Portal"))
+        portal_body.node().add_shape(portal_shape)
+        portal_body.set_pos(*pos)
+        portal_body.set_scale(range, range, range)
+        portal_body.set_python_tag("destination", destination)
+        self.physics_world.attach(portal_body.node())
+
+        portal = base.loader.load_model("meshes/scenery/Portal.gltf")
+        texture = base.loader.load_texture(join("maps", destination, "Portal.jpg"))
+
+        if texture is None:
+            logger.warning(f"Failed to load portal texture for map '{destination}'.")
+
+        default_tex = portal.find_texture("portalDefault")
+        portal.replace_texture(default_tex, texture)
+        
+        portal.reparent_to(portal_body)
+        self.portals.append(portal_body)
 
     def update(self, task):
         # Update terrain
         if self.terrain is not None:
             self.terrain.update()
+
+        # Update physics
+        self.physics_world.do_physics(base.clock.get_dt())
 
         return task.cont
