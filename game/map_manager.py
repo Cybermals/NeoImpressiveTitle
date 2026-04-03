@@ -67,7 +67,7 @@ class MapManager(object):
         self.stripes_tex.wrap_u = SamplerState.WM_repeat
         self.stripes_tex.wrap_v = SamplerState.WM_repeat
 
-        # Create Bullet world
+        # Create physics world
         self.physics_world = BulletWorld()
         self.physics_world.set_gravity(0, 0, -9.81)
 
@@ -168,7 +168,7 @@ class MapManager(object):
         # Create terrain rigid body
         terrain_shape = BulletHeightfieldShape(
             terrain.heightfield(),
-            terrain_config["terrain"]["max_height"],
+            1,
             Z_up
         )
         terrain_body = base.render.attach_new_node(BulletRigidBodyNode("TerrainBody"))
@@ -176,7 +176,7 @@ class MapManager(object):
         terrain_body.set_scale(
             world_config["width"] / 512,
             world_config["height"] / 512,
-            1
+            terrain_config["terrain"]["max_height"]
         )
         terrain_body.set_pos(
             world_config["width"] / 2,
@@ -212,13 +212,13 @@ class MapManager(object):
 
         # Destroy existing terrain body
         if self.terrain_body is not None:
-            self.physics_world.remove(self.terrain_body)
+            self.physics_world.remove(self.terrain_body.node())
             self.terrain_body.remove_node()
             self.terrain_body = None
 
         # Destroy existing portals
         for portal in self.portals:
-            self.physics_world.remove(portal)
+            self.physics_world.remove(portal.node())
             portal.remove_node()
 
         self.portals = []
