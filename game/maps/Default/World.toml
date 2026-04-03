@@ -3,14 +3,14 @@ width = 500.0
 height = 500.0
 spawn_point = [
     250.0,
-    10.0,
+    490.0,
     250.0,
 ]
 
 [[portals]]
 pos = [
     139.5,
-    400.0,
+    100.0,
     13.0,
 ]
 range = 2.5
@@ -19,7 +19,7 @@ destination = "Waterfall"
 [[portals]]
 pos = [
     57.0,
-    19.0,
+    481.0,
     34.0,
 ]
 range = 2.5
@@ -28,7 +28,7 @@ destination = "ReallyBig"
 [[portals]]
 pos = [
     407.0,
-    207.0,
+    293.0,
     5.0,
 ]
 range = 2.5
@@ -37,7 +37,7 @@ destination = "Ocean"
 [[portals]]
 pos = [
     437.0,
-    17.0,
+    483.0,
     14.0,
 ]
 range = 2.5
@@ -46,7 +46,7 @@ destination = "Ice"
 [[portals]]
 pos = [
     17.0,
-    437.0,
+    63.0,
     10.0,
 ]
 range = 2.5
@@ -55,7 +55,7 @@ destination = "Lava"
 [[portals]]
 pos = [
     298.663,
-    298.149,
+    201.851,
     4.0,
 ]
 range = 2.5
@@ -65,7 +65,7 @@ destination = "Playground"
 material = "GateMatBlack"
 pos = [
     188.8,
-    163.20000000000002,
+    336.79999999999995,
     2.3000000000000003,
 ]
 destination = "Serpent's Pass"
@@ -78,7 +78,7 @@ dest_pos = [
 material = "GateMatBlack"
 pos = [
     164.3,
-    147.9,
+    352.1,
     10.0,
 ]
 destination = "Hidden Valley"
@@ -90,7 +90,7 @@ dest_pos = [
 [[water_planes]]
 pos = [
     165.5,
-    153.5,
+    346.5,
     20.0,
 ]
 scale_x = 8.75
@@ -104,7 +104,7 @@ mesh = "Waterfall.gltf"
 [[objects.instances]]
 pos = [
     165.3,
-    147.0,
+    353.0,
     19.900000000000002,
 ]
 rot = [
@@ -124,7 +124,7 @@ mesh = "rock.gltf"
 [[objects.instances]]
 pos = [
     164.9,
-    143.3,
+    356.7,
     9.0,
 ]
 rot = [
@@ -141,7 +141,7 @@ scale = [
 [[objects.instances]]
 pos = [
     167.20000000000002,
-    143.1,
+    356.9,
     8.0,
 ]
 rot = [
@@ -158,7 +158,7 @@ scale = [
 [[objects.instances]]
 pos = [
     162.0,
-    143.1,
+    356.9,
     8.0,
 ]
 rot = [
@@ -2369,7 +2369,7 @@ mesh = "rockSlab.gltf"
 [[objects.instances]]
 pos = [
     157.10000000000002,
-    403.3,
+    96.69999999999999,
     23.0,
 ]
 rot = [
@@ -2386,7 +2386,7 @@ scale = [
 [[objects.instances]]
 pos = [
     166.3,
-    399.3,
+    100.69999999999999,
     24.1,
 ]
 rot = [
@@ -2403,7 +2403,7 @@ scale = [
 [[objects.instances]]
 pos = [
     174.5,
-    391.70000000000005,
+    108.29999999999995,
     25.200000000000003,
 ]
 rot = [
@@ -2420,7 +2420,7 @@ scale = [
 [[objects.instances]]
 pos = [
     180.8,
-    383.5,
+    116.5,
     26.400000000000002,
 ]
 rot = [
@@ -2437,7 +2437,7 @@ scale = [
 [[objects.instances]]
 pos = [
     182.0,
-    373.3,
+    126.69999999999999,
     27.700000000000003,
 ]
 rot = [
@@ -2454,7 +2454,7 @@ scale = [
 [[objects.instances]]
 pos = [
     180.10000000000002,
-    361.3,
+    138.7,
     29.0,
 ]
 rot = [
@@ -2471,7 +2471,7 @@ scale = [
 [[objects.instances]]
 pos = [
     175.3,
-    348.8,
+    151.2,
     30.5,
 ]
 rot = [
@@ -2491,7 +2491,7 @@ mesh = "Waterfall.gltf"
 [[objects.instances]]
 pos = [
     165.3,
-    147.0,
+    353.0,
     19.900000000000002,
 ]
 rot = [
@@ -2511,7 +2511,7 @@ mesh = "rock.gltf"
 [[objects.instances]]
 pos = [
     164.9,
-    143.3,
+    356.7,
     9.0,
 ]
 rot = [
@@ -2528,7 +2528,7 @@ scale = [
 [[objects.instances]]
 pos = [
     167.20000000000002,
-    143.1,
+    356.9,
     8.0,
 ]
 rot = [
@@ -2545,7 +2545,7 @@ scale = [
 [[objects.instances]]
 pos = [
     162.0,
-    143.1,
+    356.9,
     8.0,
 ]
 rot = [
@@ -2563,7 +2563,7 @@ scale = [
 name = "WaterSplash"
 pos = [
     164.9,
-    143.5,
+    356.5,
     10.0,
 ]
 sound = "water1.wav"
@@ -2572,7 +2572,7 @@ sound = "water1.wav"
 name = "WaterSplash"
 pos = [
     167.20000000000002,
-    143.4,
+    356.6,
     9.9,
 ]
 
@@ -2580,7 +2580,7 @@ pos = [
 name = "WaterSplash"
 pos = [
     162.0,
-    143.3,
+    356.7,
     9.0,
 ]
 
@@ -2592,7 +2592,7 @@ color_map = "grass_tex.jpg"
 [[collision_boxes]]
 pos = [
     165.5,
-    157.70000000000002,
+    342.29999999999995,
     19.0,
 ]
 range = [
@@ -2604,7 +2604,7 @@ range = [
 [[collision_boxes]]
 pos = [
     160.3,
-    153.8,
+    346.2,
     19.0,
 ]
 range = [
@@ -2616,7 +2616,7 @@ range = [
 [[collision_boxes]]
 pos = [
     170.10000000000002,
-    153.60000000000002,
+    346.4,
     19.0,
 ]
 range = [
@@ -2628,7 +2628,7 @@ range = [
 [[collision_boxes]]
 pos = [
     385.20000000000005,
-    384.20000000000005,
+    115.79999999999995,
     0.0,
 ]
 range = [
@@ -2640,7 +2640,7 @@ range = [
 [[collision_boxes]]
 pos = [
     384.6,
-    385.6,
+    114.39999999999998,
     0.0,
 ]
 range = [
@@ -2652,7 +2652,7 @@ range = [
 [[collision_boxes]]
 pos = [
     157.10000000000002,
-    403.3,
+    96.69999999999999,
     22.900000000000002,
 ]
 range = [
@@ -2664,7 +2664,7 @@ range = [
 [[collision_boxes]]
 pos = [
     166.3,
-    399.3,
+    100.69999999999999,
     24.0,
 ]
 range = [
@@ -2676,7 +2676,7 @@ range = [
 [[collision_boxes]]
 pos = [
     174.5,
-    391.70000000000005,
+    108.29999999999995,
     25.1,
 ]
 range = [
@@ -2688,7 +2688,7 @@ range = [
 [[collision_boxes]]
 pos = [
     180.8,
-    383.5,
+    116.5,
     26.3,
 ]
 range = [
@@ -2700,7 +2700,7 @@ range = [
 [[collision_boxes]]
 pos = [
     182.0,
-    373.3,
+    126.69999999999999,
     27.6,
 ]
 range = [
@@ -2712,7 +2712,7 @@ range = [
 [[collision_boxes]]
 pos = [
     180.10000000000002,
-    361.3,
+    138.7,
     28.900000000000002,
 ]
 range = [
@@ -2724,7 +2724,7 @@ range = [
 [[collision_boxes]]
 pos = [
     175.3,
-    348.8,
+    151.2,
     30.5,
 ]
 range = [
@@ -2736,7 +2736,7 @@ range = [
 [[colllision_spheres]]
 pos = [
     280.0,
-    280.0,
+    220.0,
     5.0,
 ]
 range = 2.5
@@ -2744,7 +2744,7 @@ range = 2.5
 [[colllision_spheres]]
 pos = [
     161.3,
-    149.6,
+    350.4,
     18.8,
 ]
 range = 1.3
@@ -2752,7 +2752,7 @@ range = 1.3
 [[colllision_spheres]]
 pos = [
     169.5,
-    149.1,
+    350.9,
     18.8,
 ]
 range = 1.7000000000000002
@@ -2760,7 +2760,7 @@ range = 1.7000000000000002
 [[colllision_spheres]]
 pos = [
     379.3,
-    387.8,
+    112.19999999999999,
     -1.0,
 ]
 range = 3.2

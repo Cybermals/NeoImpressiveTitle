@@ -3,7 +3,7 @@ width = 250.0
 height = 250.0
 spawn_point = [
     50.0,
-    10.0,
+    240.0,
     50.0,
 ]
 weather_cycle = "ThunderstormRain"
@@ -11,7 +11,7 @@ weather_cycle = "ThunderstormRain"
 [[portals]]
 pos = [
     100.0,
-    80.0,
+    170.0,
     30.0,
 ]
 range = 2.5
@@ -20,7 +20,7 @@ destination = "Default"
 [[portals]]
 pos = [
     221.0,
-    221.0,
+    29.0,
     27.0,
 ]
 range = 2.5
@@ -29,7 +29,7 @@ destination = "ReallyBig"
 [[portals]]
 pos = [
     35.0,
-    245.0,
+    5.0,
     42.5,
 ]
 range = 2.5
@@ -39,7 +39,7 @@ destination = "GreatFalls"
 material = "GateMatBlack"
 pos = [
     126.9,
-    126.9,
+    123.1,
     5.0,
 ]
 destination = "Waterfall Cave"
@@ -51,7 +51,7 @@ dest_pos = [
 [[water_planes]]
 pos = [
     154.5,
-    130.0,
+    120.0,
     5.0,
 ]
 scale_x = 75.0
@@ -61,7 +61,7 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     98.0,
-    90.0,
+    160.0,
     21.5,
 ]
 scale_x = 50.0
@@ -72,7 +72,7 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     63.0,
-    152.0,
+    98.0,
     28.5,
 ]
 scale_x = 50.0
@@ -86,7 +86,7 @@ mesh = "Waterfall.gltf"
 [[objects.instances]]
 pos = [
     126.0,
-    119.5,
+    130.5,
     21.5,
 ]
 rot = [
@@ -103,7 +103,7 @@ scale = [
 [[objects.instances]]
 pos = [
     126.0,
-    134.5,
+    115.5,
     21.5,
 ]
 rot = [
@@ -120,7 +120,7 @@ scale = [
 [[objects.instances]]
 pos = [
     90.5,
-    118.5,
+    131.5,
     28.5,
 ]
 rot = [
@@ -137,7 +137,7 @@ scale = [
 [[objects.instances]]
 pos = [
     91.0,
-    130.5,
+    119.5,
     28.5,
 ]
 rot = [
@@ -155,7 +155,7 @@ scale = [
 name = "WaterfallSmoke"
 pos = [
     134.5,
-    125.5,
+    124.5,
     5.0,
 ]
 sound = "waterfall.mp3"
@@ -164,7 +164,7 @@ sound = "waterfall.mp3"
 name = "WaterfallSmoke"
 pos = [
     99.0,
-    122.5,
+    127.5,
     21.3,
 ]
 sound = "waterfall.mp3"

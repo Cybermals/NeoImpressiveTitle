@@ -3,7 +3,7 @@ width = 100.0
 height = 100.0
 spawn_point = [
     50.0,
-    10.0,
+    90.0,
     50.0,
 ]
 
@@ -11,7 +11,7 @@ spawn_point = [
 material = "GateMatWhite"
 pos = [
     47.0,
-    94.4,
+    5.599999999999994,
     13.0,
 ]
 destination = "Waterfall"
@@ -43,7 +43,7 @@ sky_color = [
 [[lights]]
 pos = [
     47.0,
-    94.4,
+    5.599999999999994,
     13.0,
 ]
 color = [
@@ -55,7 +55,7 @@ color = [
 [[lights]]
 pos = [
     50.0,
-    50.5,
+    49.5,
     13.200000000000001,
 ]
 color = [
@@ -67,7 +67,7 @@ color = [
 [[lights]]
 pos = [
     49.5,
-    49.5,
+    50.5,
     13.200000000000001,
 ]
 color = [
@@ -79,7 +79,7 @@ color = [
 [[billboards]]
 pos = [
     47.2,
-    89.5,
+    10.5,
     13.0,
 ]
 scale = [

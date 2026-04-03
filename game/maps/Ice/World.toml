@@ -3,7 +3,7 @@ width = 800.0
 height = 800.0
 spawn_point = [
     400.0,
-    10.0,
+    790.0,
     400.0,
 ]
 weather_cycle = "Snow"
@@ -12,7 +12,7 @@ map_effect = "Exhale"
 [[portals]]
 pos = [
     485.1,
-    385.20000000000005,
+    414.79999999999995,
     28.8,
 ]
 range = 2.5
@@ -21,7 +21,7 @@ destination = "Default"
 [[portals]]
 pos = [
     753.7,
-    515.1,
+    284.9,
     26.0,
 ]
 range = 2.5
@@ -30,7 +30,7 @@ destination = "Waterfall"
 [[portals]]
 pos = [
     312.40000000000003,
-    456.6,
+    343.4,
     30.0,
 ]
 range = 2.5
@@ -39,7 +39,7 @@ destination = "Lava"
 [[portals]]
 pos = [
     665.7,
-    402.5,
+    397.5,
     30.0,
 ]
 range = 2.5
@@ -48,7 +48,7 @@ destination = "Ocean"
 [[portals]]
 pos = [
     624.7,
-    90.5,
+    709.5,
     30.0,
 ]
 range = 2.5
@@ -58,7 +58,7 @@ destination = "ReallyBig"
 material = "GateMatBlack"
 pos = [
     559.0,
-    213.0,
+    587.0,
     28.400000000000002,
 ]
 destination = "Ice Cave"

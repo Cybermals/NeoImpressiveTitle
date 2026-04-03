@@ -3,7 +3,7 @@ width = 200.0
 height = 200.0
 spawn_point = [
     100.0,
-    10.0,
+    190.0,
     100.0,
 ]
 
@@ -11,13 +11,13 @@ spawn_point = [
 material = "GateMatWhite"
 pos = [
     50.0,
-    10.5,
+    189.5,
     57.6,
 ]
 destination = "Underwater Cave"
 dest_pos = [
     22.3,
-    80.9,
+    119.1,
     3.1,
 ]
 
@@ -25,7 +25,7 @@ dest_pos = [
 material = "GateMatWhite"
 pos = [
     144.9,
-    191.0,
+    9.0,
     57.6,
 ]
 destination = "Last Cave"
@@ -57,7 +57,7 @@ sky_color = [
 [[lights]]
 pos = [
     52.5,
-    13.0,
+    187.0,
     57.6,
 ]
 color = [
@@ -69,7 +69,7 @@ color = [
 [[lights]]
 pos = [
     143.20000000000002,
-    189.0,
+    11.0,
     57.6,
 ]
 color = [
@@ -81,7 +81,7 @@ color = [
 [[billboards]]
 pos = [
     52.5,
-    13.0,
+    187.0,
     57.6,
 ]
 scale = [
@@ -93,7 +93,7 @@ material = "CaveLight"
 [[billboards]]
 pos = [
     142.9,
-    188.60000000000002,
+    11.399999999999977,
     57.6,
 ]
 scale = [

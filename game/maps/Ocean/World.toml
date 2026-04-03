@@ -3,14 +3,14 @@ width = 800.0
 height = 800.0
 spawn_point = [
     400.0,
-    2.5,
+    797.5,
     390.0,
 ]
 
 [[portals]]
 pos = [
     125.0,
-    100.0,
+    700.0,
     30.0,
 ]
 range = 2.5
@@ -19,7 +19,7 @@ destination = "Default"
 [[portals]]
 pos = [
     90.0,
-    710.0,
+    90.0,
     12.0,
 ]
 range = 5.0
@@ -29,13 +29,13 @@ destination = "Waterfall"
 material = "GateMatBlack"
 pos = [
     429.20000000000005,
-    416.1,
+    383.9,
     14.0,
 ]
 destination = "Underwater Cave"
 dest_pos = [
     21.700000000000003,
-    67.60000000000001,
+    732.4,
     485.90000000000003,
 ]
 

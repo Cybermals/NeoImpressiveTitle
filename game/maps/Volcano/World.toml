@@ -3,7 +3,7 @@ width = 750.0
 height = 750.0
 spawn_point = [
     97.7,
-    10.0,
+    740.0,
     632.9000000000001,
 ]
 weather_cycle = "Redsky"
@@ -11,7 +11,7 @@ weather_cycle = "Redsky"
 [[portals]]
 pos = [
     108.80000000000001,
-    632.3000000000001,
+    117.69999999999993,
     88.0,
 ]
 range = 2.5
@@ -20,7 +20,7 @@ destination = "Default"
 [[portals]]
 pos = [
     396.8,
-    391.0,
+    359.0,
     165.0,
 ]
 range = 2.5
@@ -29,7 +29,7 @@ destination = "Jungle"
 [[portals]]
 pos = [
     507.5,
-    332.5,
+    417.5,
     110.0,
 ]
 range = 2.5
@@ -38,7 +38,7 @@ destination = "Lava"
 [[portals]]
 pos = [
     336.5,
-    371.8,
+    378.2,
     1.5,
 ]
 range = 2.5
@@ -47,7 +47,7 @@ destination = "Ocean"
 [[water_planes]]
 pos = [
     324.0,
-    377.8,
+    372.2,
     170.0,
 ]
 scale_x = 60.0
@@ -58,7 +58,7 @@ sound = "lava1.wav"
 [[water_planes]]
 pos = [
     605.0,
-    172.5,
+    577.5,
     60.0,
 ]
 scale_x = 70.0
@@ -69,7 +69,7 @@ sound = "lava1.wav"
 [[water_planes]]
 pos = [
     689.2,
-    667.7,
+    82.29999999999995,
     42.5,
 ]
 scale_x = 275.0
@@ -80,7 +80,7 @@ sound = "lava1.wav"
 [[water_planes]]
 pos = [
     212.5,
-    648.5,
+    101.5,
     29.5,
 ]
 scale_x = 75.0
@@ -90,7 +90,7 @@ sound = "water1.wav"
 [[water_planes]]
 pos = [
     243.5,
-    40.5,
+    709.5,
     46.0,
 ]
 scale_x = 100.0
@@ -101,7 +101,7 @@ sound = "water1.wav"
 name = "WaterfallSmoke"
 pos = [
     214.8,
-    661.1,
+    88.89999999999998,
     29.0,
 ]
 
@@ -109,7 +109,7 @@ pos = [
 name = "WaterfallSmoke"
 pos = [
     206.0,
-    649.8000000000001,
+    100.19999999999993,
     29.0,
 ]
 
@@ -117,7 +117,7 @@ pos = [
 name = "WaterfallSmoke"
 pos = [
     216.0,
-    640.0,
+    110.0,
     29.0,
 ]
 
@@ -125,7 +125,7 @@ pos = [
 name = "WaterfallSmoke"
 pos = [
     270.3,
-    38.5,
+    711.5,
     45.5,
 ]
 
@@ -133,7 +133,7 @@ pos = [
 name = "WaterfallSmoke"
 pos = [
     243.10000000000002,
-    47.1,
+    702.9,
     45.5,
 ]
 
@@ -141,7 +141,7 @@ pos = [
 name = "WaterfallSmoke"
 pos = [
     228.3,
-    39.1,
+    710.9,
     45.5,
 ]
 
@@ -149,7 +149,7 @@ pos = [
 name = "WaterfallSmoke"
 pos = [
     220.70000000000002,
-    39.6,
+    710.4,
     45.5,
 ]
 
@@ -157,7 +157,7 @@ pos = [
 name = "WaterfallSmoke"
 pos = [
     257.40000000000003,
-    49.800000000000004,
+    700.2,
     45.5,
 ]
 
@@ -165,7 +165,7 @@ pos = [
 name = "WaterfallSmoke"
 pos = [
     254.9,
-    37.0,
+    713.0,
     45.5,
 ]
 
@@ -173,7 +173,7 @@ pos = [
 name = "WaterfallSmoke"
 pos = [
     215.9,
-    45.0,
+    705.0,
     45.5,
 ]
 
@@ -181,7 +181,7 @@ pos = [
 name = "Geyser"
 pos = [
     196.20000000000002,
-    29.400000000000002,
+    720.6,
     50.2,
 ]
 sound = "Steam2.wav"
@@ -190,7 +190,7 @@ sound = "Steam2.wav"
 name = "Geyser"
 pos = [
     564.0,
-    366.0,
+    384.0,
     90.2,
 ]
 sound = "Steam2.wav"
@@ -199,7 +199,7 @@ sound = "Steam2.wav"
 name = "Geyser"
 pos = [
     51.0,
-    247.60000000000002,
+    502.4,
     89.5,
 ]
 sound = "Steam2.wav"
@@ -208,7 +208,7 @@ sound = "Steam2.wav"
 name = "Geyser"
 pos = [
     236.4,
-    658.5,
+    91.5,
     51.0,
 ]
 sound = "Steam2.wav"

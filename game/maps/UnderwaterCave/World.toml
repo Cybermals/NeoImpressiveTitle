@@ -3,7 +3,7 @@ width = 100.0
 height = 100.0
 spawn_point = [
     45.0,
-    10.0,
+    90.0,
     45.0,
 ]
 
@@ -11,13 +11,13 @@ spawn_point = [
 material = "GateMatWhite"
 pos = [
     88.9,
-    14.700000000000001,
+    85.3,
     13.0,
 ]
 destination = "Ocean"
 dest_pos = [
     73.60000000000001,
-    16.8,
+    83.2,
     60.7,
 ]
 
@@ -25,7 +25,7 @@ dest_pos = [
 material = "GateMatWhite"
 pos = [
     14.700000000000001,
-    87.0,
+    13.0,
     3.2,
 ]
 destination = "Serpent's Pass"
@@ -48,7 +48,7 @@ material = "Terrain/LargeWater"
 name = "WaterSplash"
 pos = [
     82.7,
-    20.8,
+    79.2,
     2.8000000000000003,
 ]
 sound = "water1.wav"
@@ -57,7 +57,7 @@ sound = "water1.wav"
 name = "Fireflywest"
 pos = [
     9.4,
-    27.3,
+    72.7,
     14.8,
 ]
 
@@ -65,7 +65,7 @@ pos = [
 name = "Fireflynorth"
 pos = [
     9.4,
-    27.3,
+    72.7,
     14.8,
 ]
 
@@ -73,7 +73,7 @@ pos = [
 name = "Fireflyeast"
 pos = [
     29.8,
-    44.800000000000004,
+    55.199999999999996,
     14.8,
 ]
 
@@ -81,7 +81,7 @@ pos = [
 name = "Fireflysouth"
 pos = [
     29.8,
-    44.800000000000004,
+    55.199999999999996,
     14.8,
 ]
 
@@ -98,7 +98,7 @@ sky_color = [
 [[lights]]
 pos = [
     87.0,
-    16.6,
+    83.4,
     13.0,
 ]
 color = [
@@ -110,7 +110,7 @@ color = [
 [[lights]]
 pos = [
     17.5,
-    84.80000000000001,
+    15.199999999999989,
     3.2,
 ]
 color = [
@@ -122,7 +122,7 @@ color = [
 [[lights]]
 pos = [
     9.4,
-    27.3,
+    72.7,
     14.8,
 ]
 color = [
@@ -134,7 +134,7 @@ color = [
 [[billboards]]
 pos = [
     87.0,
-    16.6,
+    83.4,
     13.0,
 ]
 scale = [
@@ -146,7 +146,7 @@ material = "CaveLight"
 [[billboards]]
 pos = [
     17.5,
-    84.80000000000001,
+    15.199999999999989,
     3.2,
 ]
 scale = [
@@ -170,7 +170,7 @@ mesh = "waterfall.gltf"
 [[objects.instances]]
 pos = [
     87.0,
-    16.5,
+    83.5,
     12.200000000000001,
 ]
 rot = [
@@ -190,7 +190,7 @@ mesh = "crystal.gltf"
 [[objects.instances]]
 pos = [
     8.0,
-    26.3,
+    73.7,
     14.600000000000001,
 ]
 rot = [
@@ -207,7 +207,7 @@ scale = [
 [[objects.instances]]
 pos = [
     9.5,
-    23.6,
+    76.4,
     14.700000000000001,
 ]
 rot = [
@@ -224,7 +224,7 @@ scale = [
 [[objects.instances]]
 pos = [
     6.4,
-    30.3,
+    69.7,
     14.8,
 ]
 rot = [
@@ -241,7 +241,7 @@ scale = [
 [[objects.instances]]
 pos = [
     10.200000000000001,
-    30.900000000000002,
+    69.1,
     14.600000000000001,
 ]
 rot = [
@@ -258,7 +258,7 @@ scale = [
 [[objects.instances]]
 pos = [
     14.0,
-    26.3,
+    73.7,
     14.600000000000001,
 ]
 rot = [

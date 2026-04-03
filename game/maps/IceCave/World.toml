@@ -3,7 +3,7 @@ width = 100.0
 height = 100.0
 spawn_point = [
     50.0,
-    10.0,
+    90.0,
     50.0,
 ]
 map_effect = "Exhale"
@@ -12,7 +12,7 @@ map_effect = "Exhale"
 material = "GateMatWhite"
 pos = [
     51.7,
-    85.4,
+    14.599999999999994,
     35.0,
 ]
 destination = "Ice"
@@ -58,7 +58,7 @@ color = [
 [[lights]]
 pos = [
     51.7,
-    85.4,
+    14.599999999999994,
     35.0,
 ]
 color = [
@@ -70,7 +70,7 @@ color = [
 [[billboards]]
 pos = [
     56.5,
-    84.7,
+    15.299999999999997,
     35.0,
 ]
 scale = [

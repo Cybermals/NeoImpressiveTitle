@@ -3,7 +3,7 @@ width = 100.0
 height = 100.0
 spawn_point = [
     50.0,
-    10.0,
+    90.0,
     50.0,
 ]
 
@@ -11,7 +11,7 @@ spawn_point = [
 material = "GateMatWhite"
 pos = [
     48.2,
-    98.5,
+    1.5,
     12.0,
 ]
 destination = "Lava"
@@ -54,7 +54,7 @@ sky_color = [
 [[lights]]
 pos = [
     48.2,
-    97.0,
+    3.0,
     12.0,
 ]
 color = [
@@ -66,7 +66,7 @@ color = [
 [[billboards]]
 pos = [
     48.2,
-    93.5,
+    6.5,
     12.0,
 ]
 scale = [
