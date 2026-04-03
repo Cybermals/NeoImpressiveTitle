@@ -3,6 +3,18 @@
 GLOBAL_SCALE = .1
 
 
+# Functions
+# =========
+def parse_vec(s, scale=1):
+    return [float(n) * scale for n in s.split(" ")]
+
+def swap_yz(vec):
+    if len(vec) < 3:
+        return vec
+    
+    return [vec[0], vec[2], vec[1]]
+
+
 # Classes
 # =======
 class MapSettings(object):
@@ -22,11 +34,10 @@ class MapSettings(object):
         self.terrain = params[0]
         self.width = int(params[1]) * GLOBAL_SCALE
         self.height = int(params[2]) * GLOBAL_SCALE
-        self.spawn_point = [
-            float(n) * GLOBAL_SCALE for n in params[3].split(" ")]
+        self.spawn_point = swap_yz(parse_vec(params[3], GLOBAL_SCALE))
 
         if len(params) > 4:
-            self.bounds = [int(n) * GLOBAL_SCALE for n in params[4].split(" ")]
+            self.bounds = swap_yz(parse_vec(params[4], GLOBAL_SCALE))
 
     def to_dict(self):
         # Convert map settings to a dictionary
@@ -55,7 +66,7 @@ class Portal(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+        self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
         self.range = float(params[1]) * GLOBAL_SCALE
         self.destination = params[2]
 
@@ -82,9 +93,9 @@ class Gate(object):
 
         # Parse params
         self.material = params[0]
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+        self.pos = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
         self.destination = params[2]
-        self.dest_pos = [float(n) * GLOBAL_SCALE for n in params[3].split(" ")]
+        self.dest_pos = swap_yz(parse_vec(params[3], GLOBAL_SCALE))
 
     def to_dict(self):
         # Convert gate data to a dictionary
@@ -111,7 +122,7 @@ class WaterPlane(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+        self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
         self.scale_x = float(params[1]) * 500 * GLOBAL_SCALE
         self.scale_z = float(params[2]) * 500 * GLOBAL_SCALE
 
@@ -160,9 +171,9 @@ class MapObject(object):
 
         # Parse params
         self.mesh = params[0].replace(".mesh", ".gltf")
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
-        self.rot = [float(n) for n in params[2].split(" ")]
-        self.scale = [float(n) * GLOBAL_SCALE for n in params[3].split(" ")]
+        self.pos = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
+        self.rot = parse_vec(params[2])
+        self.scale = swap_yz(parse_vec(params[3], GLOBAL_SCALE))
 
         if len(params) > 4:
             self.sound = params[4]
@@ -201,7 +212,7 @@ class Particle(object):
 
         # Parse params
         self.name = params[0]
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+        self.pos = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
 
         if len(params) > 2:
             self.sound = params[2]
@@ -254,7 +265,7 @@ class Interior(object):
         self.material = params[1]
 
         if len(params) > 2:
-            self.sky_color = [float(n) for n in params[2].split(" ")]
+            self.sky_color = parse_vec(params[2])
 
     def to_dict(self):
         # Convert interior data to a dictionary
@@ -276,8 +287,8 @@ class Light(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
-        self.color = [float(n) for n in params[1].split(" ")]
+        self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
+        self.color = parse_vec(params[1])
 
     def to_dict(self):
         # Convert light data to a dictionary
@@ -299,8 +310,8 @@ class Billboard(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
-        self.scale = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+        self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
+        self.scale = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
         self.material = params[2]
 
     def to_dict(self):
@@ -324,7 +335,7 @@ class SphereWall(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
+        self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
         self.range = float(params[1]) * GLOBAL_SCALE
         self.is_inside = params[2] == "true"
 
@@ -349,9 +360,9 @@ class BoxWall(object):
         params = [param.strip() for param in params]
 
         # Parase params
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
-        self.range = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
-        self.is_inside = params[2] == "true"
+        self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
+        self.range = parse_vec(params[1], GLOBAL_SCALE)
+        self.is_inside = (params[2] == "true")
 
     def to_dict(self):
         # Convert box wall data to a dictionary
@@ -481,9 +492,9 @@ class FoliageGroup(object):
                 continue
 
             # Parse params
-            pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
-            scale = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
-            rot = [float(n) for n in params[2].split(" ")]
+            pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
+            scale = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
+            rot = parse_vec(params[2])
             self.instances.append({
                 "pos": pos,
                 "rot": rot,
@@ -539,8 +550,8 @@ class CollisionBox(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
-        self.range = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+        self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
+        self.range = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
 
     def to_dict(self):
         # Convert collision box to a dictionary
@@ -561,8 +572,8 @@ class CollisionSphere(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.pos = [float(n) * GLOBAL_SCALE for n in params[0].split(" ")]
-        self.range = [float(n) * GLOBAL_SCALE for n in params[1].split(" ")]
+        self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
+        self.range = float(params[1].split(" ")[0]) * GLOBAL_SCALE
 
     def to_dict(self):
         # Convert collision sphere to a dictionary
