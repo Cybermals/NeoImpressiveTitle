@@ -8,22 +8,30 @@ GLOBAL_SCALE = .1
 def parse_vec(s, scale=1):
     return [float(n) * scale for n in s.split(" ")]
 
-def swap_yz(vec):
+def swap_yz(vec, invert_y=True):
     if len(vec) < 3:
         return vec
     
-    return [vec[0], vec[2], vec[1]]
+    if invert_y:
+        return [vec[0], MapSettings.current.height - vec[2], vec[1]]
+    
+    else:
+        return [vec[0], vec[2], vec[1]]
 
 
 # Classes
 # =======
 class MapSettings(object):
+    current = None
+
     def __init__(self):
         self.terrain = ""
         self.width = 0
         self.height = 0
         self.spawn_point = [0, 0, 0]
         self.bounds = None
+
+        MapSettings.current = self
 
     def parse(self, s):
         # Split section into params
@@ -37,7 +45,7 @@ class MapSettings(object):
         self.spawn_point = swap_yz(parse_vec(params[3], GLOBAL_SCALE))
 
         if len(params) > 4:
-            self.bounds = swap_yz(parse_vec(params[4], GLOBAL_SCALE))
+            self.bounds = swap_yz(parse_vec(params[4], GLOBAL_SCALE), False)
 
     def to_dict(self):
         # Convert map settings to a dictionary
@@ -173,7 +181,7 @@ class MapObject(object):
         self.mesh = params[0].replace(".mesh", ".gltf")
         self.pos = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
         self.rot = parse_vec(params[2])
-        self.scale = swap_yz(parse_vec(params[3], GLOBAL_SCALE))
+        self.scale = swap_yz(parse_vec(params[3], GLOBAL_SCALE), False)
 
         if len(params) > 4:
             self.sound = params[4]
@@ -311,7 +319,7 @@ class Billboard(object):
 
         # Parse params
         self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
-        self.scale = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
+        self.scale = swap_yz(parse_vec(params[1], GLOBAL_SCALE), False)
         self.material = params[2]
 
     def to_dict(self):
@@ -493,7 +501,7 @@ class FoliageGroup(object):
 
             # Parse params
             pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
-            scale = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
+            scale = swap_yz(parse_vec(params[1], GLOBAL_SCALE), False)
             rot = parse_vec(params[2])
             self.instances.append({
                 "pos": pos,
@@ -551,7 +559,7 @@ class CollisionBox(object):
 
         # Parse params
         self.pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
-        self.range = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
+        self.range = swap_yz(parse_vec(params[1], GLOBAL_SCALE), False)
 
     def to_dict(self):
         # Convert collision box to a dictionary
