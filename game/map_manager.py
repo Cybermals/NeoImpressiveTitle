@@ -37,6 +37,7 @@ class MapManager(object):
         self.terrain = None
         self.terrain_body = None
         self.portals = []
+        self.gates = []
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -204,6 +205,17 @@ class MapManager(object):
                     portal["destination"]
                 )
 
+        # Does the map have gates?
+        if "gates" in world_config:
+            # Create gates
+            for gate in world_config["gates"]:
+                self.add_gate(
+                    gate["pos"],
+                    gate["destination"],
+                    gate["dest_pos"],
+                    gate["material"]
+                )
+
     def unload_map(self):
         # Destroy existing terrain
         if self.terrain is not None:
@@ -222,6 +234,13 @@ class MapManager(object):
             portal.remove_node()
 
         self.portals = []
+
+        # Destroy existing gates
+        for gate in self.gates:
+            self.physics_world.remove(gate.node())
+            gate.remove_node()
+
+        self.gates = []
 
     def add_portal(self, pos, range, destination):
         # Create portal
@@ -247,6 +266,24 @@ class MapManager(object):
         portal.reparent_to(portal_body)
         self.portals.append(portal_body)
 
+    def add_gate(self, pos, destination, dest_pos, material=""):
+        # Create gate
+        logger.info(f"Adding gate (pos = {pos}, destination = {destination}, dest_pos = {dest_pos}, material = {material})...")
+
+        gate_shape = BulletSphereShape(1)
+        gate_body = base.render.attach_new_node(BulletGhostNode("Gate"))
+        gate_body.node().add_shape(gate_shape)
+        gate_body.set_pos(*pos)
+        gate_body.set_scale(5, 5, 5)
+        gate_body.set_python_tag("destination", destination)
+        gate_body.set_python_tag("dest_pos", dest_pos)
+        self.physics_world.attach(gate_body.node())
+
+        gate = base.loader.load_model("meshes/scenery/Portal.gltf")
+        # TODO: Set material here
+        gate.reparent_to(gate_body)
+        self.gates.append(gate)
+
     def update(self, task):
         # Update terrain
         if self.terrain is not None:
@@ -254,5 +291,9 @@ class MapManager(object):
 
         # Update physics
         self.physics_world.do_physics(base.clock.get_dt())
+
+        # TODO: Handle collisions between the player and portals.
+
+        # TODO: Handle collisions between the player and gates.
 
         return task.cont
