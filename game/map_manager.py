@@ -14,13 +14,15 @@ from panda3d.bullet import (
 from panda3d.core import (
     GeoMipTerrain,
     Material,
-    PNMImage,
     SamplerState,
     Shader,
     TextureStage,
     Vec2,
+    Vec3,
     Vec4
 )
+
+from water import WaterPlane
 
 # Configure logging
 logger = DirectNotify().newCategory("MapManager")
@@ -38,6 +40,7 @@ class MapManager(object):
         self.terrain_body = None
         self.portals = []
         self.gates = []
+        self.water_planes = []
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -216,6 +219,15 @@ class MapManager(object):
                     gate["material"]
                 )
 
+        # Does the map have water planes?
+        if "water_planes" in world_config:
+            # Create water planes
+            for water_plane in world_config["water_planes"]:
+                self.add_water_plane(
+                    Vec3(*water_plane["pos"]),
+                    Vec3(water_plane["scale_x"], water_plane["scale_z"], 1)
+                )
+
     def unload_map(self):
         # Destroy existing terrain
         if self.terrain is not None:
@@ -241,6 +253,10 @@ class MapManager(object):
             gate.remove_node()
 
         self.gates = []
+
+        # Destroy existing water planes
+        # Note: The water plane destructor handles removing them from the scene graph.
+        self.water_planes = []
 
     def add_portal(self, pos, range, destination):
         # Create portal
@@ -283,6 +299,13 @@ class MapManager(object):
         # TODO: Set material here
         gate.reparent_to(gate_body)
         self.gates.append(gate)
+
+    def add_water_plane(self, pos, scale):
+        # Create water plane
+        logger.info(f"Adding water plane (pos = {pos}, scale = {scale})")
+
+        water_plane = WaterPlane(pos, 0, scale)
+        self.water_planes.append(water_plane)
 
     def update(self, task):
         # Update terrain
