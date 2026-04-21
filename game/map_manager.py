@@ -163,7 +163,7 @@ class MapManager(object):
         terrain.get_root().set_scale(
             world_config["width"] / 512,
             world_config["height"] / 512,
-            terrain_config["terrain"]["max_height"]
+            terrain_config["max_height"]
         )
 
         # Create terrain rigid body
@@ -177,12 +177,12 @@ class MapManager(object):
         terrain_body.set_scale(
             world_config["width"] / 512,
             world_config["height"] / 512,
-            terrain_config["terrain"]["max_height"]
+            terrain_config["max_height"]
         )
         terrain_body.set_pos(
             world_config["width"] / 2,
             world_config["height"] / 2,
-            terrain_config["terrain"]["max_height"] / 2
+            terrain_config["max_height"] / 2
         )
         self.physics_world.attach(terrain_body.node())
         self.terrain_body = terrain_body
