@@ -2,4 +2,8 @@
 max_height = 100
 
 [[layers]]
-texture = "MissingMaterial"
+texture = "rock_tex2.png"
+scale = [
+    .2,
+    .2
+]
