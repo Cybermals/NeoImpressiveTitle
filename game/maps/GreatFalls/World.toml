@@ -1,4 +1,3 @@
-terrain = "GreatFallsterrain.cfg"
 width = 1000.0
 height = 1000.0
 spawn_point = [

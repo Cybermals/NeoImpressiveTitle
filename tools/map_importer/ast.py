@@ -25,7 +25,6 @@ class MapSettings(object):
     current = None
 
     def __init__(self):
-        self.terrain = ""
         self.width = 0
         self.height = 0
         self.spawn_point = [0, 0, 0]
@@ -39,7 +38,6 @@ class MapSettings(object):
         params = [param.strip() for param in params]
 
         # Parse params
-        self.terrain = params[0]
         self.width = int(params[1]) * GLOBAL_SCALE
         self.height = int(params[2]) * GLOBAL_SCALE
         self.spawn_point = swap_yz(parse_vec(params[3], GLOBAL_SCALE))
@@ -50,7 +48,6 @@ class MapSettings(object):
     def to_dict(self):
         # Convert map settings to a dictionary
         data = {
-            "terrain": self.terrain,
             "width": self.width,
             "height": self.height,
             "spawn_point": self.spawn_point

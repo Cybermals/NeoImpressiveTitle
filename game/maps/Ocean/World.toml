@@ -1,4 +1,3 @@
-terrain = "oceanterrain.cfg"
 width = 800.0
 height = 800.0
 spawn_point = [
