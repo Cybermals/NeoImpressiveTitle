@@ -47,10 +47,10 @@ class WaterPlane(object):
 
             # Write vertex data
             vertex = GeomVertexWriter(vertices, "vertex")
-            vertex.add_data3(-1, 1, 0)
-            vertex.add_data3(1, 1, 0)
-            vertex.add_data3(-1, -1, 0)
-            vertex.add_data3(1, -1, 0)
+            vertex.add_data3(-.5, .5, 0)
+            vertex.add_data3(.5, .5, 0)
+            vertex.add_data3(-.5, -.5, 0)
+            vertex.add_data3(.5, -.5, 0)
 
             # Allocate primitive data
             triangles = GeomTriangles(Geom.UH_static)

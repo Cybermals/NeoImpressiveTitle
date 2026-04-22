@@ -305,6 +305,7 @@ class MapManager(object):
         logger.info(f"Adding water plane (pos = {pos}, scale = {scale})")
 
         water_plane = WaterPlane(pos, 0, scale)
+        # TODO: Set material, sound, and solid state here
         self.water_planes.append(water_plane)
 
     def update(self, task):
