@@ -313,7 +313,7 @@ class MapManager(object):
         logger.info(f"Adding water plane (pos = {pos}, scale = {scale})")
 
         water_plane = WaterPlane(pos, scale, sound, is_solid)
-        # TODO: Set material, sound, and solid state here
+        # TODO: Set material here
         self.water_planes.append(water_plane)
 
     def update(self, task):
@@ -327,5 +327,7 @@ class MapManager(object):
         # TODO: Handle collisions between the player and portals.
 
         # TODO: Handle collisions between the player and gates.
+
+        # TODO: Determine if each player and NPC is underwater.
 
         return task.cont
