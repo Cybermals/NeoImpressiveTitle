@@ -191,7 +191,7 @@ void main() {
     vec2 totalDistortion = (texture(p3d_Texture0, distortedUV).rg * 2 - 1) * .02;
     
     // Calculate base color
-    vec4 baseColor = vec4(0, .225, .5, .7);
+    vec4 baseColor = vec4(0, .225, .5, .8);
     float metallic = p3d_Material.metallic;
     float emission = 0.0;
     float roughness = p3d_Material.roughness;
