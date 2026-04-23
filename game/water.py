@@ -64,7 +64,7 @@ class WaterPlane(object):
         # Initialize water material if necessary
         if self.water_mat is None:
             WaterPlane.water_mat = Material()
-            self.water_mat.set_base_color(Vec4(1, 1, 1, 1))
+            self.water_mat.set_base_color(Vec4(0, .225, .5, .8))
             self.water_mat.set_metallic(0)
             self.water_mat.set_emission(Vec4(0, 0, 0, 1))
             self.water_mat.set_roughness(.2)
