@@ -115,7 +115,8 @@ vec3 fresnelSchlick(float cosTheta, vec3 F0) {
 }
 
 
-vec4 applyLighting(vec4 albedo, float metallic, float emission, float roughness) {
+vec4 applyLighting(vec4 albedo, float metallic, vec3 emission, 
+    float roughness) {
     // Normalize normal and extract camera position from view matrix
     vec3 N = normalize(normal);
     vec3 cameraPos = p3d_ViewMatrix[3].xyz;
@@ -161,7 +162,7 @@ vec4 applyLighting(vec4 albedo, float metallic, float emission, float roughness)
         Lo += (kD * albedo.rgb / PI + specular) * radiance * NdotL;
 
         // Add emission
-        Lo += p3d_Material.emission.rgb * emission;
+        Lo += emission;
     }
 
     // Apply lighting to initial color
@@ -199,7 +200,7 @@ void main() {
     baseColor = mix(baseColor, layer3, mask0.b);
     baseColor = baseColor * p3d_Material.baseColor;
     float metallic = p3d_Material.metallic;
-    float emission = 0.0;
+    vec3 emission = vec3(0.0, 0.0, 0.0);
     float roughness = p3d_Material.roughness;
 
     // Calculate final color
