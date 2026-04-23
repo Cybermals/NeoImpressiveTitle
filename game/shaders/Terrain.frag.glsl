@@ -197,6 +197,7 @@ void main() {
     baseColor = mix(baseColor, layer1, mask0.r);
     baseColor = mix(baseColor, layer2, mask0.g);
     baseColor = mix(baseColor, layer3, mask0.b);
+    baseColor = baseColor * p3d_Material.baseColor;
     float metallic = p3d_Material.metallic;
     float emission = 0.0;
     float roughness = p3d_Material.roughness;
