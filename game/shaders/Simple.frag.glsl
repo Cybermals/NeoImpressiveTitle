@@ -62,7 +62,6 @@ uniform struct p3d_FogParameters {
     float scale; // 1.0 / (end - start)
 } p3d_Fog;
 uniform sampler2D p3d_Texture0;
-uniform sampler2D p3d_Texture1;
 
 out vec4 p3d_FragColor;
 
@@ -108,7 +107,7 @@ vec3 fresnelSchlick(float cosTheta, vec3 F0) {
 }
 
 
-vec4 applyLighting(vec4 albedo, float metallic, float emission, 
+vec4 applyLighting(vec4 albedo, float metallic, vec3 emission, 
     float roughness) {
     // Normalize normal and extract camera position from view matrix
     vec3 N = normalize(normal);
@@ -155,7 +154,7 @@ vec4 applyLighting(vec4 albedo, float metallic, float emission,
         Lo += (kD * albedo.rgb / PI + specular) * radiance * NdotL;
 
         // Add emission
-        Lo += p3d_Material.emission.rgb;
+        Lo += emission;
     }
 
     // Apply lighting to initial color
@@ -184,7 +183,7 @@ void main() {
     // Calculate base color, metallic, emission, and roughness
     vec4 baseColor = texture(p3d_Texture0, uv) * p3d_Material.baseColor;
     float metallic = p3d_Material.metallic;
-    float emission = 0.0;
+    vec3 emission = vec3(0.0, 0.0, 0.0);
     float roughness = p3d_Material.roughness;
 
     // Calculate final color
