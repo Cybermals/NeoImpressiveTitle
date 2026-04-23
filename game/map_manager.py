@@ -38,6 +38,7 @@ class MapManager(object):
             if self.is_map_valid(map_name)]
         self.terrain = None
         self.terrain_body = None
+        self.terrain_size = None
         self.portals = []
         self.gates = []
         self.water_planes = []
@@ -194,6 +195,11 @@ class MapManager(object):
         terrain.generate()
         terrain.get_root().reparent_to(base.render)
         self.terrain = terrain
+        self.terrain_size = Vec3(
+            world_config["width"],
+            world_config["height"],
+            terrain_config["max_height"]
+        )
 
         # Set world bounds if present
         # TODO
@@ -224,8 +230,10 @@ class MapManager(object):
             # Create water planes
             for water_plane in world_config["water_planes"]:
                 self.add_water_plane(
-                    Vec3(*water_plane["pos"]),
-                    Vec3(water_plane["scale_x"], water_plane["scale_z"], 1)
+                    water_plane["pos"],
+                    [water_plane["scale_x"], water_plane["scale_z"], 1],
+                    water_plane["sound"] if "sound" in water_plane else "",
+                    water_plane["is_solid"] if "is_solid" in water_plane else False
                 )
 
     def unload_map(self):
@@ -300,11 +308,11 @@ class MapManager(object):
         gate.reparent_to(gate_body)
         self.gates.append(gate)
 
-    def add_water_plane(self, pos, scale):
+    def add_water_plane(self, pos, scale, sound, is_solid):
         # Create water plane
         logger.info(f"Adding water plane (pos = {pos}, scale = {scale})")
 
-        water_plane = WaterPlane(pos, 0, scale)
+        water_plane = WaterPlane(pos, scale, sound, is_solid)
         # TODO: Set material, sound, and solid state here
         self.water_planes.append(water_plane)
 

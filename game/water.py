@@ -1,4 +1,11 @@
+from panda3d.bullet import (
+    BulletBoxShape,
+    BulletGhostNode,
+    BulletPlaneShape,
+    BulletRigidBodyNode
+)
 from panda3d.core import (
+    CullFaceAttrib,
     Geom,
     GeomNode,
     GeomTriangles,
@@ -9,6 +16,7 @@ from panda3d.core import (
     SamplerState,
     Shader,
     TextureStage,
+    TransformState,
     TransparencyAttrib,
     Vec3,
     Vec4
@@ -26,7 +34,33 @@ class WaterPlane(object):
     water_mat = None
     plane_mesh = None
 
-    def __init__(self, pos=Vec3(), heading=0, scale=Vec3(1, 1, 1)):
+    def __init__(self, pos, scale, sound, is_solid):
+        # Choose a shape for the physics body based on the size of the water
+        terrain_size = base.map_mgr.terrain_size
+
+        if scale[0] >= terrain_size.x and scale[1] >= terrain_size.y:
+            water_shape = BulletPlaneShape(Vec3(0, 0, 1), 0)
+            self.is_ocean = True
+
+        else:
+            water_shape = BulletBoxShape(Vec3(.5, .5, 128))
+            self.is_ocean = False
+
+        # Create a ghost node or rigid body for the water
+        if not is_solid:
+            self.water_body = base.render.attach_new_node(BulletGhostNode("WaterBody"))
+            self.water_body.node().add_shape(water_shape)
+            self.is_solid = False
+
+        else:
+            self.water_body = base.render.attach_new_node(BulletRigidBodyNode("WaterBody"))
+            self.water_body.node().add_shape(water_shape)
+            self.is_solid = True
+
+        self.water_body.set_pos(Vec3(*pos) + Vec3(0, 0, -128))
+        self.water_body.set_scale(*scale)
+        base.map_mgr.physics_world.attach(self.water_body.node())
+
         # Initialize water material if necessary
         if self.water_mat is None:
             WaterPlane.water_mat = Material()
@@ -76,12 +110,11 @@ class WaterPlane(object):
         # Create water plane
         self.plane = base.render.attach_new_node(GeomNode("WaterPlane"))
         self.plane.node().add_geom(self.plane_mesh)
-        self.plane.set_pos(pos)
-        self.plane.set_h(heading)
-        self.plane.set_scale(scale)
+        self.plane.set_pos(*pos)
+        self.plane.set_scale(*scale)
 
         self.plane.set_shader(self.water_shader)
-        self.plane.set_shader_input("waveSpeed", .01)
+        self.plane.set_shader_input("waveSpeed", .01 * (not self.is_solid))
 
         stage1 = TextureStage("NormalMap")
 
@@ -90,7 +123,11 @@ class WaterPlane(object):
 
         self.plane.set_material(self.water_mat)
         self.plane.set_attrib(TransparencyAttrib.make(TransparencyAttrib.M_alpha))
+        self.plane.set_attrib(CullFaceAttrib.make(CullFaceAttrib.M_cull_none))
+
+        # TODO: Create water sound effect here.
 
     def __del__(self):
         # Remove water plane
-        self.plane.remove_node()
+        base.map_mgr.physics_world.remove(self.water_body.node())
+        self.water_body.remove_node()
