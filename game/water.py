@@ -128,6 +128,7 @@ class WaterPlane(object):
         # TODO: Create water sound effect here.
 
     def __del__(self):
-        # Remove water plane
+        # Remove water
         base.map_mgr.physics_world.remove(self.water_body.node())
         self.water_body.remove_node()
+        self.plane.remove_node()
