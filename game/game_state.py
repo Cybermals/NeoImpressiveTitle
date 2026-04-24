@@ -12,7 +12,7 @@ class GameState(FSM):
     def enterSplashScreen(self):
         # Show splash screen and play title screen music
         base.ui.switch_to_screen("SplashScreen")  # noqa: F821
-        base.title_music.play()  # noqa: F821
+        base.audio_mgr.play_title_screen_music(True)  # noqa: F821
 
     def exitSplashScreen(self):
         # Enable pause menu

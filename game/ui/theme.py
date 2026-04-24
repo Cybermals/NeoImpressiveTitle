@@ -33,7 +33,7 @@ LabelBase.register(
 class GameButton(Button):
     def on_press(self):
         try:
-            base.click_sfx.play()
+            base.audio_mgr.play_click_sfx()
 
         except NameError:
             # The sound effect is only available ingame. Theme testing doesn't
@@ -54,7 +54,7 @@ class GameFloatingWindow(FloatingWindow):
         super().on_close()
 
         try:
-            base.click_sfx.play()
+            base.audio_mgr.play_click_sfx()
 
         except NameError:
             # The sound effect is only available ingame. Theme testing doesn't

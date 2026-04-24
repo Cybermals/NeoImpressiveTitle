@@ -4,6 +4,7 @@ from panda3d.core import (
     load_prc_file
 )
 
+from audio_manager import AudioManager
 from game_state import GameState
 from map_manager import MapManager
 from ui.neoimpressivetitleui import NeoImpressiveTitleUI
@@ -23,15 +24,9 @@ class NeoImpressiveTitle(ShowBase):
         self.ui = NeoImpressiveTitleUI(self)
         self.ui.run()
 
-        # Initialize map manager
+        # Initialize map manager and audio manager
         self.map_mgr = MapManager()
-
-        # Load music
-        self.title_music = self.loader.load_music("music/Title.ogg")
-        self.title_music.set_loop(True)
-
-        # Load sound effects
-        self.click_sfx = self.loader.load_sfx("sfx/Click.ogg")
+        self.audio_mgr = AudioManager()
 
         # Schedule game initialization
         self.task_mgr.add(self.init_game(), "init")
