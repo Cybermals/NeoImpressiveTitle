@@ -170,6 +170,7 @@ vec4 applyLighting(vec4 albedo, float metallic, vec3 emission,
         p3d_Material.refractiveIndex;
     vec3 color = ambient + Lo;
     color = color / (color + vec3(1.0));
+    color = pow(color, vec3(1.0 / 2.2));
     return vec4(color, albedo.a);
 }
 

@@ -161,6 +161,7 @@ vec4 applyLighting(vec4 albedo, float metallic, vec3 emission,
     vec3 ambient = p3d_LightModel.ambient.rgb * albedo.rgb;
     vec3 color = ambient + Lo;
     color = color / (color + vec3(1.0));
+    color = pow(color, vec3(1.0 / 2.2));
     return vec4(color, albedo.a);
 }
 
@@ -183,7 +184,7 @@ void main() {
     // Calculate base color, metallic, emission, and roughness
     vec4 baseColor = texture(p3d_Texture0, uv) * p3d_Material.baseColor;
     float metallic = p3d_Material.metallic;
-    vec3 emission = vec3(0.0, 0.0, 0.0);
+    vec3 emission = p3d_Material.emission.rgb;
     float roughness = p3d_Material.roughness;
 
     // Calculate final color
