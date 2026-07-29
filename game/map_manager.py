@@ -16,6 +16,7 @@ from panda3d.core import (
     Material,
     SamplerState,
     Shader,
+    Texture,
     TextureStage,
     Vec2,
     Vec3,
@@ -132,11 +133,18 @@ class MapManager(object):
         # Load terrain textures
         for i, layer in enumerate(terrain_config["layers"]):
             # Load texture
+            # Note: Each terrain texture must be sampled as sRGB
             texture = base.loader.load_texture(join("images", "terrain", layer["texture"]))
             texture.minfilter = SamplerState.FT_linear_mipmap_linear
             texture.magfilter = SamplerState.FT_linear_mipmap_linear
             texture.wrap_u = SamplerState.WM_repeat
             texture.wrap_v = SamplerState.WM_repeat
+
+            if texture.get_num_components() == 4:
+                texture.set_format(Texture.F_srgb_alpha)
+
+            else:
+                texture.set_format(Texture.F_srgb)
 
             # Set texture and texture scale
             terrain.get_root().set_texture(TextureStage(f"Layer{i}"), texture)
@@ -155,6 +163,7 @@ class MapManager(object):
             )
 
         # Load color mask
+        # Note: Color masks do not get sampled as sRGB
         color_mask = base.loader.load_texture(join("maps", name, "ColorMask.png"))
         color_mask.minfilter = SamplerState.FT_linear_mipmap_linear
         color_mask.magfilter = SamplerState.FT_linear_mipmap_linear
@@ -303,7 +312,15 @@ class MapManager(object):
         portal = base.loader.load_model("meshes/scenery/Portal.gltf")
         texture = base.loader.load_texture(join("maps", destination, "Portal.jpg"))
 
-        if texture is None:
+        if texture is not None:
+            # Standalone diffuse textures must be sampled as sRGB
+            if texture.get_num_components() == 4:
+                texture.set_format(Texture.F_srgb_alpha)
+
+            else:
+                texture.set_format(Texture.F_srgb)
+
+        else:
             logger.warning(f"Failed to load portal texture for map '{destination}'.")
 
         default_tex = portal.find_texture("portalDefault")
