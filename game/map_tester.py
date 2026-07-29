@@ -51,7 +51,7 @@ class MapTester(ShowBase):
         # Initialize lighting
         # TODO: Move this to sky manager
         self.ambient = self.render.attach_new_node(AmbientLight("Ambient"))
-        self.ambient.node().set_color(Vec4(.8, .8, .8, 1))
+        self.ambient.node().set_color(Vec4(.2, .2, .2, 1))
         self.render.set_light(self.ambient)
 
         self.sun = self.render.attach_new_node(DirectionalLight("Sun"))

@@ -47,7 +47,7 @@ class NeoImpressiveTitle(ShowBase):
         else:
             self.game_state.request(self.game_state.prev_state)
 
-    def exit_game(self, task):
+    def exit_game(self, task: Task):
         # Exit the game
         self.userExit()
         return task.done

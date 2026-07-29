@@ -22,6 +22,7 @@ from panda3d.core import (
     Vec4
 )
 
+from sky import SkyDome
 from water import WaterPlane
 
 # Configure logging
@@ -82,7 +83,7 @@ class MapManager(object):
         bullet_dbg.node().show_constraints(True)
         bullet_dbg.node().show_bounding_boxes(False)
         bullet_dbg.node().show_normals(False)
-        bullet_dbg.show()
+        # bullet_dbg.show()
         self.physics_world.set_debug_node(bullet_dbg.node())
 
         # Schedule update task
@@ -203,6 +204,27 @@ class MapManager(object):
 
         # Set world bounds if present
         # TODO
+
+        # Create sky
+        cloud_tex = base.loader.load_texture("images/sky/Clouds.png")
+        cloud_tex.minfilter = SamplerState.FT_linear_mipmap_linear
+        cloud_tex.magfilter = SamplerState.FT_linear_mipmap_linear
+        cloud_tex.wrap_u = SamplerState.WM_repeat
+        cloud_tex.wrap_v = SamplerState.WM_repeat
+
+        celestials_tex = base.loader.load_texture("images/sky/Celestials.png")
+        celestials_tex.minfilter = SamplerState.FT_linear_mipmap_linear
+        celestials_tex.magfilter = SamplerState.FT_linear_mipmap_linear
+        celestials_tex.wrap_u = SamplerState.WM_repeat
+        celestials_tex.wrap_v = SamplerState.WM_repeat
+
+        self.sky = SkyDome(
+            Vec4(0.0, .64, 1.0, 1.0),
+            Vec4(0.0, .49, .76, 1.0),
+            cloud_tex,
+            celestials_tex
+        )
+        self.sky.set_cloud_scale(Vec2(.5, .5))
 
         # Does the map have portals?
         if "portals" in world_config:
