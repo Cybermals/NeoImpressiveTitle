@@ -184,7 +184,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "crystal.gltf"
+mesh = "Crystal.gltf"
 
 [[objects.instances]]
 pos = [

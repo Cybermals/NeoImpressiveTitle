@@ -36,7 +36,7 @@ scale_z = 150.0
 material = "Terrain/bloodWater"
 
 [[objects]]
-mesh = "acaciaTree.gltf"
+mesh = "AcaciaTree.gltf"
 material = "GUIMat/None(1)"
 
 [[objects.instances]]
@@ -958,7 +958,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "pumpkin.gltf"
+mesh = "Pumpkin.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1522,7 +1522,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "candles.gltf"
+mesh = "Candles.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2069,7 +2069,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "grave.gltf"
+mesh = "Grave.gltf"
 
 [[objects.instances]]
 pos = [

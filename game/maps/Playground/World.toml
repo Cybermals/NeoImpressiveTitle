@@ -561,7 +561,7 @@ scale = [
 sound = "water1.wav"
 
 [[objects]]
-mesh = "fir14_25.gltf"
+mesh = "Fir14-25.gltf"
 
 [[objects.instances]]
 pos = [
@@ -744,7 +744,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fir06_30.gltf"
+mesh = "Fir06-30.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1267,7 +1267,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "acaciaTree.gltf"
+mesh = "AcaciaTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1514,7 +1514,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "savannahTree.gltf"
+mesh = "SavannahTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1857,7 +1857,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "Jungletree.gltf"
+mesh = "JungleTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1922,7 +1922,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fern.gltf"
+mesh = "Fern.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2150,7 +2150,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn2.gltf"
+mesh = "Farn2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2228,7 +2228,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rockSlab.gltf"
+mesh = "RockSlab.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3369,7 +3369,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "grassPatch.gltf"
+mesh = "GrassPatch.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3732,7 +3732,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom2_2.gltf"
+mesh = "Shroom2-2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3827,7 +3827,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shrub.gltf"
+mesh = "Shrub.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3995,7 +3995,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom2_1.gltf"
+mesh = "Shroom2-1.gltf"
 
 [[objects.instances]]
 pos = [
@@ -4103,7 +4103,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn1.gltf"
+mesh = "Farn.gltf"
 
 [[objects.instances]]
 pos = [
@@ -4174,7 +4174,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rock.gltf"
+mesh = "Rock.gltf"
 
 [[objects.instances]]
 pos = [
@@ -4805,7 +4805,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "crystal.gltf"
+mesh = "Crystal.gltf"
 
 [[objects.instances]]
 pos = [
@@ -5036,7 +5036,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom1_2.gltf"
+mesh = "Shroom1-2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -5609,8 +5609,8 @@ color_map = "Flower2.png"
 
 [random_trees]
 trees = [
-    "fern.gltf",
-    "acaciatree.gltf",
+    "Fern.gltf",
+    "AcaciaTree.gltf",
     "Tree1.gltf",
 ]
 count = 400

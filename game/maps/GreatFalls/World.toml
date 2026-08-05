@@ -191,7 +191,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "savannahTree.gltf"
+mesh = "SavannahTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -7958,7 +7958,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fir06_30.gltf"
+mesh = "Fir06-30.gltf"
 
 [[objects.instances]]
 pos = [
@@ -7985,7 +7985,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn1.gltf"
+mesh = "Farn.gltf"
 
 [[objects.instances]]
 pos = [
@@ -9740,7 +9740,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rock.gltf"
+mesh = "Rock.gltf"
 
 [[objects.instances]]
 pos = [
@@ -9779,7 +9779,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "den.gltf"
+mesh = "Den.gltf"
 
 [[objects.instances]]
 pos = [
@@ -9974,7 +9974,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "BeeHive.gltf"
+mesh = "Beehive.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10045,7 +10045,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn1.gltf"
+mesh = "Farn.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10340,7 +10340,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom1_1.gltf"
+mesh = "Shroom1-1.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10360,7 +10360,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom1_2.gltf"
+mesh = "Shroom1-2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10397,7 +10397,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom2_2.gltf"
+mesh = "Shroom2-2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -10417,7 +10417,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rockSlab.gltf"
+mesh = "RockSlab.gltf"
 
 [[objects.instances]]
 pos = [

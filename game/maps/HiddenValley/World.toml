@@ -165,7 +165,7 @@ range = [
 is_inside = false
 
 [[objects]]
-mesh = "acaciaTree.gltf"
+mesh = "AcaciaTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -765,7 +765,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "savannahTree.gltf"
+mesh = "SavannahTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1208,7 +1208,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "DeadTree2.gltf"
+mesh = "DeadTree.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1334,7 +1334,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "grassPatch.gltf"
+mesh = "GrassPatch.gltf"
 
 [[objects.instances]]
 pos = [
@@ -1773,7 +1773,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shrub.gltf"
+mesh = "Shrub.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2270,7 +2270,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "fern.gltf"
+mesh = "Fern.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2677,7 +2677,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "farn2.gltf"
+mesh = "Farn2.gltf"
 
 [[objects.instances]]
 pos = [
@@ -2712,7 +2712,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rockSlab.gltf"
+mesh = "RockSlab.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3197,7 +3197,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "rock.gltf"
+mesh = "Rock.gltf"
 
 [[objects.instances]]
 pos = [
@@ -3830,7 +3830,7 @@ scale = [
 ]
 
 [[objects]]
-mesh = "shroom2_1.gltf"
+mesh = "Shroom2-1.gltf"
 
 [[objects.instances]]
 pos = [

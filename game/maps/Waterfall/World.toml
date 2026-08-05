@@ -175,8 +175,8 @@ color_map = "grass_tex2.png"
 
 [random_trees]
 trees = [
-    "fir14_25.gltf",
-    "fir06_30.gltf",
-    "fir14_25.gltf",
+    "Fir14-25.gltf",
+    "Fir06-30.gltf",
+    "Fir14-25.gltf",
 ]
 count = 20
