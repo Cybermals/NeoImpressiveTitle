@@ -19,8 +19,12 @@ class SkyDome(object):
         "shaders/Sky.frag.glsl"
     )
 
-    def __init__(self, horizon: Vec4, zenith: Vec4, cloud_tex: Texture, 
-        celestials_tex: Texture):
+    def __init__(
+            self, 
+            horizon: Vec4, 
+            zenith: Vec4, 
+            cloud_tex: Texture, 
+            celestials_tex: Texture):
         # Set background color
         base.win.set_clear_color(horizon)
 
