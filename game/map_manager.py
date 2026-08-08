@@ -1,7 +1,9 @@
 import tomllib
+from typing import List, Union
 
 from direct.directnotify.DirectNotify import DirectNotify
 from direct.stdpy.file import *
+from direct.task.Task import Task
 from panda3d.bullet import (
     BulletDebugNode,
     BulletGhostNode,
@@ -14,10 +16,12 @@ from panda3d.bullet import (
 from panda3d.core import (
     GeoMipTerrain,
     Material,
+    NodePath,
     SamplerState,
     Shader,
     Texture,
     TextureStage,
+    TransparencyAttrib,
     Vec2,
     Vec3,
     Vec4
@@ -44,6 +48,7 @@ class MapManager(object):
         self.portals = []
         self.gates = []
         self.water_planes = []
+        self.object_groups = {}
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -90,7 +95,7 @@ class MapManager(object):
         # Schedule update task
         base.task_mgr.add(self.update, "map_manager")
 
-    def is_map_valid(self, map_name):
+    def is_map_valid(self, map_name: str) -> bool:
         valid = (
             exists(join("maps", map_name, "World.toml")) and
             exists(join("maps", map_name, "Terrain.toml")) and
@@ -103,10 +108,10 @@ class MapManager(object):
 
         return valid
 
-    def get_maps(self):
+    def get_maps(self) -> List[str]:
         return self.maps
     
-    def load_map(self, name):
+    def load_map(self, name: str) -> None:
         # Is the map valid?
         if name not in self.maps:
             logger.error(f"Map '{name}' cannot be loaded.")
@@ -264,10 +269,29 @@ class MapManager(object):
                     water_plane["pos"],
                     [water_plane["scale_x"], water_plane["scale_z"], 1],
                     water_plane["sound"] if "sound" in water_plane else "",
-                    water_plane["is_solid"] if "is_solid" in water_plane else False
+                    water_plane["is_solid"] 
+                    if "is_solid" in water_plane else False
                 )
 
-    def unload_map(self):
+        # Does the map have objects?
+        if "objects" in world_config:
+            # Create objects
+            for map_object in world_config["objects"]:
+                for instance in map_object["instances"]:
+                    self.add_object(
+                        instance["pos"],
+                        instance["rot"],
+                        instance["scale"],
+                        map_object["mesh"],
+                        map_object["material"] 
+                        if "material" in map_object else ""
+                    )
+
+        # Flatten object groups
+        for object_group in self.object_groups.values():
+            object_group.flatten_strong()
+
+    def unload_map(self) -> None:
         # Destroy existing terrain
         if self.terrain is not None:
             self.terrain.get_root().remove_node()
@@ -297,9 +321,19 @@ class MapManager(object):
         # Note: The water plane destructor handles removing them from the scene graph.
         self.water_planes = []
 
-    def add_portal(self, pos, range, destination):
+        # Destroy existing map objects
+        for object_group in self.object_groups.values():
+            object_group.remove_node()
+
+        self.object_groups = {}
+
+    def add_portal(
+            self, 
+            pos: Union[list, tuple], 
+            range: float, 
+            destination: str) -> None:
         # Create portal
-        logger.info(f"Adding portal (pos = {pos}, range = {range}, destination = {destination})...")
+        logger.info(f"Adding portal (pos = {pos}, range = {range}, destination = '{destination}')...")
         
         portal_shape = BulletSphereShape(1)
         portal_body = base.render.attach_new_node(BulletGhostNode("Portal"))
@@ -329,9 +363,14 @@ class MapManager(object):
         portal.reparent_to(portal_body)
         self.portals.append(portal_body)
 
-    def add_gate(self, pos, destination, dest_pos, material=""):
+    def add_gate(
+            self, 
+            pos: Union[list, tuple], 
+            destination: str, 
+            dest_pos: Union[list, tuple], 
+            material: str = "") -> None:
         # Create gate
-        logger.info(f"Adding gate (pos = {pos}, destination = {destination}, dest_pos = {dest_pos}, material = {material})...")
+        logger.info(f"Adding gate (pos = {pos}, destination = '{destination}', dest_pos = {dest_pos}, material = '{material}')...")
 
         gate_shape = BulletSphereShape(1)
         gate_body = base.render.attach_new_node(BulletGhostNode("Gate"))
@@ -347,15 +386,81 @@ class MapManager(object):
         gate.reparent_to(gate_body)
         self.gates.append(gate)
 
-    def add_water_plane(self, pos, scale, sound, is_solid):
+    def add_water_plane(
+            self, 
+            pos: Union[list, tuple], 
+            scale: Union[list, tuple], 
+            sound: str, 
+            is_solid: bool) -> None:
         # Create water plane
         logger.info(f"Adding water plane (pos = {pos}, scale = {scale})")
+        return  # TODO: Fix water collision performance bug
 
         water_plane = WaterPlane(pos, scale, sound, is_solid)
         # TODO: Set material here
         self.water_planes.append(water_plane)
 
-    def update(self, task):
+    def add_object(
+            self, 
+            pos: Union[list, tuple], 
+            rot: Union[list, tuple],
+            scale: Union[list, tuple], 
+            mesh: str, 
+            material: str):
+        logger.info(f"Adding map object (pos = {pos}, rot = {rot}, scale = {scale}, mesh = '{mesh}', material = '{material}')...")
+
+        # Does the object position lack a Z coordinate?
+        if len(pos) < 3:
+            # Calculate the object position based on terrain height
+            ray_col = self.physics_world.ray_test_closest(
+                Vec3(pos[0], pos[1], self.terrain_size.z),
+                Vec3(pos[0], pos[1], -self.terrain_size.z),
+                0xffffffff
+            )
+            pos = ray_col.get_hit_pos()
+
+        else:
+            pos = Vec3(*pos)
+
+        # Does the object rotation have just a heading?
+        if len(rot) < 3:
+            rot = Vec3(rot[0], 0, 0)
+
+        else:
+            rot = Vec3(*rot)
+        
+        # Calculate which group the object is in and its position within the group
+        group_pos = pos // 64
+        object_pos = Vec3(pos.x % 64, pos.y % 64, pos.z % 64)
+
+        # Create the object group if it doesn't exist
+        if group_pos not in self.object_groups:
+            object_group = NodePath(f"ObjectGroup")
+            object_group.set_pos(group_pos * 64)
+            object_group.reparent_to(base.render)
+            self.object_groups[group_pos] = object_group
+
+        # Get the object group
+        object_group = self.object_groups[group_pos]
+
+        # Add the map object to the object group
+        try:
+            map_object = base.loader.load_model(join("meshes", "scenery", mesh))
+            map_object.set_pos(object_pos)
+            map_object.set_hpr(*rot)
+            map_object.set_scale(*scale)
+            map_object.reparent_to(object_group)
+
+            # Enable transparency if any of the textures have an alpha channel
+            if (Texture.F_srgb_alpha in 
+                    [tex.get_format() for tex in map_object.find_all_textures()]):
+                map_object.set_attrib(
+                    TransparencyAttrib.make(TransparencyAttrib.M_alpha))
+
+        except IOError:
+            logger.warning(f"Failed to load mesh '{mesh}'.")
+
+    def update(self, task: Task) -> None:
         # Update terrain
         if self.terrain is not None:
             self.terrain.update()

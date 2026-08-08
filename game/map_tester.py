@@ -1,3 +1,23 @@
+# panda3d-kivy monkey patch
+# =========================
+import panda3d_kivy.core.window as kivy_window
+
+# Store original method
+_original_update_size = kivy_window.PandaWindow.update_size
+
+def safe_update_size(self):
+    try:
+        _original_update_size(self)
+    except AssertionError:
+        # Ignore uninitialized matrix state during scene loading frames
+        pass
+
+# Apply override
+kivy_window.PandaWindow.update_size = safe_update_size
+
+
+# Imports
+# =======
 from direct.showbase.ShowBase import ShowBase
 from direct.task.Task import Task
 from panda3d.core import (
