@@ -71,7 +71,7 @@ pos = [
 destination = "Lava Cave"
 dest_pos = [
     48.2,
-    89.0,
+    711.0,
 ]
 
 [[water_planes]]

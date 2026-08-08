@@ -17,7 +17,7 @@ pos = [
 destination = "Ice"
 dest_pos = [
     563.6,
-    204.60000000000002,
+    -104.60000000000002,
 ]
 
 [[water_planes]]

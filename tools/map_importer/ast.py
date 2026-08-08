@@ -8,15 +8,22 @@ GLOBAL_SCALE = .1
 def parse_vec(s, scale=1):
     return [float(n) * scale for n in s.split(" ")]
 
+
 def swap_yz(vec, invert_y=True):
+    if len(vec) == 3:
+        vec = [vec[0], vec[2], vec[1]]
+    
+    if invert_y:
+        vec[1] = MapSettings.current.height - vec[1]
+
+    return vec
+
+
+def swap_hp(vec):
     if len(vec) < 3:
         return vec
     
-    if invert_y:
-        return [vec[0], MapSettings.current.height - vec[2], vec[1]]
-    
-    else:
-        return [vec[0], vec[2], vec[1]]
+    return [vec[1], vec[0], vec[2]]
 
 
 # Classes
@@ -177,7 +184,7 @@ class MapObject(object):
         # Parse params
         self.mesh = params[0].replace(".mesh", ".gltf")
         self.pos = swap_yz(parse_vec(params[1], GLOBAL_SCALE))
-        self.rot = parse_vec(params[2])
+        self.rot = swap_hp(parse_vec(params[2]))
         self.scale = swap_yz(parse_vec(params[3], GLOBAL_SCALE), False)
 
         if len(params) > 4:
@@ -499,7 +506,7 @@ class FoliageGroup(object):
             # Parse params
             pos = swap_yz(parse_vec(params[0], GLOBAL_SCALE))
             scale = swap_yz(parse_vec(params[1], GLOBAL_SCALE), False)
-            rot = parse_vec(params[2])
+            rot = swap_hp(parse_vec(params[2]))
             self.instances.append({
                 "pos": pos,
                 "rot": rot,

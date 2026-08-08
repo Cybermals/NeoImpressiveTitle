@@ -30,7 +30,7 @@ pos = [
 destination = "Last Cave"
 dest_pos = [
     486.70000000000005,
-    14.200000000000001,
+    185.8,
 ]
 
 [[water_planes]]
