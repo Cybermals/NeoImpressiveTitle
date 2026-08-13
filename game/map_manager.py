@@ -27,6 +27,7 @@ from panda3d.core import (
     Vec4
 )
 
+import particles
 from sky import SkyDome
 from water import WaterPlane
 
@@ -49,6 +50,7 @@ class MapManager(object):
         self.gates = []
         self.water_planes = []
         self.object_groups = {}
+        self.particles = []
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -91,6 +93,9 @@ class MapManager(object):
         bullet_dbg.node().show_normals(False)
         # bullet_dbg.show()
         self.physics_world.set_debug_node(bullet_dbg.node())
+
+        # Initialize particles
+        base.enable_particles()
 
         # Schedule update task
         base.task_mgr.add(self.update, "map_manager")
@@ -269,8 +274,8 @@ class MapManager(object):
                     water_plane["pos"],
                     [water_plane["scale_x"], water_plane["scale_z"], 1],
                     water_plane["sound"] if "sound" in water_plane else "",
-                    water_plane["is_solid"] 
-                    if "is_solid" in water_plane else False
+                    (water_plane["is_solid"] 
+                     if "is_solid" in water_plane else False)
                 )
 
         # Does the map have objects?
@@ -283,9 +288,21 @@ class MapManager(object):
                         instance["rot"],
                         instance["scale"],
                         map_object["mesh"],
-                        map_object["material"] 
-                        if "material" in map_object else ""
+                        (map_object["material"]
+                         if "material" in map_object else ""),
+                        map_object["sound"] if "sound" in map_object else ""
                     )
+
+        # Does the map have particles?
+        if "particles" in world_config:
+            # Create particles
+            for particle_sys in world_config["particles"]:
+                self.add_particles(
+                    particle_sys["name"],
+                    particle_sys["pos"],
+                    particle_sys["sound"] if "sound" in particle_sys else "",
+                    particle_sys["material"] if "material" in particle_sys else ""
+                )
 
         # Flatten object groups
         for object_group in self.object_groups.values():
@@ -326,6 +343,12 @@ class MapManager(object):
             object_group.remove_node()
 
         self.object_groups = {}
+
+        # Destroy existing particles
+        for particle_sys in self.particles:
+            particle_sys.remove_node()
+
+        self.particles = []
 
     def add_portal(
             self, 
@@ -406,8 +429,9 @@ class MapManager(object):
             rot: Union[list, tuple],
             scale: Union[list, tuple], 
             mesh: str, 
-            material: str):
-        logger.info(f"Adding map object (pos = {pos}, rot = {rot}, scale = {scale}, mesh = '{mesh}', material = '{material}')...")
+            material: str,
+            sound: str):
+        logger.info(f"Adding map object (pos = {pos}, rot = {rot}, scale = {scale}, mesh = '{mesh}', material = '{material}', sound = '{sound}')...")
 
         # Does the object position lack a Z coordinate?
         if len(pos) < 3:
@@ -449,6 +473,7 @@ class MapManager(object):
             map_object.set_pos(object_pos)
             map_object.set_hpr(*rot)
             map_object.set_scale(*scale)
+            # TODO: Set material and sound effect here.
             map_object.reparent_to(object_group)
 
             # Enable transparency if any of the textures have an alpha channel
@@ -459,6 +484,25 @@ class MapManager(object):
 
         except IOError:
             logger.warning(f"Failed to load mesh '{mesh}'.")
+
+    def add_particles(
+            self, 
+            name: str, 
+            pos: Union[list, tuple],
+            sound: str,
+            material: str) -> None:
+        logger.info(f"Adding particles (name = '{name}', pos = {pos}, sound = '{sound}', material = '{material}')...")
+
+        # Create particles
+        particle_root = NodePath("Particles")
+        particle_root.set_pos(*pos)
+        particle_root.set_shader_auto()
+        particle_root.reparent_to(base.render)
+        self.particles.append(particle_root)
+
+        ParticleClass = getattr(particles, name)
+        particle_sys = ParticleClass()
+        particle_sys.start(parent=particle_root, renderParent=particle_root)
 
     def update(self, task: Task) -> None:
         # Update terrain
