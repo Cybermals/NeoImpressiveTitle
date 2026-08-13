@@ -51,6 +51,7 @@ class MapManager(object):
         self.water_planes = []
         self.object_groups = {}
         self.particles = []
+        self.ceiling = None
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -304,8 +305,18 @@ class MapManager(object):
                     particle_sys["material"] if "material" in particle_sys else ""
                 )
 
-        # Load weather
-        # TODO: Need to load the weather later.
+        # Does the map have weather?
+        if "weather_cycle" in world_config:
+            pass  # TODO: Need to load the weather later.
+
+        # Is the map an interior map?
+        if "interior" in world_config:
+            interior = world_config["interior"]
+            self.set_interior(
+                interior["height"],
+                interior["material"] if "material" in interior else "",
+                interior["sky_color"] if "sky_color" in interior else ""
+            )
 
         # Flatten object groups
         for object_group in self.object_groups.values():
@@ -352,6 +363,12 @@ class MapManager(object):
             particle_sys.remove_node()
 
         self.particles = []
+
+        # Destroy existing ceiling
+        if self.ceiling is not None:
+            self.ceiling.remove_node()
+
+        self.ceiling = None
 
     def add_portal(
             self, 
@@ -500,6 +517,7 @@ class MapManager(object):
         particle_root = NodePath("Particles")
         particle_root.set_pos(*pos)
         particle_root.set_shader_auto()
+        particle_root.set_attrib(TransparencyAttrib.make(TransparencyAttrib.M_alpha))
         particle_root.reparent_to(base.render)
         self.particles.append(particle_root)
 
@@ -507,8 +525,30 @@ class MapManager(object):
         particle_sys = ParticleClass()
         particle_sys.start(parent=particle_root, renderParent=particle_root)
 
+        # TODO: Add sound effect. Not sure if material is applicable.
+
     def set_weather(self, name: str) -> None:
         pass
+
+    def set_interior(
+            self,
+            height: float,
+            material: str,
+            sky_color: Union[list, tuple]) -> None:
+        logger.info(f"Set interior (height = {height}, material = '{material}', sky_color = {sky_color})...")
+
+        # Create ceiling
+        ceiling = base.loader.load_model("meshes/scenery/Ceiling.gltf")
+        x, y, z = self.terrain_size
+        ceiling.set_scale(
+            x / 2,
+            y / 2,
+            z
+        )
+        ceiling.set_y(y)
+        ceiling.set_z(height)
+        ceiling.reparent_to(base.render)
+        self.ceiling = ceiling
 
     def update(self, task: Task) -> None:
         # Update terrain
