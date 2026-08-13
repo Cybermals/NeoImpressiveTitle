@@ -304,6 +304,9 @@ class MapManager(object):
                     particle_sys["material"] if "material" in particle_sys else ""
                 )
 
+        # Load weather
+        # TODO: Need to load the weather later.
+
         # Flatten object groups
         for object_group in self.object_groups.values():
             object_group.flatten_strong()
@@ -503,6 +506,9 @@ class MapManager(object):
         ParticleClass = getattr(particles, name)
         particle_sys = ParticleClass()
         particle_sys.start(parent=particle_root, renderParent=particle_root)
+
+    def set_weather(self, name: str) -> None:
+        pass
 
     def update(self, task: Task) -> None:
         # Update terrain
