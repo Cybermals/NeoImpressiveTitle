@@ -3,6 +3,6 @@ max_height = 100
 [[layers]]
 texture = "rock_tex2.png"
 scale = [
-    .2,
-    .2
+    0.2,
+    0.2
 ]
