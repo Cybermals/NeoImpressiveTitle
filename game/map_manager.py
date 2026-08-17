@@ -17,6 +17,7 @@ from panda3d.core import (
     GeoMipTerrain,
     Material,
     NodePath,
+    PointLight,
     SamplerState,
     Shader,
     Texture,
@@ -52,6 +53,7 @@ class MapManager(object):
         self.object_groups = {}
         self.particles = []
         self.ceiling = None
+        self.lights = []
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -318,6 +320,11 @@ class MapManager(object):
                 interior["sky_color"] if "sky_color" in interior else ""
             )
 
+        # Does the map have any lights?
+        if "lights" in world_config:
+            for light in world_config["lights"]:
+                self.add_light(light["pos"], light["color"])
+
         # Flatten object groups
         for object_group in self.object_groups.values():
             object_group.flatten_strong()
@@ -549,6 +556,20 @@ class MapManager(object):
         ceiling.set_z(height)
         ceiling.reparent_to(base.render)
         self.ceiling = ceiling
+
+    def add_light(
+            self,
+            pos: Union[list, tuple],
+            color: Union[list, tuple]) -> None:
+        logger.info(f"Adding light (pos = {pos}, color = {color})...")
+
+        # Add a light source
+        light = base.render.attach_new_node(PointLight("Light"))
+        light.node().set_color(Vec4(*color, 1))
+        light.node().set_attenuation(Vec3(1, .1, .5))
+        light.set_pos(*pos)
+        base.render.set_light(light)
+        self.lights.append(light)
 
     def update(self, task: Task) -> None:
         # Update terrain
