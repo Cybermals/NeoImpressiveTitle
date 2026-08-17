@@ -632,7 +632,7 @@ class MapManager(object):
 
         # Create sphere wall shape
         if not is_inside:
-            sphere_shape = BulletSphereShape(.5)
+            sphere_shape = BulletSphereShape(1)
 
         else:
             inv_col_sphere = base.loader.load_model("meshes/scenery/InvColSphere.gltf")
@@ -644,7 +644,7 @@ class MapManager(object):
         sphere_wall = base.render.attach_new_node(BulletRigidBodyNode("SphereWall"))
         sphere_wall.node().add_shape(sphere_shape)
         sphere_wall.set_pos(*pos)
-        sphere_wall.set_scale(range, range, range)
+        sphere_wall.set_scale(range, range, self.terrain_size.z)
         self.physics_world.attach(sphere_wall.node())
         self.sphere_walls.append(sphere_wall)
 
