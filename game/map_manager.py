@@ -54,6 +54,7 @@ class MapManager(object):
         self.particles = []
         self.ceiling = None
         self.lights = []
+        self.billboards = []
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -325,6 +326,15 @@ class MapManager(object):
             for light in world_config["lights"]:
                 self.add_light(light["pos"], light["color"])
 
+        # Does the map have any billboards?
+        if "billboards" in world_config:
+            for billboard in world_config["billboards"]:
+                self.add_billboard(
+                    billboard["pos"], 
+                    billboard["scale"], 
+                    billboard["material"]
+                )
+
         # Flatten object groups
         for object_group in self.object_groups.values():
             object_group.flatten_strong()
@@ -381,6 +391,10 @@ class MapManager(object):
         for light in self.lights:
             base.render.clear_light(light)
             light.remove_node()
+
+        # Destroy existing billboards
+        for billboard in self.billboards:
+            billboard.remove_node()
 
     def add_portal(
             self, 
@@ -575,6 +589,22 @@ class MapManager(object):
         light.set_pos(*pos)
         base.render.set_light(light)
         self.lights.append(light)
+
+    def add_billboard(
+            self,
+            pos: Union[list, tuple],
+            scale: Union[list, tuple],
+            material: str) -> None:
+        logger.info(f"Adding billboard (pos = {pos}, scale = {scale}, material = '{material}')...")
+
+        # Add a billboard
+        billboard = base.loader.load_model("meshes/scenery/Billboard.gltf")
+        billboard.set_pos(*pos)
+        billboard.set_scale(scale[0], 1, scale[1])
+        billboard.set_billboard_point_world(0)
+        # TODO: Set material
+        billboard.reparent_to(base.render)
+        self.billboards.append(billboard)
 
     def update(self, task: Task) -> None:
         # Update terrain

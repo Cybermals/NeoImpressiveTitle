@@ -1,0 +1,104 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.2.20",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "nodes" : [
+                0
+            ],
+            "name" : "Scene"
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Billboard",
+            "mesh" : 0
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "Billboard",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1
+                    },
+                    "indices" : 2,
+                    "material" : 0
+                }
+            ],
+            "name" : "Plane"
+        }
+    ],
+    "accessors" : [
+        {
+            "max" : [
+                0.4999999701976776,
+                0.5,
+                0
+            ],
+            "bufferView" : 0,
+            "count" : 4,
+            "type" : "VEC3",
+            "componentType" : 5126,
+            "min" : [
+                -0.4999999701976776,
+                -0.5,
+                0
+            ]
+        },
+        {
+            "type" : "VEC3",
+            "componentType" : 5126,
+            "bufferView" : 1,
+            "count" : 4
+        },
+        {
+            "type" : "SCALAR",
+            "componentType" : 5123,
+            "bufferView" : 2,
+            "count" : 6
+        }
+    ],
+    "bufferViews" : [
+        {
+            "byteLength" : 48,
+            "byteOffset" : 0,
+            "buffer" : 0
+        },
+        {
+            "byteLength" : 48,
+            "byteOffset" : 48,
+            "buffer" : 0
+        },
+        {
+            "byteLength" : 12,
+            "byteOffset" : 96,
+            "buffer" : 0
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 108,
+            "uri" : "data:application/octet-stream;base64,////PgAAAD8AAACA////vgAAAL8AAACA////PgAAAL8AAACA////vgAAAD8AAACAAAAAAAAAAIAAAIA/AAAAAAAAAIAAAIA/AAAAAAAAAIAAAIA/AAAAAAAAAIAAAIA/AAABAAIAAAADAAEA"
+        }
+    ]
+}
