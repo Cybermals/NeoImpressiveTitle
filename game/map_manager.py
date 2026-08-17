@@ -377,6 +377,11 @@ class MapManager(object):
 
         self.ceiling = None
 
+        # Destroy existing lights
+        for light in self.lights:
+            base.render.clear_light(light)
+            light.remove_node()
+
     def add_portal(
             self, 
             pos: Union[list, tuple], 
