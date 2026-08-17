@@ -8,8 +8,10 @@ from panda3d.bullet import (
     BulletDebugNode,
     BulletGhostNode,
     BulletHeightfieldShape,
-    BulletSphereShape,
     BulletRigidBodyNode,
+    BulletSphereShape,
+    BulletTriangleMesh,
+    BulletTriangleMeshShape,
     BulletWorld,
     Z_up
 )
@@ -55,6 +57,7 @@ class MapManager(object):
         self.ceiling = None
         self.lights = []
         self.billboards = []
+        self.sphere_walls = []
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -95,7 +98,7 @@ class MapManager(object):
         bullet_dbg.node().show_constraints(True)
         bullet_dbg.node().show_bounding_boxes(False)
         bullet_dbg.node().show_normals(False)
-        # bullet_dbg.show()
+        bullet_dbg.show()
         self.physics_world.set_debug_node(bullet_dbg.node())
 
         # Initialize particles
@@ -335,6 +338,15 @@ class MapManager(object):
                     billboard["material"]
                 )
 
+        # Does the map have any sphere walls?
+        if "sphere_walls" in world_config:
+            for sphere_wall in world_config["sphere_walls"]:
+                self.add_sphere_wall(
+                    sphere_wall["pos"], 
+                    sphere_wall["range"], 
+                    sphere_wall["is_inside"]
+                )
+
         # Flatten object groups
         for object_group in self.object_groups.values():
             object_group.flatten_strong()
@@ -395,6 +407,11 @@ class MapManager(object):
         # Destroy existing billboards
         for billboard in self.billboards:
             billboard.remove_node()
+
+        # Destroy existing sphere walls
+        for sphere_wall in self.sphere_walls:
+            self.physics_world.remove(sphere_wall.node())
+            sphere_wall.remove_node()
 
     def add_portal(
             self, 
@@ -605,6 +622,31 @@ class MapManager(object):
         # TODO: Set material
         billboard.reparent_to(base.render)
         self.billboards.append(billboard)
+
+    def add_sphere_wall(
+            self,
+            pos: Union[list, tuple],
+            range: float,
+            is_inside: bool) -> None:
+        logger.info(f"Adding sphere wall (pos = {pos}, range = {range}, is_inside = {is_inside})")
+
+        # Create sphere wall shape
+        if not is_inside:
+            sphere_shape = BulletSphereShape(.5)
+
+        else:
+            inv_col_sphere = base.loader.load_model("meshes/scenery/InvColSphere.gltf")
+            inv_sphere_mesh = BulletTriangleMesh()
+            inv_sphere_mesh.add_geom(inv_col_sphere.find("**/+GeomNode").node().get_geom(0))
+            sphere_shape = BulletTriangleMeshShape(inv_sphere_mesh, False)
+
+        # Add a sphere wall
+        sphere_wall = base.render.attach_new_node(BulletRigidBodyNode("SphereWall"))
+        sphere_wall.node().add_shape(sphere_shape)
+        sphere_wall.set_pos(*pos)
+        sphere_wall.set_scale(range, range, range)
+        self.physics_world.attach(sphere_wall.node())
+        self.sphere_walls.append(sphere_wall)
 
     def update(self, task: Task) -> None:
         # Update terrain
