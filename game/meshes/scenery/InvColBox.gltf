@@ -1,0 +1,95 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.2.20",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "nodes" : [
+                0
+            ],
+            "name" : "Scene"
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "InvColBox",
+            "mesh" : 0
+        }
+    ],
+    "materials" : [
+        {
+            "pbrMetallicRoughness" : {},
+            "name" : "InvColBox"
+        }
+    ],
+    "meshes" : [
+        {
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 0,
+                        "POSITION" : 1
+                    },
+                    "indices" : 2,
+                    "material" : 0
+                }
+            ],
+            "name" : "Cube"
+        }
+    ],
+    "accessors" : [
+        {
+            "count" : 24,
+            "type" : "VEC3",
+            "componentType" : 5126,
+            "bufferView" : 0
+        },
+        {
+            "min" : [
+                -1.0000003576278687,
+                -1,
+                -1.0000003576278687
+            ],
+            "count" : 24,
+            "type" : "VEC3",
+            "componentType" : 5126,
+            "max" : [
+                1.0000004768371582,
+                1,
+                1.0000005960464478
+            ],
+            "bufferView" : 1
+        },
+        {
+            "count" : 36,
+            "type" : "SCALAR",
+            "componentType" : 5123,
+            "bufferView" : 2
+        }
+    ],
+    "bufferViews" : [
+        {
+            "byteLength" : 288,
+            "buffer" : 0,
+            "byteOffset" : 0
+        },
+        {
+            "byteLength" : 288,
+            "buffer" : 0,
+            "byteOffset" : 288
+        },
+        {
+            "byteLength" : 72,
+            "buffer" : 0,
+            "byteOffset" : 576
+        }
+    ],
+    "buffers" : [
+        {
+            "uri" : "data:application/octet-stream;base64,AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgL8AAACAAAAAAAAAgL8AAACAAAAAAAAAgL8AAACAAAAAAAAAgL8AAACAAACAv+z/P7MAAJi0AACAv+z/P7MAAJi0AACAv+z/P7MAAJi0AACAv+z/P7MAAJi0AACYNAkA4DMAAIC/AACYNAkA4DMAAIC/AACYNAkA4DMAAIC/AACYNAkA4DMAAIC/AACAP///DzQCAHA0AACAP///DzQCAHA0AACAP///DzQCAHA0AACAP///DzQCAHA0AACAtAAAYLQAAIA/AACAtAAAYLQAAIA/AACAtAAAYLQAAIA/AACAtAAAYLQAAIA/AQCAvwAAgL/9/38/AACAPwAAgL///3+/+v9/vwAAgL8DAIC/AACAPwAAgL8AAIA/BACAPwAAgD/3/3+/AwCAvwAAgD/6/38///9/vwAAgD8AAIC/9f9/PwAAgD8FAIA/9f9/PwAAgD8FAIA/AACAPwAAgL///3+/AACAPwAAgL8AAIA/BACAPwAAgD/3/3+/AwCAvwAAgD/6/38/AACAPwAAgL8AAIA/AQCAvwAAgL/9/38/9f9/PwAAgD8FAIA///9/vwAAgD8AAIC/AQCAvwAAgL/9/38/+v9/vwAAgL8DAIC/AwCAvwAAgD/6/38/BACAPwAAgD/3/3+/+v9/vwAAgL8DAIC/AACAPwAAgL///3+///9/vwAAgD8AAIC/AAABAAIAAAADAAEABAAFAAYABwAFAAQACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA",
+            "byteLength" : 648
+        }
+    ]
+}

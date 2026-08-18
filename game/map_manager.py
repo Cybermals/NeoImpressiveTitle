@@ -5,6 +5,7 @@ from direct.directnotify.DirectNotify import DirectNotify
 from direct.stdpy.file import *
 from direct.task.Task import Task
 from panda3d.bullet import (
+    BulletBoxShape,
     BulletDebugNode,
     BulletGhostNode,
     BulletHeightfieldShape,
@@ -58,6 +59,7 @@ class MapManager(object):
         self.lights = []
         self.billboards = []
         self.sphere_walls = []
+        self.box_walls = []
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -347,6 +349,15 @@ class MapManager(object):
                     sphere_wall["is_inside"]
                 )
 
+        # Does the map have any box walls?
+        if "box_walls" in world_config:
+            for box_wall in world_config["box_walls"]:
+                self.add_box_wall(
+                    box_wall["pos"],
+                    box_wall["range"],
+                    box_wall["is_inside"]
+                )
+
         # Flatten object groups
         for object_group in self.object_groups.values():
             object_group.flatten_strong()
@@ -404,14 +415,27 @@ class MapManager(object):
             base.render.clear_light(light)
             light.remove_node()
 
+        self.lights = []
+
         # Destroy existing billboards
         for billboard in self.billboards:
             billboard.remove_node()
+
+        self.billboards = []
 
         # Destroy existing sphere walls
         for sphere_wall in self.sphere_walls:
             self.physics_world.remove(sphere_wall.node())
             sphere_wall.remove_node()
+
+        self.sphere_walls = []
+
+        # Destroy existing box walls
+        for box_wall in self.box_walls:
+            self.physics_world.remove(box_wall.node())
+            box_wall.remove_node()
+
+        self.box_walls = []
 
     def add_portal(
             self, 
@@ -647,6 +671,31 @@ class MapManager(object):
         sphere_wall.set_scale(range, range, self.terrain_size.z)
         self.physics_world.attach(sphere_wall.node())
         self.sphere_walls.append(sphere_wall)
+
+    def add_box_wall(
+            self,
+            pos: Union[list, tuple],
+            range: Union[list, tuple],
+            is_inside: bool) -> None:
+        logger.info(f"Adding box wall (pos = {pos}, range = {range}, is_inside = {is_inside})...")
+
+        # Create box shape
+        if not is_inside:
+            box_shape = BulletBoxShape(Vec3(1, 1, 1))
+
+        else:
+            inv_col_box = base.loader.load_model("meshes/scenery/InvColBox.gltf")
+            inv_box_mesh = BulletTriangleMesh()
+            inv_box_mesh.add_geom(inv_col_box.find("**/+GeomNode").node().get_geom(0))
+            box_shape = BulletTriangleMeshShape(inv_box_mesh, False)
+
+        # Add box wall
+        box_wall = base.render.attach_new_node(BulletRigidBodyNode("BoxWall"))
+        box_wall.node().add_shape(box_shape)
+        box_wall.set_pos(*pos)
+        box_wall.set_scale(range[0] / 2, range[1] / 2, self.terrain_size.z)
+        self.physics_world.attach(box_wall.node())
+        self.box_walls.append(box_wall)
 
     def update(self, task: Task) -> None:
         # Update terrain
