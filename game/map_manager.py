@@ -20,6 +20,7 @@ from panda3d.core import (
     GeoMipTerrain,
     Material,
     NodePath,
+    PNMImage,
     PointLight,
     SamplerState,
     Shader,
@@ -31,6 +32,7 @@ from panda3d.core import (
     Vec4
 )
 
+import config
 import particles
 from sky import SkyDome
 from water import WaterPlane
@@ -60,6 +62,7 @@ class MapManager(object):
         self.billboards = []
         self.sphere_walls = []
         self.box_walls = []
+        self.grass_groups = {}
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -100,7 +103,7 @@ class MapManager(object):
         bullet_dbg.node().show_constraints(True)
         bullet_dbg.node().show_bounding_boxes(False)
         bullet_dbg.node().show_normals(False)
-        bullet_dbg.show()
+        # bullet_dbg.show()
         self.physics_world.set_debug_node(bullet_dbg.node())
 
         # Initialize particles
@@ -358,9 +361,26 @@ class MapManager(object):
                     box_wall["is_inside"]
                 )
 
+        # Does the map have a map effect?
+        if "map_effect" in world_config:
+            pass  # TODO: Need to load the map effect later.
+
+        # Does the map have grass?
+        if "grass" in world_config:
+            grass = world_config["grass"]
+            self.add_grass(
+                grass["material"],
+                join("maps", name, "GrassDensityMap.png"),
+                grass["color_map"]
+            )
+
         # Flatten object groups
         for object_group in self.object_groups.values():
             object_group.flatten_strong()
+
+        # Flatten grass groups
+        for grass_group in self.grass_groups.values():
+            grass_group.flatten_strong()
 
     def unload_map(self) -> None:
         # Destroy existing terrain
@@ -436,6 +456,12 @@ class MapManager(object):
             box_wall.remove_node()
 
         self.box_walls = []
+
+        # Destroy grass groups
+        for grass_group in self.grass_groups.values():
+            grass_group.remove_node()
+
+        self.grass_groups = {}
 
     def add_portal(
             self, 
@@ -696,6 +722,66 @@ class MapManager(object):
         box_wall.set_scale(range[0] / 2, range[1] / 2, self.terrain_size.z)
         self.physics_world.attach(box_wall.node())
         self.box_walls.append(box_wall)
+
+    def add_grass(self, material: str, grass_map: str, color_map: str) -> None:
+        logger.info(f"Adding grass (material = '{material}', grass_map = '{grass_map}', color_map = '{color_map}')...")
+
+        # Load grass map
+        grass_map_img = PNMImage()
+
+        if not grass_map_img.read(grass_map):
+            logger.warning(f"Failed to load grass map '{grass_map}'.")
+            return
+
+        grass_map_size = grass_map_img.get_size()
+        scale = Vec2(
+            self.terrain_size.x / grass_map_size.x,
+            self.terrain_size.y / grass_map_size.y
+        )
+
+        # Parse grass map
+        for y in range(0, grass_map_size.y, 2):
+            for x in range(0, grass_map_size.x, 2):
+                # Is the density greater than the grass density threshold?
+                density = grass_map_img.get_gray(x, y)
+
+                if density > config.GRASS_DENSITY_THRESHOLD:
+                    # Calculate grass patch position
+                    pos = Vec3(
+                        x * scale.x, 
+                        self.terrain_size.y - y * scale.y, 
+                        0
+                    )
+
+                    ray_col = self.physics_world.ray_test_closest(
+                        Vec3(pos[0], pos[1], self.terrain_size.z),
+                        Vec3(pos[0], pos[1], -self.terrain_size.z),
+                        0xffffffff
+                    )
+                    pos = ray_col.get_hit_pos()
+
+                    # Calculate grass group position and object position within
+                    # the group
+                    group_pos = pos // 64
+                    object_pos = Vec3(pos.x % 64, pos.y % 64, pos.z % 64)
+
+                    # Create the grass group if it doesn't exist
+                    if group_pos not in self.grass_groups:
+                        grass_group = NodePath("GrassGroup")
+                        grass_group.set_pos(group_pos * 64)
+                        grass_group.set_attrib(
+                            TransparencyAttrib.make(TransparencyAttrib.M_alpha)
+                        )
+                        grass_group.reparent_to(base.render)
+                        self.grass_groups[group_pos] = grass_group
+
+                    # Get grass group
+                    grass_group = self.grass_groups[group_pos]
+
+                    # Add the grass patch to the grass group
+                    grass_patch = base.loader.load_model("meshes/scenery/Grass.gltf")
+                    grass_patch.set_pos(object_pos)
+                    grass_patch.reparent_to(grass_group)
 
     def update(self, task: Task) -> None:
         # Update terrain
