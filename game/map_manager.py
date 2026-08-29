@@ -1,3 +1,4 @@
+import random
 import tomllib
 from typing import List, Union
 
@@ -373,6 +374,37 @@ class MapManager(object):
                 join("maps", name, "GrassDensityMap.png"),
                 grass["color_map"]
             )
+
+        # Does the map have random trees?
+        if "random_trees" in world_config:
+            # Randomly place the given number of trees randomly chosen from the
+            # list of possible tree meshes
+            random_trees = world_config["random_trees"]
+
+            for i in range(random_trees["count"]):
+                # Randomly choose a tree mesh and a position for it
+                tree = random.choice(random_trees["trees"])
+                pos = [
+                    random.random() * self.terrain_size.x,
+                    random.random() * self.terrain_size.y
+                ]
+                self.add_object(pos, [0], [.1, .1, .1], tree, "", "")
+
+        # Does the map have random bushes?
+        if "random_bushes" in world_config:
+            # Randomly place bushes randomly chosen from the list of possible
+            # bush meshes. The number of random bushes is equal to the width
+            # of the world because Kov did it that way.
+            random_bushes = world_config["random_bushes"]
+
+            for i in range(int(self.terrain_size.x / 10)):
+                # Randomly choose a bush mesh and a position for it
+                bush = random.choice(random_bushes["bushes"])
+                pos = [
+                    random.random() * self.terrain_size.x,
+                    random.random() * self.terrain_size.y
+                ]
+                self.add_object(pos, [0], [.1, .1, .1], bush, "", "")
 
         # Flatten object groups
         for object_group in self.object_groups.values():

@@ -157,7 +157,7 @@ trees = [
     "Fir06-30.gltf",
     "Fir05-30.gltf",
 ]
-count = 25000
+count = 2500
 
 [random_bushes]
 bushes = [
