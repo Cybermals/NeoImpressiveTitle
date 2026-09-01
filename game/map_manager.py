@@ -64,6 +64,7 @@ class MapManager(object):
         self.sphere_walls = []
         self.box_walls = []
         self.grass_groups = {}
+        self.collision_boxes = []
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -104,7 +105,7 @@ class MapManager(object):
         bullet_dbg.node().show_constraints(True)
         bullet_dbg.node().show_bounding_boxes(False)
         bullet_dbg.node().show_normals(False)
-        # bullet_dbg.show()
+        bullet_dbg.show()
         self.physics_world.set_debug_node(bullet_dbg.node())
 
         # Initialize particles
@@ -406,6 +407,14 @@ class MapManager(object):
                 ]
                 self.add_object(pos, [0], [.1, .1, .1], bush, "", "")
 
+        # Does the map have collision boxes?
+        if "collision_boxes" in world_config:
+            for collision_box in world_config["collision_boxes"]:
+                self.add_collision_box(
+                    collision_box["pos"],
+                    collision_box["range"]
+                )
+
         # Flatten object groups
         for object_group in self.object_groups.values():
             object_group.flatten_strong()
@@ -494,6 +503,13 @@ class MapManager(object):
             grass_group.remove_node()
 
         self.grass_groups = {}
+
+        # Destroy collision boxes
+        for collision_box in self.collision_boxes:
+            self.physics_world.remove(collision_box.node())
+            collision_box.remove()
+
+        collision_boxes = []
 
     def add_portal(
             self, 
@@ -814,6 +830,20 @@ class MapManager(object):
                     grass_patch = base.loader.load_model("meshes/scenery/Grass.gltf")
                     grass_patch.set_pos(object_pos)
                     grass_patch.reparent_to(grass_group)
+
+    def add_collision_box(
+            self, 
+            pos: Union[list, tuple], 
+            range: Union[list, tuple]) -> None:
+        logger.info(f"Adding collision box (pos = {pos}, range = {range})...")
+
+        # Add a collision box
+        col_box = base.render.attach_new_node(BulletRigidBodyNode("CollisionBox"))
+        col_shape = BulletBoxShape(Vec3(*range) / 2)
+        col_box.node().add_shape(col_shape)
+        col_box.set_pos(Vec3(*pos) + Vec3(0, 0, range[2] / 2))
+        self.physics_world.attach(col_box.node())
+        self.collision_boxes.append(col_box)
 
     def update(self, task: Task) -> None:
         # Update terrain
