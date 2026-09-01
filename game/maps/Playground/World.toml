@@ -6395,7 +6395,7 @@ range = [
     1.8,
 ]
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     640.5,
     359.9,
@@ -6403,7 +6403,7 @@ pos = [
 ]
 range = 1.1
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     706.8000000000001,
     769.8,
@@ -6411,7 +6411,7 @@ pos = [
 ]
 range = 3.2
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     393.5,
     733.3,
@@ -6419,7 +6419,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     398.20000000000005,
     738.3,
@@ -6427,7 +6427,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     393.3,
     738.3,
@@ -6435,7 +6435,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     398.20000000000005,
     733.5,
@@ -6443,7 +6443,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     398.1,
     737.1,
@@ -6451,7 +6451,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     398.20000000000005,
     734.8,
@@ -6459,7 +6459,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     395.1,
     733.4,
@@ -6467,7 +6467,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     396.5,
     733.4,
@@ -6475,7 +6475,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     393.20000000000005,
     736.8,
@@ -6483,7 +6483,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     393.3,
     734.7,
@@ -6491,7 +6491,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     396.6,
     738.3,
@@ -6499,7 +6499,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     394.40000000000003,
     738.4,
@@ -6507,7 +6507,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     398.5,
     736.1,
@@ -6515,7 +6515,7 @@ pos = [
 ]
 range = 2.0
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     393.0,
     735.7,

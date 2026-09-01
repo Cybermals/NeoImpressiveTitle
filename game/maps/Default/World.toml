@@ -2732,7 +2732,7 @@ range = [
     1.7000000000000002,
 ]
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     280.0,
     220.0,
@@ -2740,7 +2740,7 @@ pos = [
 ]
 range = 2.5
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     161.3,
     350.4,
@@ -2748,7 +2748,7 @@ pos = [
 ]
 range = 1.3
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     169.5,
     350.9,
@@ -2756,7 +2756,7 @@ pos = [
 ]
 range = 1.7000000000000002
 
-[[colllision_spheres]]
+[[collision_spheres]]
 pos = [
     379.3,
     112.19999999999999,

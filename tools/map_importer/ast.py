@@ -874,7 +874,7 @@ class Map(object):
             ]
 
         if len(self.collision_spheres):
-            data["colllision_spheres"] = [
+            data["collision_spheres"] = [
                 collision_sphere.to_dict()
                 for collision_sphere in self.collision_spheres
             ]
