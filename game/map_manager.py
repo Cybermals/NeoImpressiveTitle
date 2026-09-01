@@ -426,7 +426,11 @@ class MapManager(object):
 
         # Should time be frozen?
         if "freeze_time" in world_config:
-            pass
+            pass  # TODO
+
+        # Set background music?
+        if "music" in world_config:
+            pass  # TODO
 
         # Flatten object groups
         for object_group in self.object_groups.values():
