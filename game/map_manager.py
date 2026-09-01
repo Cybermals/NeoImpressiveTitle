@@ -65,6 +65,7 @@ class MapManager(object):
         self.box_walls = []
         self.grass_groups = {}
         self.collision_boxes = []
+        self.collision_spheres = []
 
         # Load default shader
         self.default_shader = Shader.load(
@@ -415,6 +416,14 @@ class MapManager(object):
                     collision_box["range"]
                 )
 
+        # Does the map have collision spheres?
+        if "collision_spheres" in world_config:
+            for collision_sphere in world_config["collision_spheres"]:
+                self.add_collision_sphere(
+                    collision_sphere["pos"],
+                    collision_sphere["range"]
+                )
+
         # Flatten object groups
         for object_group in self.object_groups.values():
             object_group.flatten_strong()
@@ -509,7 +518,14 @@ class MapManager(object):
             self.physics_world.remove(collision_box.node())
             collision_box.remove()
 
-        collision_boxes = []
+        self.collision_boxes = []
+
+        # Destroy collison spheres
+        for collision_sphere in self.collision_spheres:
+            self.physics_world.remove(collision_sphere.node())
+            collision_sphere.remove()
+
+        self.collision_spheres = []
 
     def add_portal(
             self, 
@@ -844,6 +860,20 @@ class MapManager(object):
         col_box.set_pos(Vec3(*pos) + Vec3(0, 0, range[2] / 2))
         self.physics_world.attach(col_box.node())
         self.collision_boxes.append(col_box)
+
+    def add_collision_sphere(
+            self, 
+            pos: Union[list, tuple], 
+            range: float) -> None:
+        logger.info(f"Add collision spheres (pos = {pos}, range = {range})...")
+
+        # Add a collision sphere
+        col_sphere = base.render.attach_new_node(BulletRigidBodyNode("CollisionSphere"))
+        col_shape = BulletSphereShape(range)
+        col_sphere.node().add_shape(col_shape)
+        col_sphere.set_pos(*pos)
+        self.physics_world.attach(col_sphere.node())
+        self.collision_spheres.append(col_sphere)
 
     def update(self, task: Task) -> None:
         # Update terrain
