@@ -424,6 +424,10 @@ class MapManager(object):
                     collision_sphere["range"]
                 )
 
+        # Should time be frozen?
+        if "freeze_time" in world_config:
+            pass
+
         # Flatten object groups
         for object_group in self.object_groups.values():
             object_group.flatten_strong()
